@@ -1,0 +1,17 @@
+Enhancement Naive_Sorting_Capability(Definition LEQV(x, y : Entry) : B) for 
+        Queue_Template;
+    requires for all a, b, c : Entry, 
+        ((LEQV(a, b) and LEQV(b, c)) implies (LEQV(a, c))) and
+        ((LEQV(a, b) or LEQV(a, b));
+
+    Operation Sort(updates Q : Queue);
+        ensures for all i : Z such that i < |Q|,
+                LEQV(Element_At(Q, i), Element_At(Q, i + 1)) and
+            for all E : Entry,
+                |Concatenation j: Integer
+                    where 1 <= j <= |Q| and Element_At(Q, j) = E,
+                    <S.Contents(i)>| = 
+                |Concatenation j: Integer
+                    where 1 <= i <= |#Q| and Element_At(#Q, j) = E,
+                    <S.Contents(i)>|;
+end;

@@ -1,0 +1,41 @@
+\contentsline {section}{Abstract}{ii}{section*.2}
+\contentsline {section}{\numberline {1}Introduction}{3}{section.1}
+\contentsline {subsection}{\numberline {1.1}Existing Systems: Practical vs. Pure}{4}{subsection.1.1}
+\contentsline {subsubsection}{\numberline {1.1.1}Example Practical System: Jahob}{5}{subsubsection.1.1.1}
+\contentsline {paragraph}{\numberline {1.1.1.1}Complex Proof Obligations for Simple Methods.}{6}{paragraph.1.1.1.1}
+\contentsline {paragraph}{\numberline {1.1.1.2}Lack of Support for Modular Design.}{7}{paragraph.1.1.1.2}
+\contentsline {subsubsection}{\numberline {1.1.2}Example Pure System: Coq}{7}{subsubsection.1.1.2}
+\contentsline {subsection}{\numberline {1.2}Best of Both Worlds?}{11}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}Problem Statement}{12}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.4}Research Approach}{12}{subsection.1.4}
+\contentsline {subsubsection}{\numberline {1.4.1}Contributions}{13}{subsubsection.1.4.1}
+\contentsline {subsection}{\numberline {1.5}Thesis Statement}{14}{subsection.1.5}
+\contentsline {subsection}{\numberline {1.6}Proposal Organization}{14}{subsection.1.6}
+\contentsline {section}{\numberline {2}Verification Background and Related Work}{15}{section.2}
+\contentsline {subsection}{\numberline {2.1}Specification and Mathematical Systems}{15}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}Automated Theorem Provers}{17}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}Decision Procedures}{18}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}SAT-Solvers}{18}{subsubsection.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.3}Term-Rewrite Provers}{18}{subsubsection.2.2.3}
+\contentsline {subsection}{\numberline {2.3}Benchmarks, Libraries, and Specification Engineering}{19}{subsection.2.3}
+\contentsline {section}{\numberline {3}RESOLVE Background}{21}{section.3}
+\contentsline {section}{\numberline {4}Research}{26}{section.4}
+\contentsline {subsection}{\numberline {4.1}Extensible, Flexible Mathematics for Specification}{26}{subsection.4.1}
+\contentsline {subsubsection}{\numberline {4.1.1}Work Completed}{26}{subsubsection.4.1.1}
+\contentsline {paragraph}{\numberline {4.1.1.1}Higher-Order Logic.}{27}{paragraph.4.1.1.1}
+\contentsline {paragraph}{\numberline {4.1.1.2}First-class Types.}{28}{paragraph.4.1.1.2}
+\contentsline {paragraph}{\numberline {4.1.1.3}Mechanisms for Static Reasoning.}{29}{paragraph.4.1.1.3}
+\contentsline {paragraph}{\numberline {4.1.1.4}Rich Theory of Mathematical Types.}{31}{paragraph.4.1.1.4}
+\contentsline {subsubsection}{\numberline {4.1.2}Work To Be Completed}{33}{subsubsection.4.1.2}
+\contentsline {subsection}{\numberline {4.2}Minimalist Prover}{33}{subsection.4.2}
+\contentsline {subsubsection}{\numberline {4.2.1}Work Completed}{34}{subsubsection.4.2.1}
+\contentsline {subsubsection}{\numberline {4.2.2}Work To Be Completed}{35}{subsubsection.4.2.2}
+\contentsline {subsection}{\numberline {4.3}Specification and Mathematical Engineering}{36}{subsection.4.3}
+\contentsline {subsubsection}{\numberline {4.3.1}Work Completed}{37}{subsubsection.4.3.1}
+\contentsline {subsubsection}{\numberline {4.3.2}Work To Be Completed}{39}{subsubsection.4.3.2}
+\contentsline {section}{\numberline {5}Evaluation}{40}{section.5}
+\contentsline {subsection}{\numberline {5.1}Extensible, Flexible Mathematics for Specification}{40}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}Minimalist Prover}{40}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}Specification and Mathematical Engineering}{41}{subsection.5.3}
+\contentsline {section}{\numberline {6}Conclusion}{42}{section.6}
+\contentsline {section}{Bibliography}{43}{section*.5}

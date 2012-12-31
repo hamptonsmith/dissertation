@@ -1,0 +1,17 @@
+Concept Unbounded_Stack_Template(type Entry);
+    uses String_Theory;
+
+    Family Stack is modeled by Str(Entry);
+        exemplar S;
+        initialization ensures S = empty_string;
+
+    Operation Push(alters E: Entry; updates S: Stack); 
+        ensures  S = <#E> o #S;
+
+    Operation Pop(replaces R: Entry; updates S: Stack);
+        requires S /= empty_string;
+        ensures #S = <R> o S;
+
+    (* Other operations omitted for brevity. *)
+
+end Unbounded_Stack_Template;

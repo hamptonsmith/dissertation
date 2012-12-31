@@ -1,0 +1,58 @@
+This is BibTeX, Version 0.99c (TeX Live 2009/Debian)
+The top-level auxiliary file: proposal.aux
+A level-1 auxiliary file: introduction.aux
+A level-1 auxiliary file: background.aux
+A level-1 auxiliary file: resolvebackground.aux
+A level-1 auxiliary file: research.aux
+A level-1 auxiliary file: evaluation.aux
+A level-1 auxiliary file: conclusion.aux
+The style file: plain.bst
+Database file #1: proposal.bib
+I was expecting a `,' or a `}'---line 1406 of file proposal.bib
+ :  
+ :  location = {Santa Fe, New Mexico}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--empty journal in bisl
+You've used 47 entries,
+            2118 wiz_defined-function locations,
+            831 strings with 14484 characters,
+and the built_in function-call counts, 19074 in all, are:
+= -- 1878
+> -- 1015
+< -- 27
++ -- 408
+- -- 347
+* -- 1352
+:= -- 3103
+add.period$ -- 168
+call.type$ -- 47
+change.case$ -- 306
+chr.to.int$ -- 0
+cite$ -- 48
+duplicate$ -- 749
+empty$ -- 1390
+format.name$ -- 347
+if$ -- 4081
+int.to.chr$ -- 0
+int.to.str$ -- 47
+missing$ -- 43
+newline$ -- 247
+num.names$ -- 106
+pop$ -- 329
+preamble$ -- 1
+purify$ -- 261
+quote$ -- 0
+skip$ -- 544
+stack$ -- 0
+substring$ -- 1000
+swap$ -- 228
+text.length$ -- 27
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 180
+warning$ -- 1
+while$ -- 168
+width$ -- 49
+write$ -- 577
+(There was 1 error message)

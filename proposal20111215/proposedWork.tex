@@ -1,0 +1,105 @@
+%-----------------------------------------------------------------------------
+\section{Proposed Work}\label{sect:proposedWork}
+%-----------------------------------------------------------------------------
+Work on the research proposed in this document will proceed along the path outlined in the introduction, adressing the three points of the problem statement directly in order to test our thesis:
+
+%-----------------------------------------------------------------------------
+\subsection{Flexible, Intuitive Mathematics}
+%-----------------------------------------------------------------------------
+The mathematical subsystem of RESOLVE already contains many features that exemplify the sort of mathematics for verification that we propose.  However, further work is needed to make it flexible and intuitive and to increase the robustness of the implementation.  After the experimentation described in Section \ref{sect:workCompleted}, we have identified the current type system as a major weakness and barrier to flexible, intuive design.  In conjunction with mathematicians here at Clemson and at Ohio State, we have been designing a new type system that will be more flexible, more closely match a modern mathematician's conception of the mathematical universe, and, at the same time, be easier to implement because of its regular and reflective nature.
+
+Because every component that is to be verified must be modeled mathematically, the expressiveness of the mathematical system has a direct impact on the facility of the modeling process.  Our hypothesis is that the more closely the mathematical model matches the ideal in the mathematician's head, unencumbered by complexities introduced by massaging an inexpressive mathematical system, the easier resultant verification will be. 
+
+Our new design, which is a work in progress, exploits three key design principles to create a flexible, intuitive system:
+
+%----------------------------------
+\subsubsection{First-class Types}\label{subsubsect:firstClassTypes}
+%----------------------------------
+First class types are a feature of several mathematical systems and a handful of experimental programming languages, but were not a part of the original RESOLVE design.  The current prototype treats types as a special case, which makes them difficult and inconsistent to manipulate.  
+
+The new design incorporates first class types that are treated as normal mathematical values.  They can be manipulated, passed as parameters, returned as the result of a relation, and quantified over.
+
+So, for example, the following line would introduce a particular Integer called \textbf{1}:
+
+\begin{lstlisting}
+Definition 1 : Z = succ(0);
+\end{lstlisting}
+
+In exactly the same way, a new type called \textbf{N} could be defined:
+
+\begin{lstlisting}
+Definition N : Power(Z) = {n : Z | n >= 0};
+\end{lstlisting}
+
+The symbol table maintains information about the kinds of elements that make up any existing class, and can thus infer when the symbol introduced by a definition can safely be used as a type.  Thus this is a valid sequence of definitions:
+
+\begin{lstlisting}
+Definition N : Power(Z) = {n : Z | n >= 0};
+Definition NAcceptor(m : N) : B = true;
+\end{lstlisting}
+
+But this one is not:
+
+\begin{lstlisting}
+Definition 1 : Z = succ(0);
+Definition OneAcceptor(o : 1) : B = true;
+\end{lstlisting}
+
+Type schemas and dependent types, which define generalized types parameterized by other values, also take advantage of the first-class nature of types, and can be defined as normal relations that return a type, rather than using a special syntax.  This requires values \emph{of type Type}, which we call \textbf{MType} as an abbreviation for \emph{Math Type}.
+
+So, an example of the String type schema, which represents a finite sequence of elements of a certain type, presupposing the existence of a type \textbf{UntypedStr}, which contains finite sequences of elements of any type, and a function called \texttt{Contains\_Only\_Elements\_Of\_Type()} which returns \texttt{true} if and only if a given UntypedStr contains only element of the given type:
+
+\begin{lstlisting}
+Definition Str(E : MType) : MType = 
+	{S : UntypedStr | Contains_Only_Elements_Of_Type(S, E)};
+\end{lstlisting}
+
+%----------------------------------
+\subsubsection{Rich Set Theory}\label{subsubsect:richSetTheory}
+%----------------------------------
+Many schemes exist to correct the deficiencies in naive set theory.  ...
+
+%----------------------------------
+\subsubsection{Unevaluated, Higher-order Definitions}\label{subsubsect:higherOrderDefinitions}
+%----------------------------------
+If our verified components are to be worth the time we spend verifying them, they must be suitably generic to ensure broad reuse.  Many reuse patterns found in modern programming languages are difficult or impossible to specify or verify using the first-order logic dictated by most modern verification systems and automated provers.  In particular, they make it difficult to apply the lessons of programming to the mathematical world.
+
+Consider, for example the $foldr$ function ubiquitous in functional languages.  $foldr$ takes as its parameters a starting value of type $\gamma$, a function of type $(\gamma*\delta)\rightarrow\gamma$, and a list of elements of type $\delta$.  Starting with the starting value and the first element of the list, the function is applied to yield a new value of type $\gamma$ before repeating the procedure with the resultant value and the next element of the list.  The result of the final function application is returned.  A summing function for lists of integers could thus be defined as:
+
+$sum(zs) = foldr(0, +, zs)$
+
+The broad applicability of such a function for specification should be obvious.  However, even simple theorems describing the mathematical properties of this function run afoul of the first-order restriction that functions may not be quantified over.  For example, Theorem \ref{thm:emptylist} states that $foldr$ applied with an initial value to an empty list simply returns the initial value:
+
+\begin{thm}
+\label{thm:emptylist}
+$\forall f : (\gamma*\delta)\rightarrow\gamma, \forall ds : List(\delta), (|ds| = 0) \Rightarrow (foldr(i : \gamma, f, ds) = i)$
+\end{thm}
+
+Defining definitions that operate on functions is similarly curtailed, preventing development of reusable theories of, for example, transitive functions.
+
+Because our minimalist prover leaves functions and definitions \emph{unevaluated}, quantifying over them becomes straightforward.  A function or definition is unevaluated when we do not expand it to consider its definition---i.e., the mathematical subsystem looks at a function or definition variable as a black box, treating it no differently from an ordinary variable.  The tradeoffs inherent in such a design decision are discussed more completely in \cite{unevaluated}.
+
+%-----------------------------------------------------------------------------
+\subsection{Engineering Specifications for Provability}
+%-----------------------------------------------------------------------------
+In \cite{something} we explore how differing conceptual models of a cursored list component affect the provability of VCs resulting from an operation to reverse the list.  However, conceptual model is only one dimension of mathematical flexibility.
+
+At it's heart the question of specification engineering is one of how equivalent logical expressions affect practical attempts at verification.  As a small example, we may express that a \texttt{Stack}, modelled as a string of \texttt{Entry}s as in Section \ref{resolvebackground}, is empty via $S = \lambda$ or $|S| = 0$.  Indeed, there are an endless number of ways to express this single idea.  In cases where we are largely thinking in terms of contents of the stack, the former may be preferable.  In cases where we are thinking in terms of stack length, the latter may be preferable.  Many current verification systems encourage programmers to state facts many different ways to maximize the liklihood of verification.  We see this as a barrier to usability and would instead like to suggest best practices so that a fact need only be stated a single way, with an intelligent proving heuristic converting it as necessary.
+
+A more complex dimension is the way in which parameter transformations are formed.  In \emph{explicit} style, the final value of each parameter is defined as a relation of inputs, with the variable on the left hand side of an equality and the the function on the right.  In \emph{implicit} style, a relation relates the final value and inputs.  As an example, assuming an operation \texttt{Substring()} that takes a string and a zero-indexed starting and ending index and returns the substring starting at the first index and end going up to but not including the ending index, we might specify \texttt{Pop()} on a \texttt{Stack} this way in explicit style:
+
+\begin{lstlisting}
+Operation Pop(replaces E : Entry, updates S : Stack);
+   requires S /= empty_string;
+   ensures S = Substring(#S, 1, |S|);
+\end{lstlisting}
+
+Alternatively, in implicit style:
+
+\begin{lstlisting}
+Operation Pop(replaces E : Entry, updates S : Stack);
+   requires S /= empty_string;
+   ensures #S = <E> o S;
+\end{lstlisting}
+
+We had originally assumed that explicitly-defined operations would yield consistently easier-to-verify VCs, but after some exploration we discovered that this may not be the case.  Our experimentation with specification engineering will involve specifying the a wide range of components in different, equivalent ways along this and other dimensions and determining best-practices.

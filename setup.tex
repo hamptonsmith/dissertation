@@ -1,0 +1,34 @@
+\usepackage{listings}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\setcounter{secnumdepth}{5}
+
+\newtheorem{thm}{Theorem}
+
+\lstset{
+	basicstyle=\footnotesize
+}
+
+\lstdefinelanguage{Coq}
+	{
+		morekeywords={Definition,forall,let,Prop,Function,measure,if,then,else,end,match,with,unfold,intro,elim,reflexivity,replace,simpl,intros,split,change,rewrite,omega,assumption,symmetry,apply,auto,Qed,Theorem},
+		sensitive=true,
+		morecomment=[l]{--},
+	}
+
+\lstdefinelanguage{resolve}
+	{
+		morekeywords={Definition,Facility,is,realized,by,Var,Concept,uses,Defines,Constraints,Initialization,Type,Family,exemplar,initialization,finalization,ensures,Operation,updates,requires,preserves,clears,evaluates,type,Extension,for,end,if,then,replaces,Procedure,convention,correspondence,iff,extended,Enhancement,Realization,represented,alters,in,modeled,constraint,While,changing,maintaining,decreasing,do,Theorem,For,all,implies,where,and},
+		sensitive=true,
+		morecomment=[l]{--},
+		morecomment=[s]{(*}{*)},
+		morestring=[b]",
+	}
+\lstset{language=resolve}
+
+% This is needed to include figures
+\usepackage{graphicx}
+
+\newcommand{\cplusplus}{{\rm C\raise.5ex\hbox{\small ++}}}

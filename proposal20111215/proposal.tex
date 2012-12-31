@@ -1,0 +1,155 @@
+%
+% proposal.tex
+%
+% Dissertation Proposal Template.
+% School of Computing
+% Clemson University
+%
+\documentclass[10pt]{ClemsonProposal}
+
+% This is nice for source code listings
+\usepackage{listings}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\setcounter{secnumdepth}{5}
+
+\newtheorem{thm}{Theorem}
+
+\lstset{
+	basicstyle=\footnotesize
+}
+
+\lstdefinelanguage{Coq}
+	{
+		morekeywords={Definition,forall,let,Prop,Function,measure,if,then,else,end,match,with,unfold,intro,elim,reflexivity,replace,simpl,intros,split,change,rewrite,omega,assumption,symmetry,apply,auto,Qed,Theorem},
+		sensitive=true,
+		morecomment=[l]{--},
+	}
+
+\lstdefinelanguage{resolve}
+	{
+		morekeywords={Definition,Facility,is,realized,by,Var,Concept,uses,Defines,Constraints,Initialization,Type,Family,exemplar,initialization,finalization,ensures,Operation,updates,requires,preserves,clears,evaluates,type,Extension,for,end,if,then,replaces,Procedure,convention,correspondence,iff,extended,Enhancement,Realization,represented,alters,in,modeled,constraint,While,changing,maintaining,decreasing,do,Theorem,For,all,implies,where,and},
+		sensitive=true,
+		morecomment=[l]{--},
+		morecomment=[s]{(*}{*)},
+		morestring=[b]",
+	}
+\lstset{language=resolve}
+
+% This is needed to include figures
+\usepackage{graphicx}
+
+% Use any additional packages you might need
+
+
+%
+% Give values to the variables used in this document
+%
+\title{Engineering Specifications and Mathematics\\for Verified Software}
+\department{School of Computing}
+\documenttype{Dissertation Proposal}
+\major{Computer Science}
+\proposalday{8}
+\proposalmonth{December}
+\proposalyear{2011}
+\author{Hampton Smith}
+\committeechair{Murali Sitaraman}
+\committeememberone{Brian C. Dean}
+\committeemembertwo{Jason O. Hallstrom}
+\committeememberthree{Roy P. Pargas}
+
+% Just in case you have more then 3 committee members
+% \committeememberfour{Member4 Name}
+% \committeememberfive{Member5 Name}
+% \committeemembersix{Member6 Name}
+
+
+%
+% PDF Setup -- You should not need to change this
+%
+\hypersetup{
+    colorlinks,
+    linkcolor={black},
+    citecolor={black},
+    filecolor={black},
+    urlcolor={black},
+    pdftitle={\thetitle},
+    pdfauthor={\theauthor},
+    pdfsubject={\thedocumenttype},
+    pdfkeywords={Clemson University, \theauthor, \thedocumenttype},
+    pdfstartpage={1}
+}
+
+
+%
+% User-specified command definitions/redefinitions
+%
+\newcommand{\cplusplus}{{\rm C\raise.5ex\hbox{\small ++}}}
+
+
+\begin{document}
+%   ==========================================================================
+%   Begin front matter (pages are numbered with roman numerals)
+%   ==========================================================================
+    \begin{frontmatter}
+        \maketitle
+		\tableofcontents
+        \newpage
+
+        % Generate the abstract
+        \input{abstract.tex}
+	\end{frontmatter}
+
+
+
+%   ==========================================================================
+%   Begin main matter (pages are numbered with arabic numerals)
+%   ==========================================================================
+    \doublespacing     % Text should be double spaced
+    \pagestyle{fancy}  % Turn the nice header on for the rest of the document
+
+\section*{Description of Proposal Area}
+\raggedbottom
+A verifying compiler ideally eliminates the need for testing to reveal functional bugs by accomplishing what testing cannot: demonstrating the \emph{absence} of any bugs.  Unlike testing and informal reasoning, formal verification demonstrates that code behaves as specified under every possible valuation and along every possible path of execution.
+
+Unfortunately, a number of limitations to full, automatic verification mean that testing remains the norm for quality assurance.  As demonstrated by a number of high-profile software disasters in the past decade, much mission-critical software, upon which human lives may depend, has errors despite rigorous testing.  Only verification can demonstrate that code meets its specification exactly.
+
+Verification operates by viewing code as a series of mathematical transformations and comparing the result with some formal specification of desired behavior.  As a result of this, an important component of any verification system is an automated theorem prover, which takes mathematical statements as its input and attempts to prove them automatically.  However, proving a mathematical statement in general is an undecidable problem and in many modern systems this process must be assisted by a human expert working interactively with the proving system.
+
+Because of the complexity of the problem, these automated provers are on the cutting edge of algorithmic and artificial intelligence design and represent the current bottleneck in automated software verification.  Since mathematical statements are generated from the program's specifications and the specifications are written in the language of the mathematics of the system, the choice of mathematical model has a direct impact on the success or failure of an automated proof attempt.  Often, specifying code one way will yield automatically-verifiable code, while another equivalent specification will not.
+
+The goal of a mechanical verifier has existed since the 1960s and the earliest days of computing\cite{hoareAxiomaticProgramming}.  Despite this, modern verification systems require tremendous effort on the part of highly-trained mathematicians and software specialists to dispatch the proof obligations resulting from even simple programs.  Ameliorating this bottleneck by experimenting with design decision upstream from the prover is the focus of this research.
+
+\pagebreak
+\flushbottom
+\section*{Explanation of Problem}
+A number of open theoretical, practical, and design problems exist in the area of mechanical verification.  Despite a large variety of tools and techniques for verification, a number of these problems span all kinds of systems.  One is the issue of scalability and modularity---to justify the effort required to verify the component, it must enjoy broad reuse so that said effort may be amortized over time.
+
+This research proposes to experiment with factors that contribute to reuse.  We hypothesize that well-engineered, modularly verified code and extensible, reusable mathematics should contribute to more easily verified client systems.  Unfortunately, current verification tools do not generally provide the kinds of tools required to test this hypothesis.  Confirming or rejecting this hypothesis would benefit many existing systems by informing the style of specification used and the choice of where in the verification life-cycle to focus effort to achieve best results.  To successfully explore the problem, a confluence of a flexible mathematical system for specification, an associated prover, and a well-designed library for experimentation is required.
+
+The goal of this dissertation is to experiment with a modularity-focused specification system as well as the consequences of such a design, including the use of a more minimalistic, general automated prover.
+
+
+    %
+    % I use a file for every section.  Each of these corresponds to a file
+    % with the specified name ending in '.tex' (e.g., introduction.tex).
+    %
+    \include{introduction}
+    \include{background}
+    \include{resolvebackground}
+    \include{research}
+    \include{evaluation}
+%    \include{workCompleted}
+%    \include{proposedWork}
+%    \include{relatedWork}
+    \include{conclusion}
+
+
+
+%   ==========================================================================
+%   Wrap up the document with the Bibliography (looks for the specified .bib)
+%   ==========================================================================
+    \makebibliography{proposal}
+\end{document}

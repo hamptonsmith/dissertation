@@ -1,0 +1,19 @@
+Goal:
+(0 <= (S.Top + 1)) and ((S.Top + 1) <= Max_Depth)
+
+Given:
+1: (min_int  <= 0)
+2: (0  < max_int)
+3: (Last_Char_Num  > 0)
+4: (1  <= (Max_Depth  + 1))
+5: (min_int <= Max_Depth) and (Max_Depth <= max_int)
+6: (min_int <= 1) and (1 <= max_int)
+7: (1  <= Max_Depth)
+8: (min_int <= Max_Depth) and (Max_Depth <= max_int)
+9: (0 <= S.Top) and (S.Top <= Max_Depth)
+10: (|Reverse(Concatenation i:Integer 
+       where (1 <= i) and (i <= S.Top), <S.Contents(i)>)|  + 1) <= Max_Depth)
+11: E' = S.Contents((S.Top  + 1))
+12: S'.Contents = lambda j: Z ({{E if j = (S.Top  + 1)
+S.Contents(j) otherwise
+}})

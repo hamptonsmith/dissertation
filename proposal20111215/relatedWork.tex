@@ -1,0 +1,69 @@
+% ---------------------------------------------------------------------------
+\section{Additional Related Work}\label{sect:relatedWork}
+% ---------------------------------------------------------------------------
+
+% ---------------------------------------------------------------------------
+\subsection{Mathematical and Specification Systems and Automated Provers}\label{sec:mathandspecsystems}
+% ---------------------------------------------------------------------------
+In addition to Jahob and Coq, discussed in some detail in Sections \ref{sec:jahob} and \ref{sec:Coq}, several other popular systems exist for expressing and manipulating mathematics, as well as applying them to programs.  We consider some here, as well as how they relate to RESOLVE.
+
+% ---------------------------------------------------------------------------
+\subsubsection{Ohio State's RESOLVE}\label{sec:OSURESOLVE}
+% ---------------------------------------------------------------------------
+RESOLVE is a joint effort with our sister research-group at The Ohio State University, where RESOLVE was originally conceived.  However, each school maintains its own implementation of the RESOLVE verification toolchain, making different design decisions and focussing on different research questions.
+
+OSU's RESOLVE implementation uses a finite set of built-in types.  Integers, Strings, and the rest are hard-coded into their implementation and can not be extended.  While their mathematics are somewhat inflexible, they do share our focus on modular programming techniques, permitting, for example, components to accept definitions as parameters.  Prover experimentation is simarly a focus, but OSU's system accomplishes this by targetting multiple prover back-ends.  They have experimented with an in-house solver, but it takes the form of a specialized decision procedure for working with Strings specifically and cannot be applied to other domains.
+
+% ---------------------------------------------------------------------------
+\subsubsection{ACL2}\label{sec:ACL2}
+% ---------------------------------------------------------------------------
+ACL2 is a verification system built on top of a variation on the Common LISP programming language.  It has found broad use in industry verifying properites of microprocessors, compilers, and other domains condusive to functional programming.  
+
+It has it's own integrated prover that is noteable for being able to discover inductive proofs automatically.  Like our minimalist prover, it is primarily a rewrite prover, but it relies on user hints and heuristics to make decisions up-front, after which it does not backtrack.
+
+By contrast to the RESOLVE system where mathematics and programming are strictly separate, ACL2 permits them to overlap.  ACL2 lists are LISP lists.  ACL2 equality is LISP equality.  In addition, whereas RESOLVE is higher-order, ACL2 remains first-order.
+
+Because it is integrated tightly with Common LISP, it inherits the advantages and disadvantages of that---primarily functional---language.  The LISP variation in question is side-effect free and so many common imperative programming patterns are not possible.  Similarly, as it is not object oriented, there are no components in the sense we discuss in this paper.
+
+% ---------------------------------------------------------------------------
+\subsubsection{Isabelle}\label{sec:Isabelle}
+% ---------------------------------------------------------------------------
+Isabelle is a proof assistant geared toward aiding mathematicians to interactively construct checked proofs, though it is capable of proving theorems on its own.  Isabelle's primary use in practice has been formalizing mathematical results such a G\"{o}del's incompleteness theorem.  It is built on top of the SML functional language and provides a relatively intuitive mathematical syntax called Isar.  Like RESOLVE, Isabelle provides for logics that are higher-order and uses a rewrite-based prover.
+
+As with COQ, Isabelle provides a mechanism to generate code in a number of languages, including one that permits object-oriented paradigms: Scala.  Note however that this is inherently an imperative representation generated from a functional-style description of behavior.  There is no tight integration of Isabelle with a standard programming language (functional, imperative, or otherwise).
+
+% ---------------------------------------------------------------------------
+\subsubsection{Spec\#}\label{sec:SpecSharp}
+% ---------------------------------------------------------------------------
+Spec\# is a practical verification system built on top of C\#.  It utilizes the Boogie intermediate verification language for generating VCs that compile down to a number of targets, most notably Z3, an SMT solver that includes theories for linear real and integer arithmetic and uninterpretted functions.  In order to reason about aliases, it uses an object-ownership paradigm.
+
+Like RESOLVE, Spec\# provides direct integration between a mathematical language and a programming language, which means that the usual practices of programming modularity can be applied to verified components.  Unlike RESOLVE, however, it does not provide an extensible mathematical universe it is at the mercy of the mathematics of Boogie which cannot be extended programmatically to support new mathematical abstractions.
+
+% ---------------------------------------------------------------------------
+\subsubsection{Yices}\label{sec:Yices}
+% ---------------------------------------------------------------------------
+Yices is an efficient SMT solver based on the Davis-Putnam-Logemann-Loveland\cite{DPLL} algorithm, which is similar to branch-and-bound.  It is not only capable of determining the satisfiability of a given formula, but also of providing counter examples if it is unsatisfiable.  Like most DPLL-based provers (which are the primary kind of prover used in practical systems), it defers at the lowest level to a boolean satisfiability (SAT) solver, makes it extremely fast, but difficult to extend, as a mapping must be provided between any new domain and the realm of boolean variables.
+
+% ---------------------------------------------------------------------------
+\subsection{Verification Libraries and Benchmarks}\label{sec:libraries}
+% ---------------------------------------------------------------------------
+Ours is certainly not the first attempt to construct a library or set of benchmarks the purpose of verification exploration and evaluation.  However, while every verification tool has its associated library of test components, few have created a cohesive set of test cases with a particular facet of verification in mind.
+
+% ---------------------------------------------------------------------------
+\subsubsection{VSTTE Verification Competition}\label{sec:competition}
+% ---------------------------------------------------------------------------
+Since 2010, the Verified Software: Tools, Theories, and Experiments conference has run a verified software competition.  Attendees are permitted to enter and are given a short amount of time to complete a handful of challenges.  Afterwards, the various solutoins are made public along with discussion by their implementers.
+
+The nature of these challenges have been all over the map, ranging from averaging an integer array, to implementing a binary tree data structure.  The intent has been to get verification projects communicating and sharing ideas rather than our purpose here: to compare different styles of specification.  
+
+This competition has revealed some interesting realities about modern verification systems \emph{vis-\'{a}-vis} modularity.  For example, in 2010, despite the fact that an earlier challenge required teams to create a list data structure, no team used that data structure in a subsequent challenge to implement an amortized queue with a linked list, instead re-implementing a linked list, presumably because they required different properties to achieve verification.
+
+% ---------------------------------------------------------------------------
+\subsubsection{Jahob Library}\label{sec:jahoblibrary}
+% ---------------------------------------------------------------------------
+The Jahob team has made a concerted effort to verify a number of data structures in a form as close to how they appear in the Java standard library as possible.  In a recent paper \cite{JahobLinked}, they published about a subset of these which were linked data-structures, including \texttt{ArrayList}, \texttt{HashMap}, and \texttt{PriorityQueue}.  While small (on the order of ten components), this library represents the sort of effort we would like to make here---a library of components geared toward an exploration of a specific facet of verification.  Jahob's library is geared towards linked data structures and the expressiveness not to have to compromise a component design from what we see in normal industrial systems.  Our library will be geared toward specification style and the ability to create modular components.
+
+% ---------------------------------------------------------------------------
+\subsubsection{RSRG Incremental Benchmarks}\label{sec:rsrgbenchmarks}
+% ---------------------------------------------------------------------------
+In 2008, researchers here at Clemson and at the Ohio State University compiled and published\cite{VSTTEBenchmarks} a set of incremental benchmarks intended to be representative of the breadth of verification complexity, starting with simple integer addition and spanning system I/O, design patterns such as Iterator, and finally an integrated application.  The focus of these benchmarks was on demonstrating the capabilities considered essential to any verification system that was to be useful in practice.  At a subsequent VSTTE conference, the Microsoft verification team published their solutions to some of these benchmarks as implemented in Dafny\cite{DafnyBenchmarks}, which revealed a number of interesting properties of that system.  Our hope is that the library developed for this research can have a similar effect elliciting discussion and comparison of different verification systems by encouraging other verification efforts to explore the effect of differing specification on properties of the verification.
