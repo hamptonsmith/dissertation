@@ -8,5 +8,5 @@
 \contentsline {lstlisting}{Pop\textunderscore Convention.asrt}{25}{lstlisting.3.-1}
 \contentsline {lstlisting}{Flipping\textunderscore Capability.en}{26}{lstlisting.3.-2}
 \contentsline {lstlisting}{\numberline {3.3}A Realization of Flip}{26}{lstlisting.3.3}
-\contentsline {lstlisting}{\numberline {4.1}A Naive Sort Specification}{40}{lstlisting.4.1}
-\contentsline {lstlisting}{\numberline {4.2}A Sort Specification with Uninterpretted Definitions}{41}{lstlisting.4.2}
+\contentsline {lstlisting}{\numberline {5.1}A Naive Sort Specification}{56}{lstlisting.5.1}
+\contentsline {lstlisting}{\numberline {5.2}A Sort Specification with Uninterpretted Definitions}{57}{lstlisting.5.2}
