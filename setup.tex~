@@ -8,6 +8,7 @@
 \newtheorem{thm}{Theorem}
 
 \lstset{
+	escapeinside={[*}{*]},
 	basicstyle=\footnotesize
 }
 
@@ -20,7 +21,7 @@
 
 \lstdefinelanguage{resolve}
 	{
-		morekeywords={Definition,Facility,is,realized,by,Var,Concept,uses,Defines,Constraints,Initialization,Type,Family,exemplar,initialization,finalization,ensures,Operation,updates,requires,preserves,clears,evaluates,type,Extension,for,end,if,then,replaces,Procedure,convention,correspondence,iff,extended,Enhancement,Realization,represented,alters,in,modeled,constraint,While,changing,maintaining,decreasing,do,Theorem,For,all,implies,where,and},
+		morekeywords={Definition,Facility,is,realized,by,Var,Concept,uses,Defines,Constraints,Initialization,Type,Family,exemplar,initialization,finalization,ensures,Operation,updates,requires,preserves,clears,evaluates,type,Extension,for,end,if,then,replaces,Procedure,convention,correspondence,iff,extended,Enhancement,Realization,represented,alters,in,modeled,constraint,While,changing,maintaining,decreasing,do,Theorem,For,all,implies,where,and,Precis,Subsumption},
 		sensitive=true,
 		morecomment=[l]{--},
 		morecomment=[s]{(*}{*)},
@@ -31,3 +32,4 @@
 % This is needed to include figures
 \usepackage{graphicx}
 
+\newcommand{\cplusplus}{{\rm C\raise.5ex\hbox{\small ++}}}
