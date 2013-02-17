@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2012.11.17)  16 JAN 2013 02:16
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2012.11.17)  15 FEB 2013 03:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -292,7 +292,90 @@ LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2009/06/22 v3.00
 )
-\c@thm=\count115
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip90
+
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks24
+\ex@=\dimen120
+))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen121
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count115
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count116
+\leftroot@=\count117
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count118
+\DOTSCASE@=\count119
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box28
+\strutbox@=\box29
+\big@size=\dimen122
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count120
+\c@MaxMatrixCols=\count121
+\dotsspace@=\muskip11
+\c@parentequation=\count122
+\dspbrk@lvl=\count123
+\tag@help=\toks25
+\row@=\count124
+\column@=\count125
+\maxfields@=\count126
+\andhelp@=\toks26
+\eqnshift@=\dimen123
+\alignsep@=\dimen124
+\tagshift@=\dimen125
+\tagwidth@=\dimen126
+\totwidth@=\dimen127
+\lineht@=\dimen128
+\@envbody=\toks27
+\multlinegap=\skip91
+\multlinetaggap=\skip92
+\mathdisplay@stack=\toks28
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2012/02/19 v3.2f Customizing captions (AR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2012/01/12 v1.4b caption3 kernel (AR)
+\captionmargin=\dimen129
+\captionmargin@=\dimen130
+\captionwidth=\dimen131
+\caption@indent=\dimen132
+\caption@parindent=\dimen133
+\caption@hangindent=\dimen134
+)
+\c@ContinuedFloat=\count127
+Package caption Info: hyperref package is loaded.
+Package caption Info: listings package is loaded.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/subcaption.sty
+Package: subcaption 2012/01/12 v1.1d Sub-captions (AR)
+\c@subfigure=\count128
+\c@subtable=\count129
+)
+(/usr/share/texlive/texmf-dist/tex/latex/jknapltx/mathrsfs.sty
+Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
+\symrsfs=\mathgroup6
+)
+\c@thm=\count130
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 53.
 
@@ -302,10 +385,10 @@ Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
 
 (./dissertation.aux
 
-LaTeX Warning: Label `thm:emptylist' multiply defined.
+LaTeX Warning: Label `ssrule:promote' multiply defined.
 
 
-LaTeX Warning: Label `fig:universe' multiply defined.
+LaTeX Warning: Label `sub@ssrule:promote' multiply defined.
 
 )
 \openout1 = `dissertation.aux'.
@@ -324,7 +407,7 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 65.
 LaTeX Font Info:    ... okay on input line 65.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 65.
 LaTeX Font Info:    ... okay on input line 65.
-\AtBeginShipoutBox=\box28
+\AtBeginShipoutBox=\box30
  (/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 
@@ -341,7 +424,7 @@ Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count116
+\c@section@level=\count131
 )
 LaTeX Info: Redefining \ref on input line 65.
 LaTeX Info: Redefining \pageref on input line 65.
@@ -388,17 +471,17 @@ LaTeX Info: Redefining \nameref on input line 65.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count117
-\scratchdimen=\dimen120
-\scratchbox=\box29
-\nofMPsegments=\count118
-\nofMParguments=\count119
-\everyMPshowfont=\toks24
-\MPscratchCnt=\count120
-\MPscratchDim=\dimen121
-\MPnumerator=\count121
-\makeMPintoPDFobject=\count122
-\everyMPtoPDFconversion=\toks25
+\scratchcounter=\count132
+\scratchdimen=\dimen135
+\scratchbox=\box31
+\nofMPsegments=\count133
+\nofMParguments=\count134
+\everyMPshowfont=\toks29
+\MPscratchCnt=\count135
+\MPscratchDim=\dimen136
+\MPnumerator=\count136
+\makeMPintoPDFobject=\count137
+\everyMPtoPDFconversion=\toks30
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -414,7 +497,9 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\c@lstlisting=\count123
+\c@lstlisting=\count138
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
 
 [1
 
@@ -441,6 +526,11 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 1.
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 1.
+
+(/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 ) [7
 
 ])
@@ -489,7 +579,7 @@ LaTeX Warning: Citation `bentleyProgrammingPearls' on page 1 undefined on input
 
 
 
-] <verification_pipeline.png, id=279, 819.06pt x 255.95625pt>
+] <verification_pipeline.png, id=265, 819.06pt x 255.95625pt>
 File: verification_pipeline.png Graphic file (type png)
 
 <use verification_pipeline.png>
@@ -570,7 +660,7 @@ LaTeX Warning: Citation `zee:annotations' on page 5 undefined on input line 44.
 
 LaTeX Warning: Citation `bronishMap' on page 5 undefined on input line 44.
 
-[5] <proverpart.png, id=333, 819.06pt x 255.95625pt>
+[5] <proverpart.png, id=319, 819.06pt x 255.95625pt>
 File: proverpart.png Graphic file (type png)
  <use proverpart.png>
 Package pdftex.def Info: proverpart.png used on input line 50.
@@ -586,12 +676,12 @@ ne 79.
 LaTeX Warning: Citation `kleinVerifiedOS' on page 8 undefined on input line 79.
 
 
-[8] <vcpart.png, id=384, 819.06pt x 255.95625pt>
+[8] <vcpart.png, id=370, 819.06pt x 255.95625pt>
 File: vcpart.png Graphic file (type png)
  <use vcpart.png>
 Package pdftex.def Info: vcpart.png used on input line 85.
 (pdftex.def)             Requested size: 433.62001pt x 135.50774pt.
- [9 <./vcpart.png>] <specpart.png, id=391, 819.06pt x 255.95625pt>
+ [9 <./vcpart.png>] <specpart.png, id=377, 819.06pt x 255.95625pt>
 File: specpart.png Graphic file (type png)
  <use specpart.png>
 Package pdftex.def Info: specpart.png used on input line 102.
@@ -611,13 +701,22 @@ LaTeX Warning: Citation `wenzelIsar' on page 12 undefined on input line 137.
 
 LaTeX Warning: Citation `bronishMap' on page 12 undefined on input line 139.
 
-[12]) [13] [14] (./background.tex
+[12]
+
+LaTeX Warning: Reference `sec:research' on page 13 undefined on input line 151.
+
+
+) [13] [14] (./background.tex
 Chapter 2.
 
 LaTeX Warning: Citation `dillerZ' on page 15 undefined on input line 10.
 
 
 LaTeX Warning: Citation `guttagLarch' on page 15 undefined on input line 10.
+
+
+LaTeX Warning: Reference `sec:higherOrderDefinitions' on page 15 undefined on i
+nput line 10.
 
 [15
 
@@ -716,6 +815,10 @@ LaTeX Warning: Citation `hartonDissertation' on page 25 undefined on input line
 
 LaTeX Warning: Citation `smith10' on page 26 undefined on input line 38.
 
+
+LaTeX Warning: Reference `sec:researchProver' on page 26 undefined on input lin
+e 38.
+
 (./Flipping_Capability.en)
 Overfull \hbox (2.70596pt too wide) in paragraph at lines 44--45
 \OT1/cmr/m/n/10 the VC-generation and prov-ing pro-cess is the same. Con-sider 
@@ -733,130 +836,90 @@ LaTeX Warning: Citation `klebanovVSTTEExperience' on page 27 undefined on input
 
 LaTeX Warning: Citation `ernstInfer' on page 27 undefined on input line 52.
 
+
+LaTeX Warning: Reference `sec:research' on page 27 undefined on input line 54.
+
 ) [27] (./mathSystem.tex
 Chapter 4.
 [28
 
 
-]
+] [29] [30]
 
-LaTeX Warning: Reference `ch:prover' on page 29 undefined on input line 25.
+LaTeX Warning: Citation `tagoreExpand' on page 31 undefined on input line 78.
 
-[29]
+[31] [32] [33]
 
-LaTeX Warning: Reference `ch:prover' on page 30 undefined on input line 53.
+LaTeX Warning: Citation `something' on page 34 undefined on input line 160.
+
+[34] [35] [36]
+Overfull \hbox (8.21243pt too wide) in paragraph at lines 315--318
+ []$[]$ 
+ []
 
 
-LaTeX Warning: Citation `tagoreExpand' on page 30 undefined on input line 53.
+Overfull \hbox (23.71912pt too wide) in paragraph at lines 329--332
+ []$[]$ 
+ []
 
-[30] [31] [32]
-
-LaTeX Warning: Citation `something' on page 33 undefined on input line 135.
-
-[33] [34] [35] [36] [37] [38]
-<universe.png, id=768, 273.49678pt x 302.40479pt>
+[37] [38] [39] [40] <universe.png, id=768, 273.49678pt x 302.40479pt>
 File: universe.png Graphic file (type png)
- <use universe.png>
-Package pdftex.def Info: universe.png used on input line 340.
+
+<use universe.png>
+Package pdftex.def Info: universe.png used on input line 429.
 (pdftex.def)             Requested size: 143.09538pt x 158.225pt.
- [39 <./universe.png>] [40] [41] [42] [43] [44] [45]) [46] (./research.tex
+ [41 <./universe.png>] [42] [43] [44] [45]
+Overfull \hbox (7.25484pt too wide) in paragraph at lines 588--589
+[]\OT1/cmr/m/n/10 So, in our above ex-am-ple, the static re-quire-ments would b
+e: $\OML/cmm/m/it/10 T[] \OT1/cmr/m/n/10 : \OML/cmm/m/it/10 MType; T[] \OT1/cmr
+/m/n/10 : \OML/cmm/m/it/10 Power\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 T[]\OT1/cmr/m
+/n/10 )\OML/cmm/m/it/10 ; T[] \OT1/cmr/m/n/10 =
+ []
+
+[46] [47]) [48] (./prover.tex
 Chapter 5.
-[47
+) [49
 
 
-]
-
-LaTeX Warning: Citation `bronishMap' on page 48 undefined on input line 20.
-
-[48]
-
-LaTeX Warning: Citation `tagoreExpand' on page 49 undefined on input line 42.
-
-[49] [50] [51] [52] [53]
-File: universe.png Graphic file (type png)
- <use universe.png>
-Package pdftex.def Info: universe.png used on input line 186.
-(pdftex.def)             Requested size: 143.09538pt x 158.225pt.
- [54]
-
-LaTeX Warning: Citation `smith10' on page 55 undefined on input line 209.
-
-
-LaTeX Warning: Citation `chuckThesis' on page 55 undefined on input line 209.
-
-
-LaTeX Warning: Citation `Sit11' on page 55 undefined on input line 209.
-
-
-LaTeX Warning: Citation `smithMinimalist' on page 55 undefined on input line 20
-9.
-
-[55] <successfulverification.png, id=962, 1027.84pt x 554.07pt>
-File: successfulverification.png Graphic file (type png)
-
-<use successfulverification.png>
-Package pdftex.def Info: successfulverification.png used on input line 213.
-(pdftex.def)             Requested size: 433.62001pt x 233.74771pt.
-
-
-LaTeX Warning: Citation `smithMinimalist' on page 56 undefined on input line 21
-7.
-
-[56 <./successfulverification.png>]
-
-LaTeX Warning: Citation `smith10' on page 57 undefined on input line 230.
-
-[57] [58]
-
-LaTeX Warning: Citation `kirschenbaumDeepMathematics' on page 59 undefined on i
-nput line 258.
-
-
-LaTeX Warning: Citation `smithSpecificationAbstractions' on page 59 undefined o
-n input line 258.
-
-(./Naive_Sort.en [59]) (./Def_Sort.en) [60]
-
-LaTeX Warning: Citation `smith08' on page 61 undefined on input line 281.
-
-
-LaTeX Warning: Citation `Benchmarks' on page 61 undefined on input line 290.
-
-) [61] (./evaluation.tex
+] (./evaluation.tex
 Chapter 6.
-[62
+
+LaTeX Warning: Reference `sec:researchProver' on page 50 undefined on input lin
+e 14.
+
+[50
 
 
 ]
 
-LaTeX Warning: Citation `smithSpecificationAbstractions' on page 63 undefined o
+LaTeX Warning: Citation `smithSpecificationAbstractions' on page 51 undefined o
 n input line 23.
 
-) [63] [64] (./conclusion.tex
+) [51] [52] (./conclusion.tex
 Chapter 7.
-) [65
+) [53
 
 
-] [66
+] [54
 
 
 
-] (./appendixA.tex [67]
-<testbed.jpg, id=1062, 321.2pt x 229.85875pt>
+] (./appendixA.tex [55] <testbed.jpg, id=906, 321.2pt x 229.85875pt>
 File: testbed.jpg Graphic file (type jpg)
- <use testbed.jpg>
+
+<use testbed.jpg>
 Package pdftex.def Info: testbed.jpg used on input line 54.
 (pdftex.def)             Requested size: 321.19922pt x 229.85817pt.
- [68 <./testbed.jpg>]) [69] (./appendixB.tex
+ [56 <./testbed.jpg>]) [57] (./appendixB.tex
 Overfull \hbox (6.11957pt too wide) in paragraph at lines 1--1
 []\OT1/cmr/bx/n/14.4 Manuscript Re-view Sign-In Datat Aheet for Stu-
  []
 
-[70
+[58
 
-] [71] [72] [73]) [74] (./appendixC.tex [75
+] [59] [60] [61]) [62] (./appendixC.tex [63
 
-] [76] [77] [78]) [79] [80]
+] [64] [65] [66]) [67] [68]
 No file dissertation.bbl.
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 165.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 165.
@@ -864,7 +927,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 165.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 165.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 165.
 Package rerunfilecheck Info: File `dissertation.out' has not changed.
-(rerunfilecheck)             Checksum: 9A51F43E3BE5901E17F556996C326A07;2355.
+(rerunfilecheck)             Checksum: BDC4FFC285FEB2CB379ADFAC98E9A3D0;2184.
 
 
 LaTeX Warning: There were undefined references.
@@ -875,18 +938,15 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 165.
  ) 
 Here is how much of TeX's memory you used:
- 8836 strings out of 495059
- 127641 string characters out of 3182029
- 260644 words of memory out of 3000000
- 11242 multiletter control sequences out of 15000+200000
- 13413 words of font info for 51 fonts, out of 3000000 for 9000
+ 10333 strings out of 495059
+ 151562 string characters out of 3182029
+ 279199 words of memory out of 3000000
+ 12807 multiletter control sequences out of 15000+200000
+ 15574 words of font info for 60 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 36i,12n,45p,1675b,1773s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{Hfootnote.11} has been referenced but does not ex
+ 39i,12n,45p,1675b,1769s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{Hfootnote.10} has been referenced but does not ex
 ist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Hfootnote.10} has been referenced but does not exis
-t, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.9} has been referenced but does not exist
 , replaced by a fixed one
@@ -917,28 +977,32 @@ pdfTeX warning (dest): name{Hfootnote.1} has been referenced but does not exist
 
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/
 share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmr5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr
-6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></
-usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/shar
-e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/p
-ublic/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
-amsfonts/cm/cmtt8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/symbols/msbm10.pfb>
-Output written on dissertation.pdf (91 pages, 772298 bytes).
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/share/texlive/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmmi5.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
+onts/cm/cmmi7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
+/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/
+texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
+/amsfonts/cm/cmsy8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
+ts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
+cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.
+pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on dissertation.pdf (79 pages, 718795 bytes).
 PDF statistics:
- 1318 PDF objects out of 1440 (max. 8388607)
- 1181 compressed objects within 12 object streams
- 585 named destinations out of 1000 (max. 500000)
- 316 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1159 PDF objects out of 1200 (max. 8388607)
+ 1031 compressed objects within 11 object streams
+ 487 named destinations out of 1000 (max. 500000)
+ 295 words of extra memory for PDF output out of 10000 (max. 10000000)
 

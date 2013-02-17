@@ -2,8 +2,12 @@
 \usepackage{amsthm}
 \usepackage{amsfonts}
 \usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{mathrsfs}
 
-\setcounter{secnumdepth}{5}
+\setcounter{secnumdepth}{3}
 
 \newtheorem{thm}{Theorem}
 

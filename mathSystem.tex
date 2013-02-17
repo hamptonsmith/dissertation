@@ -8,6 +8,31 @@ Introducing formal methods into a software engineering project causes a sharp in
 
 While we argue that this cost is justified in critical or long-running deployments by a corresponding reduction in effort during the maintenance phase of the software lifecycle, it is undeniable that this remains a barrier for entry to many projects that could otherwise benefit from formal methods of quality assurance.  We hypothesized that a number of steps could be taken to reduce the real or percieved additional effort, as well as increase the corresponding long-term benefits.
 
+
+%-----------------------------------------------------------------------------
+\section{Preliminaries\label{preliminaries}}
+%-----------------------------------------------------------------------------
+
+For the sake of clarity and brevity, we will explain a few important concepts and notations for this section upfront.
+
+	%-----------------------------------------------------------------------------
+	\subsection{Objects \emph{vs.} Expressions\label{objectsVsExpressions}}
+	%-----------------------------------------------------------------------------
+
+We will occasionally need to distinguish between a \emph{mathematical value and its corresponding type} and a \emph{RESOLVE expression and its corresponding type}.  The former is a mathematical object representable in the universe of RESOLVE.  The latter is a meta-concept pertaining to syntax.  When we wish to indicate a mathematical value, we will use the standard mathematical syntax.  E.g., $\forall i : \mathbb{Z}, ...$ quantifies over all mathematical integers.  When we wish to indicate a RESOLVE expression of some type, we will use the meta-type \textbf{Exp}, subscripted with the type of the expression.  E.g., $\forall i : \textbf{Exp}_\mathbb{Z}, ...$ quantifies over all RESOLVE expressions that, when evaluated, would yield a mathematical integer.  We will also use the meta-function \emph{Eval}, which takes an \textbf{Exp} and returns the results of evaluating the expression.
+
+	%-----------------------------------------------------------------------------
+	\subsection{Operating on Expressions\label{operatingOnExpressions}}
+	%-----------------------------------------------------------------------------
+
+When normal mathematical functions (e.g., $\cup$, $\times$, etc.) are shown operating on \textbf{Exp}s, this is a shorthand for constructing a new RESOLVE expression resembling the given expression, with any \textbf{Exp}-valued variables macro-expanded into their full expression value.  For example, $\forall R, T : \textbf{Exp}_{\mathcal{P}(\mathbb{Z})}, \text{Eval}(R \cup T) \supseteq \text{Eval}(R)$ does not contain an attempt to somehow ``union'' two expressions ($\cup$ operates on types, not expressions), but rather is constructing a new union expression with $R$ and $T$ as sub-expressions.
+
+	%-----------------------------------------------------------------------------
+	\subsection{Type Equality\label{typeEquality}}
+	%-----------------------------------------------------------------------------
+
+Equality of types can be a complex topic.  In this text, when we say, for some types $T$ and $R$, that $T = R$ (or use the word ``equals'') we mean that $T$ and $R$ are \emph{alpha equivalent}.  Two types are alpha equivalent if they are identical except for the names of any quantified variables, which may be different so long as they do not change the internal relationships between the variables (i.e., the names can not be changed to make two previously differently-named variables the same.)
+
 %-----------------------------------------------------------------------------
 \section{General Design Goals\label{mathDesignGoals}}
 %-----------------------------------------------------------------------------
@@ -30,7 +55,7 @@ The second situation may be addressed by making VCs easier to dispatch.  While t
 
 Borrowing from the software development world, we note that when complexity is unavoidable, it can be mitigated by strong modularity in the form of clear demarcations between atomic conceptual units.   Such units serve both to organize the thoughts of the human user and to provide a finer granularity with which to import such concepts, decreasing the clutter in namespaces and ensuring that only the resources that are truly needed are loaded.  In the presence of an automated prover, we hypothesized that such a strategy would also assist the ease with which VCs can be dispatched by ensuring that the prover only considers those theorems relevant to the current domain.
 
-Note that it's not our desire to place on the user the burden of deciding which theorems might be relevant, but rather to ensure that appropriate theorems are bundled with the concepts they operate on.  A user might work with binary relations a great deal, but only when she wishes to use the \texttt{Is\_Total\_Preordering} predicate would she import \texttt{Preordering\_Theory}.  By importing what is necessary to gain access to such a predicate, she also gains a body of theorems for reasoning about such relations.
+Note that it's not our desire to place on the user the burden of deciding which theorems might be relevant, but rather to ensure that appropriate theorems are bundled with the mathematical objects upon which they operate.  A user might work with binary relations a great deal, but only when she wishes to use the \texttt{Is\_Total\_Preordering} predicate would she import \texttt{Preordering\_Theory}.  By importing what is necessary to gain access to such a predicate, she also gains a body of theorems for reasoning about such relations.
 
 	%---------------------------------------------------------------------
 	\subsection{Reusable Theories\label{reusableTheories}}
@@ -48,9 +73,9 @@ In seeking out such features, we drew from the body of existing programming lang
 	\subsection{Higher-order Logic\label{higherOrderLogic}}
 	%---------------------------------------------------------------------
 
-The availability of first-class functions in both the theory and specification realm both increase mathematically \emph{familiarity} (supporting usability) and encourage patterns of reuse.  Many reuse patterns found in modern programming languages are difficult or impossible to specify or verify using the first-order logic dictated by most practical verification systems and automated provers.  For example, the Strategy patten, functional constructs, and ??? all become impossible to specify.
+The availability of first-class functions in theories and specifications both increases mathematically \emph{familiarity} (supporting usability) and encourage patterns of reuse.  Many reuse patterns found in modern programming languages are difficult or impossible to specify or verify using the first-order logic dictated by most practical verification systems and automated provers.  For example, the Strategy patten, functional constructs, and ??? all become impossible to specify.
 
-Higher-order logic is presumably omitted from such systems because of the added complexity introduced by reasoning over quantified types.  However, as discussed further in Chapter \ref{ch:prover}, our minimalist prover leaves functions and definitions \emph{uninterpretted}.  A function or definition is uninterpretted when we do not expand it to consider its definition---i.e., the mathematical subsystem looks at a function or definition variable as a black box, treating it no differently from an ordinary variable.  As a result, quantifying over functions introduces no additional complexity.  The tradeoffs inherent in such a design decision are discussed more completely in \cite{tagoreExpand}.
+Higher-order logic is presumably omitted from such systems because of the added complexity introduced by reasoning over quantified functions.  However, as discussed further in Chapter \ref{ch:prover}, our minimalist prover leaves functions and definitions \emph{uninterpretted}.  A function or definition is uninterpretted when we do not expand it to consider its definition---i.e., the mathematical subsystem looks at a function or definition variable as a black box, treating it no differently from an ordinary variable.  As a result, quantifying over functions introduces no additional complexity.  The tradeoffs inherent in such a design decision are discussed more completely in \cite{tagoreExpand}.
 
 In addition to the familiarity gained by permitting mathematicians to treat functions as first-class citizens, their presence introduces a number of dimensions of usability and reuse:
 
@@ -62,11 +87,11 @@ Consider, for example the $foldr$ function ubiquitous in functional languages.  
 
 $sum(zs) = foldr(0, +, zs)$
 
-The broad applicability of such a function for specification should be obvious.  However, even simple theorems describing the mathematical properties of this function run afoul of the first-order restriction that functions may not be quantified over.  For example, Theorem \ref{thm:emptylist} states that $foldr$ applied with an initial value to an empty list simply returns the initial value:
+The broad applicability of such a function for specification should be obvious.  However, even simple theorems describing the mathematical properties of this function run afoul of the first-order restriction that functions may not be quantified over.  For example, Theorem \ref{thm:foldremptylist} states that $foldr$ applied with an initial value to an empty list simply returns the initial value:
 
 \begin{thm}
 $\forall f : (\gamma*\delta)\rightarrow\gamma, \forall ds : List(\delta), (|ds| = 0) \Rightarrow (foldr(i : \gamma, f, ds) = i)$
-\label{thm:emptylist}
+\label{thm:foldremptylist}
 \end{thm}
 
 RESOLVE permits such a theorem, enabling the development of a \emph{theory} of $foldr$, that in turn permits the automated prover to reason about expressions using such an expression at a high level of abstraction.
@@ -232,6 +257,8 @@ First-class types are a feature of several mathematical systems and a handful of
 
 RESOLVE now incorporates first-class mathematical types that are treated as normal mathematical values.  They can be manipulated, passed as parameters, returned as the result of a relation, and quantified over.  This provides both a great deal of flexibilty, as well as a straightforward mechanic for specifying certain generic programming paradigms (most obviously: parameterized type variables).
 
+Because there are now type values, this implies those values are, in some sense, \emph{of type Type}.  We call this type \textbf{MType} as an abbreviation for \emph{Math Type}\footnote{\texttt{MType} is comparable to * in Haskell, where * is the kind of a type.}.
+
 For example, the following line would introduce a particular integer called \textbf{1}:
 
 \begin{lstlisting}
@@ -244,7 +271,69 @@ In exactly the same way, a new type called \textbf{N} could be defined:
 Definition N : Power(Z) = {n : Z | n >= 0};
 \end{lstlisting}
 
-The symbol table maintains information about the kinds of elements that make up any existing class and can thus infer when the symbol introduced by a definition can safely be used as a type.  Thus this is a valid sequence of definitions:
+The symbol table maintains information about the kinds of elements that make up any existing class and can thus infer when the symbol introduced by a definition can safely be used as a type.  This corresponds to the static surety that \emph{the declared type of the symbol is a class known to contain only \textbf{MType}s.}  For brevity we will call this predicate $\tau$.  That is, $\tau(T)$ is true if $T$ is known to contain only \textbf{MType}s.  The question of whether or not such a class is inhabited is important, and our current design calls for any assertion that an element is in a set raise a proof obligation that the set is inhabited.  We note, however, that this may be cumbersome and alternatives exist, including insisting that such a type be demonstrated to be inhabited when it is defined, and requiring the user to explicitly state that the set is inhabited (and proving that statement), before permitting the set to be used as a type.  Module this complexity, the full list of judgements for statically determining if a symbol's type meets this property is given in Figure~\ref{typeJudgements}. (Judgement syntax is read as follows: ``in order to demonstrate what is below the line, it is sufficient to demonstrate what is above the lone''.)
+
+\begin{figure}
+\caption{Static judgements for determining if a symbol may be used as a type\label{typeJudgements}}
+\centering
+	\begin{subfigure}{0.15\textwidth}
+		\centering
+		$\dfrac{\top}{\tau(\textbf{MType})}$
+		\vspace{0.5em}
+		\caption{\label{rule:mtype}}
+	\end{subfigure}%
+	\begin{subfigure}{0.15\textwidth}
+		\centering
+		$\dfrac{\top}{\tau(\textbf{Set})}$
+		\vspace{0.5em}
+		\caption{\label{rule:set}}
+	\end{subfigure}%
+	\begin{subfigure}{0.3\textwidth}
+		\centering
+		$\dfrac{\top}{\forall T : \textbf{Exp}_\textbf{MType}, \text{Power}(T)}$
+		\vspace{0.5em}
+		\caption{\label{rule:power}}
+	\end{subfigure}%
+	\vspace{1em}
+	\begin{subfigure}{0.45\textwidth}
+		\centering
+		$\dfrac{\tau(T)}{\forall T : \textbf{Exp}_\textbf{MType}, \forall p : \textbf{Exp}_\mathbb{B}, 
+				\left\{t : T | p\right\}}$
+		\vspace{0.5em}
+		\caption{\label{rule:restrict}}
+	\end{subfigure}%
+	\begin{subfigure}{0.45\textwidth}
+		\centering
+		$\dfrac{\tau(T_1) \wedge \tau(T_2) \wedge ... \tau(T_n)}{\forall T_1, T_2, ... T_n : 
+				\textbf{Exp}_\textbf{MType}, T_1 \cup T_2 \cup ... T_n}$
+		\vspace{0.5em}
+		\caption{\label{rule:union}}
+	\end{subfigure}%
+	\vspace{1em}
+	\begin{subfigure}{0.4\textwidth}
+		\centering
+		$\dfrac{\tau(T_1) \vee \tau(T_2) \vee ... \tau(T_n)}{\forall T_1, T_2, ... T_n : 
+			\textbf{Exp}_\textbf{MType}, T_1 \cap T_2 \cap ... T_n}$
+		\vspace{0.5em}
+		\caption{\label{rule:intersection}}
+	\end{subfigure}%
+	\begin{subfigure}{0.4\textwidth}
+		\centering
+		$\dfrac{\bot}{\forall T, R : \textbf{Exp}_\textbf{MType}, T \times R}$
+		\vspace{0.5em}
+		\caption{\label{rule:cross}}
+	\end{subfigure}%
+	\vspace{1em}
+	\begin{subfigure}{0.4\textwidth}
+		\centering
+		$\dfrac{\bot}{\forall e : \textbf{Exp}_\textbf{Entity}, \forall f : \textbf{Entity} \rightarrow \textbf{MType}, 
+			f(e)}$
+		\vspace{0.5em}
+		\caption{\label{rule:application}}
+	\end{subfigure}%
+\end{figure}
+
+Thus this is a valid sequence of definitions:
 
 \begin{lstlisting}
 Definition N : Power(Z) = {n : Z | n >= 0};
@@ -258,7 +347,7 @@ Definition 1 : Z = succ(0);
 Definition OneAcceptor(o : 1) : B = true;
 \end{lstlisting}
 
-Type schemas and dependent types, which define generalized types parameterized by arbitrary values take advantage of the first-class nature of types and can be defined as normal relations that return a type, rather than using a special syntax.  This requires values that are, in some sense, \emph{of type Type}.  We call this type \textbf{MType} as an abbreviation for \emph{Math Type}\footnote{\texttt{MType} is comparable to * in Haskell, where * is the kind of a type.}.
+Type schemas and dependent types, which define generalized types parameterized by arbitrary values take advantage of the first-class nature of types and can be defined as normal relations that return a type, rather than using a special syntax.  
 
 In addition increasing usability by reducing special cases, this flexibility permits increased modularity and reuse in a number of ways:
 
@@ -479,26 +568,72 @@ Type Theorem N_Subset_of_Z:
 
 Most of the features listed in this chapter exist in other systems and are novel primarily for being gathered in one place alongside a practical, imperative programming lanaguage.  Type theorems, however, are to our knowledge entirely novel, and we therefore will spend a short amount of time discussing their implementation.
 
-Each type theorem introduces two, possibly three pieces of information: an \emph{expression pattern}, which we seek to bind against the actual value, an \emph{asserted type}, which the pattern is said to inhabit, and, optionally, a \emph{condition}, which the actual value must meet in order for the relationship to hold.  As a practical example, consider:
+Each type theorem introduces two, possibly three pieces of information: an \emph{expression pattern}, which we seek to bind against the actual provided expression, an \emph{asserted type}, which the pattern is said to inhabit, and, optionally, a \emph{condition}, which the actual value must meet in order for the relationship to hold.  As a practical example, consider:
 
 \begin{lstlisting}
 Type Theorem Z_Superset_of_N:
 	For all m : Z, (m >= 0) implies m : N;
 \end{lstlisting}
 
-Here, the expression pattern is \texttt{m}, the asserted type is \texttt{N}, and the condition is \texttt{(m >= 0)}.  If the condition is omitted, we default it to \texttt{true}.
+Here, the expression pattern is \texttt{m}, the asserted type is \texttt{N}, and the condition is \texttt{(m >= 0)}.  If the condition is omitted, we default it to \texttt{true}, and so without loss of generality we will imagine that all type theorems contain a condition.
 
 Each time a new type theorem is accepted, we take the type of the expression pattern and the asserted type and determine their \emph{canonical bucket}, before finding the associated buckets in the type graph and added an edge.
 
-Canonicalization transforms a type that possibly contains free type variables into a Big Union type that contains any valuation of those variables.  This is accomplished by introducing new variables indexed by the Big Union for each type variable (even if the variables are not unique), ranging over \texttt{MType}.
+Canonicalization transforms a type expression that possibly contains free type variables into a Big Union type containing every possible valuation of those variables (and possibly more).  This is accomplished by locating any free type variables in the type expression, giving them unique names, then binding those unique variable names at the top level in a Big Union expression, each ranging over \textbf{MType}.
 
-So, if a type started life as $T \cup W \cup T$, where $T$ ranges over \texttt{MType} and $W$ over \texttt{Power(T)}, it would be canonicalized into $\left( \bigcup \limits_{T_1 : MType, T_2 : MType, T_3 : MType} T_1 \cup T_2 \cup T_3 \right)$.  Clearly, we have lost a fair bit of information here, but that is attached to the newly added edge in the form of \emph{static requirements}.
+So, if a type expression started life as $T \cup W \cup T$, where $T$ ranges over \texttt{MType} and $W$ over \texttt{Power(T)}, it would be canonicalized into $\left( \bigcup \limits_{T_1 : MType, T_2 : MType, T_3 : MType} T_1 \cup T_2 \cup T_3 \right)$.  Clearly, we have lost a fair bit of information here, but that will be attached to the newly added edge in the form of \emph{static requirements}.
 
-In this case, the static requirements would be: $T_1 : MType, T_2 : Power(T_1), T_3 = T_1$.
+Static requirements encode the relationships between the original free type variables.  Two types of relationships are permitted: 1) \emph{equality}---two type variables were originally the same and 2) \emph{membership}---a variable was originally declared as a member of a certain type.
 
-The expression pattern and condition are also added to the edge.
+So, in our above example, the static requirements would be: $T_1 : MType, T_2 : Power(T_1), T_3 = T_1$, recapturing the information we lost during canonicalization.
 
-When we seek to determine if a given value is acceptable in a particular type, we first canonicalize the type of the value, then seek out any canonical buckets that are \emph{syntactic supertypes} of that type, which is a simpler kind of type reasoning based on a short list of hard-coded rules.  We do the same for the expected type.  We then determine if there are edges from any of the provided value's buckets to any of the expected type's buckets.  For each such edge, we iterate, attempting to bind the value to the pattern expression, then use the resulting bindings to satisfy the static requirements, before finally instantiating the condition and adding it to a list.
+In addition to these static requirements, the expression pattern and condition are added to the edge.
+
+When we seek to determine if a given expression is acceptable as a particular type, we first canonicalize the type of the expression, then seek out any canonical buckets that are \emph{syntactic supertypes} of that type, which is a simpler kind of type reasoning based on a short list of hard-coded rules.  For brevity, we establish the predicate $\sigma(T, R)$, which is true if $T$ is a \emph{syntactic subtype} of R.  The full list of judgements for making this determination is provided in Figure~\ref{syntacticSubtypeJudgements}.  We do the same for the expected type.  We then determine if there are edges from any of the provided value's buckets to any of the expected type's buckets.  For each such edge, we iterate, attempting to bind the value to the pattern expression, then use the resulting bindings to satisfy the static requirements, before finally instantiating the condition and adding it to a list.
+
+\begin{figure}
+\caption{Syntactic judgements for determining if one type expression is a subtype of another\label{syntacticSubtypeJudgements}}
+\centering
+	\begin{subfigure}{0.35\textwidth}
+		\centering
+		$\dfrac{\top}{\forall T : \textbf{MType}, \sigma(T, \textbf{MType})}$
+		\vspace{0.5em}
+		\caption{\label{ssrule:mtype}}
+	\end{subfigure}%
+	\begin{subfigure}{0.35\textwidth}
+		\centering
+		$\dfrac{\top}{\forall T : \textbf{MType}, \sigma(T, \textbf{Element})}$
+		\vspace{0.5em}
+		\caption{\label{ssrule:element}}
+	\end{subfigure}%
+	\vspace{1em}
+	\begin{subfigure}{0.3\textwidth}
+		\centering
+		$\dfrac{\top}{\forall T : \textbf{MType}, \sigma(\phi, T)}$
+		\vspace{0.5em}
+		\caption{\label{ssrule:emptyset}}
+	\end{subfigure}%
+	\begin{subfigure}{0.3\textwidth}
+		\centering
+		$\dfrac{T = R}{\forall T, R : \textbf{MType}, \sigma(T, R)}$
+		\vspace{0.5em}
+		\caption{\label{ssrule:symmetric}}
+	\end{subfigure}%
+	\vspace{1em}
+	\begin{subfigure}{.9\textwidth}
+		\centering
+		$\dfrac{\sigma\left(\bigcup\limits_{t_1, t_2, ... t_n : \textbf{MType}}T, R\right), \text{where } t_1, t_2, ... t_n \text{ do not appear in } T}{\forall T, R : \textbf{MType}, \sigma(T, R)}$
+		\vspace{0.5em}
+		\caption{\label{ssrule:promote}}
+	\end{subfigure}%
+	\vspace{1em}
+	\begin{subfigure}{.9\textwidth}
+		\centering
+		$\dfrac{\sigma\left(\bigcup\limits_{t_1, t_2, ... t_n : \textbf{MType}}T, R\right), \text{where } t_1, t_2, ... t_n \text{ do not appear in } T}{\forall T, R : \textbf{MType}, \sigma(T, R)}$
+		\vspace{0.5em}
+		\caption{\label{ssrule:promote}}
+	\end{subfigure}%
+\end{figure}
 
 We continue searching until we find an edge whose condition is simply \texttt{true}, or we run out of edges.  If any edge's condition is \texttt{true}, we simply return true.  If no edge matched, we return \texttt{false}.  In any other case, we return the disjunction of the condition of each matched edge.
 
