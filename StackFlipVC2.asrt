@@ -1,0 +1,14 @@
+Goal:
+(|S_Flipped'|  < Max_Depth)
+
+Given:
+(((((((min_int  <= 0) and
+(0  < max_int)) and
+((Last_Char_Num  > 0) and
+((Max_Depth  > 0) and
+((min_int  <= Max_Depth) and
+(Max_Depth  <= max_int))))) and
+(|S|  <= Max_Depth)) and
+S = (Reverse(S_Flipped')  o S'')) and
+|S''| /= 0) and
+S'' = (<Next_Entry'>  o S'))

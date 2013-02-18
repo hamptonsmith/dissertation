@@ -1,0 +1,33 @@
+public normal_behavior
+	requires \typeof(item) <: this.elementType;
+	requires this.containsNull||item != null;
+	assignable theCollection;
+	ensures this.theList.equals(\old(this.theList).insertBack(item));
+	ensures this.theList.int_size() <= this.maxCapacity;
+also
+	public normal_behavior
+	requires \typeof(this) == \type(java.util.Vector);
+	{|
+		requires this.theList.int_size() < this.maxCapacity;
+		ensures \not_modified(maxCapacity)&&\not_modified(capIncrement);
+	also
+		requires this.theList.int_size() == this.maxCapacity;
+		{|
+			requires 0 < this.capIncrement&&this.maxCapacity <= 2147483647-this.capIncrement;
+			assignable maxCapacity, theList;
+			ensures this.maxCapacity == \old(this.maxCapacity)+this.capIncrement;
+		also
+			requires this.capIncrement == 0&&this.maxCapacity == 0;
+			assignable maxCapacity, theList;
+			ensures this.maxCapacity == 1;
+		also
+			requires this.capIncrement == 0&&this.maxCapacity > 0&&this.maxCapacity < 1073741823;
+			assignable maxCapacity, theList;
+			ensures this.maxCapacity == \old(this.maxCapacity)*2;
+		|}
+	|}
+also
+	requires \typeof(item) <: this.elementType;
+	requires this.containsNull||item != null;
+	assignable elementCount;
+	ensures this.elementCount == \old(this.elementCount)+1;
