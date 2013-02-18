@@ -11,34 +11,101 @@ In order to experiment with this hypothesis and identify those prover capabiliti
 
 
 %-----------------------------------------------------------------------------
-\section{Initial Observations and the Version 1 Prover}
+\section{Original Motivation}
 %-----------------------------------------------------------------------------
 
-In practical verification systems to date, specifications are often quite complicated, even for simple operations.  These specifications derive 
+In practical verification systems to date, specifications are often quite complicated, even for simple operations.  Consider Listing \ref{lst:jmladd} for the JML spec of the \texttt{add()} operation on a \texttt{List} data structure.
 
+\lstinputlisting[language=JML,caption={JML Specification for \texttt{add()}\label{lst:jmladd}}]{JMLAdd.jml}
 
-In \cite{smith10}, we present our architecture for an extensible platform for minimalistic prover experimentation.  The implementation of this prover is in a working form and has been used for several years as part of the RESOLVE toolchain, incuding as part of our education effort centered around the RESOLVE integrated web development environment\cite{chuckThesis}.  This prover has been used in support of a number of our verification publications, including \cite{Sit11} and \cite{smithMinimalist}.  We see the results of a successful verification from the web interface in Figure \ref{fig:successfulverification}.  This is a verification of a realization of the \texttt{Flip()} operation introduced in Section \ref{sec:resolveBackground}.  Enhancement realizations often involve a small number of mathematical types (in this case, almost entirely Strings) and are therefore more straightforward to verify.  Data structure realizations, on the other hand, often have to map from one representation to another, introducing many related types.  As a result, while we can prove them by hand, the mechanical verification of data structures is consigned to Work to be Completed.
+In this case, the complexity arises from multiple different sources:
 
-\begin{figure}
-  \centering
-    \includegraphics[width=\textwidth]{successfulverification}
-  \caption{Our Minimalist Prover at Work\label{fig:successfulverification}}
-\end{figure}
+\begin{itemize}
+	\item The JML specification library seeks to formalize the existing informal specification of the Java Runtime Library, so they are bound by design decisions made agnostic of formal specification.  For example, the original informal specification provides no guidance about how to deal with collections potentially containing more than \texttt{Integer.MAX\_VALUE} elements.
+	\item Language complexities like null elements and integer bounds must be taken into account.
+	\item Without a correspondence established at the class level between the abstract value of the structure as a whole and its abstract fields, information that would otherwise be redundant must be encoded.  For example, certainly the fact that \texttt{this.contains(o)} follows from \texttt{\\old(this.theCollection.insert(o))}, but no correspondence exists between these two values.
+\end{itemize}
 
-As part of our experimentation to-date, we have utilized the extensible plug-in architecture of the prover to add a number of capabilities.  These have included heuristics to make intelligent theorem choices based on the VC at hand, a graphical front-end that permits the user to guide the prover, and a number of preprocessing options to simplify and normalize incoming VCs.  In \cite{smithMinimalist} we perform a comparison of proof complexity (in terms of number of proof steps, including backtracks, taken before reaching a complete proof) based on a simple component using a number of different feature configurations.  This exploration was very illuminating as to which features gave good results.
+Additionally, complexity often arises from other areas as well:
+
+\begin{itemize}
+	\item Capturing alias behavior, including the repeated argument problem.
+	\item Using separation logic to describe allowable changes in memory while the method call runs.
+	\item Poorly designed APIs.
+\end{itemize}
+
+The complexity of these specifications necessarily ends up in the VCs that arise from code that operates on these structures.  These complex VCs must then be dispatched by the prover.
+
+The design of RESOLVE, on the other hand, attempts to minimize such complexities.  There are no nulls to reason about.  While integers are bounded, their bounds are asserted in their own component and reasoned about at that level.  A class-level correspondence establishes how the actual fields of the representation map into an abstract value.  RESOLVE minimizes aliasing and marshals reference behavior through a pointer data structure and has a well-defined semantic for repeated arguments.  And while no language can force its users to write good APIs, the constraints and rigor of the language contribute to encapsulated, modular design.  Consider this specification for the comparable \texttt{insert()} operation on the RESOLVE list datastructure:
+
+\begin{lstlisting}[language=RESOLVE]
+	ensures P.Prec = #P.Prec and P.Rem = <#New_Entry> o #P.Rem
+\end{lstlisting}
+
+While these design decisions were originally made to encourage reuse and simplify \emph{human} reasoning, when we began to be able to generate VCs for various components and algorithms, we noticed they were much more straightforward than those generated by comparable functions.  Consider the VC given in Listing \ref{lst:easyVCEg}.
+
+\lstinputlisting[language=RESOLVE,caption={VC for the Inductive Case of Loop Invariant\label{lst:easyVCEg}}]{StackFlipVC1.asrt}
+
+The VC is easily solvable by expanding the variable S'', then applying a few relatively straightforward transformations on strings.  The presence of these sorts of VCs originally caused us to suspect we could get away with a very simple prover--one that first expanded variables, then substituted equivalent expressions until either the goal matched some given or the expression reduced to \texttt{true}.  To test this hypothesis, we built our first automated prover.
+
 
 %-----------------------------------------------------------------------------
-\subsubsection{Work To Be Completed}
+\section{Version 1 Prover}
 %-----------------------------------------------------------------------------
-With the harness already in working order, the most important addition is that of facilities for mechanically characterizing VCs according to a number of different mechanisms.  Our current depth-first search is more efficient than a breadth-first search, but means that we do not necessarily find the \emph{shortest} proof.  Work is needed to permit a breadth first option when we're willing to trade some efficiency for a more precise metrics.  In addition, we imagine some metrics will be related to the theorems used and the current prover output takes the form of a plain-text ASCII dump, which is not ideal for processing.  A better solution must be engineered so that proofs can be compared and processed mechanically.
 
-Additionally, we would like to expand our efforts to collect data on different prover feature configurations by applying this analysis to a broader range of components.  As mentioned in the Work Completed section, we are eager to expand mechanical verification from enhancement realizations to data structure realizations.  This process will include the explorations of features that have yet to be identified and may be included upon discovering their usefulness for practical VCs.  As an example of a capability we have identified but have yet to implement, we consider a snippet from a realization of a \texttt{Merge\_Sort()} enhancement for queues.  As part of a loop invariant we state:
+The first prover was extremely straightforward.  As a preprocessing step, it expanded any variables (so for the VC in Listing \ref{easyVCEg}, appearances of both \texttt{S} and \texttt{S''} would be replaced with their full values), then read in theorems from any available theories.  These theorems were applied in alphabetical order by theorem name (in order to ensure consistence between tests) in a depth-first manner, with the search tethered at 6 steps to prevent infinite cycles.
 
-\texttt{Is\_Permutation(\#Q o \#R, Merger o <Q\_Min> o Q o R)}
+Initially, only equality theorems (i.e., those of the form \texttt{A = B}) were considered, and they were permitted to travel in travel in either direction (i.e., replacing \texttt{A} with \texttt{B} or replacing \texttt{B} with \texttt{A}).
 
-Clearly, in the context of a permutation, the concatenation operator is commutative.  Unfortunately, any straightforward commutativity theorem requires us to play a complicated shell game to rearrange arbitrary chains of concatenation.  We could use a torrent of theorems to try and cover all cases, but we suspect that at that point, we have followed minimalism to a ridiculous extreme.  We would like, instead, to permit such context-sensitive properties to be stated in a general way, after which a better internal prover representation than a tree could be chosen to better reflect the properties of the conjunct.
+This alone turned out to be sufficient to prove a surprising number of VCs arising from various contexts (for more information, see Chapter \ref{proverEvaluation} for an analysis of the efficacy of these various techniques.)  However, we quickly found VCs like the one given in listing \ref{lst:lessEasyVCEg}.
 
-We would also like to experiment with minimalistic proving algorithms.  For example, in addition to the back-tracking, depth- or breadth-first search algorithm we establish in \cite{smith10}, we could imagine that we instead start with our set of antecedents and our set of consequents, then transitively build up a larger and larger set of known antecedents as we simultaneously build up a set of possible justifications for each conjunct of the consequents, dispatch a conjunct whenever its justification set intersects the antecedent set. 
+\lstinputlisting[language=RESOLVE,caption={VC for the Requires Clause of Push\label{lst:lessEasyVCEg}}]{StackFlipVC2.asrt}
 
-Finally, the prover will need to be adapted to work with the new mathematical type-system, though this modification should be straight-forward since complex reasoning about types is unnecessary in the prover, which need only be able to answer the questions ``What is the type of this expression?'' and ``Does an expression of this type bind to this free variable?''  The former question ought to be answered before the prover is ever invoked, while the latter should be a straightforward library call to the symbol table.
+The proof for this VC is relatively straightforward: note that \texttt{|S| <= Max\_Depth} and \texttt{S} itself is made up of \texttt{Reverse(S\_Flipped')} and \texttt{S''}.  Since we know that \texttt{|S''| /= 0}, the length of \texttt{Reverse(S\_Flipped')} must be strictly less than \texttt{Max\_Depth}.  Since reversing the string does not affect its length, the length of \texttt{S\_Flipped'} must also be strictly less than \texttt{Max\_Depth}.
 
+However, note that no amount of variable expansion and the application of equality theorems on the consequent will arrive at the solution.  Indeed, even if we expand our process to permit equality theorems to act on the antecedent of the VC, we can't solve it.  What we need is a theorem like:
+
+\begin{lstlisting}
+Theorem Non_Empty_Concatenation:
+    For all S, T : SStr,
+    For all i : Z, 
+        |S o T| <= i and |T| /= 0 implies
+            |S| < i;
+\end{lstlisting}
+
+Since developing the VC's antecedent with a theorem like this is considerably more expensive\footnote{Each conjunct of the antecedent of the theorem must be matched against some given in the antecedent of the VC, and all possible matchings must be considered---making it exponential in the number of VC antecedents, with an order equal to the number of theorem antecedents.}, this was implemented as a preprocessing step, with all available implication theorems applied in three rounds to the antecedent before continuing with the normal proof search using only equality theorems.
+
+This permitted us to dispatch VCs like the one that appeared in Listing \ref{lst:lessEasyVCEg}.  However, at this point we had begun to amass a considerable number of theorems and the time required to successfully search all proofs of length no more than six for a solution was becoming untenable (over a minute to eventually succeed proofs) and we began searching for heuristics to speed up this process.
+
+The first thing we noticed was that \emph{most} VCs required proofs of much shorter length (one, two, or three steps).  So the prover was retrofitted to operate in phases, first searching proofs of length no more than three before trying those of length no more than four and finally trying those no more than six.  This significantly reduced the time to prove many VCs, however still left others taking far too long.
+
+Our second heuristic was to attempt to improve the order in which theorems were applied by examining them to determine which would be most likely to yield progress.  We determined this fitness at the level of ``transformations'' rather than theorems.  A transformation represents a particular kind of application of a theorem.  For example, applying an equality theorem in one direction would be one transformation, while applying it in the other direction would be another.
+
+We identified three criteria on which to determine the fitness of a transformation: 1) what affect does applying the transformation have on the unique symbols present?  Does it introduce new unique symbols?  Does it eliminate existing ones? 2) what affect does applying the transformation have on the number of function applications? 3) how many symbols does the transformation share with the VC?
+
+After experimentation, the third criteria was not useful, since a transformation attempting to match symbols not contained in the VC can never be applied, and thus any such symbols that might be \emph{produced} by the transformation, must be newly unique, which is subsumed by the second criteria.
+
+By deprioritizing transformations that will introduce new symbols, we prevent the prover from ``entering new territory'' before it's finished exploring all the ways it can transform the current symbols.  Similarly, by deprioritizing transformations that increase the number of function applications, we encourage proof states toward simplicity and parsimony that are easier to explore.  In a \emph{general} proof system, we might assert that these tactics were just as likely to lead us \emph{away} from a correct proof as to bring us closer, but in the specific domain of verifying well-engineered software, we hypothesize that the programmer is not taking leaps of logic and thus the reasoning should be simple.  Empiracally, this hyptohesis worked out well as our heuristic increased the speed of all VCs at our disposal that could be proved.  (Again, see Chapter \ref{proverEvaluation} for analytical results.)
+
+	%-----------------------------------------------------------------------------
+	\subsection{Implementation}
+	%-----------------------------------------------------------------------------
+
+This version of the prover was based on our existing abstract syntax tree data structure.  A recursive loop implemented the main proof search using available equality theorems.  However, a separate, hardcoded pre-processing step performed variable expansions and theory development.
+
+
+%-----------------------------------------------------------------------------
+\section{Version 2 Prover}
+%-----------------------------------------------------------------------------
+
+As the first prover continued to mature and found its way into our web integrated environment, we began working on a research paper that involved averaging the integers in a queue datastructure.
+
+	%-----------------------------------------------------------------------------
+	\subsection{Implementation}
+	%-----------------------------------------------------------------------------
+
+Even had the capabilities of the first prover been sufficient, it suffered from a number of design limitations that we sought to improve in the next iteration.
+
+Our existing AST data-structure was poorly suited for formal reasoning and required constant, defensive deep-copying to ensure that changes made in one area would not propogate to another due to some shared reference.  Exarcerbating this issue, the design of the AST left much to be desired and copying required many scattered, error-prone operations that often failed to copy important data attached to an AST node such as its type.
+
+Additionally, the first prover was insufficiently flexible to permit steps other than equality substitution to be included in the proof-search algorithm without hard coding them.  All pre-processing was hard coded outside the general proof-search algorithm (despite often being sufficient to complete the proof), as was all simplification logic at each step.  In addition to being difficult to understand and upkeep, this made collecting metrics such as run time or proof length difficult to keep, since they could not be applied uniformly to hard-coded steps.
