@@ -2,14 +2,18 @@ public behavior
 	requires !this.containsNull ==> o != null;
 	requires (o == null)||\typeof(o) <: this.elementType;
 	assignable theCollection;
-	ensures \result ==> this.theCollection.equals(\old(this.theCollection.insert(o)));
-	ensures \result &&\old(this.size() < 2147483647) ==> this.size() == \old(this.size()+1);
+	ensures \result ==> 
+		this.theCollection.equals(\old(this.theCollection.insert(o)));
+	ensures \result &&\old(this.size() < 2147483647) ==> 
+		this.size() == \old(this.size()+1);
 	ensures !\result ==> this.size() == \old(this.size());
 	ensures !\result ==> \not_modified(theCollection);
 	ensures this.contains(o);
 	ensures_redundantly !\result ==> \old(this.contains(o));
-	signals_only java.lang.UnsupportedOperationException, java.lang.NullPointerException, java.lang.ClassCastException, java.lang.IllegalArgumentException;
-	signals (java.lang.UnsupportedOperationException) (* this does not support add *);
-	signals (java.lang.NullPointerException) (* not allowed to add null *);
-	signals (java.lang.ClassCastException) (* class of specified element prevents it from being added to this *);
-	signals (java.lang.IllegalArgumentException) (* some aspect of this element prevents it from being added to this *);
+	signals_only java.lang.UnsupportedOperationException, 
+		java.lang.NullPointerException, java.lang.ClassCastException, 
+		java.lang.IllegalArgumentException;
+	signals (java.lang.UnsupportedOperationException);
+	signals (java.lang.NullPointerException);
+	signals (java.lang.ClassCastException);
+	signals (java.lang.IllegalArgumentException;

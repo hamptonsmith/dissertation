@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2012.11.17)  18 FEB 2013 03:43
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2012.11.17)  19 FEB 2013 02:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -516,30 +516,46 @@ Package caption Info: End \AtBeginDocument code.
 ] (./acknowledgments.tex [5
 
 
-]) [6] (./dissertation.toc)
+]) [6] (./dissertation.toc
+LaTeX Font Info:    Try loading font information for U+msa on input line 1.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+)
+LaTeX Font Info:    Try loading font information for U+msb on input line 1.
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+)
+LaTeX Font Info:    Try loading font information for U+rsfs on input line 1.
+
+(/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
+File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
+) [7
+
+])
 \tf@toc=\write4
 \openout4 = `dissertation.toc'.
 
-[7
-
-] (./dissertation.lot)
+ [8]
+(./dissertation.lot)
 \tf@lot=\write5
 \openout5 = `dissertation.lot'.
 
- [8
+ [9
 
 ] (./dissertation.lof)
 \tf@lof=\write6
 \openout6 = `dissertation.lof'.
 
- [9
+ [10
 
 ] (./dissertation.lol)
 \tf@lol=\write7
 \openout7 = `dissertation.lol'.
 
 
-[10
+[11
 
 ] (./introduction.tex
 Chapter 1.
@@ -563,7 +579,7 @@ LaTeX Warning: Citation `bentleyProgrammingPearls' on page 1 undefined on input
 
 
 
-] <verification_pipeline.png, id=157, 819.06pt x 255.95625pt>
+] <verification_pipeline.png, id=301, 819.06pt x 255.95625pt>
 File: verification_pipeline.png Graphic file (type png)
 
 <use verification_pipeline.png>
@@ -586,20 +602,6 @@ LaTeX Warning: Citation `coq' on page 2 undefined on input line 21.
 
 LaTeX Warning: Citation `nipkowIsabelle' on page 2 undefined on input line 21.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 21.
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2009/06/22 v3.00 AMS symbols A
-)
-LaTeX Font Info:    Try loading font information for U+msb on input line 21.
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2009/06/22 v3.00 AMS symbols B
-)
-LaTeX Font Info:    Try loading font information for U+rsfs on input line 21.
-
-(/usr/share/texlive/texmf-dist/tex/latex/jknapltx/ursfs.fd
-File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
-)
 
 LaTeX Warning: Citation `Sit11' on page 2 undefined on input line 21.
 
@@ -658,7 +660,7 @@ LaTeX Warning: Citation `zee:annotations' on page 5 undefined on input line 44.
 
 LaTeX Warning: Citation `bronishMap' on page 5 undefined on input line 44.
 
-[5] <proverpart.png, id=213, 819.06pt x 255.95625pt>
+[5] <proverpart.png, id=355, 819.06pt x 255.95625pt>
 File: proverpart.png Graphic file (type png)
  <use proverpart.png>
 Package pdftex.def Info: proverpart.png used on input line 50.
@@ -674,12 +676,12 @@ ne 79.
 LaTeX Warning: Citation `kleinVerifiedOS' on page 8 undefined on input line 79.
 
 
-[8] <vcpart.png, id=268, 819.06pt x 255.95625pt>
+[8] <vcpart.png, id=406, 819.06pt x 255.95625pt>
 File: vcpart.png Graphic file (type png)
  <use vcpart.png>
 Package pdftex.def Info: vcpart.png used on input line 85.
 (pdftex.def)             Requested size: 433.62001pt x 135.50774pt.
- [9 <./vcpart.png>] <specpart.png, id=277, 819.06pt x 255.95625pt>
+ [9 <./vcpart.png>] <specpart.png, id=413, 819.06pt x 255.95625pt>
 File: specpart.png Graphic file (type png)
  <use specpart.png>
 Package pdftex.def Info: specpart.png used on input line 102.
@@ -699,20 +701,7 @@ LaTeX Warning: Citation `wenzelIsar' on page 12 undefined on input line 137.
 
 LaTeX Warning: Citation `bronishMap' on page 12 undefined on input line 139.
 
-[12]
-
-LaTeX Warning: Reference `sec:research' on page 13 undefined on input line 151.
-
-
-
-LaTeX Warning: Reference `sec:evaluation' on page 13 undefined on input line 15
-1.
-
-
-LaTeX Warning: Reference `sec:conclusion' on page 13 undefined on input line 15
-1.
-
-) [13] [14] (./background.tex
+[12]) [13] [14] (./background.tex
 Chapter 2.
 
 LaTeX Warning: Citation `dillerZ' on page 15 undefined on input line 10.
@@ -868,7 +857,7 @@ Overfull \hbox (23.71912pt too wide) in paragraph at lines 329--332
  []$[]$ 
  []
 
-[37] [38] [39] [40] <universe.png, id=673, 273.49678pt x 302.40479pt>
+[37] [38] [39] [40] <universe.png, id=800, 273.49678pt x 302.40479pt>
 File: universe.png Graphic file (type png)
 
 <use universe.png>
@@ -882,126 +871,114 @@ e: $\OML/cmm/m/it/10 T[] \OT1/cmr/m/n/10 : \OML/cmm/m/it/10 MType; T[] \OT1/cmr
 /n/10 )\OML/cmm/m/it/10 ; T[] \OT1/cmr/m/n/10 =
  []
 
-[46] [47]) [48] (./prover.tex
+[46] <typeGraph.png, id=897, 328.427pt x 336.457pt>
+File: typeGraph.png Graphic file (type png)
+ <use typeGraph.png>
+Package pdftex.def Info: typeGraph.png used on input line 614.
+(pdftex.def)             Requested size: 216.81pt x 222.11365pt.
+
+[47 <./typeGraph.png>] [48]) [49] (./prover.tex
 Chapter 5.
-
-LaTeX Warning: Reference `lst:jmladd' on page 49 undefined on input line 17.
-
-[49
+[50
 
 
-] (./JMLAdd.jml
-Overfull \hbox (25.39015pt too wide) in paragraph at lines 5--6
-[][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
+] (./JMLAdd.jml) [51] (./StackFlipVC1.asrt [52])
+
+LaTeX Warning: Reference `easyVCEg' on page 53 undefined on input line 56.
 
 
-Overfull \hbox (55.99083pt too wide) in paragraph at lines 6--7
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (377.29794pt too wide) in paragraph at lines 11--12
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (25.39015pt too wide) in paragraph at lines 12--13
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
- []
-
-
-Overfull \hbox (163.0932pt too wide) in paragraph at lines 14--15
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-] 
- []
-
-)
-Overfull \hbox (198.79399pt too wide) in paragraph at lines 15--19
-[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][
-][][] 
- []
-
-[50]
-
-LaTeX Warning: Reference `lst:easyVCEg' on page 51 undefined on input line 45.
-
-(./StackFlipVC1.asrt [51])
-
-LaTeX Warning: Reference `easyVCEg' on page 52 undefined on input line 56.
-
-
-LaTeX Warning: Reference `proverEvaluation' on page 52 undefined on input line 
+LaTeX Warning: Reference `proverEvaluation' on page 53 undefined on input line 
 60.
 
+(./StackFlipVC2.asrt [53]) [54]
 
-LaTeX Warning: Reference `lst:lessEasyVCEg' on page 52 undefined on input line 
-60.
-
-(./StackFlipVC2.asrt [52])
-
-LaTeX Warning: Reference `lst:lessEasyVCEg' on page 53 undefined on input line 
-78.
-
-[53]
-
-LaTeX Warning: Reference `proverEvaluation' on page 54 undefined on input line 
+LaTeX Warning: Reference `proverEvaluation' on page 55 undefined on input line 
 88.
 
-[54]) [55] (./evaluation.tex
+
+LaTeX Warning: Citation `specEngineering' on page 55 undefined on input line 10
+1.
+
+
+LaTeX Warning: Citation `queueAverage' on page 55 undefined on input line 101.
+
+[55] (./longVC.asrt
+Overfull \hbox (15.18993pt too wide) in paragraph at lines 4--5
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (15.18993pt too wide) in paragraph at lines 8--9
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+) [56] (./longVCReduced.asrt) [57] [58] [59] [60]
+<proverDebugMode.png, id=1099, 415.5525pt x 552.0625pt>
+File: proverDebugMode.png Graphic file (type png)
+
+<use proverDebugMode.png>
+Package pdftex.def Info: proverDebugMode.png used on input line 203.
+(pdftex.def)             Requested size: 195.12767pt x 259.22511pt.
+ [61]
+
+LaTeX Warning: Reference `math' on page 62 undefined on input line 219.
+
+[62 <./proverDebugMode.png>]
+<newProverInterface.png, id=1114, 663.47874pt x 456.70625pt>
+File: newProverInterface.png Graphic file (type png)
+
+<use newProverInterface.png>
+Package pdftex.def Info: newProverInterface.png used on input line 231.
+(pdftex.def)             Requested size: 325.215pt x 223.86467pt.
+ [63 <./newProverInterface.png>]) [64]
+(./evaluation.tex
 Chapter 6.
 
-LaTeX Warning: Reference `sec:researchProver' on page 56 undefined on input lin
+LaTeX Warning: Reference `sec:researchProver' on page 65 undefined on input lin
 e 14.
 
-[56
+[65
 
 
 ]
 
-LaTeX Warning: Citation `smithSpecificationAbstractions' on page 57 undefined o
+LaTeX Warning: Citation `smithSpecificationAbstractions' on page 66 undefined o
 n input line 23.
 
-) [57] [58] (./conclusion.tex
+) [66] [67] (./conclusion.tex
 Chapter 7.
-) [59
+) [68
 
 
-] [60
+] [69
 
 
 
-] (./appendixA.tex [61] <testbed.jpg, id=907, 321.2pt x 229.85875pt>
+] (./appendixA.tex [70]
+<testbed.jpg, id=1152, 321.2pt x 229.85875pt>
 File: testbed.jpg Graphic file (type jpg)
-
-<use testbed.jpg>
+ <use testbed.jpg>
 Package pdftex.def Info: testbed.jpg used on input line 54.
 (pdftex.def)             Requested size: 321.19922pt x 229.85817pt.
- [62 <./testbed.jpg>]) [63] (./appendixB.tex
+ [71 <./testbed.jpg>]) [72] (./appendixB.tex
 Overfull \hbox (6.11957pt too wide) in paragraph at lines 1--1
 []\OT1/cmr/bx/n/14.4 Manuscript Re-view Sign-In Datat Aheet for Stu-
  []
 
-[64
+[73
 
-] [65] [66] [67]) [68] (./appendixC.tex [69
+] [74] [75] [76]) [77] (./appendixC.tex [78
 
-] [70] [71] [72]) [73] [74]
+] [79] [80] [81]) [82] [83]
 No file dissertation.bbl.
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 165.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 165.
 (./dissertation.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 165.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 165.
+Package rerunfilecheck Info: File `dissertation.out' has not changed.
+(rerunfilecheck)             Checksum: A49524D9B9EE06DB9E2393BF17FB2EF4;2446.
 
-
-Package rerunfilecheck Warning: File `dissertation.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `dissertation.out':
-(rerunfilecheck)             Before: 0DAD71A2D8607B9BF0948C2B9D6F7F7E;1496
-(rerunfilecheck)             After:  A2C0B2CC098D7CDB756A539FA351A975;2376.
 
 LaTeX Warning: There were undefined references.
 
@@ -1011,15 +988,18 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 165.
  ) 
 Here is how much of TeX's memory you used:
- 10433 strings out of 495059
- 153022 string characters out of 3182029
- 281474 words of memory out of 3000000
- 12832 multiletter control sequences out of 15000+200000
- 15574 words of font info for 60 fonts, out of 3000000 for 9000
+ 10581 strings out of 495059
+ 155301 string characters out of 3182029
+ 285210 words of memory out of 3000000
+ 12876 multiletter control sequences out of 15000+200000
+ 15910 words of font info for 62 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  39i,12n,45p,1675b,1769s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{Hfootnote.11} has been referenced but does not ex
+pdfTeX warning (dest): name{Hfootnote.12} has been referenced but does not ex
 ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.11} has been referenced but does not exis
+t, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.10} has been referenced but does not exis
 t, replaced by a fixed one
@@ -1075,10 +1055,10 @@ cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on dissertation.pdf (84 pages, 733078 bytes).
+Output written on dissertation.pdf (94 pages, 837695 bytes).
 PDF statistics:
- 1173 PDF objects out of 1200 (max. 8388607)
- 1040 compressed objects within 11 object streams
- 552 named destinations out of 1000 (max. 500000)
- 223 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1434 PDF objects out of 1440 (max. 8388607)
+ 1284 compressed objects within 13 object streams
+ 647 named destinations out of 1000 (max. 500000)
+ 342 words of extra memory for PDF output out of 10000 (max. 10000000)
 

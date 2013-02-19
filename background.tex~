@@ -1,8 +1,8 @@
 %----------------------------------------------------------------------------
-\chapter*{Verification Background and Related Work}\label{sec:background}
+\chapter{Verification Background and Related Work}\label{sec:background}
 %----------------------------------------------------------------------------
 
-In order to justify the proposed research as well as place it in context, it is important to consider the full breadth of available mathematical systems, provers, and verification libraries.  In the following three sections, we break related work and necessary background down along those lines.
+In order to justify the presented research as well as place it in context, it is important to consider the full breadth of available mathematical systems, provers, and verification libraries.  In the following three sections, we break related work and necessary background down along those lines.
 
 %----------------------------------------------------------------------------
 \section{Specification and Mathematical Systems}\label{sec:overviewSpec}

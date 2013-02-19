@@ -589,6 +589,32 @@ So, in our above example, the static requirements would be: $T_1 : MType, T_2 : 
 
 In addition to these static requirements, the expression pattern and condition are added to the edge.
 
+Consider that we want to add the following three type theorems:
+
+\begin{lstlisting}
+Type Theorem N_Subset_of_Z:
+	For all n : N,
+		n : Z;
+
+Type Theorem Positive_Zs_Are_Ns:
+	For all i : Z,
+		(i >= 0) implies i : N;
+
+Type Theorem String_Generics_Related:
+	For all T : MType,
+	For all R : Power(T),
+	For all S : Str(R),
+		S : Str(T);
+\end{lstlisting}
+
+The resulting type graph would appear as in Figure \ref{typeGraph}.  Note that in that figure, $T_E$ and $T_F$ denote ``the actual value of $T$ from the expected type'' and ``the actual value of $T$ from the found type'' respectively.
+
+\begin{figure}
+  \centering
+    \includegraphics[width=0.5\textwidth]{typeGraph}
+  \caption{Example Type Graph\label{typeGraph}}
+\end{figure}
+
 When we seek to determine if a given expression is acceptable as a particular type, we first canonicalize the type of the expression, then seek out any canonical buckets that are \emph{syntactic supertypes} of that type, which is a simpler kind of type reasoning based on a short list of hard-coded rules.  For brevity, we establish the predicate $\sigma(T, R)$, which is true if $T$ is a \emph{syntactic subtype} of R.  The full list of judgements for making this determination is provided in Figure~\ref{syntacticSubtypeJudgements}.  We do the same for the expected type.  We then determine if there are edges from any of the provided value's buckets to any of the expected type's buckets.  For each such edge, we iterate, attempting to bind the value to the pattern expression, then use the resulting bindings to satisfy the static requirements, before finally instantiating the condition and adding it to a list.
 
 \begin{figure}

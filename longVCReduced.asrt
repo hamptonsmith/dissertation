@@ -1,0 +1,15 @@
+Goal:
+|(Right_Substring(S.List, 1))| < 
+	|((Reverse((Right_Substring(S.List, 1)))
+	 o <Element_At(0, S.List)>))| 
+	 
+Given:
+(((((((min_int  <= 0) and
+(0  < max_int)) and
+(Last_Char_Num  > 0)) and
+(((S.Insertion_Point  <= |S.List|) and
+(0  <= S.Insertion_Point)) and
+S.Insertion_Point = 0)) and
+P_val = (|S.List|  - 0)) and
+((|S.List|  - 0)  >= 0)) and
+Entry.is_initial(Temp'))

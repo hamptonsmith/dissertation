@@ -98,14 +98,148 @@ This version of the prover was based on our existing abstract syntax tree data s
 \section{Version 2 Prover}
 %-----------------------------------------------------------------------------
 
-As the first prover continued to mature and found its way into our web integrated environment, we began working on a research paper that involved averaging the integers in a queue datastructure.
+As the first prover continued to mature and found its way into our web integrated environment, we continued to experiment with more complex components, including those derived from our burgeoning ideas on specification engineering\cite{specEngineering} and one born out of our collaboration with the Intelligent River project here at clemson, that required a routine for averaging the integers in a queue datastructure\cite{queueAverage}.  
+
+These new domains yielded VCs that exposed fundamental weaknesses in the first prover and motivated the design and creation of the second prover.  As an example of this sort of VC, consider Figure \ref{lst:longVC}.
+
+\lstinputlisting[language=RESOLVE,caption={VC for the Requires Clause of Advance\label{lst:longVC}}]{longVC.asrt}
+
+This VC expresses a tautology, but requires seventeen steps to prove.  This raised serious concerns that we would not be able to use a simple term-rewrite prover as we had hoped---with hundreds or thousands of theorems in play and combinatorial complexity, it seems impractical to search a proof space that size, even with some guidance about which transformations to prioritize.
+
+Our insight here was that a mathematician, upon seeing this VC, spots a number of simplifications that should ``obviously'' be applied immediately (we subjectively speculate that part of what qualifies a proof step as ``obvious'' is the intuition that there's an extremely low liklihood we will wish to backtrack over that step in the future.)  For example, clearly \texttt{(0 + 1)} adds nothing and should be simplified to \texttt{1}.  Similarly, because of the semantics of \texttt{Left\_Substring}, $\forall S : \text{SStr}, \texttt{Left\_Substring}(S, 0) = \texttt{Empty\_String}$.  And $\forall S : \text{SStr}, \texttt{Empty\_String} o S = S$.
+
+In fact, if we continue to apply such ``obvious'' simplifications until we can quickly reduce the same VC to how it appears in Listing \ref{lst:longVCReduced}.
+
+\lstinputlisting[language=RESOLVE,caption={VC for the Requires Clause of Advance\label{lst:longVCReduced}}]{longVCReduced.asrt}
+
+From here, a four-step proof suffices:
+
+\begin{lstlisting}
+|(Right_Substring(S.List, 1))| < 
+	|((Reverse((Right_Substring(S.List, 1)))
+	 o <Element_At(0, S.List)>))|
+
+|(Right_Substring(S.List, 1))| <                    by (|S o T| = |S| + |T|)
+	|Reverse((Right_Substring(S.List, 1)))|
+	 + |<Element_At(0, S.List)>|
+
+|(Right_Substring(S.List, 1))| <                    by (|Reverse(S)| = |S|)
+	|Right_Substring(S.List, 1)|
+	 + |<Element_At(0, S.List)>|
+
+|(Right_Substring(S.List, 1))| <                    by (|<E>| = 1)
+	|Right_Substring(S.List, 1)|
+	 + 1
+
+true                                                by (i < i + 1)
+\end{lstlisting}
+
+We qualified such ``obvious'' steps as those that maintain the tautological property (i.e., could not make a tautologically true VC into one that is not tautologically true) and \emph{strictly reduce} the number of function applications.  We hypothesized that if we could add this to the proof search algorithm as a preprocessing step, we would see improvement on many VCs, however the proof search algorithm of the first prover was such that to do so would require more hard-coding, so we conceived of a new prover, capable of being ``driven'' by an object that described its behavior.  Every action it took would be part of the main proof loop, allowing for the consistent collection of metrics and the easy addition of new kinds of proof steps.
+
+This new prover enabled us to implement the described pre-processing step, which we terming ``Minimization''\footnote{We avoided terms loaded with existing mathematical meaning, such as ``Simplification'', because minimization merely provides a best-effort heuristic for reducing function application count.  Changing the available theorems or even the order of those theorems may affect the outcome of minimization.} using the same machinery as the main proof search, while still allowing us to dictate, e.g., that minimzation should not be backtracked over, while proof steps in the main search might be.
+
+\textbf{XXX This next para needs fleshing out and examples once the Queue averaging example is brought up to date to compile XXX}
+
+In addition to need new pre-processing steps, new kinds of proof steps were required.  Motivated by our queue averaging example, which required a great deal of reasoning about integer bounds, it became important to be able to strengthen the consequents of a VC by applying implication theorems, as well as use existential instantiation.  The design of the second prover permitted such new kinds of proof rules to be put into place.
 
 	%-----------------------------------------------------------------------------
 	\subsection{Implementation}
 	%-----------------------------------------------------------------------------
 
-Even had the capabilities of the first prover been sufficient, it suffered from a number of design limitations that we sought to improve in the next iteration.
+Even had the capabilities of the first prover been sufficient, it suffered from a number of design limitations that we sought to improve in this next iteration.
 
-Our existing AST data-structure was poorly suited for formal reasoning and required constant, defensive deep-copying to ensure that changes made in one area would not propogate to another due to some shared reference.  Exarcerbating this issue, the design of the AST left much to be desired and copying required many scattered, error-prone operations that often failed to copy important data attached to an AST node such as its type.
+Our existing AST data-structure was poorly suited for formal reasoning and required constant, defensive deep-copying to ensure that changes made in one area would not propogate to another due to some shared reference.  This was annoying and inefficient.  Exarcerbating this issue, the design of the AST left much to be desired and copying required many scattered, error-prone operations that often failed to copy important data attached to an AST node such as its type.
 
 Additionally, the first prover was insufficiently flexible to permit steps other than equality substitution to be included in the proof-search algorithm without hard coding them.  All pre-processing was hard coded outside the general proof-search algorithm (despite often being sufficient to complete the proof), as was all simplification logic at each step.  In addition to being difficult to understand and upkeep, this made collecting metrics such as run time or proof length difficult to keep, since they could not be applied uniformly to hard-coded steps.
+
+In order to address the shortcomings of the AST, we created a separate data structure to hold expressions that were involved in the proving proces---both those related to the VC itself, and those that were part of theorems.  This structure was immutable and thus permitted references to be passed and subtrees to be shared without fear of the problems usually associated with shared aliases.  Transforming the existing ASTs into this new immutable data-structure also provided a convenient point at which to sanitize and perform defense checks, ensuring that those checks only needed to happen once.
+
+The second prover replaced the hard-coded proof search with a general mechanism that deferred to proving tactic objects that implemented the \emph{Strategy} pattern, permitting a single uniform mechanism by which steps were applied and rolled back, while allowing more flexibility on what exactly constituted a ``step''.  This allowed for consistent metric gathering among a number of other design advantages.  The basic implementation remained a recursive one, with backtracking falling out naturally from unwinding the recursive loop.
+
+%-----------------------------------------------------------------------------
+\section{Version 3 Prover}
+%-----------------------------------------------------------------------------
+
+While the second prover was much more flexible and brought many new VCs into the realm of provability, we found it did not meet our needs with regard to a number of non-functional attributres unrelated to its strict mathematical power.  This motivated us to develop the third and final version of the prover to address these issues.
+
+	%-----------------------------------------------------------------------------
+	\subsection{Issues}
+	%-----------------------------------------------------------------------------
+
+		%-----------------------------------------------------------------------------
+		\subsubsection{Performance}
+		%-----------------------------------------------------------------------------
+
+The second prover eliminated the need to make deep copies at each step by ensuring that VCs were immutable and could thus be safely shared with deeper parts of the recursion.  However, it did this at the cost of eliminating the possibility of making changes to expressions in place---each change had to spawn a completely new structure.  While any unchanged subexpressions could be recycled, this generated a great deal of dynamic memory allocations that slowed down the tight prover loop.
+
+Additionally, while it shared this weakness with the first prover, the second prover's reliance on the old type system, which was plagued with inconsistencies and idiosyncracies, prevented proof states from being hashed efficiently and thus precluded a number of optimizations such as efficiently detecting proof cycles.
+
+		%-----------------------------------------------------------------------------
+		\subsubsection{Debugging and Understandability}
+		%-----------------------------------------------------------------------------
+
+The capabilities and requirements of our prover are rapidly changing in a research environment and a number of design decisions of the second prover made rapid implementation of new features, or the finding and fixing of bugs very difficult.
+
+Because of the tight recursive loop that applied steps and handled backtracking, adding or modifying cross-cutting concerns such as new metrics, visualizations of proof state, or prover interactions such as timeouts or cancel buttons became very difficult.  This had an corresponding effect on debugging, since introducing tools to examine proof state was correspondingly more difficult, and even setting sane breakpoints became challenging.
+
+Additionally, the object that served to ``direct'' the proof was unweildy and difficult to understand or update.  Many layers of inductive, embedded decisions were represented in a functional way that often required straightforward conceptual decisions (``apply this strategy until it cannot be applied anymore, then move on to this strategy'', ``only apply this strategy if this other one is not applicable'') to be represented in counterintuitive ways.
+
+		%-----------------------------------------------------------------------------
+		\subsubsection{Metric Collection}
+		%-----------------------------------------------------------------------------
+
+While the second prover was a huge improvement, it still fell short of our metric-collection needs.  Most steps were now governed by the consistent machinery of the main proof loop, but not all.  For example, variable expansion was still the purview of a hard-coded pre-processing step.  Additionally, in order to enable the sorts of complexities we required to be described by the strategy object, what should have been considered entire ``phases'' of the proof were occasionally embedded into a single step that made many different, unrelated modifications to the proof state.
+
+An additional issue was that, with theory development now under the purview of the main prover loop, these steps contributed to proof-length-based metrics.  However, since theory development is purely speculative, in most cases, the vast majority of those steps did not contribute to the eventual proof.  A mechanism was required to trace which steps actually contributed to the eventual result.
+
+		%-----------------------------------------------------------------------------
+		\subsubsection{Educational Suitability}
+		%-----------------------------------------------------------------------------
+
+While the primary thrust of the RSRG's research is the development of a toolchain to broaden the accessibilty of verified software, another important aspect of our research is the use of formal methods as an educational tool for teaching software engineering.  Because the design of the first two provers had been single-mindedly on mathematical power and cross-cutting concerns were difficult to satisfy under that design, creating visualizations of the proof state, permitting the user to slow down and ``watch'' the automated prover work, or effectively allowing the user to control the course of the proof was very difficult.  Both of the first two versions of the prover had a debug mode in which a window would appear at each step and permit the user to select the next theorem, but it was extremely rudimentary by necessity (see Figure \ref{proverDebugMode}).
+
+\begin{figure}
+  \centering
+    \includegraphics[width=0.45\textwidth]{proverDebugMode}
+  \caption{V1 and V2 Prover Visualization\label{proverDebugMode}}
+\end{figure}
+
+		%-----------------------------------------------------------------------------
+		\subsubsection{Reliance on Old Type System}
+		%-----------------------------------------------------------------------------
+
+The version two prover was still reliant on the old type system to function.  This type system was poorly designed and implemented and would often prevent VCs that were otherwise provable from proving.
+
+	%-----------------------------------------------------------------------------
+	\subsection{Design and Implementation}
+	%-----------------------------------------------------------------------------
+
+For the third prover, visualization and control of the proof process, along with a design amenable to debugging and the writing of unit tests were made first-class design concerns.  To this end, it eschewed the functional, recursive design of the first two provers in favor of a model/view/controller decomposition.
+
+The third prover maintained the immutable expression data structures of the second version, and replaced the old type system with the new one implemented for Chapter \ref{math}, which also uses immutable structures for the representation of types.
+
+While the expressions are immutable, this version of the prover uses a single, mutable proof state object to hold information about proof state, implementing backtracking via explicit undoing of steps rather than recursive unrolling with copies at each level.  This is significantly more efficient since often a proof step impacts only one small part of the proof state.
+
+Each antecedent in the proof state is wrapped in a object that permits meta-information to be attached about where it came from, this permits the prover to trace backwards on a successful proof and determine exactly which antecedents (and thus exactly which proof steps) contributed to the final result.
+
+Rather than a single strategy object that was built up by composing sub-strategies, the third prover is controlled by a \emph{goal stack}, where the top goal is queried each heartbeat and permitted to modify the goal stack or perform a single proof step.  This leads to a much more understandable controller and makes the construction of new goals straightforward.
+
+Much consideration was given to a user interface that would make debugging easy and provide an excellent educational interface.  One image of this interface is provided in Figure \ref{newProverInterface}.
+
+\begin{figure}
+  \centering
+    \includegraphics[width=0.75\textwidth]{newProverInterface}
+  \caption{V3 Prover Interface\label{newProverInterface}}
+\end{figure}
+
+The current state of the VC is displayed in (1), while a list of available theorems is displayed in (2).  The textbox at the top of the theorem list allows the user to search theorems based on the symbols it contains.  (3) shows any proof steps taken so far, and clicking on one permits the user to undo it.  Finally, play/stop/pause controls at (4) permit the user to seamlessly transition between interactive and automated proving mode.
+
+When a theorem is selected in interactive mode, any possible applications of that theorem become highlighted in (1) in grey.  Hovering the mouse over a possible application causes it to highlight, and clicking applies the theorem.  If no theorem has been selected from (2), each antecedent of the VC also becomes highlighted and may be selected and applied as an ordinary theorem.
+
+When in automated proving mode, (1) updates periodically with the current state of the proof, allowing the user to visualize the work the prover is doing.  Step functionality is also provided on pause to allow the user to watch the automated prover work step by step.
+
+With fully immutable expressions, a number of optimizations became possible.  Proof state is efficiently hashed using a polynomial hash that can be rapidly updated as expressions are added or removed.  This permits us to rapidly detect proof cycles and prune those parts of the tree from the search.  Memoization was used when comparing types to ensure that once we establish a particular type relationship (which can be quite costly under the new analysis), we never calculate it again.  Finally, both the singleton and flyweight patterns were used along with object pools to minimize dynamic object creation.
+
+Finally, for the collection of metrics, the final version of the prover outputs significantly more data in a significantly more readable form than either earlier version.  These proof files include all productive steps of the proof, with a snapshot of the VC at that time, as well as metrics about the proving process, such as length and elapsed time.
+
+\textbf{XXX Insert a figure of this output when it's working XXX}
