@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2012.11.17)  19 FEB 2013 02:58
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2012.11.17)  8 MAR 2013 13:47
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -564,11 +564,14 @@ LaTeX Warning: Citation `hoareGrandChallenge' on page 1 undefined on input line
  4.
 
 
+LaTeX Warning: Citation `king' on page 1 undefined on input line 4.
+
+
 LaTeX Warning: Citation `hoareAxiomaticProgramming' on page 1 undefined on inpu
 t line 4.
 
 
-LaTeX Warning: Citation `blochBinarySearch' on page 1 undefined on input line 6
+LaTeX Warning: Citation `blockBinarySearch' on page 1 undefined on input line 6
 .
 
 
@@ -603,14 +606,21 @@ LaTeX Warning: Citation `coq' on page 2 undefined on input line 21.
 LaTeX Warning: Citation `nipkowIsabelle' on page 2 undefined on input line 21.
 
 
-LaTeX Warning: Citation `Sit11' on page 2 undefined on input line 21.
+LaTeX Warning: Citation `BronishVSTTE' on page 2 undefined on input line 21.
 
 [2 <./verification_pipeline.png>]
+
+LaTeX Warning: Citation `Sit11' on page 3 undefined on input line 23.
+
+
+LaTeX Warning: Citation `zeeIntegratedProofLanguage' on page 3 undefined on inp
+ut line 32.
+
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
 Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on i
-nput line 28.
+nput line 34.
 
 (./ArrayList1.java
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 2.
@@ -630,78 +640,81 @@ LaTeX Font Info:    Font shape `OML/cmr/m/it' in size <8> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 7.
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <8> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 10.
- [3])
+)
 
-LaTeX Warning: Citation `zeeIntegratedProofLanguage' on page 4 undefined on inp
-ut line 30.
-
-
-LaTeX Warning: Citation `zee:annotations' on page 4 undefined on input line 32.
+LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-
-LaTeX Warning: Citation `kingVerifier' on page 4 undefined on input line 32.
-
-
-LaTeX Warning: Citation `barretCVC3' on page 4 undefined on input line 32.
-
-
-LaTeX Warning: Citation `deMouraZ3' on page 4 undefined on input line 32.
-
-
-LaTeX Warning: Citation `weideVerificationReferences' on page 4 undefined on in
-put line 39.
-
-[4]
-
-LaTeX Warning: Citation `zee:annotations' on page 5 undefined on input line 44.
+LaTeX Warning: Citation `zee:annotations' on page 3 undefined on input line 36.
 
 
 
-LaTeX Warning: Citation `bronishMap' on page 5 undefined on input line 44.
+LaTeX Warning: Citation `kingVerifier' on page 3 undefined on input line 36.
 
-[5] <proverpart.png, id=355, 819.06pt x 255.95625pt>
+
+LaTeX Warning: Citation `barretCVC3' on page 3 undefined on input line 36.
+
+
+LaTeX Warning: Citation `deMouraZ3' on page 3 undefined on input line 36.
+
+[3] [4]
+
+LaTeX Warning: Citation `weideVerificationReferences' on page 5 undefined on in
+put line 44.
+
+
+LaTeX Warning: Citation `zee:annotations' on page 5 undefined on input line 49.
+
+
+
+LaTeX Warning: Citation `bronishMap' on page 5 undefined on input line 49.
+
+[5] <proverpart.png, id=356, 819.06pt x 255.95625pt>
 File: proverpart.png Graphic file (type png)
  <use proverpart.png>
-Package pdftex.def Info: proverpart.png used on input line 50.
+Package pdftex.def Info: proverpart.png used on input line 55.
 (pdftex.def)             Requested size: 433.62001pt x 135.50774pt.
 
-(./DivPred.coq) [6 <./proverpart.png>] (./DivImpl.coq) (./DivTheorem.coq)
-(./DivProof.coq [7])
+[6 <./proverpart.png>] (./DivPred.coq) (./DivImpl.coq) (./DivTheorem.coq)
+[7] (./DivProof.coq)
 
 LaTeX Warning: Citation `leroyVerifiedcompiler' on page 8 undefined on input li
-ne 79.
+ne 84.
 
 
-LaTeX Warning: Citation `kleinVerifiedOS' on page 8 undefined on input line 79.
+LaTeX Warning: Citation `kleinVerifiedOS' on page 8 undefined on input line 84.
 
 
-[8] <vcpart.png, id=406, 819.06pt x 255.95625pt>
+[8] <vcpart.png, id=410, 819.06pt x 255.95625pt>
 File: vcpart.png Graphic file (type png)
  <use vcpart.png>
-Package pdftex.def Info: vcpart.png used on input line 85.
+Package pdftex.def Info: vcpart.png used on input line 88.
 (pdftex.def)             Requested size: 433.62001pt x 135.50774pt.
- [9 <./vcpart.png>] <specpart.png, id=413, 819.06pt x 255.95625pt>
+ [9 <./vcpart.png>] <specpart.png, id=417, 819.06pt x 255.95625pt>
 File: specpart.png Graphic file (type png)
  <use specpart.png>
-Package pdftex.def Info: specpart.png used on input line 102.
+Package pdftex.def Info: specpart.png used on input line 105.
 (pdftex.def)             Requested size: 433.62001pt x 135.50774pt.
 
 [10 <./specpart.png>]
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 114.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 117.
 
 
-LaTeX Warning: Citation `Sit11' on page 11 undefined on input line 122.
+LaTeX Warning: Citation `Sigsoft94' on page 11 undefined on input line 126.
+
+
+LaTeX Warning: Citation `Sit11' on page 11 undefined on input line 126.
 
 [11]
 
-LaTeX Warning: Citation `wenzelIsar' on page 12 undefined on input line 137.
+LaTeX Warning: Citation `wenzelIsar' on page 12 undefined on input line 141.
 
+[12]
 
-LaTeX Warning: Citation `bronishMap' on page 12 undefined on input line 139.
+LaTeX Warning: Citation `bronishMap' on page 13 undefined on input line 143.
 
-[12]) [13] [14] (./background.tex
+[13]) [14] (./background.tex
 Chapter 2.
 
 LaTeX Warning: Citation `dillerZ' on page 15 undefined on input line 10.
@@ -857,7 +870,7 @@ Overfull \hbox (23.71912pt too wide) in paragraph at lines 329--332
  []$[]$ 
  []
 
-[37] [38] [39] [40] <universe.png, id=800, 273.49678pt x 302.40479pt>
+[37] [38] [39] [40] <universe.png, id=804, 273.49678pt x 302.40479pt>
 File: universe.png Graphic file (type png)
 
 <use universe.png>
@@ -871,7 +884,7 @@ e: $\OML/cmm/m/it/10 T[] \OT1/cmr/m/n/10 : \OML/cmm/m/it/10 MType; T[] \OT1/cmr
 /n/10 )\OML/cmm/m/it/10 ; T[] \OT1/cmr/m/n/10 =
  []
 
-[46] <typeGraph.png, id=897, 328.427pt x 336.457pt>
+[46] <typeGraph.png, id=901, 328.427pt x 336.457pt>
 File: typeGraph.png Graphic file (type png)
  <use typeGraph.png>
 Package pdftex.def Info: typeGraph.png used on input line 614.
@@ -913,7 +926,7 @@ Overfull \hbox (15.18993pt too wide) in paragraph at lines 8--9
  []
 
 ) [56] (./longVCReduced.asrt) [57] [58] [59] [60]
-<proverDebugMode.png, id=1099, 415.5525pt x 552.0625pt>
+<proverDebugMode.png, id=1103, 415.5525pt x 552.0625pt>
 File: proverDebugMode.png Graphic file (type png)
 
 <use proverDebugMode.png>
@@ -924,7 +937,7 @@ Package pdftex.def Info: proverDebugMode.png used on input line 203.
 LaTeX Warning: Reference `math' on page 62 undefined on input line 219.
 
 [62 <./proverDebugMode.png>]
-<newProverInterface.png, id=1114, 663.47874pt x 456.70625pt>
+<newProverInterface.png, id=1118, 663.47874pt x 456.70625pt>
 File: newProverInterface.png Graphic file (type png)
 
 <use newProverInterface.png>
@@ -955,7 +968,7 @@ Chapter 7.
 
 
 ] (./appendixA.tex [70]
-<testbed.jpg, id=1152, 321.2pt x 229.85875pt>
+<testbed.jpg, id=1156, 321.2pt x 229.85875pt>
 File: testbed.jpg Graphic file (type jpg)
  <use testbed.jpg>
 Package pdftex.def Info: testbed.jpg used on input line 54.
@@ -977,7 +990,7 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 165.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 165.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 165.
 Package rerunfilecheck Info: File `dissertation.out' has not changed.
-(rerunfilecheck)             Checksum: A49524D9B9EE06DB9E2393BF17FB2EF4;2446.
+(rerunfilecheck)             Checksum: 1F1C1A0C78F371A4C7A460A50ECE9605;2446.
 
 
 LaTeX Warning: There were undefined references.
@@ -988,15 +1001,18 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 165.
  ) 
 Here is how much of TeX's memory you used:
- 10581 strings out of 495059
- 155301 string characters out of 3182029
- 285210 words of memory out of 3000000
- 12876 multiletter control sequences out of 15000+200000
+ 10587 strings out of 495059
+ 155386 string characters out of 3182029
+ 286104 words of memory out of 3000000
+ 12879 multiletter control sequences out of 15000+200000
  15910 words of font info for 62 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 39i,12n,45p,1675b,1769s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{Hfootnote.12} has been referenced but does not ex
+ 39i,12n,45p,1669b,1761s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{Hfootnote.13} has been referenced but does not ex
 ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.12} has been referenced but does not exis
+t, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.11} has been referenced but does not exis
 t, replaced by a fixed one
@@ -1055,10 +1071,10 @@ cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on dissertation.pdf (94 pages, 837695 bytes).
+Output written on dissertation.pdf (94 pages, 839577 bytes).
 PDF statistics:
- 1434 PDF objects out of 1440 (max. 8388607)
- 1284 compressed objects within 13 object streams
- 647 named destinations out of 1000 (max. 500000)
+ 1441 PDF objects out of 1728 (max. 8388607)
+ 1291 compressed objects within 13 object streams
+ 650 named destinations out of 1000 (max. 500000)
  342 words of extra memory for PDF output out of 10000 (max. 10000000)
 
