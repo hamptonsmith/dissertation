@@ -11,5 +11,5 @@
 \contentsline {lstlisting}{\numberline {5.1}JML Specification for \texttt {add()}}{51}{lstlisting.5.1}
 \contentsline {lstlisting}{\numberline {5.2}VC for the Inductive Case of Loop Invariant}{52}{lstlisting.5.2}
 \contentsline {lstlisting}{\numberline {5.3}VC for the Requires Clause of Push}{53}{lstlisting.5.3}
-\contentsline {lstlisting}{\numberline {5.4}VC for the Requires Clause of Advance}{56}{lstlisting.5.4}
-\contentsline {lstlisting}{\numberline {5.5}VC for the Requires Clause of Advance}{57}{lstlisting.5.5}
+\contentsline {lstlisting}{\numberline {5.4}VC for the Requires Clause of Advance}{55}{lstlisting.5.4}
+\contentsline {lstlisting}{\numberline {5.5}VC for the Requires Clause of Advance}{56}{lstlisting.5.5}
