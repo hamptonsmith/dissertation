@@ -690,3 +690,20 @@ Subsumption Theorem R_Plus_Subsumes_Z_Plus:
 
 As with all other theorems, this one must be backed with a proof, but once accepted it assures the type-system that nothing is lost by resolving ambiguity in favor of the tighter function.
 
+
+	%---------------------------------------------------------------------
+	\subsection{Categorical Definitions\label{sec:categoricalDefinitions}}
+	%---------------------------------------------------------------------
+
+Categorical definitions are a new construct in the language which address the issue of mutually-dependent symbols.  They permit one or more symbols to be introduced together, then defined by a simple predicate in terms of each other.  As an example, consider this definition of the set of natural numbers:
+
+\begin{lstlisting}
+Categorical Definition introduces
+	N : MType, 0 : N, Succ : N -> N
+related by
+	For all e : Entity, (
+		(Exists i : Z, Repeatedly_Apply(N, 0, i) = e)
+			implies Is_In(N, e));
+\end{lstlisting}
+
+The definition introduces \texttt{N}, \texttt{0}, and \texttt{Succ} simultaneously.  They are defined only by the predicate that relates them to each other.  Because we lack the base case of an inductive definition or the witness of a direct definition, categorical definitions raise a proof obligation that they are inhabitted.  After all, nothing prevents the user from including \texttt{related by false}.
