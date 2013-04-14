@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2012.11.17)  9 APR 2013 00:58
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2012.11.17)  14 APR 2013 19:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -375,7 +375,30 @@ Package: subcaption 2012/01/12 v1.1d Sub-captions (AR)
 Package: mathrsfs 1996/01/01 Math RSFS package v1.0 (jk)
 \symrsfs=\mathgroup6
 )
-\c@thm=\count130
+(/usr/share/texlive/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2005/04/14 v1.61803 publication quality tables
+\heavyrulewidth=\dimen135
+\lightrulewidth=\dimen136
+\cmidrulewidth=\dimen137
+\belowrulesep=\dimen138
+\belowbottomsep=\dimen139
+\aboverulesep=\dimen140
+\abovetopsep=\dimen141
+\cmidrulesep=\dimen142
+\cmidrulekern=\dimen143
+\defaultaddspace=\dimen144
+\@cmidla=\count130
+\@cmidlb=\count131
+\@aboverulesep=\dimen145
+\@belowrulesep=\dimen146
+\@thisruleclass=\count132
+\@lastruleclass=\count133
+\@thisrulewidth=\dimen147
+)
+(/usr/share/texlive/texmf-dist/tex/latex/placeins/placeins.sty
+Package: placeins 2005/04/18  v 2.2
+)
+\c@thm=\count134
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 53.
 
@@ -389,6 +412,15 @@ LaTeX Warning: Label `ssrule:promote' multiply defined.
 
 
 LaTeX Warning: Label `sub@ssrule:promote' multiply defined.
+
+
+LaTeX Warning: Label `fig:recAddResults' multiply defined.
+
+
+LaTeX Warning: Label `sub@fig:recAddResults' multiply defined.
+
+
+LaTeX Warning: Label `lst:flippingImpl' multiply defined.
 
 )
 \openout1 = `dissertation.aux'.
@@ -424,7 +456,7 @@ Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count131
+\c@section@level=\count135
 )
 LaTeX Info: Redefining \ref on input line 65.
 LaTeX Info: Redefining \pageref on input line 65.
@@ -471,16 +503,16 @@ LaTeX Info: Redefining \nameref on input line 65.
 
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count132
-\scratchdimen=\dimen135
+\scratchcounter=\count136
+\scratchdimen=\dimen148
 \scratchbox=\box31
-\nofMPsegments=\count133
-\nofMParguments=\count134
+\nofMPsegments=\count137
+\nofMParguments=\count138
 \everyMPshowfont=\toks29
-\MPscratchCnt=\count135
-\MPscratchDim=\dimen136
-\MPnumerator=\count136
-\makeMPintoPDFobject=\count137
+\MPscratchCnt=\count139
+\MPscratchDim=\dimen149
+\MPnumerator=\count140
+\makeMPintoPDFobject=\count141
 \everyMPtoPDFconversion=\toks30
 ) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
@@ -497,7 +529,7 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-\c@lstlisting=\count138
+\c@lstlisting=\count142
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 
@@ -533,12 +565,21 @@ LaTeX Font Info:    Try loading font information for U+rsfs on input line 1.
 File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 ) [7
 
-])
+]
+Overfull \hbox (2.2499pt too wide) detected at line 129
+ \OT1/cmr/bx/n/10 100
+ []
+
+
+Overfull \hbox (2.2499pt too wide) detected at line 130
+ \OT1/cmr/bx/n/10 101
+ []
+
+)
 \tf@toc=\write4
 \openout4 = `dissertation.toc'.
 
- [8]
-(./dissertation.lot)
+ [8] (./dissertation.lot)
 \tf@lot=\write5
 \openout5 = `dissertation.lot'.
 
@@ -550,14 +591,14 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 
  [10
 
-] (./dissertation.lol)
+] (./dissertation.lol
+[11
+
+])
 \tf@lol=\write7
 \openout7 = `dissertation.lol'.
 
-
-[11
-
-] (./introduction.tex
+ [12] (./introduction.tex
 Chapter 1.
 
 LaTeX Warning: Citation `hoareGrandChallenge' on page 1 undefined on input line
@@ -582,7 +623,7 @@ LaTeX Warning: Citation `bentleyProgrammingPearls' on page 1 undefined on input
 
 
 
-] <verification_pipeline.png, id=348, 819.06pt x 255.95625pt>
+] <verification_pipeline.png, id=400, 819.06pt x 255.95625pt>
 File: verification_pipeline.png Graphic file (type png)
 
 <use verification_pipeline.png>
@@ -669,7 +710,7 @@ LaTeX Warning: Citation `zee:annotations' on page 5 undefined on input line 49.
 
 LaTeX Warning: Citation `bronishMap' on page 5 undefined on input line 49.
 
-[5] <proverpart.png, id=402, 819.06pt x 255.95625pt>
+[5] <proverpart.png, id=453, 819.06pt x 255.95625pt>
 File: proverpart.png Graphic file (type png)
  <use proverpart.png>
 Package pdftex.def Info: proverpart.png used on input line 55.
@@ -685,12 +726,12 @@ ne 84.
 LaTeX Warning: Citation `kleinVerifiedOS' on page 8 undefined on input line 84.
 
 
-[8] <vcpart.png, id=456, 819.06pt x 255.95625pt>
+[8] <vcpart.png, id=508, 819.06pt x 255.95625pt>
 File: vcpart.png Graphic file (type png)
  <use vcpart.png>
 Package pdftex.def Info: vcpart.png used on input line 88.
 (pdftex.def)             Requested size: 433.62001pt x 135.50774pt.
- [9 <./vcpart.png>] <specpart.png, id=464, 819.06pt x 255.95625pt>
+ [9 <./vcpart.png>] <specpart.png, id=515, 819.06pt x 255.95625pt>
 File: specpart.png Graphic file (type png)
  <use specpart.png>
 Package pdftex.def Info: specpart.png used on input line 105.
@@ -847,69 +888,26 @@ LaTeX Warning: Citation `ernstInfer' on page 27 undefined on input line 52.
 
 LaTeX Warning: Reference `sec:research' on page 27 undefined on input line 54.
 
-) [27] (./mathSystem.tex
+) [27] (./prover.tex
 Chapter 4.
 [28
 
 
-] [29] [30]
+] (./JMLAdd.jml) [29] (./StackFlipVC1.asrt [30])
 
-LaTeX Warning: Citation `tagoreExpand' on page 31 undefined on input line 78.
-
-[31] [32] [33]
-
-LaTeX Warning: Citation `something' on page 34 undefined on input line 160.
-
-[34] [35] [36]
-Overfull \hbox (8.21243pt too wide) in paragraph at lines 315--318
- []$[]$ 
- []
+LaTeX Warning: Reference `easyVCEg' on page 31 undefined on input line 56.
 
 
-Overfull \hbox (23.71912pt too wide) in paragraph at lines 329--332
- []$[]$ 
- []
-
-[37] [38] [39] [40] <universe.png, id=850, 273.49678pt x 302.40479pt>
-File: universe.png Graphic file (type png)
-
-<use universe.png>
-Package pdftex.def Info: universe.png used on input line 429.
-(pdftex.def)             Requested size: 143.09538pt x 158.225pt.
- [41 <./universe.png>] [42] [43] [44] [45]
-Overfull \hbox (7.25484pt too wide) in paragraph at lines 588--589
-[]\OT1/cmr/m/n/10 So, in our above ex-am-ple, the static re-quire-ments would b
-e: $\OML/cmm/m/it/10 T[] \OT1/cmr/m/n/10 : \OML/cmm/m/it/10 MType; T[] \OT1/cmr
-/m/n/10 : \OML/cmm/m/it/10 Power\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 T[]\OT1/cmr/m
-/n/10 )\OML/cmm/m/it/10 ; T[] \OT1/cmr/m/n/10 =
- []
-
-[46] <typeGraph.png, id=947, 328.427pt x 336.457pt>
-File: typeGraph.png Graphic file (type png)
- <use typeGraph.png>
-Package pdftex.def Info: typeGraph.png used on input line 614.
-(pdftex.def)             Requested size: 216.81pt x 222.11365pt.
-
-[47 <./typeGraph.png>] [48] [49]) [50] (./prover.tex
-Chapter 5.
-[51
-
-
-] (./JMLAdd.jml) [52] (./StackFlipVC1.asrt [53])
-
-LaTeX Warning: Reference `easyVCEg' on page 54 undefined on input line 56.
-
-
-LaTeX Warning: Reference `proverEvaluation' on page 54 undefined on input line 
+LaTeX Warning: Reference `proverEvaluation' on page 31 undefined on input line 
 60.
 
-(./StackFlipVC2.asrt [54]) [55]
+(./StackFlipVC2.asrt [31]) [32]
 
-LaTeX Warning: Citation `specEngineering' on page 56 undefined on input line 95
+LaTeX Warning: Citation `specEngineering' on page 33 undefined on input line 95
 .
 
 
-LaTeX Warning: Citation `queueAverage' on page 56 undefined on input line 95.
+LaTeX Warning: Citation `queueAverage' on page 33 undefined on input line 95.
 
 (./longVC.asrt
 Overfull \hbox (15.18993pt too wide) in paragraph at lines 4--5
@@ -921,59 +919,216 @@ Overfull \hbox (15.18993pt too wide) in paragraph at lines 8--9
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
 
-[56]) (./longVCReduced.asrt [57]) [58] [59] [60] [61]
-<proverDebugMode.png, id=1164, 415.5525pt x 552.0625pt>
+[33]) (./longVCReduced.asrt [34]) [35] [36] [37] [38]
+<proverDebugMode.png, id=867, 415.5525pt x 552.0625pt>
 File: proverDebugMode.png Graphic file (type png)
 
 <use proverDebugMode.png>
 Package pdftex.def Info: proverDebugMode.png used on input line 197.
 (pdftex.def)             Requested size: 195.12767pt x 259.22511pt.
- [62 <./proverDebugMode.png>]
+ [39 <./proverDebugMode.png>]
 
-LaTeX Warning: Reference `math' on page 63 undefined on input line 213.
+LaTeX Warning: Reference `math' on page 40 undefined on input line 213.
 
-<newProverInterface.png, id=1173, 663.47874pt x 456.70625pt>
+<newProverInterface.png, id=875, 663.47874pt x 456.70625pt>
 File: newProverInterface.png Graphic file (type png)
 
 <use newProverInterface.png>
 Package pdftex.def Info: newProverInterface.png used on input line 225.
 (pdftex.def)             Requested size: 325.215pt x 223.86467pt.
- [63] [64 <./newProverInterface.png>]
+ [40] [41 <./newProverInterface.png>]
 
-LaTeX Warning: Reference `proverEvaluation' on page 65 undefined on input line 
+LaTeX Warning: Reference `proverEvaluation' on page 42 undefined on input line 
 247.
 
 
-LaTeX Warning: Citation `something' on page 65 undefined on input line 257.
+LaTeX Warning: Citation `something' on page 42 undefined on input line 257.
 
-[65] [66] [67]
+[42] [43] [44]
 
-LaTeX Warning: Citation `ACL2' on page 68 undefined on input line 302.
+LaTeX Warning: Citation `ACL2' on page 45 undefined on input line 302.
 
 
-LaTeX Warning: Citation `Issabelle' on page 68 undefined on input line 302.
+LaTeX Warning: Citation `Issabelle' on page 45 undefined on input line 302.
 
-[68]) [69] (./mathEval/mathSystemEvaluation.tex
+[45]) [46] (./mathSystem.tex
+Chapter 5.
+[47
+
+
+] [48] [49]
+
+LaTeX Warning: Citation `tagoreExpand' on page 50 undefined on input line 78.
+
+[50] [51] [52]
+
+LaTeX Warning: Citation `something' on page 53 undefined on input line 160.
+
+[53] [54] [55]
+Overfull \hbox (8.21243pt too wide) in paragraph at lines 315--318
+ []$[]$ 
+ []
+
+
+Overfull \hbox (23.71912pt too wide) in paragraph at lines 329--332
+ []$[]$ 
+ []
+
+[56] [57] [58] [59] <universe.png, id=1139, 273.49678pt x 302.40479pt>
+File: universe.png Graphic file (type png)
+
+<use universe.png>
+Package pdftex.def Info: universe.png used on input line 429.
+(pdftex.def)             Requested size: 143.09538pt x 158.225pt.
+ [60 <./universe.png>] [61] [62] [63] [64]
+Overfull \hbox (7.25484pt too wide) in paragraph at lines 588--589
+[]\OT1/cmr/m/n/10 So, in our above ex-am-ple, the static re-quire-ments would b
+e: $\OML/cmm/m/it/10 T[] \OT1/cmr/m/n/10 : \OML/cmm/m/it/10 MType; T[] \OT1/cmr
+/m/n/10 : \OML/cmm/m/it/10 Power\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 T[]\OT1/cmr/m
+/n/10 )\OML/cmm/m/it/10 ; T[] \OT1/cmr/m/n/10 =
+ []
+
+[65] <typeGraph.png, id=1235, 328.427pt x 336.457pt>
+File: typeGraph.png Graphic file (type png)
+ <use typeGraph.png>
+Package pdftex.def Info: typeGraph.png used on input line 614.
+(pdftex.def)             Requested size: 216.81pt x 222.11365pt.
+
+[66 <./typeGraph.png>] [67] [68]) [69] (./proverEval/proverEvaluation.tex
 Chapter 6.
 
-LaTeX Warning: Reference `ch:proverEvaluation' on page 70 undefined on input li
-ne 6.
+LaTeX Warning: Reference `evalHeuristics' on page 70 undefined on input line 8.
 
 
-LaTeX Warning: Citation `benchmarks' on page 70 undefined on input line 6.
+
+LaTeX Warning: Reference `proverEvalConclusion' on page 70 undefined on input l
+ine 8.
 
 
-LaTeX Warning: Citation `benchmarks' on page 70 undefined on input line 6.
+LaTeX Warning: Reference `apx:spec' on page 70 undefined on input line 10.
 
 
-LaTeX Warning: Citation `benchmarks' on page 70 undefined on input line 17.
+LaTeX Warning: Reference `apx:real' on page 70 undefined on input line 10.
+
+
+LaTeX Warning: Reference `apx:proofs' on page 70 undefined on input line 10.
+
+
+LaTeX Warning: Citation `something' on page 70 undefined on input line 12.
+
+
+LaTeX Warning: Citation `something' on page 70 undefined on input line 12.
+
+
+LaTeX Warning: Citation `something' on page 70 undefined on input line 12.
 
 [70
 
 
+]
+
+LaTeX Warning: Citation `benchmarks' on page 71 undefined on input line 35.
+
+
+LaTeX Warning: Citation `heatherDissertation' on page 71 undefined on input lin
+e 35.
+
+
+LaTeX Warning: Citation `heatherDissertation' on page 71 undefined on input lin
+e 35.
+
+[71]
+
+LaTeX Warning: Citation `benchmarks' on page 72 undefined on input line 39.
+
+(./proverEval/examples/IntegerPlusTimesSpecs.en)
+
+LaTeX Warning: Reference `apx:spec' on page 72 undefined on input line 47.
+
+
+Overfull \hbox (5.68367pt too wide) in paragraph at lines 47--48
+[]\OT1/cmr/m/n/10 We ex-per-i-mented both with an it-er-a-tive and re-cur-sive 
+im-ple-men-ta-tion of \OT1/cmtt/m/n/10 Adding[]Capability\OT1/cmr/m/n/10 .
+ []
+
+[72] (./proverEval/examples/Recursive_Add_to_Realiz.rb)
+(./proverEval/examples/Iterative_Multiply_into_Realiz.rb)
+
+LaTeX Warning: Reference `fig:addMultResults' on page 73 undefined on input lin
+e 59.
+
+
+Overfull \hbox (4.12715pt too wide) in paragraph at lines 65--79
+ [][] 
+ []
+
+
+Overfull \hbox (4.12715pt too wide) in paragraph at lines 84--98
+ [][] 
+ []
+
+[73] (./proverEval/examples/Search_Capability.en)
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+(./proverEval/examples/Bin_Search_Realiz.rb)
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: Citation `thingy' on page 74 undefined on input line 137.
+
+[74] (./proverEval/examples/Static_Array_Template.co
+Overfull \hbox (10.08981pt too wide) in paragraph at lines 1--2
+[][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+
+Overfull \hbox (45.7906pt too wide) in paragraph at lines 11--12
+[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
+ []
+
+)
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[75] [76] [77] (./proverEval/examples/Sorting_Capability.en)
+(./proverEval/examples/Selection_Sort_Realization.rb)
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[78
+
+] [79] [80] (./proverEval/examples/Flipping_Capability.en)
+(./proverEval/examples/Recursive_Flipping_Realiz.rb) [81
+
+]
+(./proverEval/examples/Stack_Template.co)
+
+LaTeX Warning: Reference `lst:stackImpl' on page 82 undefined on input line 257
+.
+
+(./proverEval/examples/Array_Realiz.rb)
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) [82] [83] (./mathEval/mathSystemEvaluation.tex
+Chapter 7.
+
+LaTeX Warning: Citation `benchmarks' on page 84 undefined on input line 6.
+
+
+LaTeX Warning: Citation `benchmarks' on page 84 undefined on input line 6.
+
+
+LaTeX Warning: Citation `benchmarks' on page 84 undefined on input line 17.
+
+[84
+
+
 ] (./mathEval/examples/Integer_Theory1.mt)
 Overfull \hbox (8.84908pt too wide) in paragraph at lines 29--30
-[]\OT1/cmr/m/n/10 Categorical def-i-ni-tions were de-scribed in Sec-tion [][]4.
+[]\OT1/cmr/m/n/10 Categorical def-i-ni-tions were de-scribed in Sec-tion [][]5.
 3.6[][] and per-mit mul-ti-ple mutually-dependent
  []
 
@@ -992,22 +1147,22 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[71] (./mathEval/examples/Integer_Theory2.mt)
+[85] (./mathEval/examples/Integer_Theory2.mt)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[72]
+[86]
 
-LaTeX Warning: Citation `something' on page 73 undefined on input line 72.
-
-
-LaTeX Warning: Citation `something' on page 73 undefined on input line 72.
+LaTeX Warning: Citation `something' on page 87 undefined on input line 72.
 
 
-LaTeX Warning: Citation `something' on page 73 undefined on input line 72.
+LaTeX Warning: Citation `something' on page 87 undefined on input line 72.
+
+
+LaTeX Warning: Citation `something' on page 87 undefined on input line 72.
 
 (./mathEval/examples/Static_Array_Template1.co
 Overfull \hbox (10.08981pt too wide) in paragraph at lines 1--2
@@ -1018,7 +1173,7 @@ Overfull \hbox (10.08981pt too wide) in paragraph at lines 1--2
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[73] (./mathEval/examples/String_Theory1.mt
+[87] (./mathEval/examples/String_Theory1.mt
 Overfull \hbox (4.9897pt too wide) in paragraph at lines 6--7
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -1028,37 +1183,37 @@ Overfull \hbox (4.9897pt too wide) in paragraph at lines 6--7
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-LaTeX Warning: Citation `something' on page 74 undefined on input line 100.
+LaTeX Warning: Citation `something' on page 88 undefined on input line 100.
 
-[74]
+[88]
 Overfull \hbox (16.39114pt too wide) in paragraph at lines 106--107
 []\OT1/cmr/m/n/10 A tricky nu-ance of per-mit-ting such type-parameterized stri
 ngs is how to type the \OT1/cmtt/m/n/10 Empty[]String[][][][][]\OT1/cmr/m/n/10 
 .
  []
 
-[75]
+[89]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[76] [77] (./mathEval/examples/Sorting_Capability.en)
+[90] [91] (./mathEval/examples/Sorting_Capability.en)
 (./mathEval/examples/Total_Preordering_Theory1.mt)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[78] (./mathEval/examples/totalpreorderingvc.asrt)
+[92] (./mathEval/examples/totalpreorderingvc.asrt)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[79] [80] [81] (./mathEval/examples/Array_Realiz1.rb)
-(./mathEval/examples/Binary_Iterator_Theory1.mt) [82]
+[93] [94] [95] (./mathEval/examples/Array_Realiz1.rb)
+(./mathEval/examples/Binary_Iterator_Theory1.mt) [96]
 (./mathEval/examples/arrayrealizvc.asrt)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[83]
+[97]
 Overfull \hbox (34.32404pt too wide) in paragraph at lines 330--331
-[]\OT1/cmr/m/n/10 First, con-sider List-ing [][]6.22[][], where rather than pas
+[]\OT1/cmr/m/n/10 First, con-sider List-ing [][]7.22[][], where rather than pas
 s \OT1/cmtt/m/n/10 Value[]Function \OT1/cmr/m/n/10 through to \OT1/cmtt/m/n/10 
 Iterative[]Apply()\OT1/cmr/m/n/10 ,
  []
@@ -1072,39 +1227,40 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) [84] [85] (./conclusion.tex
-Chapter 7.
-) [86
+) [98] [99] (./conclusion.tex
+Chapter 8.
+) [100
 
 
-] [87
+] [101
 
 
 
-] (./appendixA.tex [88]
-<testbed.jpg, id=1689, 321.2pt x 229.85875pt>
+] (./appendixA.tex [102]
+<testbed.jpg, id=2115, 321.2pt x 229.85875pt>
 File: testbed.jpg Graphic file (type jpg)
  <use testbed.jpg>
 Package pdftex.def Info: testbed.jpg used on input line 54.
 (pdftex.def)             Requested size: 321.19922pt x 229.85817pt.
- [89 <./testbed.jpg>]) [90] (./appendixB.tex
+ [103 <./testbed.jpg>]) [104] (./appendixB.tex
 Overfull \hbox (6.11957pt too wide) in paragraph at lines 1--1
 []\OT1/cmr/bx/n/14.4 Manuscript Re-view Sign-In Datat Aheet for Stu-
  []
 
-[91
+[105
 
-] [92] [93] [94]) [95] (./appendixC.tex [96
+] [106] [107] [108]) [109] (./appendixC.tex [110
 
-] [97] [98] [99]) [100] [101]
+] [111] [112] [113])
+[114] [115]
 No file dissertation.bbl.
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 165.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 165.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 166.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 166.
 (./dissertation.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 165.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 165.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 166.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 166.
 Package rerunfilecheck Info: File `dissertation.out' has not changed.
-(rerunfilecheck)             Checksum: B0AF1DEF136FEFFFBA8516A66A49B487;2345.
+(rerunfilecheck)             Checksum: 9381C06BE87FBA250449D6D3CF43992D;2547.
 
 
 LaTeX Warning: There were undefined references.
@@ -1112,18 +1268,21 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 165.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 166.
  ) 
 Here is how much of TeX's memory you used:
- 11162 strings out of 495059
- 165243 string characters out of 3182029
- 328700 words of memory out of 3000000
- 13000 multiletter control sequences out of 15000+200000
- 15910 words of font info for 62 fonts, out of 3000000 for 9000
+ 11679 strings out of 495059
+ 174014 string characters out of 3182029
+ 330818 words of memory out of 3000000
+ 13145 multiletter control sequences out of 15000+200000
+ 16077 words of font info for 63 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
- 39i,12n,45p,1669b,1768s stack positions out of 5000i,500n,10000p,200000b,50000s
-pdfTeX warning (dest): name{Hfootnote.16} has been referenced but does not ex
+ 39i,12n,45p,1669b,1771s stack positions out of 5000i,500n,10000p,200000b,50000s
+pdfTeX warning (dest): name{Hfootnote.17} has been referenced but does not ex
 ist, replaced by a fixed one
+
+pdfTeX warning (dest): name{Hfootnote.16} has been referenced but does not exis
+t, replaced by a fixed one
 
 pdfTeX warning (dest): name{Hfootnote.15} has been referenced but does not exis
 t, replaced by a fixed one
@@ -1192,12 +1351,13 @@ st/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/share/texlive/texmf-dist/fonts
 ts/cm/cmti10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/
 cmti8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></us
-r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on dissertation.pdf (112 pages, 913094 bytes).
+sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on dissertation.pdf (127 pages, 970731 bytes).
 PDF statistics:
- 2057 PDF objects out of 2073 (max. 8388607)
- 1883 compressed objects within 19 object streams
- 1065 named destinations out of 1200 (max. 500000)
- 334 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2555 PDF objects out of 2984 (max. 8388607)
+ 2360 compressed objects within 24 object streams
+ 1391 named destinations out of 1440 (max. 500000)
+ 358 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,20 @@
+Goal:
+Is_Universally_Related(<Considered_Entry'>, (New_Queue'  o <Min'>), LEQV)
+
+Given:
+(((((((((Last_Char_Num  > 0) and
+(((min_int  <= 0) and
+(0  < max_int)) and
+((Max_Length  > 0) and
+((min_int  <= Max_Length) and
+(Max_Length  <= max_int))))) and
+Is_Total_Preordering(LEQV)) and
+(Entry.is_initial(Min) and
+((|Q|  <= Max_Length) and
+|Q| /= 0))) and
+Q = (<Min''>  o Q''')) and
+(Is_Permutation(((New_Queue'  o Q'')  o <Min'>), Q) and
+Is_Universally_Related(<Min'>, New_Queue', LEQV))) and
+(|Q''|  > 0)) and
+Q'' = (<Considered_Entry'>  o Q')) and
+LEQV(Considered_Entry', Min'))

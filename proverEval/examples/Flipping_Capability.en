@@ -1,0 +1,6 @@
+Enhancement Flipping_Capability for Queue_Template;
+
+	Operation Flip (updates Q: Queue);
+		ensures Q = Reverse(#Q);
+
+end;

@@ -1,0 +1,382 @@
+
+
+
+\chapter{Evaluation of Mathematical System\label{ch:mathEvaluation}}
+%-----------------------------------------------------------------------------
+The evaluation of our mathematical system is fundamentally based on the ease with which it permits us to express the necessary and diverse mathematical ideas that arise when specifying programs formally.  In Chapter \ref{ch:proverEvaluation}, we present a number of solutions to selected benchmarks from \cite{benchmarks} and discuss the effectiveness of our automated prover at discharging the VCs that arise from those implementations.  In this chapter, we will consider the mathematical developments that arise when specifying those benchmarks and provide commentary on the effectiveness of our mathematical system.  Afterward, we present some of the mathematical developments required for benchmarks beyond \cite{benchmarks}.
+
+
+%-----------------------------------------------------------------------------
+\section{VSTTE Benchmarks}
+%-----------------------------------------------------------------------------
+
+	%-----------------------------------------------------------------------------
+	\subsection{Benchmark 1: Adding and Multiplying Integers}
+	%-----------------------------------------------------------------------------
+
+\textbf{Problem Statement:}\footnote{This and all other problem statements quote directly from \cite{benchmarks}.} Verify an operation that adds two numbers by repeated incrementing. Verify an operation that multiplies two numbers by repeated addition, using the first operation to do the addition. Make one algorithm iterative, the other recursive.
+
+		%-----------------------------------------------------------------------------
+		\subsubsection{Supporting Mathematics}
+		%-----------------------------------------------------------------------------
+
+The primary mathematical support required for verifying this benchmark is simply the availability of the integers, along with operators for manipulating them and theorems for reasoning about them.  The set \texttt{Z} and its fundamental operations are built-in for RESOLVE (since they must back up programmatic integers), making this benchmark somewhat trivial.  However, we can still use it as a launching-point for exploring our mathematical flexibility by engaging in the exercise of introducing an identically-behaving mathematical set, \texttt{OtherZ}.
+
+Listing \ref{lst:integertheory1} gives a snippet from \texttt{Integer\_Theory} in which we introduce this set.
+
+\lstinputlisting[float=h,language=resolve,caption={The definition of \texttt{OtherZ}\label{lst:integertheory1}}]{mathEval/examples/Integer_Theory1.mt}
+
+Categorical definitions were described in Section \ref{sec:categoricalDefinitions} and permit multiple mutually-dependent symbols to be introduced simultaneously and related by a predicate.  Here we use a higher-order definition, \texttt{Is\_Monogenerator\_For()} to relate these symbols.  This is drawn from \texttt{Monogenerator\_Theory} and describes sets that can be described by some fixed starting point (here, \texttt{Other0}) and iterated over by repeated applications of a closed function.  We imagine that function, \texttt{Bounce}, returns a sequence like \texttt{0, 1, -1, 2, -2, 3, -3 ...}, though this is an arbitrary semantic notion that would be codified by a later definition of negativity.  The definition of \texttt{Is\_Monogenerator\_For()} from \texttt{Monogenerator\_Theory} is given in Listing \ref{lst:monogeneratortheory1}.
+
+\lstinputlisting[float=h,language=resolve,caption={The definition of \texttt{Is\_Monogenerator\_For()}\label{lst:monogeneratortheory1}}]{mathEval/examples/Monogenerator_Theory1.mt}
+
+This definition takes advantage of first class types, permitting us to pass in a type as the first parameter which is then used to define the types of the second two parameters.  Note that the definition of \texttt{Is\_Monogenerator\_For()} itself takes advantage of a higher-order definition, \texttt{Is\_Injective()}, which is drawn from \texttt{Basic\_Function\_Properties\_Theory}, shown in Listing \ref{lst:basicfunctionpropertiestheory1}.
+
+\lstinputlisting[float=h,language=resolve,caption={The definition of \texttt{Is\_Injective()}\label{lst:basicfunctionpropertiestheory1}}]{mathEval/examples/Basic_Function_Properties_Theory1.mt}
+
+\texttt{Is\_Injective()} uses the implicit type parameter feature described in Section \ref{inferredGenericTypes} to establish the domain (\texttt{D}) and range (\texttt{R}) of the function \texttt{F}.
+
+		%-----------------------------------------------------------------------------
+		\subsubsection{When Things Go Wrong}
+		%-----------------------------------------------------------------------------
+
+Of course, a mathematical system could easily support all of these features if it simply accepted all inputs.  An important component of any static system is raising appropriate errors on invalid input.  We will present an example here of how the input could be changed to be in error and the output of the compiler in that case.
+
+When using \texttt{Is\_Monogenerator\_For()}, the type of the second and third parameters depend on the first-class type passed for the first parameter.  Suppose we were to change the type of the third parameter to no longer be consistent.  An example of this is given in Listing \ref{lst:integerTheory2}, where \texttt{Bounce} is changed from type \texttt{OtherZ -> OtherZ} to type \texttt{B -> OtherZ}, which is invalid.  Given this input, the corresponding RESOLVE output is shown in Figure \ref{fig:bounceError}.
+
+\lstinputlisting[float=h,language=resolve,caption={Note that \texttt{Bounce} no longer has an acceptable type\label{lst:integerTheory2}}]{mathEval/examples/Integer_Theory2.mt}
+
+\begin{lstlisting}[float=h,language=,caption={\texttt{Bounce} does not have the appropriate type\label{fig:bounceError}}]
+Error: Integer_Theory.mt(50):
+No function applicable for domain: ((MType * OtherZ) * (B -> OtherZ))
+
+Candidates:
+	Is_Monogenerator_For : ((((T : MType) * (Start : 'T')) * 
+		(F : ('T' -> 'T'))) -> B)
+
+	Is_Monogenerator_For(OtherZ, Other0, Bounce);
+	^
+\end{lstlisting}
+
+
+	%-----------------------------------------------------------------------------
+	\subsection{Benchmark 2: Binary Search an Array}
+	%-----------------------------------------------------------------------------
+
+\textbf{Problem Statement:} Verify an operation that uses binary search to find a given entry in an array of entries that are in sorted order.
+
+		%-----------------------------------------------------------------------------
+		\subsubsection{Supporting Mathematics}
+		%-----------------------------------------------------------------------------
+
+An important design goal of RESOLVE is that as much reasoning as possible happens through the general component machinery.  As a result, RESOLVE does not elevate arrays (or pointers, as we will see later) to special status, unlike nearly all other practical verification languages (\cite{something}, \cite{something}, or \cite{something}, e.g.).
+
+While some syntactic sugar exists to ease working with arrays, this is all translated to normal object operations as a pre-processing step, after which reasoning about arrays based on an ordinary concept with operations and specifications.  Listing \ref{lst:staticarraytemplate1} shows the first part of that specification, including the definition of the array type and a common operation, \texttt{Swap()}.
+
+\lstinputlisting[float=h,language=resolve,caption={A snippet of \texttt{Static\_Array\_Template}\label{lst:staticarraytemplate1}}]{mathEval/examples/Static_Array_Template1.co}
+
+For our model of arrays, we choose functions, which naturally describe an object mapping an integer to an entry.  Note that the normal parameterization mechanism is used.  \texttt{Is\_Initial()} is a meta-field of all programmatic types of type \texttt{T -> B}, where \texttt{T} is the type from which the meta-field is derived.  Meta-fields are handled gracefully by our mathematical system using a plugin architecture that allows the type-checker to defer when it encounters a field-access that is not strictly correct (as here, where the type of \texttt{Entry} is not a tuple.)
+
+The double-curly-bracket notation in the \emph{ensures} clause of the operation represents a piece-wise function, whose type is implicitly determined as the type of the first possible return value.  The return type of the lambda expression is similarly implicitly determined by the type of its body.
+
+Function composition is used extensively in \texttt{Static\_Array\_Template} to represent the changing value of the array.  In \texttt{Swap\_Entry}, the lambda function that represents the final value of the array simply wraps the existing array---defering to that array at all indecis other than \texttt{i}, and providing the value of \texttt{\#E} otherwise.
+
+\textbf{XXX A little more info once we have some VCs for binary search XXX}
+
+	%-----------------------------------------------------------------------------
+	\subsection{Benchmark 3: Reversing a Queue}
+	%-----------------------------------------------------------------------------
+
+\textbf{Problem Statement:} Specify a user-defined FIFO queue ADT. Verify two implementations (one iterative, one recursive) for an operation that reverses a queue. (Note: the iterative version may need to use another component, e.g., a LIFO stack ADT, in which case that also needs to be specified, of course.)
+
+		%-----------------------------------------------------------------------------
+		\subsubsection{Supporting Mathematics}
+		%-----------------------------------------------------------------------------
+
+In order to model a queue, we will need access to a suitable mathematical object for representing it.  We choose mathematical \emph{strings}, which are finite sequences.  A portion of \texttt{String\_Theory} is given in Listing \ref{lst:stringtheory1}.
+
+\lstinputlisting[float=h,language=resolve,caption={A snippet of \texttt{String\_Theory}\label{lst:stringtheory1}}]{mathEval/examples/String_Theory1.mt}
+
+First, note that this module is labeled as a \emph{prec\`{i}s} rather than a \emph{theory}.  As we have published in \cite{something}, RESOLVE permits us to separate the public signatures of definitions from their full details in a way similar to how C++ separates header files from class files.  This increases readability for the consumer of the theory and here conveniently allows us to focus on interesting features rather than getting tangled in fine details.
+
+We begin by introducing the type \texttt{SStr}, which represents the type of all strings containing elements of hetergenous type.  We then introduce a function from types to types (which thus takes advantage of first-class types) called \texttt{Str()}, which conceptually restricts \texttt{SStr} to only those strings containing elements of the provided type.  I.e., \texttt{Str(Z)} is the type of all \texttt{SStr}s containing only integers, \texttt{Str(SStr)} is the type of all \texttt{SStr}s containing only other \texttt{SStr}s, and so forth.
+
+Following this, two type theorems (described in Section \ref{typeTheorems}) establish important relationships between and within these types.  The first states that any parameterization of \texttt{Str} is a subset of \texttt{SStr}, while the second states that one parameterization of \texttt{Str} is a subset of another if the type-parameter of the former is a subset of the type-parameter of the latter.
+
+A tricky nuance of permitting such type-parameterized strings is how to type the \texttt{Empty\_String}\footnote{This same nuance shows up with sets and other similar ``container'' mathematical objects.}.  One option is to have a single object of type \texttt{SStr} that lies at the intersection of every possible parameterization.   This causes problems for the static type checker when we want to provide \texttt{Empty\_String} where a more specific type of string is required---after all, not every \texttt{SStr} is a \texttt{Str(Z)}, for example.  The other option is to define a separate \texttt{Empty\_String} for each parameterization.  However, this only changes the problem from one of typing (which becomes straightforward) to one of identity: can \texttt{Empty\_String\_Of\_Z} and \texttt{Empty\_String\_Of\_B} coinhabit a set?  If not, what happens if one takes the intersection with the set containing \texttt{Empty\_String\_Of\_R}?
+
+The flexibility of type theorems permits us a graceful solution to this problem:
+
+We define \texttt{Empty\_String} to be of type \texttt{SStr}.  Because type theorems are not restricted to relating types, but may also relate \emph{expressions}, we then define a type theorem that states that \texttt{Empty\_String} is a member of any parameterization of \texttt{Str}.
+
+Having now seen three type theorems, we can see some at work in Listing \ref{lst:typeTheoremsInQueueTemplate}, where we present a small snippet from \texttt{Queue\_Template}.
+
+\begin{lstlisting}[float=h,language=resolve,caption={Type theorems at work in \texttt{Queue\_Template}\label{lst:typeTheoremsInQueueTemplate}}]
+Concept Queue_Template(type Entry; evaluates Max_Length: Integer);
+		uses String_Theory;
+		requires Max_Length > 0;
+ 
+	Family Queue is modeled by Str(Entry);
+		exemplar Q;
+		constraint |Q| <= Max_Length;
+		initialization ensures Q = Empty_String;
+
+  ...
+end;
+\end{lstlisting}
+
+Note that string length, denoted by vertical pipes as in \texttt{|Q|}, is defined to take a \texttt{SStr}, yet is offering \texttt{Q}, which is of type \texttt{Str(Entry)}.  This is acceptable because we have established that all parameterizations of \texttt{Str} are subtypes of \texttt{SStr}.  Similarly, the equals operator is defined to take two parameters of the same type, resolved from left to right, but \texttt{Empty\_String} is acceptable where a \texttt{Str(Entry)} is required (even though it is certainly not the case that all \texttt{SStr}s are in \texttt{Str(Entry)}), because a type theorem establishes that \texttt{Empty\_String} is in all parameterizations of \texttt{Str}.
+
+Also of interest in our development of string theory is the definition of concatenate, shown in Listing \ref{lst:stringconcat}.
+
+\begin{lstlisting}[float=h,language=resolve,caption={String concatenation and an associated type theorem\label{lst:stringconcat}}]
+Precis String_Theory;
+   ...
+
+	--String concatenation
+	Definition (s : SStr) o (t : SStr) : SStr;
+
+	Type Theorem Concatenation_Preserves_Generic_Type:
+		For all T : MType,
+		For all U, V : Str(T),
+			U o V : Str(T);
+
+   ...
+end;
+\end{lstlisting}
+
+We define the concatenation operator (\texttt{o}) to operate on two \texttt{SStr}s instead of taking advantage of implicit type parameters.  This design decision permits flexibility when constructing intermediate strings that might have heterogenous type, and also prevents each theorem about concatenation (of which there are many) from having to individually quantify over all types, leading to a more succinct theory.  That the result when the two parameters happen to be \texttt{Str}s with the same parameterized type is closed on that parmeterization is established by the type theorem, which permits us to provide the results of such a concatenation to a function that requires the more specific type.  This technique is used with many other string manipulation operations.
+
+		%-----------------------------------------------------------------------------
+		\subsubsection{When Things Go Wrong}
+		%-----------------------------------------------------------------------------
+
+As an example of what would happen without one of the necessary type theorems, we can remove the type theorem that establishes that all parameterized strings are also in \texttt{SStr}.  If we then attempt to compile \texttt{Queue\_Template}, the RESOLVE compiler gives the output given in Listing \ref{lst:stringLengthError}.
+
+\begin{lstlisting}[float=h,language=,caption={The vertical pipe operator is associated with input of type \texttt{SStr} or \texttt{Z}, neither of which is matched by \texttt{Str('Entry')} without an appropriate type theorem.\label{lst:stringLengthError}}]
+Error: Queue_Template.co(7):
+No function applicable for domain: Str('Entry')
+
+Candidates:
+	|_| : (SStr -> N)
+	|_| : (Z -> Z)
+
+    constraint |Q| <= Max_Length;
+               ^
+\end{lstlisting}
+
+
+	%-----------------------------------------------------------------------------
+	\subsection{Benchmark 4: Sorting a Queue}
+	%-----------------------------------------------------------------------------
+
+\textbf{Problem Statement:} Specify a user-defined FIFO queue ADT that is generic (i.e., parameterized by the type of entries in a queue). Verify an operation that uses this component to sort the entries in a queue into some client-defined order.
+
+		%-----------------------------------------------------------------------------
+		\subsubsection{Supporting Mathematics}
+		%-----------------------------------------------------------------------------
+
+The previous benchmarks had straightforward specifications and most of the interesting things were happening in the supporting mathematics.  Starting with Benchmark 4, we begin to see specifications that make use of interesting features of our mathematical system directly.
+
+In order to implement sorting on a queue, we rely on all the mathematics already discussed in Benchmark 3.  We then introduce the \texttt{Sorting\_Capability} enhancement shown in Listing \ref{lst:sortingenhancement}, which extends a queue with the ability to be sorted.
+
+\lstinputlisting[float=h,language=resolve,caption={\texttt{Sorting\_Capability} provides the \texttt{Sort} Operation\label{lst:sortingenhancement}}]{mathEval/examples/Sorting_Capability.en}
+
+The sorting enhancement is parameterized by a first-class definition, \texttt{LEQV}, which provides a client-definable mathematical conception of the ordering of the elements.  We use the higher-order predicate \texttt{Is\_Total\_Preordering()} drawn from \texttt{Total\_Preordering\_Theory} to establish the needed properties---namely, that \texttt{LEQV} is reflexive, transitive, and total.  A related definition, \texttt{Is\_Conformal\_With()} is used in the \emph{ensures} clause of \texttt{Sort} to indicate that the final queue is in sorted order: \texttt{Is\_Conformal\_With()} takes a comparison function and a string and ensures that all pairs of elements in the string appear in order with respect to the function.
+
+The definitions of both \texttt{Is\_Total\_Preordering()} and \texttt{Is\_Conformal\_With()} are shown in Listing \ref{lst:totalpreorderingtheory1}.
+
+\lstinputlisting[float=h,language=resolve,caption={Definition of \texttt{Is\_Total\_Preordering() and \texttt{Is\_Conformal\_With()}}\label{lst:totalpreorderingtheory1}}]{mathEval/examples/Total_Preordering_Theory1.mt}
+
+The use of these high-level, semantic predicates over complex quantified expressions is a key part of our methodology, and our flexible type system makes defining and working with such definitions straightforward.  \texttt{Total\_Preordering\_Theory} contains a number of theorems for manipulating expressions involving \texttt{Is\_Total\_Preordering()} and \texttt{Is\_Conformal\_With()}, eliminating the need for the prover to reason about quantified expressions at all.  
+
+As an example of how mathematical flexibility supports proving, consider the VC presented in Listing \ref{lst:sortingCapabilityVC}, which arises from a selection sort implementation of \texttt{Sorting\_Capability}.
+
+\lstinputlisting[float=h,language=resolve,caption={A VC arising from a selection sort implementation\label{lst:sortingCapabilityVC}}]{mathEval/examples/totalpreorderingvc.asrt}
+
+The predicate \texttt{Is\_Universally\_Related()} states that every element in one string is related to every element in another by a function.  The proof of this VC is involved, but requires a theorem like the one in Listing \ref{lst:universallyrelatedtheorem}.
+
+\begin{lstlisting}[float=h,language=resolve,caption={A Useful \texttt{Is\_Universally\_Related} theorem\label{lst:universallyrelatedtheorem}}]
+For all f : (Entity * Entity) -> B,
+For all E1, E2 : Entity,
+For all S : String,
+	Is_Total_Preordering(f) and
+	f(E1, E2) and
+	Is_Universally_Related(<E2>, S, f)
+		implies Is_Unversally_Related(E1, S);
+\end{lstlisting}
+
+The requirement that \texttt{f} be a total preordering is critical, since only for a transitive function does this statement hold\footnote{It would, of course, be sufficient to simply know \texttt{Is\_Transitive(f)}, but since none of our benchmarks or examples make use of this weaker statement, we see no reason to multiply predicates unnecessarily.}.
+
+Note, however, that the VC provides \texttt{Is\_Total\_Preordering(LEQV)} as a given (derived from the module-level requires clause of \texttt{Sorting\_Capability}.  We may therefore make use of this theorem without needing to reason deeper about what it means for a function to be a total preordering.
+
+In order to implement \texttt{Sort}, we require the client to pass in an operation for comparing two elements, \texttt{Compare()}, which provides a programmatic way of determining if two objects are related via \texttt{LEQV}.  We see this in the header of \texttt{Selection\_Sort\_Realization} shown in Listing \ref{lst:selectionsortparameter}.
+
+\begin{lstlisting}[float=h,language=resolve,caption={\texttt{Selection\_Sort\_Realization} taking an operation that implements \texttt{LEQV}\label{lst:selectionsortparameter}}]
+Realization Selection_Sort_Realization(
+			Operation Compare(restores E1, E2 : Entry) 
+				: Boolean;
+				ensures Compare = LEQV(E1, E2);)
+		for Sorting_Capability of Queue_Template;
+	uses String_Theory;
+\end{lstlisting}
+
+This use of higher-order definitions provides the possibility of a generic sorting capability.
+
+
+%-----------------------------------------------------------------------------
+\section{Other Benchmarks}
+%-----------------------------------------------------------------------------
+
+This section contains other examples that we feel highlight the capabilities of the mathematical type system.
+
+	%-----------------------------------------------------------------------------
+	\subsection{Cartesian Product Subtypes}
+	%-----------------------------------------------------------------------------
+
+Cartesian products are a built-in notion in RESOLVE, primarly so that they can support multi-parameter functions.  However, the design of our type theorems is flexible enough that it was not necessary to build in important type-relationships between cartesian product types.
+
+		%-----------------------------------------------------------------------------
+		\subsubsection{Supporting Mathematics}
+		%-----------------------------------------------------------------------------
+
+As an example, consider the snippet of theory in Listing \ref{lst:cartprod1}.
+
+\begin{lstlisting}[float=h,language=resolve,caption={Passing a Cartesian product subtype\label{lst:cartprod1}}]
+Definition TakesZs(zs : (Z * Z * Z)) : B;
+Definition SomeNs : (N * N * N);
+Definition AFact : B = TakesZs(SomeNs);
+\end{lstlisting}
+
+Certainly, this should be acceptible---a value in \texttt{(N * N * N)} is also in \texttt{(Z * Z * Z)}.  This general subtype relationship between Cartesian products can be expressed as a type theorem, as shown in Listing \ref{lst:cartprod2}.
+
+\begin{lstlisting}[float=h,language=resolve,caption={A type theorem expressing Cartesian subtypes\label{lst:cartprod2}}]
+Type Theorem Cart_Prod_Thingy:
+	For all T1, T2 : MType,
+	For all R1 : Powerset(T1),
+	For all R2 : Powerset(T2),
+	For all r1 : R1,
+	For all r2 : R2,
+		(r1, r2) : (T1 * T2);
+\end{lstlisting}
+
+Because of the inductive structure of our representation of Cartesian products (namely, \texttt{(N~*~N~*~N)} is merely shorthand for \texttt{((N~*~N)~*~N)}), this single definition covers arbitrarily large and nested products.
+
+		%-----------------------------------------------------------------------------
+		\subsubsection{When Things Go Wrong}
+		%-----------------------------------------------------------------------------
+
+Removing the type theorem and running the same input, the RESOLVE compiler gives the error given in Listing \ref{lst:cartprod3}.
+
+\begin{lstlisting}[float=h,language=,caption={Results without type theorem\label{lst:cartprod3}}]
+Error: Demo_Theory.mt(65):
+No function applicable for domain: ((N * N) * N)
+
+Candidates:
+	TakesZs : (((Z * Z) * Z) -> B)
+
+	Definition AFact : B = TakesZs(SomeNs);
+	                       ^
+\end{lstlisting}
+
+	%-----------------------------------------------------------------------------
+	\subsection{Array Realization of Stack}
+	%-----------------------------------------------------------------------------
+
+For this benchmark, we used the \texttt{Static\_Array\_Template} discussed in Benchmark 2 to implement \texttt{Stack\_Template}, which was an excellent stress-test for our array reasoning and highlights a number of interesting features.
+
+		%-----------------------------------------------------------------------------
+		\subsubsection{Supporting Mathematics}
+		%-----------------------------------------------------------------------------
+
+Consider the representation clause from \texttt{Array\_Realiz} provided in Listing \ref{lst:arrayrealiz1}.
+
+\lstinputlisting[float=h,language=resolve,caption={The representation of \texttt{Stack}\label{lst:arrayrealiz1}}]{mathEval/examples/Array_Realiz1.rb}
+
+Of particular interest here is the \emph{correspondence} clause.  The \texttt{Concatenate()} function here is the mathematical notion of ``big concatenate''---i.e., the result of repeatedly concatenating elements together.  It is not a special construct, but rather an ordinary function defined in \texttt{Binary\_Iterator\_Theory}.
+
+That definition, along with one on which it depends, is given in Listing \ref{lst:binaryiteratortheory1}.
+
+\lstinputlisting[float=h,language=resolve,caption={Definition of \texttt{Concatenate}\label{lst:binaryiteratortheory1}}]{mathEval/examples/Binary_Iterator_Theory1.mt}
+
+The \texttt{Iterative\_Apply()} function is a general aggregation function similar to \emph{foldr()} in functional languages.  It takes a starting aggregate value, an iteration function, an iteration count, and an aggregation function. Its semantic is to call the iteration function starting with the parameter 1 and continuing to \texttt{Value\_Count} and repeatedly combining it with the working aggregate value using the aggregation function.
+
+Thus, by supplying \texttt{Empty\_String} as the starting aggregate value and a function for concatenating the next value onto the existing aggregate as the aggregation function, we achieve ``big concatenate''.  If we were instead to supply \texttt{0} and an addition aggregator, we'd get ``big sum''.
+
+Note the complexity of this type-checking task: in \texttt{Concatenate()}, the first parameter establishes the implicit type parameters of \texttt{Iterative\_Apply()}, \texttt{R} and \texttt{V}.  The body of the lambda expression is defined to be of type \texttt{SStr}, but a type theorem in \texttt{String\_Theory} establishes that the result of concatenating two parameterized strings is another string with the same parameterization, thus allowing the lambda expression to meet the expected type of \texttt{(R * V) -> R}.  The second parameter, \texttt{Empty\_String} is declared of type \texttt{SStr}, but a second type theorem states that \texttt{Empty\_String} is in all parameterized versions of \texttt{Str()}.  For the third parameter, we match \texttt{T}, the type parameter to \texttt{Concatenate()}, with \texttt{V}, the type parameter to \texttt{Iterative\_Apply()}, which has previously been established by the first parameter, despite neither type parameter having a concrete instantiation.  Only the fourth parameter is straightforward.
+
+When this realization of stack is submitted to the compiler, several of its VCs contain conbinations of these iterative aggregations and the piece-wise functions from \texttt{Static\_Array\_Template}.  An example of such a VC is given in Listing \ref{lst:arrayrealizvc}.
+
+\lstinputlisting[float=h,language=resolve,caption={Complex VC arising from \texttt{Array\_Realiz}\label{lst:arrayrealizvc}}]{mathEval/examples/arrayrealizvc.asrt}
+
+While it seems complex at first glance, the goal of the VC is, in fact, a tautology that can be proven with this theorem:
+
+\begin{lstlisting}
+Theorem Inductive_Reverse_1:
+	For all f : Z -> Entity,
+	For all i : Z,
+	Reverse(Concatenate(f, i)) = 
+		<f(i)> o Reverse(Concatenate(f, i - 1));
+\end{lstlisting}
+
+Because of the flexibility of our type system, reasoning about these constructs requires no special machinery---functions can be defined and supporting theorems provided using standard syntax.
+
+		%-----------------------------------------------------------------------------
+		\subsubsection{When Things Go Wrong}
+		%-----------------------------------------------------------------------------
+
+We will explore two things that could go wrong in the definition of \texttt{Concatenate()} offered in Listing \ref{lst:binaryiteratortheory1}.
+
+First, consider Listing \ref{lst:binaryiteratorerror1}, where rather than pass \texttt{Value\_Function} through to \texttt{Iterative\_Apply()}, we instead pass a lambda expression with type \texttt{Z -> N}.
+
+\begin{lstlisting}[float=h,language=resolve,caption={Passing an incorrectly-typed \texttt{Value\_Function}\label{lst:binaryiteratorerror1}}]
+Definition Iterative_Apply(Step : ((R : MType) * (V : MType)) -> R,
+	Start : R, Value_Function : Z -> V, Value_Count : Z) : R;
+
+Definition Concatenate(Value_Function : Z -> (T : MType), 
+		Value_Count : Z) : Str(T) = 
+	Iterative_Apply(lambda (s : Str(T), t : T).(s o <t>),
+		Empty_String, lambda(i : Z).(0), Value_Count);
+\end{lstlisting}
+
+Because \texttt{N} does not necessarily match the concrete type of \texttt{V} as established by the first parameter passed to \texttt{Iterative\_Apply()} (\texttt{V} should be \texttt{T}), this should be an error, and indeed, the RESOLVE compiler gives the results shown in Listing \ref{lst:binaryiteratorerroroutput1}.
+
+\begin{lstlisting}[float=h,language=,caption={The third parameter does not have correct type\label{lst:binaryiteratorerroroutput1}}]
+Error: Binary_Iterator_Theory.mt(9):
+No function applicable for domain: (((((Str('T') * 'T') -> SStr) * SStr) 
+		* (Z -> N)) * Z)
+
+Candidates:
+	Iterative_Apply : (((((Step : (('R' * 'V') -> 'R')) * (Start : 'R'))
+			* (Value_Function : (Z -> 'V'))) * (Value_Count : Z)) -> 'R')
+
+		Iterative_Apply(lambda (s : Str(T), t : T).(s o <t>),
+		^
+\end{lstlisting}
+
+Now consider that the aggregation function did not maintain the correct type, as shown in Listing \ref{lst:binaryiteratorerror2}, where the aggregation function returns \texttt{s o <0>}, a valid call to concatenate, but one that does not meet the qualifications for the application of the necessary type theorem.  
+
+\begin{lstlisting}[float=h,language=,caption={The expression returned by the lambda function does not maintain the string type\label{lst:binaryiteratorerror2}}]
+Definition Iterative_Apply(Step : ((R : MType) * (V : MType)) -> R,
+	Start : R, Value_Function : Z -> V, Value_Count : Z) : R;
+
+Definition Concatenate(Value_Function : Z -> (T : MType), 
+		Value_Count : Z) : Str(T) = 
+	Iterative_Apply(lambda (s : Str(T), t : T).(s o <0>),
+		Empty_String, Value_Function, Value_Count);
+\end{lstlisting}
+
+In this case, the output from the RESOLVE compiler is shown in Listing \ref{lst:binaryiteratorerroroutput2}.
+
+\begin{lstlisting}[float=h,language=,caption={The first parameter does not have correct type\label{lst:binaryiteratorerroroutput2}}]
+Error: Binary_Iterator_Theory.mt(9):
+No function applicable for domain: (((((Str('T') * 'T') -> SStr) * SStr) 
+		* (Z -> 'T')) * Z)
+
+Candidates:
+	Iterative_Apply : (((((Step : (('R' * 'V') -> 'R')) * (Start : 'R')) 
+		* (Value_Function : (Z -> 'V'))) * (Value_Count : Z)) -> 'R')
+
+		Iterative_Apply(lambda (s : Str(T), t : T).(s o <0>),
+		^
+\end{lstlisting}

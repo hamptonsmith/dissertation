@@ -94,7 +94,7 @@ This version of the prover was based on our existing abstract syntax tree data s
 
 As the first prover continued to mature and found its way into our web integrated environment, we continued to experiment with more complex components, including those derived from our burgeoning ideas on specification engineering\cite{specEngineering} and one born out of our collaboration with the Intelligent River project here at clemson, that required a routine for averaging the integers in a queue datastructure\cite{queueAverage}.  
 
-These new domains yielded VCs that exposed fundamental weaknesses in the first prover and motivated the design and creation of the second prover.  As an example of this sort of VC, consider Figure \ref{lst:longVC}.
+These new domains yielded VCs that exposed fundamental weaknesses in the first prover and motivated the design and creation of the second prover.  As an example of this sort of VC, consider Listing \ref{lst:longVC}.
 
 \lstinputlisting[language=RESOLVE,caption={VC for the Requires Clause of Advance\label{lst:longVC}}]{longVC.asrt}
 
@@ -286,7 +286,7 @@ We would permit the development \texttt{|S| /= 0}, since it eliminates the great
 \paragraph{Maintain Simplicity.}  We discussed our minimization algorithm in Section \ref{proverV2}.  After each round of antecedent development, we minimize the resultant antecedents.  This provides two advantages: first, it supports the diversity maximization from above by exposing antecedents that essentially establish the same fact in the same terms (which are then removed as redundant); second, it increases the liklihood of transforming the consequent into an antecedent during the proof exploration phase, since both antecedents and consequent orbit the same ``normal form''.
 
  		%-----------------------------------------------------------------------------
-		\subsubsection{Intelligent Consequent Exploration}
+		\subsubsection{Intelligent Consequent Exploration\label{consequentExploration}}
 		%-----------------------------------------------------------------------------
 
 Consequent exploration refers to the final phase of the proof search during which the consequent is repeatedly transformed using available theorems until it reduces to \texttt{true} or the search times out.

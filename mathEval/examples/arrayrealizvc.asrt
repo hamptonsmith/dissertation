@@ -1,0 +1,22 @@
+Goal:
+Reverse(Concatenate(lambda j: Z ({{E if j = (S.Top  + 1)
+S.Contents(j) otherwise
+}}), (S.Top  + 1))) = (<E>  o Reverse(Concatenate(S.Contents, S.Top)))
+
+Given:
+((((((Last_Char_Num  > 0) and
+(((min_int  <= 0) and
+(0  < max_int)) and
+(((1  <= Max_Depth) and
+(((min_int  <= Max_Depth) and
+(Max_Depth  <= max_int)) and
+((min_int  <= 1) and
+(1  <= max_int)))) and
+((Max_Depth  > 0) and
+((min_int  <= Max_Depth) and
+(Max_Depth  <= max_int)))))) and
+((0  <= S.Top) and
+(S.Top  <= Max_Depth))) and
+Conc.S = Reverse(Concatenate(S.Contents, S.Top))) and
+(|Reverse(Concatenate(S.Contents, S.Top))|  < Max_Depth)) and
+E' = S.Contents((S.Top  + 1)))

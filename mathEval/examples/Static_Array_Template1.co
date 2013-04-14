@@ -1,0 +1,18 @@
+Concept Static_Array_Template(type Entry; evaluates Lower_Bound, Upper_Bound: Integer);
+		uses Std_Integer_Fac, Integer_Theory, Conditional_Function_Theory;
+		requires (Lower_Bound <= Upper_Bound);
+
+	Family Static_Array is modeled by (Z -> Entry);
+		exemplar A;
+		initialization ensures 
+			for all i: Z, Entry.Is_Initial(A(i));
+
+	Operation Swap_Entry(updates A: Static_Array; updates E: Entry; 
+			evaluates i: Integer); 
+		requires Lower_Bound <= i and i <= Upper_Bound;
+		ensures E = #A(i) and A = lambda (j : Z).(
+			{{#E if j = i;
+			  #A(j) otherwise;}});
+
+   ...
+end;

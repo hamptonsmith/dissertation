@@ -1,0 +1,7 @@
+Goal:
+lambda j: Z ({{A''((low'  + mid')) if j = (low'  + mid');
+A'(j) otherwise;
+}}) = A
+
+Given:
+...
