@@ -1,0 +1,488 @@
+Proofs for Recursive_Flipping_Realiz generated Sun Apr 14 18:20:48 EDT 2013
+
+=================================== Summary ===================================
+
+	0_1	......... proved in 1441ms via 5 steps (0 search)
+	0_2	......... proved in 3055ms via 7 steps (0 search)
+	0_3	......... proved in 2888ms via 8 steps (0 search)
+	0_4	......... proved in 2127ms via 9 steps (2 search)
+	1_1	......... proved in 340ms via 10 steps (0 search)
+
+=================================== 0_1 ===================================
+
+[PROVED] via:
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+(P_val = |Q|) and
+(|Q| /= 0)
+  -->
+(|Q| /= 0)
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+--- Done Minimizing Consequent ---
+
+Applied (|Q| /= 0)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+(P_val = |Q|) and
+(|Q| /= 0)
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+(P_val = |Q|) and
+(|Q| /= 0)
+  -->
+
+
+Q.E.D.
+
+=================================== 0_2 ===================================
+
+[PROVED] via:
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+(P_val = |Q|) and
+(|Q| /= 0) and
+(Q = (<?E> o ?Q))
+  -->
+(|?Q| < |Q|)
+
+Applied Q = (<?E> o ?Q)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+(P_val = |Q|) and
+(|Q| /= 0) and
+((<?E> o ?Q) = (<?E> o ?Q))
+  -->
+(|?Q| < |Q|)
+
+Applied Q = (<?E> o ?Q)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+(P_val = |Q|) and
+(|Q| /= 0) and
+((<?E> o ?Q) = (<?E> o ?Q))
+  -->
+(|?Q| < |(<?E> o ?Q)|)
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+Applied (|S| < |(<E> o S)|)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+(P_val = |Q|) and
+(|Q| /= 0) and
+((<?E> o ?Q) = (<?E> o ?Q))
+  -->
+true
+
+--- Done Minimizing Consequent ---
+
+Applied Eliminate true conjunct
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+(P_val = |Q|) and
+(|Q| /= 0) and
+((<?E> o ?Q) = (<?E> o ?Q))
+  -->
+
+
+Q.E.D.
+
+=================================== 0_3 ===================================
+
+[PROVED] via:
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+(P_val = |Q|) and
+(|Q| /= 0) and
+(Q = (<?E> o ?Q))
+  -->
+(|Reverse(?Q)| < Max_Length)
+
+Applied Q = (<?E> o ?Q)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|(<?E> o ?Q)| <= Max_Length) and
+(P_val = |Q|) and
+(|Q| /= 0) and
+(Q = (<?E> o ?Q))
+  -->
+(|Reverse(?Q)| < Max_Length)
+
+--- Done Minimizing Antecedent ---
+
+Applied (|(<E> o S)| <= i) implies (|S| < i)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|(<?E> o ?Q)| <= Max_Length) and
+(P_val = |Q|) and
+(|Q| /= 0) and
+(Q = (<?E> o ?Q)) and
+(|?Q| < Max_Length)
+  -->
+(|Reverse(?Q)| < Max_Length)
+
+--- Done Developing Antecedent ---
+
+Applied |Reverse(S)| = |S|
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|(<?E> o ?Q)| <= Max_Length) and
+(P_val = |Q|) and
+(|Q| /= 0) and
+(Q = (<?E> o ?Q)) and
+(|?Q| < Max_Length)
+  -->
+(|?Q| < Max_Length)
+
+--- Done Minimizing Consequent ---
+
+Applied (|?Q| < Max_Length)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|(<?E> o ?Q)| <= Max_Length) and
+(P_val = |Q|) and
+(|Q| /= 0) and
+(Q = (<?E> o ?Q)) and
+(|?Q| < Max_Length)
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|(<?E> o ?Q)| <= Max_Length) and
+(P_val = |Q|) and
+(|Q| /= 0) and
+(Q = (<?E> o ?Q)) and
+(|?Q| < Max_Length)
+  -->
+
+
+Q.E.D.
+
+=================================== 0_4 ===================================
+
+[PROVED] via:
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+(P_val = |Q|) and
+(|Q| /= 0) and
+(Q = (<?E> o ?Q))
+  -->
+((Reverse(?Q) o <?E>) = Reverse(Q))
+
+Applied Q = (<?E> o ?Q)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+(P_val = |Q|) and
+(|Q| /= 0) and
+((<?E> o ?Q) = (<?E> o ?Q))
+  -->
+((Reverse(?Q) o <?E>) = Reverse(Q))
+
+Applied Q = (<?E> o ?Q)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+(P_val = |Q|) and
+(|Q| /= 0) and
+((<?E> o ?Q) = (<?E> o ?Q))
+  -->
+((Reverse(?Q) o <?E>) = Reverse((<?E> o ?Q)))
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+--- Done Minimizing Consequent ---
+
+Applied Reverse((U o V)) = (Reverse(V) o Reverse(U))
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+(P_val = |Q|) and
+(|Q| /= 0) and
+((<?E> o ?Q) = (<?E> o ?Q))
+  -->
+((Reverse(?Q) o <?E>) = (Reverse(?Q) o Reverse(<?E>)))
+
+Applied Reverse(<E>) = <E>
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+(P_val = |Q|) and
+(|Q| /= 0) and
+((<?E> o ?Q) = (<?E> o ?Q))
+  -->
+((Reverse(?Q) o <?E>) = (Reverse(?Q) o <?E>))
+
+Applied Symmetric equality is true
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+(P_val = |Q|) and
+(|Q| /= 0) and
+((<?E> o ?Q) = (<?E> o ?Q))
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+(P_val = |Q|) and
+(|Q| /= 0) and
+((<?E> o ?Q) = (<?E> o ?Q))
+  -->
+
+
+Q.E.D.
+
+=================================== 1_1 ===================================
+
+[PROVED] via:
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+(P_val = |Q|) and
+(|Q| = 0)
+  -->
+(Q = Reverse(Q))
+
+Applied (|S| = 0) = (S = Empty_String)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+(P_val = |Q|) and
+(Q = Empty_String)
+  -->
+(Q = Reverse(Q))
+
+Applied Q = Empty_String
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+(P_val = |Q|) and
+(Empty_String = Empty_String)
+  -->
+(Q = Reverse(Q))
+
+Applied Q = Empty_String
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+(P_val = |Q|) and
+(Empty_String = Empty_String)
+  -->
+(Empty_String = Reverse(Q))
+
+Applied Q = Empty_String
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+(P_val = |Q|) and
+(Empty_String = Empty_String)
+  -->
+(Empty_String = Reverse(Empty_String))
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+Applied Reverse(Empty_String) = Empty_String
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+(P_val = |Q|) and
+(Empty_String = Empty_String)
+  -->
+(Empty_String = Empty_String)
+
+--- Done Minimizing Consequent ---
+
+Applied Symmetric equality is true
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+(P_val = |Q|) and
+(Empty_String = Empty_String)
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+(P_val = |Q|) and
+(Empty_String = Empty_String)
+  -->
+
+
+Q.E.D.
+

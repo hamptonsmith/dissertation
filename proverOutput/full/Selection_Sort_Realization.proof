@@ -1,0 +1,4036 @@
+Proofs for Selection_Sort_Realization generated Sun Apr 14 17:29:56 EDT 2013
+
+=================================== Summary ===================================
+
+	0_1	......... proved in 1758ms via 6 steps (0 search)
+	0_2	......... proved in 470ms via 5 steps (0 search)
+	0_3	......... proved in 878ms via 5 steps (0 search)
+	0_4	......... proved in 1503ms via 6 steps (1 search)
+	0_5	......... proved in 3008ms via 8 steps (0 search)
+	0_6	......... proved in 3734ms via 9 steps (3 search)
+	0_7	......... proved in 1920ms via 8 steps (0 search)
+	0_8	......... proved in 1815ms via 10 steps (1 search)
+	0_9	......... proved in 2398ms via 9 steps (3 search)
+	1_1	......... proved in 552ms via 5 steps (0 search)
+	1_2	......... proved in 1170ms via 10 steps (1 search)
+	2_1	......... proved in 868ms via 5 steps (0 search)
+	2_2	......... proved in 1995ms via 8 steps (0 search)
+	2_3	......... proved in 1708ms via 5 steps (0 search)
+	2_4	......... proved in 2052ms via 6 steps (1 search)
+	2_5	......... proved in 3608ms via 14 steps (0 search)
+	2_6	......... proved in 4559ms via 12 steps (3 search)
+	2_7	......... proved in 1929ms via 10 steps (2 search)
+	2_8	......... proved in 1978ms via 7 steps (0 search)
+	3_1	......... proved in 921ms via 5 steps (0 search)
+	3_2	......... proved in 1940ms via 8 steps (0 search)
+	3_3	......... proved in 1750ms via 5 steps (0 search)
+	3_4	......... proved in 1764ms via 6 steps (1 search)
+	3_5	......... proved in 3356ms via 14 steps (0 search)
+	3_6	......... proved in 4418ms via 10 steps (1 search)
+	3_7	......... proved in 2226ms via 10 steps (2 search)
+	3_8	......... proved in 2002ms via 7 steps (0 search)
+	4_1	......... proved in 956ms via 5 steps (0 search)
+	4_2	......... proved in 3150ms via 12 steps (0 search)
+	4_3	......... proved in 1177ms via 5 steps (0 search)
+	4_4	......... proved in 3455ms via 18 steps (3 search)
+
+=================================== 0_1 ===================================
+
+[PROVED] via:
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length)
+  -->
+Is_Permutation((Q o Empty_String), Q)
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+Applied (S o Empty_String) = S
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length)
+  -->
+Is_Permutation(Q, Q)
+
+Applied Is_Permutation(S, S)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length)
+  -->
+true
+
+--- Done Minimizing Consequent ---
+
+Applied Eliminate true conjunct
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length)
+  -->
+
+
+Q.E.D.
+
+=================================== 0_2 ===================================
+
+[PROVED] via:
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length)
+  -->
+Is_Conformal_With(LEQV, Empty_String)
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+Applied Is_Conformal_With(f, Empty_String)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length)
+  -->
+true
+
+--- Done Minimizing Consequent ---
+
+Applied Eliminate true conjunct
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length)
+  -->
+
+
+Q.E.D.
+
+=================================== 0_3 ===================================
+
+[PROVED] via:
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length)
+  -->
+Is_Universally_Related(Empty_String, Q, LEQV)
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+Applied Is_Universally_Related(Empty_String, S, f)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length)
+  -->
+true
+
+--- Done Minimizing Consequent ---
+
+Applied Eliminate true conjunct
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length)
+  -->
+
+
+Q.E.D.
+
+=================================== 0_4 ===================================
+
+[PROVED] via:
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+Is_Permutation((??Q o ?Sorted_Queue), Q) and
+Is_Conformal_With(LEQV, ?Sorted_Queue) and
+Is_Universally_Related(?Sorted_Queue, ??Q, LEQV) and
+(|??Q| > 0)
+  -->
+(|??Q| /= 0)
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+--- Done Minimizing Consequent ---
+
+Applied Strengthen to (i > 0)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+Is_Permutation((??Q o ?Sorted_Queue), Q) and
+Is_Conformal_With(LEQV, ?Sorted_Queue) and
+Is_Universally_Related(?Sorted_Queue, ??Q, LEQV) and
+(|??Q| > 0)
+  -->
+(|??Q| > 0)
+
+Applied (|??Q| > 0)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+Is_Permutation((??Q o ?Sorted_Queue), Q) and
+Is_Conformal_With(LEQV, ?Sorted_Queue) and
+Is_Universally_Related(?Sorted_Queue, ??Q, LEQV) and
+(|??Q| > 0)
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+Is_Permutation((??Q o ?Sorted_Queue), Q) and
+Is_Conformal_With(LEQV, ?Sorted_Queue) and
+Is_Universally_Related(?Sorted_Queue, ??Q, LEQV) and
+(|??Q| > 0)
+  -->
+
+
+Q.E.D.
+
+=================================== 0_5 ===================================
+
+[PROVED] via:
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+Is_Permutation((??Q o ?Sorted_Queue), Q) and
+Is_Conformal_With(LEQV, ?Sorted_Queue) and
+Is_Universally_Related(?Sorted_Queue, ??Q, LEQV) and
+(|??Q| > 0) and
+Is_Permutation((?Q o <?Lowest_Remaining>), ??Q) and
+Is_Universally_Related(<?Lowest_Remaining>, ?Q, LEQV) and
+(|?Q| = (|??Q| - 1))
+  -->
+(|?Sorted_Queue| < Max_Length)
+
+--- Done Minimizing Antecedent ---
+
+Applied Is_Permutation(S, T) implies (|S| = |T|)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+Is_Permutation((??Q o ?Sorted_Queue), Q) and
+Is_Conformal_With(LEQV, ?Sorted_Queue) and
+Is_Universally_Related(?Sorted_Queue, ??Q, LEQV) and
+(|??Q| > 0) and
+Is_Permutation((?Q o <?Lowest_Remaining>), ??Q) and
+Is_Universally_Related(<?Lowest_Remaining>, ?Q, LEQV) and
+(|?Q| = (|??Q| - 1)) and
+(|(??Q o ?Sorted_Queue)| = |Q|)
+  -->
+(|?Sorted_Queue| < Max_Length)
+
+Applied (|(S o T)| = |U|) and (|S| > 0) implies (|T| < |U|)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+Is_Permutation((??Q o ?Sorted_Queue), Q) and
+Is_Conformal_With(LEQV, ?Sorted_Queue) and
+Is_Universally_Related(?Sorted_Queue, ??Q, LEQV) and
+(|??Q| > 0) and
+Is_Permutation((?Q o <?Lowest_Remaining>), ??Q) and
+Is_Universally_Related(<?Lowest_Remaining>, ?Q, LEQV) and
+(|?Q| = (|??Q| - 1)) and
+(|(??Q o ?Sorted_Queue)| = |Q|) and
+(|?Sorted_Queue| < |Q|)
+  -->
+(|?Sorted_Queue| < Max_Length)
+
+Applied (i < j) and (j <= k) implies (i < k)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+Is_Permutation((??Q o ?Sorted_Queue), Q) and
+Is_Conformal_With(LEQV, ?Sorted_Queue) and
+Is_Universally_Related(?Sorted_Queue, ??Q, LEQV) and
+(|??Q| > 0) and
+Is_Permutation((?Q o <?Lowest_Remaining>), ??Q) and
+Is_Universally_Related(<?Lowest_Remaining>, ?Q, LEQV) and
+(|?Q| = (|??Q| - 1)) and
+(|(??Q o ?Sorted_Queue)| = |Q|) and
+(|?Sorted_Queue| < |Q|) and
+(|?Sorted_Queue| < Max_Length)
+  -->
+(|?Sorted_Queue| < Max_Length)
+
+--- Done Developing Antecedent ---
+
+--- Done Minimizing Consequent ---
+
+Applied (|?Sorted_Queue| < Max_Length)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+Is_Permutation((??Q o ?Sorted_Queue), Q) and
+Is_Conformal_With(LEQV, ?Sorted_Queue) and
+Is_Universally_Related(?Sorted_Queue, ??Q, LEQV) and
+(|??Q| > 0) and
+Is_Permutation((?Q o <?Lowest_Remaining>), ??Q) and
+Is_Universally_Related(<?Lowest_Remaining>, ?Q, LEQV) and
+(|?Q| = (|??Q| - 1)) and
+(|(??Q o ?Sorted_Queue)| = |Q|) and
+(|?Sorted_Queue| < |Q|) and
+(|?Sorted_Queue| < Max_Length)
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+Is_Permutation((??Q o ?Sorted_Queue), Q) and
+Is_Conformal_With(LEQV, ?Sorted_Queue) and
+Is_Universally_Related(?Sorted_Queue, ??Q, LEQV) and
+(|??Q| > 0) and
+Is_Permutation((?Q o <?Lowest_Remaining>), ??Q) and
+Is_Universally_Related(<?Lowest_Remaining>, ?Q, LEQV) and
+(|?Q| = (|??Q| - 1)) and
+(|(??Q o ?Sorted_Queue)| = |Q|) and
+(|?Sorted_Queue| < |Q|) and
+(|?Sorted_Queue| < Max_Length)
+  -->
+
+
+Q.E.D.
+
+=================================== 0_6 ===================================
+
+[PROVED] via:
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+Is_Permutation((??Q o ?Sorted_Queue), Q) and
+Is_Conformal_With(LEQV, ?Sorted_Queue) and
+Is_Universally_Related(?Sorted_Queue, ??Q, LEQV) and
+(|??Q| > 0) and
+Is_Permutation((?Q o <?Lowest_Remaining>), ??Q) and
+Is_Universally_Related(<?Lowest_Remaining>, ?Q, LEQV) and
+(|?Q| = (|??Q| - 1))
+  -->
+Is_Permutation((?Q o (?Sorted_Queue o <?Lowest_Remaining>)), Q)
+
+--- Done Minimizing Antecedent ---
+
+Applied Is_Permutation(S, T) and Is_Permutation((T o U), V) implies Is_Permutation((S o U), V)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+Is_Permutation((??Q o ?Sorted_Queue), Q) and
+Is_Conformal_With(LEQV, ?Sorted_Queue) and
+Is_Universally_Related(?Sorted_Queue, ??Q, LEQV) and
+(|??Q| > 0) and
+Is_Permutation((?Q o <?Lowest_Remaining>), ??Q) and
+Is_Universally_Related(<?Lowest_Remaining>, ?Q, LEQV) and
+(|?Q| = (|??Q| - 1)) and
+Is_Permutation(((?Q o <?Lowest_Remaining>) o ?Sorted_Queue), Q)
+  -->
+Is_Permutation((?Q o (?Sorted_Queue o <?Lowest_Remaining>)), Q)
+
+--- Done Developing Antecedent ---
+
+--- Done Minimizing Consequent ---
+
+Applied (U o (V o W)) = ((U o V) o W)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+Is_Permutation((??Q o ?Sorted_Queue), Q) and
+Is_Conformal_With(LEQV, ?Sorted_Queue) and
+Is_Universally_Related(?Sorted_Queue, ??Q, LEQV) and
+(|??Q| > 0) and
+Is_Permutation((?Q o <?Lowest_Remaining>), ??Q) and
+Is_Universally_Related(<?Lowest_Remaining>, ?Q, LEQV) and
+(|?Q| = (|??Q| - 1)) and
+Is_Permutation(((?Q o <?Lowest_Remaining>) o ?Sorted_Queue), Q)
+  -->
+Is_Permutation(((?Q o ?Sorted_Queue) o <?Lowest_Remaining>), Q)
+
+Applied Is_Permutation(((S o U) o T), V) = Is_Permutation((S o (T o U)), V)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+Is_Permutation((??Q o ?Sorted_Queue), Q) and
+Is_Conformal_With(LEQV, ?Sorted_Queue) and
+Is_Universally_Related(?Sorted_Queue, ??Q, LEQV) and
+(|??Q| > 0) and
+Is_Permutation((?Q o <?Lowest_Remaining>), ??Q) and
+Is_Universally_Related(<?Lowest_Remaining>, ?Q, LEQV) and
+(|?Q| = (|??Q| - 1)) and
+Is_Permutation(((?Q o <?Lowest_Remaining>) o ?Sorted_Queue), Q)
+  -->
+Is_Permutation((?Q o (<?Lowest_Remaining> o ?Sorted_Queue)), Q)
+
+Applied (U o (V o W)) = ((U o V) o W)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+Is_Permutation((??Q o ?Sorted_Queue), Q) and
+Is_Conformal_With(LEQV, ?Sorted_Queue) and
+Is_Universally_Related(?Sorted_Queue, ??Q, LEQV) and
+(|??Q| > 0) and
+Is_Permutation((?Q o <?Lowest_Remaining>), ??Q) and
+Is_Universally_Related(<?Lowest_Remaining>, ?Q, LEQV) and
+(|?Q| = (|??Q| - 1)) and
+Is_Permutation(((?Q o <?Lowest_Remaining>) o ?Sorted_Queue), Q)
+  -->
+Is_Permutation(((?Q o <?Lowest_Remaining>) o ?Sorted_Queue), Q)
+
+Applied Is_Permutation(((?Q o <?Lowest_Remaining>) o ?Sorted_Queue), Q)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+Is_Permutation((??Q o ?Sorted_Queue), Q) and
+Is_Conformal_With(LEQV, ?Sorted_Queue) and
+Is_Universally_Related(?Sorted_Queue, ??Q, LEQV) and
+(|??Q| > 0) and
+Is_Permutation((?Q o <?Lowest_Remaining>), ??Q) and
+Is_Universally_Related(<?Lowest_Remaining>, ?Q, LEQV) and
+(|?Q| = (|??Q| - 1)) and
+Is_Permutation(((?Q o <?Lowest_Remaining>) o ?Sorted_Queue), Q)
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+Is_Permutation((??Q o ?Sorted_Queue), Q) and
+Is_Conformal_With(LEQV, ?Sorted_Queue) and
+Is_Universally_Related(?Sorted_Queue, ??Q, LEQV) and
+(|??Q| > 0) and
+Is_Permutation((?Q o <?Lowest_Remaining>), ??Q) and
+Is_Universally_Related(<?Lowest_Remaining>, ?Q, LEQV) and
+(|?Q| = (|??Q| - 1)) and
+Is_Permutation(((?Q o <?Lowest_Remaining>) o ?Sorted_Queue), Q)
+  -->
+
+
+Q.E.D.
+
+=================================== 0_7 ===================================
+
+[PROVED] via:
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+Is_Permutation((??Q o ?Sorted_Queue), Q) and
+Is_Conformal_With(LEQV, ?Sorted_Queue) and
+Is_Universally_Related(?Sorted_Queue, ??Q, LEQV) and
+(|??Q| > 0) and
+Is_Permutation((?Q o <?Lowest_Remaining>), ??Q) and
+Is_Universally_Related(<?Lowest_Remaining>, ?Q, LEQV) and
+(|?Q| = (|??Q| - 1))
+  -->
+Is_Conformal_With(LEQV, (?Sorted_Queue o <?Lowest_Remaining>))
+
+--- Done Minimizing Antecedent ---
+
+Applied Is_Universally_Related(S, T, f) and Is_Permutation(U, T) implies Is_Universally_Related(S, U, f)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+Is_Permutation((??Q o ?Sorted_Queue), Q) and
+Is_Conformal_With(LEQV, ?Sorted_Queue) and
+Is_Universally_Related(?Sorted_Queue, ??Q, LEQV) and
+(|??Q| > 0) and
+Is_Permutation((?Q o <?Lowest_Remaining>), ??Q) and
+Is_Universally_Related(<?Lowest_Remaining>, ?Q, LEQV) and
+(|?Q| = (|??Q| - 1)) and
+Is_Universally_Related(?Sorted_Queue, (?Q o <?Lowest_Remaining>), LEQV)
+  -->
+Is_Conformal_With(LEQV, (?Sorted_Queue o <?Lowest_Remaining>))
+
+Applied Is_Universally_Related(S, (T o U), f) implies (Is_Universally_Related(S, T, f) and Is_Universally_Related(S, U, f))
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+Is_Permutation((??Q o ?Sorted_Queue), Q) and
+Is_Conformal_With(LEQV, ?Sorted_Queue) and
+Is_Universally_Related(?Sorted_Queue, ??Q, LEQV) and
+(|??Q| > 0) and
+Is_Permutation((?Q o <?Lowest_Remaining>), ??Q) and
+Is_Universally_Related(<?Lowest_Remaining>, ?Q, LEQV) and
+(|?Q| = (|??Q| - 1)) and
+Is_Universally_Related(?Sorted_Queue, (?Q o <?Lowest_Remaining>), LEQV) and
+Is_Universally_Related(?Sorted_Queue, ?Q, LEQV) and
+Is_Universally_Related(?Sorted_Queue, <?Lowest_Remaining>, LEQV)
+  -->
+Is_Conformal_With(LEQV, (?Sorted_Queue o <?Lowest_Remaining>))
+
+Applied Is_Conformal_With(f, S) and Is_Universally_Related(S, <e>, f) implies Is_Conformal_With(f, (S o <e>))
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+Is_Permutation((??Q o ?Sorted_Queue), Q) and
+Is_Conformal_With(LEQV, ?Sorted_Queue) and
+Is_Universally_Related(?Sorted_Queue, ??Q, LEQV) and
+(|??Q| > 0) and
+Is_Permutation((?Q o <?Lowest_Remaining>), ??Q) and
+Is_Universally_Related(<?Lowest_Remaining>, ?Q, LEQV) and
+(|?Q| = (|??Q| - 1)) and
+Is_Universally_Related(?Sorted_Queue, (?Q o <?Lowest_Remaining>), LEQV) and
+Is_Universally_Related(?Sorted_Queue, ?Q, LEQV) and
+Is_Universally_Related(?Sorted_Queue, <?Lowest_Remaining>, LEQV) and
+Is_Conformal_With(LEQV, (?Sorted_Queue o <?Lowest_Remaining>))
+  -->
+Is_Conformal_With(LEQV, (?Sorted_Queue o <?Lowest_Remaining>))
+
+--- Done Developing Antecedent ---
+
+--- Done Minimizing Consequent ---
+
+Applied Is_Conformal_With(LEQV, (?Sorted_Queue o <?Lowest_Remaining>))
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+Is_Permutation((??Q o ?Sorted_Queue), Q) and
+Is_Conformal_With(LEQV, ?Sorted_Queue) and
+Is_Universally_Related(?Sorted_Queue, ??Q, LEQV) and
+(|??Q| > 0) and
+Is_Permutation((?Q o <?Lowest_Remaining>), ??Q) and
+Is_Universally_Related(<?Lowest_Remaining>, ?Q, LEQV) and
+(|?Q| = (|??Q| - 1)) and
+Is_Universally_Related(?Sorted_Queue, (?Q o <?Lowest_Remaining>), LEQV) and
+Is_Universally_Related(?Sorted_Queue, ?Q, LEQV) and
+Is_Universally_Related(?Sorted_Queue, <?Lowest_Remaining>, LEQV) and
+Is_Conformal_With(LEQV, (?Sorted_Queue o <?Lowest_Remaining>))
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+Is_Permutation((??Q o ?Sorted_Queue), Q) and
+Is_Conformal_With(LEQV, ?Sorted_Queue) and
+Is_Universally_Related(?Sorted_Queue, ??Q, LEQV) and
+(|??Q| > 0) and
+Is_Permutation((?Q o <?Lowest_Remaining>), ??Q) and
+Is_Universally_Related(<?Lowest_Remaining>, ?Q, LEQV) and
+(|?Q| = (|??Q| - 1)) and
+Is_Universally_Related(?Sorted_Queue, (?Q o <?Lowest_Remaining>), LEQV) and
+Is_Universally_Related(?Sorted_Queue, ?Q, LEQV) and
+Is_Universally_Related(?Sorted_Queue, <?Lowest_Remaining>, LEQV) and
+Is_Conformal_With(LEQV, (?Sorted_Queue o <?Lowest_Remaining>))
+  -->
+
+
+Q.E.D.
+
+=================================== 0_8 ===================================
+
+[PROVED] via:
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+Is_Permutation((??Q o ?Sorted_Queue), Q) and
+Is_Conformal_With(LEQV, ?Sorted_Queue) and
+Is_Universally_Related(?Sorted_Queue, ??Q, LEQV) and
+(|??Q| > 0) and
+Is_Permutation((?Q o <?Lowest_Remaining>), ??Q) and
+Is_Universally_Related(<?Lowest_Remaining>, ?Q, LEQV) and
+(|?Q| = (|??Q| - 1))
+  -->
+Is_Universally_Related((?Sorted_Queue o <?Lowest_Remaining>), ?Q, LEQV)
+
+--- Done Minimizing Antecedent ---
+
+Applied Is_Universally_Related(S, T, f) and Is_Permutation(U, T) implies Is_Universally_Related(S, U, f)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+Is_Permutation((??Q o ?Sorted_Queue), Q) and
+Is_Conformal_With(LEQV, ?Sorted_Queue) and
+Is_Universally_Related(?Sorted_Queue, ??Q, LEQV) and
+(|??Q| > 0) and
+Is_Permutation((?Q o <?Lowest_Remaining>), ??Q) and
+Is_Universally_Related(<?Lowest_Remaining>, ?Q, LEQV) and
+(|?Q| = (|??Q| - 1)) and
+Is_Universally_Related(?Sorted_Queue, (?Q o <?Lowest_Remaining>), LEQV)
+  -->
+Is_Universally_Related((?Sorted_Queue o <?Lowest_Remaining>), ?Q, LEQV)
+
+Applied Is_Universally_Related(S, (T o U), f) implies (Is_Universally_Related(S, T, f) and Is_Universally_Related(S, U, f))
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+Is_Permutation((??Q o ?Sorted_Queue), Q) and
+Is_Conformal_With(LEQV, ?Sorted_Queue) and
+Is_Universally_Related(?Sorted_Queue, ??Q, LEQV) and
+(|??Q| > 0) and
+Is_Permutation((?Q o <?Lowest_Remaining>), ??Q) and
+Is_Universally_Related(<?Lowest_Remaining>, ?Q, LEQV) and
+(|?Q| = (|??Q| - 1)) and
+Is_Universally_Related(?Sorted_Queue, (?Q o <?Lowest_Remaining>), LEQV) and
+Is_Universally_Related(?Sorted_Queue, ?Q, LEQV) and
+Is_Universally_Related(?Sorted_Queue, <?Lowest_Remaining>, LEQV)
+  -->
+Is_Universally_Related((?Sorted_Queue o <?Lowest_Remaining>), ?Q, LEQV)
+
+--- Done Developing Antecedent ---
+
+--- Done Minimizing Consequent ---
+
+Applied Strengthen to Is_Universally_Related(S, U, f) and Is_Universally_Related(T, U, f)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+Is_Permutation((??Q o ?Sorted_Queue), Q) and
+Is_Conformal_With(LEQV, ?Sorted_Queue) and
+Is_Universally_Related(?Sorted_Queue, ??Q, LEQV) and
+(|??Q| > 0) and
+Is_Permutation((?Q o <?Lowest_Remaining>), ??Q) and
+Is_Universally_Related(<?Lowest_Remaining>, ?Q, LEQV) and
+(|?Q| = (|??Q| - 1)) and
+Is_Universally_Related(?Sorted_Queue, (?Q o <?Lowest_Remaining>), LEQV) and
+Is_Universally_Related(?Sorted_Queue, ?Q, LEQV) and
+Is_Universally_Related(?Sorted_Queue, <?Lowest_Remaining>, LEQV)
+  -->
+Is_Universally_Related(?Sorted_Queue, ?Q, LEQV) and
+Is_Universally_Related(<?Lowest_Remaining>, ?Q, LEQV)
+
+Applied Is_Universally_Related(<?Lowest_Remaining>, ?Q, LEQV)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+Is_Permutation((??Q o ?Sorted_Queue), Q) and
+Is_Conformal_With(LEQV, ?Sorted_Queue) and
+Is_Universally_Related(?Sorted_Queue, ??Q, LEQV) and
+(|??Q| > 0) and
+Is_Permutation((?Q o <?Lowest_Remaining>), ??Q) and
+Is_Universally_Related(<?Lowest_Remaining>, ?Q, LEQV) and
+(|?Q| = (|??Q| - 1)) and
+Is_Universally_Related(?Sorted_Queue, (?Q o <?Lowest_Remaining>), LEQV) and
+Is_Universally_Related(?Sorted_Queue, ?Q, LEQV) and
+Is_Universally_Related(?Sorted_Queue, <?Lowest_Remaining>, LEQV)
+  -->
+Is_Universally_Related(?Sorted_Queue, ?Q, LEQV) and
+true
+
+Applied Eliminate true conjunct
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+Is_Permutation((??Q o ?Sorted_Queue), Q) and
+Is_Conformal_With(LEQV, ?Sorted_Queue) and
+Is_Universally_Related(?Sorted_Queue, ??Q, LEQV) and
+(|??Q| > 0) and
+Is_Permutation((?Q o <?Lowest_Remaining>), ??Q) and
+Is_Universally_Related(<?Lowest_Remaining>, ?Q, LEQV) and
+(|?Q| = (|??Q| - 1)) and
+Is_Universally_Related(?Sorted_Queue, (?Q o <?Lowest_Remaining>), LEQV) and
+Is_Universally_Related(?Sorted_Queue, ?Q, LEQV) and
+Is_Universally_Related(?Sorted_Queue, <?Lowest_Remaining>, LEQV)
+  -->
+Is_Universally_Related(?Sorted_Queue, ?Q, LEQV)
+
+Applied Is_Universally_Related(?Sorted_Queue, ?Q, LEQV)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+Is_Permutation((??Q o ?Sorted_Queue), Q) and
+Is_Conformal_With(LEQV, ?Sorted_Queue) and
+Is_Universally_Related(?Sorted_Queue, ??Q, LEQV) and
+(|??Q| > 0) and
+Is_Permutation((?Q o <?Lowest_Remaining>), ??Q) and
+Is_Universally_Related(<?Lowest_Remaining>, ?Q, LEQV) and
+(|?Q| = (|??Q| - 1)) and
+Is_Universally_Related(?Sorted_Queue, (?Q o <?Lowest_Remaining>), LEQV) and
+Is_Universally_Related(?Sorted_Queue, ?Q, LEQV) and
+Is_Universally_Related(?Sorted_Queue, <?Lowest_Remaining>, LEQV)
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+Is_Permutation((??Q o ?Sorted_Queue), Q) and
+Is_Conformal_With(LEQV, ?Sorted_Queue) and
+Is_Universally_Related(?Sorted_Queue, ??Q, LEQV) and
+(|??Q| > 0) and
+Is_Permutation((?Q o <?Lowest_Remaining>), ??Q) and
+Is_Universally_Related(<?Lowest_Remaining>, ?Q, LEQV) and
+(|?Q| = (|??Q| - 1)) and
+Is_Universally_Related(?Sorted_Queue, (?Q o <?Lowest_Remaining>), LEQV) and
+Is_Universally_Related(?Sorted_Queue, ?Q, LEQV) and
+Is_Universally_Related(?Sorted_Queue, <?Lowest_Remaining>, LEQV)
+  -->
+
+
+Q.E.D.
+
+=================================== 0_9 ===================================
+
+[PROVED] via:
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+Is_Permutation((??Q o ?Sorted_Queue), Q) and
+Is_Conformal_With(LEQV, ?Sorted_Queue) and
+Is_Universally_Related(?Sorted_Queue, ??Q, LEQV) and
+(|??Q| > 0) and
+Is_Permutation((?Q o <?Lowest_Remaining>), ??Q) and
+Is_Universally_Related(<?Lowest_Remaining>, ?Q, LEQV) and
+(|?Q| = (|??Q| - 1))
+  -->
+(|?Q| < |??Q|)
+
+--- Done Minimizing Antecedent ---
+
+Applied ((i = (j - k)) = ((i + k) = j))
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+Is_Permutation((??Q o ?Sorted_Queue), Q) and
+Is_Conformal_With(LEQV, ?Sorted_Queue) and
+Is_Universally_Related(?Sorted_Queue, ??Q, LEQV) and
+(|??Q| > 0) and
+Is_Permutation((?Q o <?Lowest_Remaining>), ??Q) and
+Is_Universally_Related(<?Lowest_Remaining>, ?Q, LEQV) and
+(|?Q| = (|??Q| - 1)) and
+((|?Q| + 1) = |??Q|)
+  -->
+(|?Q| < |??Q|)
+
+--- Done Developing Antecedent ---
+
+--- Done Minimizing Consequent ---
+
+Applied |?Q| = (|??Q| - 1)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+Is_Permutation((??Q o ?Sorted_Queue), Q) and
+Is_Conformal_With(LEQV, ?Sorted_Queue) and
+Is_Universally_Related(?Sorted_Queue, ??Q, LEQV) and
+(|??Q| > 0) and
+Is_Permutation((?Q o <?Lowest_Remaining>), ??Q) and
+Is_Universally_Related(<?Lowest_Remaining>, ?Q, LEQV) and
+(|?Q| = (|??Q| - 1)) and
+((|?Q| + 1) = |??Q|)
+  -->
+((|??Q| - 1) < |??Q|)
+
+Applied |??Q| = (|?Q| + 1)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+Is_Permutation((??Q o ?Sorted_Queue), Q) and
+Is_Conformal_With(LEQV, ?Sorted_Queue) and
+Is_Universally_Related(?Sorted_Queue, ??Q, LEQV) and
+(|??Q| > 0) and
+Is_Permutation((?Q o <?Lowest_Remaining>), ??Q) and
+Is_Universally_Related(<?Lowest_Remaining>, ?Q, LEQV) and
+(|?Q| = (|??Q| - 1)) and
+((|?Q| + 1) = |??Q|)
+  -->
+(((|?Q| + 1) - 1) < |??Q|)
+
+Applied |??Q| = (|?Q| + 1)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+Is_Permutation((??Q o ?Sorted_Queue), Q) and
+Is_Conformal_With(LEQV, ?Sorted_Queue) and
+Is_Universally_Related(?Sorted_Queue, ??Q, LEQV) and
+(|??Q| > 0) and
+Is_Permutation((?Q o <?Lowest_Remaining>), ??Q) and
+Is_Universally_Related(<?Lowest_Remaining>, ?Q, LEQV) and
+(|?Q| = (|??Q| - 1)) and
+((|?Q| + 1) = |??Q|)
+  -->
+(((|?Q| + 1) - 1) < (|?Q| + 1))
+
+Applied ((i - 1) < i)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+Is_Permutation((??Q o ?Sorted_Queue), Q) and
+Is_Conformal_With(LEQV, ?Sorted_Queue) and
+Is_Universally_Related(?Sorted_Queue, ??Q, LEQV) and
+(|??Q| > 0) and
+Is_Permutation((?Q o <?Lowest_Remaining>), ??Q) and
+Is_Universally_Related(<?Lowest_Remaining>, ?Q, LEQV) and
+(|?Q| = (|??Q| - 1)) and
+((|?Q| + 1) = |??Q|)
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+Is_Permutation((??Q o ?Sorted_Queue), Q) and
+Is_Conformal_With(LEQV, ?Sorted_Queue) and
+Is_Universally_Related(?Sorted_Queue, ??Q, LEQV) and
+(|??Q| > 0) and
+Is_Permutation((?Q o <?Lowest_Remaining>), ??Q) and
+Is_Universally_Related(<?Lowest_Remaining>, ?Q, LEQV) and
+(|?Q| = (|??Q| - 1)) and
+((|?Q| + 1) = |??Q|)
+  -->
+
+
+Q.E.D.
+
+=================================== 1_1 ===================================
+
+[PROVED] via:
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+Is_Permutation((?Q o ?Sorted_Queue), Q) and
+Is_Conformal_With(LEQV, ?Sorted_Queue) and
+Is_Universally_Related(?Sorted_Queue, ?Q, LEQV) and
+not((|?Q| > 0))
+  -->
+Is_Conformal_With(LEQV, ?Sorted_Queue)
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+--- Done Minimizing Consequent ---
+
+Applied Is_Conformal_With(LEQV, ?Sorted_Queue)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+Is_Permutation((?Q o ?Sorted_Queue), Q) and
+Is_Conformal_With(LEQV, ?Sorted_Queue) and
+Is_Universally_Related(?Sorted_Queue, ?Q, LEQV) and
+not((|?Q| > 0))
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+Is_Permutation((?Q o ?Sorted_Queue), Q) and
+Is_Conformal_With(LEQV, ?Sorted_Queue) and
+Is_Universally_Related(?Sorted_Queue, ?Q, LEQV) and
+not((|?Q| > 0))
+  -->
+
+
+Q.E.D.
+
+=================================== 1_2 ===================================
+
+[PROVED] via:
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+Is_Permutation((?Q o ?Sorted_Queue), Q) and
+Is_Conformal_With(LEQV, ?Sorted_Queue) and
+Is_Universally_Related(?Sorted_Queue, ?Q, LEQV) and
+not((|?Q| > 0))
+  -->
+Is_Permutation(Q, ?Sorted_Queue)
+
+Applied not((n > 0)) = (n = 0)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+Is_Permutation((?Q o ?Sorted_Queue), Q) and
+Is_Conformal_With(LEQV, ?Sorted_Queue) and
+Is_Universally_Related(?Sorted_Queue, ?Q, LEQV) and
+(|?Q| = 0)
+  -->
+Is_Permutation(Q, ?Sorted_Queue)
+
+Applied (|S| = 0) = (S = Empty_String)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+Is_Permutation((?Q o ?Sorted_Queue), Q) and
+Is_Conformal_With(LEQV, ?Sorted_Queue) and
+Is_Universally_Related(?Sorted_Queue, ?Q, LEQV) and
+(?Q = Empty_String)
+  -->
+Is_Permutation(Q, ?Sorted_Queue)
+
+Applied ?Q = Empty_String
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+Is_Permutation((Empty_String o ?Sorted_Queue), Q) and
+Is_Conformal_With(LEQV, ?Sorted_Queue) and
+Is_Universally_Related(?Sorted_Queue, ?Q, LEQV) and
+(?Q = Empty_String)
+  -->
+Is_Permutation(Q, ?Sorted_Queue)
+
+--- Done Minimizing Antecedent ---
+
+Applied (Empty_String o S) = S
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+Is_Permutation(?Sorted_Queue, Q) and
+Is_Conformal_With(LEQV, ?Sorted_Queue) and
+Is_Universally_Related(?Sorted_Queue, ?Q, LEQV) and
+(?Q = Empty_String)
+  -->
+Is_Permutation(Q, ?Sorted_Queue)
+
+--- Done Developing Antecedent ---
+
+--- Done Minimizing Consequent ---
+
+Applied Is_Permutation(T, S) = Is_Permutation(S, T)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+Is_Permutation(?Sorted_Queue, Q) and
+Is_Conformal_With(LEQV, ?Sorted_Queue) and
+Is_Universally_Related(?Sorted_Queue, ?Q, LEQV) and
+(?Q = Empty_String)
+  -->
+Is_Permutation(?Sorted_Queue, Q)
+
+Applied Is_Permutation(?Sorted_Queue, Q)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+Is_Permutation(?Sorted_Queue, Q) and
+Is_Conformal_With(LEQV, ?Sorted_Queue) and
+Is_Universally_Related(?Sorted_Queue, ?Q, LEQV) and
+(?Q = Empty_String)
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+(|Q| <= Max_Length) and
+Is_Permutation(?Sorted_Queue, Q) and
+Is_Conformal_With(LEQV, ?Sorted_Queue) and
+Is_Universally_Related(?Sorted_Queue, ?Q, LEQV) and
+(?Q = Empty_String)
+  -->
+
+
+Q.E.D.
+
+=================================== 2_1 ===================================
+
+[PROVED] via:
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0)
+  -->
+(|Q| /= 0)
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+--- Done Minimizing Consequent ---
+
+Applied (|Q| /= 0)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0)
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0)
+  -->
+
+
+Q.E.D.
+
+=================================== 2_2 ===================================
+
+[PROVED] via:
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ???Q))
+  -->
+Is_Permutation(((Empty_String o ???Q) o <??Min>), Q)
+
+Applied Q = (<??Min> o ???Q)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ???Q) = (<??Min> o ???Q))
+  -->
+Is_Permutation(((Empty_String o ???Q) o <??Min>), Q)
+
+Applied Q = (<??Min> o ???Q)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ???Q) = (<??Min> o ???Q))
+  -->
+Is_Permutation(((Empty_String o ???Q) o <??Min>), (<??Min> o ???Q))
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+Applied (Empty_String o S) = S
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ???Q) = (<??Min> o ???Q))
+  -->
+Is_Permutation((???Q o <??Min>), (<??Min> o ???Q))
+
+Applied Is_Permutation((S o T), (T o S))
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ???Q) = (<??Min> o ???Q))
+  -->
+true
+
+--- Done Minimizing Consequent ---
+
+Applied Eliminate true conjunct
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ???Q) = (<??Min> o ???Q))
+  -->
+
+
+Q.E.D.
+
+=================================== 2_3 ===================================
+
+[PROVED] via:
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ???Q))
+  -->
+Is_Universally_Related(<??Min>, Empty_String, LEQV)
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+Applied Is_Universally_Related(S, Empty_String, f)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ???Q))
+  -->
+true
+
+--- Done Minimizing Consequent ---
+
+Applied Eliminate true conjunct
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ???Q))
+  -->
+
+
+Q.E.D.
+
+=================================== 2_4 ===================================
+
+[PROVED] via:
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o ??Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0)
+  -->
+(|??Q| /= 0)
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+--- Done Minimizing Consequent ---
+
+Applied Strengthen to (i > 0)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o ??Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0)
+  -->
+(|??Q| > 0)
+
+Applied (|??Q| > 0)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o ??Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0)
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o ??Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0)
+  -->
+
+
+Q.E.D.
+
+=================================== 2_5 ===================================
+
+[PROVED] via:
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o ??Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+LEQV(?Considered_Entry, ?Min)
+  -->
+(|?New_Queue| < Max_Length)
+
+Applied Q = (<??Min> o ???Q)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|(<??Min> o ???Q)| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o ??Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+LEQV(?Considered_Entry, ?Min)
+  -->
+(|?New_Queue| < Max_Length)
+
+Applied Q = (<??Min> o ???Q)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|(<??Min> o ???Q)| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ???Q) = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o ??Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+LEQV(?Considered_Entry, ?Min)
+  -->
+(|?New_Queue| < Max_Length)
+
+Applied Q = (<??Min> o ???Q)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|(<??Min> o ???Q)| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ???Q) = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o ??Q) o <?Min>), (<??Min> o ???Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+LEQV(?Considered_Entry, ?Min)
+  -->
+(|?New_Queue| < Max_Length)
+
+Applied ??Q = (<?Considered_Entry> o ?Q)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|(<??Min> o ???Q)| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ???Q) = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o (<?Considered_Entry> o ?Q)) o <?Min>), (<??Min> o ???Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+LEQV(?Considered_Entry, ?Min)
+  -->
+(|?New_Queue| < Max_Length)
+
+--- Done Minimizing Antecedent ---
+
+Applied Is_Permutation(S, T) implies (|S| = |T|)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|(<??Min> o ???Q)| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ???Q) = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o (<?Considered_Entry> o ?Q)) o <?Min>), (<??Min> o ???Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+LEQV(?Considered_Entry, ?Min) and
+(|((?New_Queue o (<?Considered_Entry> o ?Q)) o <?Min>)| = |(<??Min> o ???Q)|)
+  -->
+(|?New_Queue| < Max_Length)
+
+Applied |(S o <e>)| = (|S| + 1)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|(<??Min> o ???Q)| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ???Q) = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o (<?Considered_Entry> o ?Q)) o <?Min>), (<??Min> o ???Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+LEQV(?Considered_Entry, ?Min) and
+((|(?New_Queue o (<?Considered_Entry> o ?Q))| + 1) = |(<??Min> o ???Q)|)
+  -->
+(|?New_Queue| < Max_Length)
+
+Applied ((|(?New_Queue o (<?Considered_Entry> o ?Q))| + 1) = |(<??Min> o ???Q)|)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|(<??Min> o ???Q)| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ???Q) = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o (<?Considered_Entry> o ?Q)) o <?Min>), (<??Min> o ???Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+LEQV(?Considered_Entry, ?Min) and
+((|(?New_Queue o (<?Considered_Entry> o ?Q))| + 1) = |(<??Min> o ???Q)|) and
+((|(?New_Queue o (<?Considered_Entry> o ?Q))| + 1) <= Max_Length)
+  -->
+(|?New_Queue| < Max_Length)
+
+Applied ((i + 1) <= j) = (i < j)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|(<??Min> o ???Q)| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ???Q) = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o (<?Considered_Entry> o ?Q)) o <?Min>), (<??Min> o ???Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+LEQV(?Considered_Entry, ?Min) and
+((|(?New_Queue o (<?Considered_Entry> o ?Q))| + 1) = |(<??Min> o ???Q)|) and
+(|(?New_Queue o (<?Considered_Entry> o ?Q))| < Max_Length)
+  -->
+(|?New_Queue| < Max_Length)
+
+Applied (|(S o T)| < i) implies ((|S| < i) and (|T| < i))
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|(<??Min> o ???Q)| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ???Q) = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o (<?Considered_Entry> o ?Q)) o <?Min>), (<??Min> o ???Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+LEQV(?Considered_Entry, ?Min) and
+((|(?New_Queue o (<?Considered_Entry> o ?Q))| + 1) = |(<??Min> o ???Q)|) and
+(|(?New_Queue o (<?Considered_Entry> o ?Q))| < Max_Length) and
+(|?New_Queue| < Max_Length) and
+(|(<?Considered_Entry> o ?Q)| < Max_Length)
+  -->
+(|?New_Queue| < Max_Length)
+
+--- Done Developing Antecedent ---
+
+--- Done Minimizing Consequent ---
+
+Applied (|?New_Queue| < Max_Length)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|(<??Min> o ???Q)| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ???Q) = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o (<?Considered_Entry> o ?Q)) o <?Min>), (<??Min> o ???Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+LEQV(?Considered_Entry, ?Min) and
+((|(?New_Queue o (<?Considered_Entry> o ?Q))| + 1) = |(<??Min> o ???Q)|) and
+(|(?New_Queue o (<?Considered_Entry> o ?Q))| < Max_Length) and
+(|?New_Queue| < Max_Length) and
+(|(<?Considered_Entry> o ?Q)| < Max_Length)
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|(<??Min> o ???Q)| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ???Q) = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o (<?Considered_Entry> o ?Q)) o <?Min>), (<??Min> o ???Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+LEQV(?Considered_Entry, ?Min) and
+((|(?New_Queue o (<?Considered_Entry> o ?Q))| + 1) = |(<??Min> o ???Q)|) and
+(|(?New_Queue o (<?Considered_Entry> o ?Q))| < Max_Length) and
+(|?New_Queue| < Max_Length) and
+(|(<?Considered_Entry> o ?Q)| < Max_Length)
+  -->
+
+
+Q.E.D.
+
+=================================== 2_6 ===================================
+
+[PROVED] via:
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o ??Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+LEQV(?Considered_Entry, ?Min)
+  -->
+Is_Permutation((((?New_Queue o <?Min>) o ?Q) o <?Considered_Entry>), Q)
+
+Applied Q = (<??Min> o ???Q)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ???Q) = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o ??Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+LEQV(?Considered_Entry, ?Min)
+  -->
+Is_Permutation((((?New_Queue o <?Min>) o ?Q) o <?Considered_Entry>), Q)
+
+Applied Q = (<??Min> o ???Q)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ???Q) = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o ??Q) o <?Min>), (<??Min> o ???Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+LEQV(?Considered_Entry, ?Min)
+  -->
+Is_Permutation((((?New_Queue o <?Min>) o ?Q) o <?Considered_Entry>), Q)
+
+Applied Q = (<??Min> o ???Q)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ???Q) = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o ??Q) o <?Min>), (<??Min> o ???Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+LEQV(?Considered_Entry, ?Min)
+  -->
+Is_Permutation((((?New_Queue o <?Min>) o ?Q) o <?Considered_Entry>), (<??Min> o ???Q))
+
+Applied ??Q = (<?Considered_Entry> o ?Q)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ???Q) = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o (<?Considered_Entry> o ?Q)) o <?Min>), (<??Min> o ???Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+LEQV(?Considered_Entry, ?Min)
+  -->
+Is_Permutation((((?New_Queue o <?Min>) o ?Q) o <?Considered_Entry>), (<??Min> o ???Q))
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+--- Done Minimizing Consequent ---
+
+Applied ((U o V) o W) = (U o (V o W))
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ???Q) = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o (<?Considered_Entry> o ?Q)) o <?Min>), (<??Min> o ???Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+LEQV(?Considered_Entry, ?Min)
+  -->
+Is_Permutation(((?New_Queue o (<?Min> o ?Q)) o <?Considered_Entry>), (<??Min> o ???Q))
+
+Applied Is_Permutation(((S o (T o U)) o V), W) = Is_Permutation((((S o V) o U) o T), W)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ???Q) = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o (<?Considered_Entry> o ?Q)) o <?Min>), (<??Min> o ???Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+LEQV(?Considered_Entry, ?Min)
+  -->
+Is_Permutation((((?New_Queue o <?Considered_Entry>) o ?Q) o <?Min>), (<??Min> o ???Q))
+
+Applied ((U o V) o W) = (U o (V o W))
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ???Q) = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o (<?Considered_Entry> o ?Q)) o <?Min>), (<??Min> o ???Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+LEQV(?Considered_Entry, ?Min)
+  -->
+Is_Permutation(((?New_Queue o (<?Considered_Entry> o ?Q)) o <?Min>), (<??Min> o ???Q))
+
+Applied Is_Permutation(((?New_Queue o (<?Considered_Entry> o ?Q)) o <?Min>), (<??Min> o ???Q))
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ???Q) = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o (<?Considered_Entry> o ?Q)) o <?Min>), (<??Min> o ???Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+LEQV(?Considered_Entry, ?Min)
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ???Q) = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o (<?Considered_Entry> o ?Q)) o <?Min>), (<??Min> o ???Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+LEQV(?Considered_Entry, ?Min)
+  -->
+
+
+Q.E.D.
+
+=================================== 2_7 ===================================
+
+[PROVED] via:
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o ??Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+LEQV(?Considered_Entry, ?Min)
+  -->
+Is_Universally_Related(<?Considered_Entry>, (?New_Queue o <?Min>), LEQV)
+
+--- Done Minimizing Antecedent ---
+
+Applied f(e1, e2) and Is_Universally_Related(<e2>, S, f) implies Is_Universally_Related(<e1>, S, f)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o ??Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+LEQV(?Considered_Entry, ?Min) and
+Is_Universally_Related(<?Considered_Entry>, ?New_Queue, LEQV)
+  -->
+Is_Universally_Related(<?Considered_Entry>, (?New_Queue o <?Min>), LEQV)
+
+--- Done Developing Antecedent ---
+
+--- Done Minimizing Consequent ---
+
+Applied Strengthen to Is_Universally_Related(S, T, f) and Is_Universally_Related(S, U, f)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o ??Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+LEQV(?Considered_Entry, ?Min) and
+Is_Universally_Related(<?Considered_Entry>, ?New_Queue, LEQV)
+  -->
+Is_Universally_Related(<?Considered_Entry>, ?New_Queue, LEQV) and
+Is_Universally_Related(<?Considered_Entry>, <?Min>, LEQV)
+
+Applied Is_Universally_Related(<?Considered_Entry>, ?New_Queue, LEQV)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o ??Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+LEQV(?Considered_Entry, ?Min) and
+Is_Universally_Related(<?Considered_Entry>, ?New_Queue, LEQV)
+  -->
+true and
+Is_Universally_Related(<?Considered_Entry>, <?Min>, LEQV)
+
+Applied Eliminate true conjunct
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o ??Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+LEQV(?Considered_Entry, ?Min) and
+Is_Universally_Related(<?Considered_Entry>, ?New_Queue, LEQV)
+  -->
+Is_Universally_Related(<?Considered_Entry>, <?Min>, LEQV)
+
+Applied Is_Universally_Related(<e1>, <e2>, f) = f(e1, e2)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o ??Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+LEQV(?Considered_Entry, ?Min) and
+Is_Universally_Related(<?Considered_Entry>, ?New_Queue, LEQV)
+  -->
+LEQV(?Considered_Entry, ?Min)
+
+Applied LEQV(?Considered_Entry, ?Min)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o ??Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+LEQV(?Considered_Entry, ?Min) and
+Is_Universally_Related(<?Considered_Entry>, ?New_Queue, LEQV)
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o ??Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+LEQV(?Considered_Entry, ?Min) and
+Is_Universally_Related(<?Considered_Entry>, ?New_Queue, LEQV)
+  -->
+
+
+Q.E.D.
+
+=================================== 2_8 ===================================
+
+[PROVED] via:
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o ??Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+LEQV(?Considered_Entry, ?Min)
+  -->
+(|?Q| < |??Q|)
+
+Applied ??Q = (<?Considered_Entry> o ?Q)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o ??Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+((<?Considered_Entry> o ?Q) = (<?Considered_Entry> o ?Q)) and
+LEQV(?Considered_Entry, ?Min)
+  -->
+(|?Q| < |??Q|)
+
+Applied ??Q = (<?Considered_Entry> o ?Q)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o ??Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+((<?Considered_Entry> o ?Q) = (<?Considered_Entry> o ?Q)) and
+LEQV(?Considered_Entry, ?Min)
+  -->
+(|?Q| < |(<?Considered_Entry> o ?Q)|)
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+Applied (|S| < |(<E> o S)|)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o ??Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+((<?Considered_Entry> o ?Q) = (<?Considered_Entry> o ?Q)) and
+LEQV(?Considered_Entry, ?Min)
+  -->
+true
+
+--- Done Minimizing Consequent ---
+
+Applied Eliminate true conjunct
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o ??Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+((<?Considered_Entry> o ?Q) = (<?Considered_Entry> o ?Q)) and
+LEQV(?Considered_Entry, ?Min)
+  -->
+
+
+Q.E.D.
+
+=================================== 3_1 ===================================
+
+[PROVED] via:
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0)
+  -->
+(|Q| /= 0)
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+--- Done Minimizing Consequent ---
+
+Applied (|Q| /= 0)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0)
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0)
+  -->
+
+
+Q.E.D.
+
+=================================== 3_2 ===================================
+
+[PROVED] via:
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ???Q))
+  -->
+Is_Permutation(((Empty_String o ???Q) o <??Min>), Q)
+
+Applied Q = (<??Min> o ???Q)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ???Q) = (<??Min> o ???Q))
+  -->
+Is_Permutation(((Empty_String o ???Q) o <??Min>), Q)
+
+Applied Q = (<??Min> o ???Q)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ???Q) = (<??Min> o ???Q))
+  -->
+Is_Permutation(((Empty_String o ???Q) o <??Min>), (<??Min> o ???Q))
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+Applied (Empty_String o S) = S
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ???Q) = (<??Min> o ???Q))
+  -->
+Is_Permutation((???Q o <??Min>), (<??Min> o ???Q))
+
+Applied Is_Permutation((S o T), (T o S))
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ???Q) = (<??Min> o ???Q))
+  -->
+true
+
+--- Done Minimizing Consequent ---
+
+Applied Eliminate true conjunct
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ???Q) = (<??Min> o ???Q))
+  -->
+
+
+Q.E.D.
+
+=================================== 3_3 ===================================
+
+[PROVED] via:
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ???Q))
+  -->
+Is_Universally_Related(<??Min>, Empty_String, LEQV)
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+Applied Is_Universally_Related(S, Empty_String, f)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ???Q))
+  -->
+true
+
+--- Done Minimizing Consequent ---
+
+Applied Eliminate true conjunct
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ???Q))
+  -->
+
+
+Q.E.D.
+
+=================================== 3_4 ===================================
+
+[PROVED] via:
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o ??Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0)
+  -->
+(|??Q| /= 0)
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+--- Done Minimizing Consequent ---
+
+Applied Strengthen to (i > 0)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o ??Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0)
+  -->
+(|??Q| > 0)
+
+Applied (|??Q| > 0)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o ??Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0)
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o ??Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0)
+  -->
+
+
+Q.E.D.
+
+=================================== 3_5 ===================================
+
+[PROVED] via:
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o ??Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+not(LEQV(?Considered_Entry, ?Min))
+  -->
+(|?New_Queue| < Max_Length)
+
+Applied Q = (<??Min> o ???Q)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|(<??Min> o ???Q)| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o ??Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+not(LEQV(?Considered_Entry, ?Min))
+  -->
+(|?New_Queue| < Max_Length)
+
+Applied Q = (<??Min> o ???Q)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|(<??Min> o ???Q)| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ???Q) = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o ??Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+not(LEQV(?Considered_Entry, ?Min))
+  -->
+(|?New_Queue| < Max_Length)
+
+Applied Q = (<??Min> o ???Q)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|(<??Min> o ???Q)| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ???Q) = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o ??Q) o <?Min>), (<??Min> o ???Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+not(LEQV(?Considered_Entry, ?Min))
+  -->
+(|?New_Queue| < Max_Length)
+
+Applied ??Q = (<?Considered_Entry> o ?Q)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|(<??Min> o ???Q)| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ???Q) = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o (<?Considered_Entry> o ?Q)) o <?Min>), (<??Min> o ???Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+not(LEQV(?Considered_Entry, ?Min))
+  -->
+(|?New_Queue| < Max_Length)
+
+--- Done Minimizing Antecedent ---
+
+Applied Is_Permutation(S, T) implies (|S| = |T|)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|(<??Min> o ???Q)| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ???Q) = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o (<?Considered_Entry> o ?Q)) o <?Min>), (<??Min> o ???Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+not(LEQV(?Considered_Entry, ?Min)) and
+(|((?New_Queue o (<?Considered_Entry> o ?Q)) o <?Min>)| = |(<??Min> o ???Q)|)
+  -->
+(|?New_Queue| < Max_Length)
+
+Applied |(S o <e>)| = (|S| + 1)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|(<??Min> o ???Q)| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ???Q) = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o (<?Considered_Entry> o ?Q)) o <?Min>), (<??Min> o ???Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+not(LEQV(?Considered_Entry, ?Min)) and
+((|(?New_Queue o (<?Considered_Entry> o ?Q))| + 1) = |(<??Min> o ???Q)|)
+  -->
+(|?New_Queue| < Max_Length)
+
+Applied ((|(?New_Queue o (<?Considered_Entry> o ?Q))| + 1) = |(<??Min> o ???Q)|)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|(<??Min> o ???Q)| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ???Q) = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o (<?Considered_Entry> o ?Q)) o <?Min>), (<??Min> o ???Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+not(LEQV(?Considered_Entry, ?Min)) and
+((|(?New_Queue o (<?Considered_Entry> o ?Q))| + 1) = |(<??Min> o ???Q)|) and
+((|(?New_Queue o (<?Considered_Entry> o ?Q))| + 1) <= Max_Length)
+  -->
+(|?New_Queue| < Max_Length)
+
+Applied ((i + 1) <= j) = (i < j)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|(<??Min> o ???Q)| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ???Q) = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o (<?Considered_Entry> o ?Q)) o <?Min>), (<??Min> o ???Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+not(LEQV(?Considered_Entry, ?Min)) and
+((|(?New_Queue o (<?Considered_Entry> o ?Q))| + 1) = |(<??Min> o ???Q)|) and
+(|(?New_Queue o (<?Considered_Entry> o ?Q))| < Max_Length)
+  -->
+(|?New_Queue| < Max_Length)
+
+Applied (|(S o T)| < i) implies ((|S| < i) and (|T| < i))
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|(<??Min> o ???Q)| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ???Q) = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o (<?Considered_Entry> o ?Q)) o <?Min>), (<??Min> o ???Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+not(LEQV(?Considered_Entry, ?Min)) and
+((|(?New_Queue o (<?Considered_Entry> o ?Q))| + 1) = |(<??Min> o ???Q)|) and
+(|(?New_Queue o (<?Considered_Entry> o ?Q))| < Max_Length) and
+(|?New_Queue| < Max_Length) and
+(|(<?Considered_Entry> o ?Q)| < Max_Length)
+  -->
+(|?New_Queue| < Max_Length)
+
+--- Done Developing Antecedent ---
+
+--- Done Minimizing Consequent ---
+
+Applied (|?New_Queue| < Max_Length)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|(<??Min> o ???Q)| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ???Q) = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o (<?Considered_Entry> o ?Q)) o <?Min>), (<??Min> o ???Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+not(LEQV(?Considered_Entry, ?Min)) and
+((|(?New_Queue o (<?Considered_Entry> o ?Q))| + 1) = |(<??Min> o ???Q)|) and
+(|(?New_Queue o (<?Considered_Entry> o ?Q))| < Max_Length) and
+(|?New_Queue| < Max_Length) and
+(|(<?Considered_Entry> o ?Q)| < Max_Length)
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|(<??Min> o ???Q)| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ???Q) = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o (<?Considered_Entry> o ?Q)) o <?Min>), (<??Min> o ???Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+not(LEQV(?Considered_Entry, ?Min)) and
+((|(?New_Queue o (<?Considered_Entry> o ?Q))| + 1) = |(<??Min> o ???Q)|) and
+(|(?New_Queue o (<?Considered_Entry> o ?Q))| < Max_Length) and
+(|?New_Queue| < Max_Length) and
+(|(<?Considered_Entry> o ?Q)| < Max_Length)
+  -->
+
+
+Q.E.D.
+
+=================================== 3_6 ===================================
+
+[PROVED] via:
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o ??Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+not(LEQV(?Considered_Entry, ?Min))
+  -->
+Is_Permutation((((?New_Queue o <?Considered_Entry>) o ?Q) o <?Min>), Q)
+
+Applied Q = (<??Min> o ???Q)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ???Q) = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o ??Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+not(LEQV(?Considered_Entry, ?Min))
+  -->
+Is_Permutation((((?New_Queue o <?Considered_Entry>) o ?Q) o <?Min>), Q)
+
+Applied Q = (<??Min> o ???Q)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ???Q) = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o ??Q) o <?Min>), (<??Min> o ???Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+not(LEQV(?Considered_Entry, ?Min))
+  -->
+Is_Permutation((((?New_Queue o <?Considered_Entry>) o ?Q) o <?Min>), Q)
+
+Applied Q = (<??Min> o ???Q)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ???Q) = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o ??Q) o <?Min>), (<??Min> o ???Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+not(LEQV(?Considered_Entry, ?Min))
+  -->
+Is_Permutation((((?New_Queue o <?Considered_Entry>) o ?Q) o <?Min>), (<??Min> o ???Q))
+
+Applied ??Q = (<?Considered_Entry> o ?Q)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ???Q) = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o (<?Considered_Entry> o ?Q)) o <?Min>), (<??Min> o ???Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+not(LEQV(?Considered_Entry, ?Min))
+  -->
+Is_Permutation((((?New_Queue o <?Considered_Entry>) o ?Q) o <?Min>), (<??Min> o ???Q))
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+--- Done Minimizing Consequent ---
+
+Applied ((U o V) o W) = (U o (V o W))
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ???Q) = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o (<?Considered_Entry> o ?Q)) o <?Min>), (<??Min> o ???Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+not(LEQV(?Considered_Entry, ?Min))
+  -->
+Is_Permutation(((?New_Queue o (<?Considered_Entry> o ?Q)) o <?Min>), (<??Min> o ???Q))
+
+Applied Is_Permutation(((?New_Queue o (<?Considered_Entry> o ?Q)) o <?Min>), (<??Min> o ???Q))
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ???Q) = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o (<?Considered_Entry> o ?Q)) o <?Min>), (<??Min> o ???Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+not(LEQV(?Considered_Entry, ?Min))
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ???Q) = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o (<?Considered_Entry> o ?Q)) o <?Min>), (<??Min> o ???Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+not(LEQV(?Considered_Entry, ?Min))
+  -->
+
+
+Q.E.D.
+
+=================================== 3_7 ===================================
+
+[PROVED] via:
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o ??Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+not(LEQV(?Considered_Entry, ?Min))
+  -->
+Is_Universally_Related(<?Min>, (?New_Queue o <?Considered_Entry>), LEQV)
+
+--- Done Minimizing Antecedent ---
+
+Applied Is_Total_Preordering(f) and not(f(e1, e2)) implies f(e2, e1)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o ??Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+not(LEQV(?Considered_Entry, ?Min)) and
+LEQV(?Min, ?Considered_Entry)
+  -->
+Is_Universally_Related(<?Min>, (?New_Queue o <?Considered_Entry>), LEQV)
+
+--- Done Developing Antecedent ---
+
+--- Done Minimizing Consequent ---
+
+Applied Strengthen to Is_Universally_Related(S, T, f) and Is_Universally_Related(S, U, f)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o ??Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+not(LEQV(?Considered_Entry, ?Min)) and
+LEQV(?Min, ?Considered_Entry)
+  -->
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+Is_Universally_Related(<?Min>, <?Considered_Entry>, LEQV)
+
+Applied Is_Universally_Related(<?Min>, ?New_Queue, LEQV)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o ??Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+not(LEQV(?Considered_Entry, ?Min)) and
+LEQV(?Min, ?Considered_Entry)
+  -->
+true and
+Is_Universally_Related(<?Min>, <?Considered_Entry>, LEQV)
+
+Applied Eliminate true conjunct
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o ??Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+not(LEQV(?Considered_Entry, ?Min)) and
+LEQV(?Min, ?Considered_Entry)
+  -->
+Is_Universally_Related(<?Min>, <?Considered_Entry>, LEQV)
+
+Applied Is_Universally_Related(<e1>, <e2>, f) = f(e1, e2)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o ??Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+not(LEQV(?Considered_Entry, ?Min)) and
+LEQV(?Min, ?Considered_Entry)
+  -->
+LEQV(?Min, ?Considered_Entry)
+
+Applied LEQV(?Min, ?Considered_Entry)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o ??Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+not(LEQV(?Considered_Entry, ?Min)) and
+LEQV(?Min, ?Considered_Entry)
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o ??Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+not(LEQV(?Considered_Entry, ?Min)) and
+LEQV(?Min, ?Considered_Entry)
+  -->
+
+
+Q.E.D.
+
+=================================== 3_8 ===================================
+
+[PROVED] via:
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o ??Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+(??Q = (<?Considered_Entry> o ?Q)) and
+not(LEQV(?Considered_Entry, ?Min))
+  -->
+(|?Q| < |??Q|)
+
+Applied ??Q = (<?Considered_Entry> o ?Q)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o ??Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+((<?Considered_Entry> o ?Q) = (<?Considered_Entry> o ?Q)) and
+not(LEQV(?Considered_Entry, ?Min))
+  -->
+(|?Q| < |??Q|)
+
+Applied ??Q = (<?Considered_Entry> o ?Q)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o ??Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+((<?Considered_Entry> o ?Q) = (<?Considered_Entry> o ?Q)) and
+not(LEQV(?Considered_Entry, ?Min))
+  -->
+(|?Q| < |(<?Considered_Entry> o ?Q)|)
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+Applied (|S| < |(<E> o S)|)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o ??Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+((<?Considered_Entry> o ?Q) = (<?Considered_Entry> o ?Q)) and
+not(LEQV(?Considered_Entry, ?Min))
+  -->
+true
+
+--- Done Minimizing Consequent ---
+
+Applied Eliminate true conjunct
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ???Q)) and
+Is_Permutation(((?New_Queue o ??Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|??Q| > 0) and
+((<?Considered_Entry> o ?Q) = (<?Considered_Entry> o ?Q)) and
+not(LEQV(?Considered_Entry, ?Min))
+  -->
+
+
+Q.E.D.
+
+=================================== 4_1 ===================================
+
+[PROVED] via:
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0)
+  -->
+(|Q| /= 0)
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+--- Done Minimizing Consequent ---
+
+Applied (|Q| /= 0)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0)
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0)
+  -->
+
+
+Q.E.D.
+
+=================================== 4_2 ===================================
+
+[PROVED] via:
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ??Q)) and
+Is_Permutation(((?New_Queue o ?Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+not((|?Q| > 0))
+  -->
+Is_Permutation((?New_Queue o <?Min>), Q)
+
+Applied Q = (<??Min> o ??Q)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ??Q) = (<??Min> o ??Q)) and
+Is_Permutation(((?New_Queue o ?Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+not((|?Q| > 0))
+  -->
+Is_Permutation((?New_Queue o <?Min>), Q)
+
+Applied Q = (<??Min> o ??Q)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ??Q) = (<??Min> o ??Q)) and
+Is_Permutation(((?New_Queue o ?Q) o <?Min>), (<??Min> o ??Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+not((|?Q| > 0))
+  -->
+Is_Permutation((?New_Queue o <?Min>), Q)
+
+Applied Q = (<??Min> o ??Q)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ??Q) = (<??Min> o ??Q)) and
+Is_Permutation(((?New_Queue o ?Q) o <?Min>), (<??Min> o ??Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+not((|?Q| > 0))
+  -->
+Is_Permutation((?New_Queue o <?Min>), (<??Min> o ??Q))
+
+Applied not((n > 0)) = (n = 0)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ??Q) = (<??Min> o ??Q)) and
+Is_Permutation(((?New_Queue o ?Q) o <?Min>), (<??Min> o ??Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|?Q| = 0)
+  -->
+Is_Permutation((?New_Queue o <?Min>), (<??Min> o ??Q))
+
+Applied (|S| = 0) = (S = Empty_String)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ??Q) = (<??Min> o ??Q)) and
+Is_Permutation(((?New_Queue o ?Q) o <?Min>), (<??Min> o ??Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(?Q = Empty_String)
+  -->
+Is_Permutation((?New_Queue o <?Min>), (<??Min> o ??Q))
+
+Applied ?Q = Empty_String
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ??Q) = (<??Min> o ??Q)) and
+Is_Permutation(((?New_Queue o Empty_String) o <?Min>), (<??Min> o ??Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(?Q = Empty_String)
+  -->
+Is_Permutation((?New_Queue o <?Min>), (<??Min> o ??Q))
+
+--- Done Minimizing Antecedent ---
+
+Applied (S o Empty_String) = S
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ??Q) = (<??Min> o ??Q)) and
+Is_Permutation((?New_Queue o <?Min>), (<??Min> o ??Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(?Q = Empty_String)
+  -->
+Is_Permutation((?New_Queue o <?Min>), (<??Min> o ??Q))
+
+--- Done Developing Antecedent ---
+
+--- Done Minimizing Consequent ---
+
+Applied Is_Permutation((?New_Queue o <?Min>), (<??Min> o ??Q))
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ??Q) = (<??Min> o ??Q)) and
+Is_Permutation((?New_Queue o <?Min>), (<??Min> o ??Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(?Q = Empty_String)
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ??Q) = (<??Min> o ??Q)) and
+Is_Permutation((?New_Queue o <?Min>), (<??Min> o ??Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(?Q = Empty_String)
+  -->
+
+
+Q.E.D.
+
+=================================== 4_3 ===================================
+
+[PROVED] via:
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ??Q)) and
+Is_Permutation(((?New_Queue o ?Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+not((|?Q| > 0))
+  -->
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV)
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+--- Done Minimizing Consequent ---
+
+Applied Is_Universally_Related(<?Min>, ?New_Queue, LEQV)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ??Q)) and
+Is_Permutation(((?New_Queue o ?Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+not((|?Q| > 0))
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ??Q)) and
+Is_Permutation(((?New_Queue o ?Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+not((|?Q| > 0))
+  -->
+
+
+Q.E.D.
+
+=================================== 4_4 ===================================
+
+[PROVED] via:
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+(Q = (<??Min> o ??Q)) and
+Is_Permutation(((?New_Queue o ?Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+not((|?Q| > 0))
+  -->
+(|?New_Queue| = (|Q| - 1))
+
+Applied Q = (<??Min> o ??Q)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ??Q) = (<??Min> o ??Q)) and
+Is_Permutation(((?New_Queue o ?Q) o <?Min>), Q) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+not((|?Q| > 0))
+  -->
+(|?New_Queue| = (|Q| - 1))
+
+Applied Q = (<??Min> o ??Q)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ??Q) = (<??Min> o ??Q)) and
+Is_Permutation(((?New_Queue o ?Q) o <?Min>), (<??Min> o ??Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+not((|?Q| > 0))
+  -->
+(|?New_Queue| = (|Q| - 1))
+
+Applied Q = (<??Min> o ??Q)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ??Q) = (<??Min> o ??Q)) and
+Is_Permutation(((?New_Queue o ?Q) o <?Min>), (<??Min> o ??Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+not((|?Q| > 0))
+  -->
+(|?New_Queue| = (|(<??Min> o ??Q)| - 1))
+
+Applied not((n > 0)) = (n = 0)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ??Q) = (<??Min> o ??Q)) and
+Is_Permutation(((?New_Queue o ?Q) o <?Min>), (<??Min> o ??Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(|?Q| = 0)
+  -->
+(|?New_Queue| = (|(<??Min> o ??Q)| - 1))
+
+Applied (|S| = 0) = (S = Empty_String)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ??Q) = (<??Min> o ??Q)) and
+Is_Permutation(((?New_Queue o ?Q) o <?Min>), (<??Min> o ??Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(?Q = Empty_String)
+  -->
+(|?New_Queue| = (|(<??Min> o ??Q)| - 1))
+
+Applied ?Q = Empty_String
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ??Q) = (<??Min> o ??Q)) and
+Is_Permutation(((?New_Queue o Empty_String) o <?Min>), (<??Min> o ??Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(?Q = Empty_String)
+  -->
+(|?New_Queue| = (|(<??Min> o ??Q)| - 1))
+
+--- Done Minimizing Antecedent ---
+
+Applied Is_Permutation(S, T) implies (|S| = |T|)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ??Q) = (<??Min> o ??Q)) and
+Is_Permutation(((?New_Queue o Empty_String) o <?Min>), (<??Min> o ??Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(?Q = Empty_String) and
+(|((?New_Queue o Empty_String) o <?Min>)| = |(<??Min> o ??Q)|)
+  -->
+(|?New_Queue| = (|(<??Min> o ??Q)| - 1))
+
+Applied (S o Empty_String) = S
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ??Q) = (<??Min> o ??Q)) and
+Is_Permutation(((?New_Queue o Empty_String) o <?Min>), (<??Min> o ??Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(?Q = Empty_String) and
+(|(?New_Queue o <?Min>)| = |(<??Min> o ??Q)|)
+  -->
+(|?New_Queue| = (|(<??Min> o ??Q)| - 1))
+
+Applied |(S o <e>)| = (|S| + 1)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ??Q) = (<??Min> o ??Q)) and
+Is_Permutation(((?New_Queue o Empty_String) o <?Min>), (<??Min> o ??Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(?Q = Empty_String) and
+((|?New_Queue| + 1) = |(<??Min> o ??Q)|)
+  -->
+(|?New_Queue| = (|(<??Min> o ??Q)| - 1))
+
+Applied ((i = (j - k)) = ((i + k) = j))
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ??Q) = (<??Min> o ??Q)) and
+Is_Permutation(((?New_Queue o Empty_String) o <?Min>), (<??Min> o ??Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(?Q = Empty_String) and
+((|?New_Queue| + 1) = |(<??Min> o ??Q)|) and
+(|?New_Queue| = (|(<??Min> o ??Q)| - 1))
+  -->
+(|?New_Queue| = (|(<??Min> o ??Q)| - 1))
+
+--- Done Developing Antecedent ---
+
+--- Done Minimizing Consequent ---
+
+Applied |(<??Min> o ??Q)| = (|?New_Queue| + 1)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ??Q) = (<??Min> o ??Q)) and
+Is_Permutation(((?New_Queue o Empty_String) o <?Min>), (<??Min> o ??Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(?Q = Empty_String) and
+((|?New_Queue| + 1) = |(<??Min> o ??Q)|) and
+(|?New_Queue| = (|(<??Min> o ??Q)| - 1))
+  -->
+(|?New_Queue| = ((|?New_Queue| + 1) - 1))
+
+Applied |?New_Queue| = (|(<??Min> o ??Q)| - 1)
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ??Q) = (<??Min> o ??Q)) and
+Is_Permutation(((?New_Queue o Empty_String) o <?Min>), (<??Min> o ??Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(?Q = Empty_String) and
+((|?New_Queue| + 1) = |(<??Min> o ??Q)|) and
+(|?New_Queue| = (|(<??Min> o ??Q)| - 1))
+  -->
+((|(<??Min> o ??Q)| - 1) = ((|?New_Queue| + 1) - 1))
+
+Applied (|?New_Queue| + 1) = |(<??Min> o ??Q)|
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ??Q) = (<??Min> o ??Q)) and
+Is_Permutation(((?New_Queue o Empty_String) o <?Min>), (<??Min> o ??Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(?Q = Empty_String) and
+((|?New_Queue| + 1) = |(<??Min> o ??Q)|) and
+(|?New_Queue| = (|(<??Min> o ??Q)| - 1))
+  -->
+((|(<??Min> o ??Q)| - 1) = (|(<??Min> o ??Q)| - 1))
+
+Applied Symmetric equality is true
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ??Q) = (<??Min> o ??Q)) and
+Is_Permutation(((?New_Queue o Empty_String) o <?Min>), (<??Min> o ??Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(?Q = Empty_String) and
+((|?New_Queue| + 1) = |(<??Min> o ??Q)|) and
+(|?New_Queue| = (|(<??Min> o ??Q)| - 1))
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(min_int <= 0) and
+(0 < max_int) and
+(Last_Char_Num > 0) and
+(Max_Length > 0) and
+(min_int <= Max_Length) and
+(Max_Length <= max_int) and
+Is_Total_Preordering(LEQV) and
+Entry.is_initial(Min) and
+(|Q| <= Max_Length) and
+(|Q| /= 0) and
+((<??Min> o ??Q) = (<??Min> o ??Q)) and
+Is_Permutation(((?New_Queue o Empty_String) o <?Min>), (<??Min> o ??Q)) and
+Is_Universally_Related(<?Min>, ?New_Queue, LEQV) and
+(?Q = Empty_String) and
+((|?New_Queue| + 1) = |(<??Min> o ??Q)|) and
+(|?New_Queue| = (|(<??Min> o ??Q)| - 1))
+  -->
+
+
+Q.E.D.
+

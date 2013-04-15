@@ -1,0 +1,811 @@
+Proofs for Iterative_Add_to_Realiz generated Sun Apr 14 14:35:35 EDT 2013
+
+=================================== Summary ===================================
+
+	0_1	......... proved in 5837ms via 5 steps (0 search)
+	0_2	......... proved in 3719ms via 5 steps (0 search)
+	0_3	......... proved in 606ms via 10 steps (0 search)
+	0_4	......... proved in 1036ms via 9 steps (0 search)
+	0_5	......... proved in 4006ms via 6 steps (0 search)
+	0_6	......... proved in 616ms via 8 steps (0 search)
+	0_7	......... proved in 683ms via 5 steps (0 search)
+	1_1	......... proved in 5385ms via 9 steps (0 search)
+
+=================================== 0_1 ===================================
+
+[PROVED] via:
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(min_int <= j) and
+(j <= max_int) and
+(min_int <= i) and
+(i <= max_int) and
+(min_int <= (i + j)) and
+((i + j) <= max_int) and
+(j >= 0)
+  -->
+((i + j) = (i + j))
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+--- Done Minimizing Consequent ---
+
+Applied Symmetric equality is true
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(min_int <= j) and
+(j <= max_int) and
+(min_int <= i) and
+(i <= max_int) and
+(min_int <= (i + j)) and
+((i + j) <= max_int) and
+(j >= 0)
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(min_int <= j) and
+(j <= max_int) and
+(min_int <= i) and
+(i <= max_int) and
+(min_int <= (i + j)) and
+((i + j) <= max_int) and
+(j >= 0)
+  -->
+
+
+Q.E.D.
+
+=================================== 0_2 ===================================
+
+[PROVED] via:
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(min_int <= j) and
+(j <= max_int) and
+(min_int <= i) and
+(i <= max_int) and
+(min_int <= (i + j)) and
+((i + j) <= max_int) and
+(j >= 0)
+  -->
+(j >= 0)
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+--- Done Minimizing Consequent ---
+
+Applied (j >= 0)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(min_int <= j) and
+(j <= max_int) and
+(min_int <= i) and
+(i <= max_int) and
+(min_int <= (i + j)) and
+((i + j) <= max_int) and
+(j >= 0)
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(min_int <= j) and
+(j <= max_int) and
+(min_int <= i) and
+(i <= max_int) and
+(min_int <= (i + j)) and
+((i + j) <= max_int) and
+(j >= 0)
+  -->
+
+
+Q.E.D.
+
+=================================== 0_3 ===================================
+
+[PROVED] via:
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(min_int <= j) and
+(j <= max_int) and
+(min_int <= i) and
+(i <= max_int) and
+(min_int <= (i + j)) and
+((i + j) <= max_int) and
+(j >= 0) and
+((?i + ?j) = (i + j)) and
+(?j >= 0) and
+not((?j = 0))
+  -->
+((?i + 1) <= max_int)
+
+Applied not((i = j)) = (i /= j)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(min_int <= j) and
+(j <= max_int) and
+(min_int <= i) and
+(i <= max_int) and
+(min_int <= (i + j)) and
+((i + j) <= max_int) and
+(j >= 0) and
+((?i + ?j) = (i + j)) and
+(?j >= 0) and
+(?j /= 0)
+  -->
+((?i + 1) <= max_int)
+
+Applied ((i >= j) and (i /= j)) = (i > j)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(min_int <= j) and
+(j <= max_int) and
+(min_int <= i) and
+(i <= max_int) and
+(min_int <= (i + j)) and
+((i + j) <= max_int) and
+(j >= 0) and
+((?i + ?j) = (i + j)) and
+(?j > 0)
+  -->
+((?i + 1) <= max_int)
+
+--- Done Minimizing Antecedent ---
+
+Applied ((?i + ?j) = (i + j))
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(min_int <= j) and
+(j <= max_int) and
+(min_int <= i) and
+(i <= max_int) and
+(min_int <= (i + j)) and
+((i + j) <= max_int) and
+(j >= 0) and
+((?i + ?j) = (i + j)) and
+(?j > 0) and
+((?i + ?j) <= max_int)
+  -->
+((?i + 1) <= max_int)
+
+Applied ((i + j) <= k) and (j > 0) implies (i < k)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(min_int <= j) and
+(j <= max_int) and
+(min_int <= i) and
+(i <= max_int) and
+(min_int <= (i + j)) and
+((i + j) <= max_int) and
+(j >= 0) and
+((?i + ?j) = (i + j)) and
+(?j > 0) and
+((?i + ?j) <= max_int) and
+(?i < max_int)
+  -->
+((?i + 1) <= max_int)
+
+--- Done Developing Antecedent ---
+
+Applied ((i + 1) <= j) = (i < j)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(min_int <= j) and
+(j <= max_int) and
+(min_int <= i) and
+(i <= max_int) and
+(min_int <= (i + j)) and
+((i + j) <= max_int) and
+(j >= 0) and
+((?i + ?j) = (i + j)) and
+(?j > 0) and
+((?i + ?j) <= max_int) and
+(?i < max_int)
+  -->
+(?i < max_int)
+
+--- Done Minimizing Consequent ---
+
+Applied (?i < max_int)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(min_int <= j) and
+(j <= max_int) and
+(min_int <= i) and
+(i <= max_int) and
+(min_int <= (i + j)) and
+((i + j) <= max_int) and
+(j >= 0) and
+((?i + ?j) = (i + j)) and
+(?j > 0) and
+((?i + ?j) <= max_int) and
+(?i < max_int)
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(min_int <= j) and
+(j <= max_int) and
+(min_int <= i) and
+(i <= max_int) and
+(min_int <= (i + j)) and
+((i + j) <= max_int) and
+(j >= 0) and
+((?i + ?j) = (i + j)) and
+(?j > 0) and
+((?i + ?j) <= max_int) and
+(?i < max_int)
+  -->
+
+
+Q.E.D.
+
+=================================== 0_4 ===================================
+
+[PROVED] via:
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(min_int <= j) and
+(j <= max_int) and
+(min_int <= i) and
+(i <= max_int) and
+(min_int <= (i + j)) and
+((i + j) <= max_int) and
+(j >= 0) and
+((?i + ?j) = (i + j)) and
+(?j >= 0) and
+not((?j = 0))
+  -->
+(min_int <= (?j - 1))
+
+Applied not((i = j)) = (i /= j)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(min_int <= j) and
+(j <= max_int) and
+(min_int <= i) and
+(i <= max_int) and
+(min_int <= (i + j)) and
+((i + j) <= max_int) and
+(j >= 0) and
+((?i + ?j) = (i + j)) and
+(?j >= 0) and
+(?j /= 0)
+  -->
+(min_int <= (?j - 1))
+
+Applied ((i >= j) and (i /= j)) = (i > j)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(min_int <= j) and
+(j <= max_int) and
+(min_int <= i) and
+(i <= max_int) and
+(min_int <= (i + j)) and
+((i + j) <= max_int) and
+(j >= 0) and
+((?i + ?j) = (i + j)) and
+(?j > 0)
+  -->
+(min_int <= (?j - 1))
+
+--- Done Minimizing Antecedent ---
+
+Applied (i <= j) and (k > j) implies (i < k)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(min_int <= j) and
+(j <= max_int) and
+(min_int <= i) and
+(i <= max_int) and
+(min_int <= (i + j)) and
+((i + j) <= max_int) and
+(j >= 0) and
+((?i + ?j) = (i + j)) and
+(?j > 0) and
+(min_int < ?j)
+  -->
+(min_int <= (?j - 1))
+
+--- Done Developing Antecedent ---
+
+Applied (i <= (j - 1)) = (i < j)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(min_int <= j) and
+(j <= max_int) and
+(min_int <= i) and
+(i <= max_int) and
+(min_int <= (i + j)) and
+((i + j) <= max_int) and
+(j >= 0) and
+((?i + ?j) = (i + j)) and
+(?j > 0) and
+(min_int < ?j)
+  -->
+(min_int < ?j)
+
+--- Done Minimizing Consequent ---
+
+Applied (min_int < ?j)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(min_int <= j) and
+(j <= max_int) and
+(min_int <= i) and
+(i <= max_int) and
+(min_int <= (i + j)) and
+((i + j) <= max_int) and
+(j >= 0) and
+((?i + ?j) = (i + j)) and
+(?j > 0) and
+(min_int < ?j)
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(min_int <= j) and
+(j <= max_int) and
+(min_int <= i) and
+(i <= max_int) and
+(min_int <= (i + j)) and
+((i + j) <= max_int) and
+(j >= 0) and
+((?i + ?j) = (i + j)) and
+(?j > 0) and
+(min_int < ?j)
+  -->
+
+
+Q.E.D.
+
+=================================== 0_5 ===================================
+
+[PROVED] via:
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(min_int <= j) and
+(j <= max_int) and
+(min_int <= i) and
+(i <= max_int) and
+(min_int <= (i + j)) and
+((i + j) <= max_int) and
+(j >= 0) and
+((?i + ?j) = (i + j)) and
+(?j >= 0) and
+not((?j = 0))
+  -->
+(((?i + 1) + (?j - 1)) = (i + j))
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+Applied ((i + k) + (j - k)) = (i + j)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(min_int <= j) and
+(j <= max_int) and
+(min_int <= i) and
+(i <= max_int) and
+(min_int <= (i + j)) and
+((i + j) <= max_int) and
+(j >= 0) and
+((?i + ?j) = (i + j)) and
+(?j >= 0) and
+not((?j = 0))
+  -->
+((?i + ?j) = (i + j))
+
+--- Done Minimizing Consequent ---
+
+Applied ((?i + ?j) = (i + j))
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(min_int <= j) and
+(j <= max_int) and
+(min_int <= i) and
+(i <= max_int) and
+(min_int <= (i + j)) and
+((i + j) <= max_int) and
+(j >= 0) and
+((?i + ?j) = (i + j)) and
+(?j >= 0) and
+not((?j = 0))
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(min_int <= j) and
+(j <= max_int) and
+(min_int <= i) and
+(i <= max_int) and
+(min_int <= (i + j)) and
+((i + j) <= max_int) and
+(j >= 0) and
+((?i + ?j) = (i + j)) and
+(?j >= 0) and
+not((?j = 0))
+  -->
+
+
+Q.E.D.
+
+=================================== 0_6 ===================================
+
+[PROVED] via:
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(min_int <= j) and
+(j <= max_int) and
+(min_int <= i) and
+(i <= max_int) and
+(min_int <= (i + j)) and
+((i + j) <= max_int) and
+(j >= 0) and
+((?i + ?j) = (i + j)) and
+(?j >= 0) and
+not((?j = 0))
+  -->
+((?j - 1) >= 0)
+
+Applied not((i = j)) = (i /= j)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(min_int <= j) and
+(j <= max_int) and
+(min_int <= i) and
+(i <= max_int) and
+(min_int <= (i + j)) and
+((i + j) <= max_int) and
+(j >= 0) and
+((?i + ?j) = (i + j)) and
+(?j >= 0) and
+(?j /= 0)
+  -->
+((?j - 1) >= 0)
+
+Applied ((i >= j) and (i /= j)) = (i > j)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(min_int <= j) and
+(j <= max_int) and
+(min_int <= i) and
+(i <= max_int) and
+(min_int <= (i + j)) and
+((i + j) <= max_int) and
+(j >= 0) and
+((?i + ?j) = (i + j)) and
+(?j > 0)
+  -->
+((?j - 1) >= 0)
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+Applied ((i - 1) >= j) = (i > j)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(min_int <= j) and
+(j <= max_int) and
+(min_int <= i) and
+(i <= max_int) and
+(min_int <= (i + j)) and
+((i + j) <= max_int) and
+(j >= 0) and
+((?i + ?j) = (i + j)) and
+(?j > 0)
+  -->
+(?j > 0)
+
+--- Done Minimizing Consequent ---
+
+Applied (?j > 0)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(min_int <= j) and
+(j <= max_int) and
+(min_int <= i) and
+(i <= max_int) and
+(min_int <= (i + j)) and
+((i + j) <= max_int) and
+(j >= 0) and
+((?i + ?j) = (i + j)) and
+(?j > 0)
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(min_int <= j) and
+(j <= max_int) and
+(min_int <= i) and
+(i <= max_int) and
+(min_int <= (i + j)) and
+((i + j) <= max_int) and
+(j >= 0) and
+((?i + ?j) = (i + j)) and
+(?j > 0)
+  -->
+
+
+Q.E.D.
+
+=================================== 0_7 ===================================
+
+[PROVED] via:
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(min_int <= j) and
+(j <= max_int) and
+(min_int <= i) and
+(i <= max_int) and
+(min_int <= (i + j)) and
+((i + j) <= max_int) and
+(j >= 0) and
+((?i + ?j) = (i + j)) and
+(?j >= 0) and
+not((?j = 0))
+  -->
+((?j - 1) < ?j)
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+Applied ((i - 1) < i)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(min_int <= j) and
+(j <= max_int) and
+(min_int <= i) and
+(i <= max_int) and
+(min_int <= (i + j)) and
+((i + j) <= max_int) and
+(j >= 0) and
+((?i + ?j) = (i + j)) and
+(?j >= 0) and
+not((?j = 0))
+  -->
+true
+
+--- Done Minimizing Consequent ---
+
+Applied Eliminate true conjunct
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(min_int <= j) and
+(j <= max_int) and
+(min_int <= i) and
+(i <= max_int) and
+(min_int <= (i + j)) and
+((i + j) <= max_int) and
+(j >= 0) and
+((?i + ?j) = (i + j)) and
+(?j >= 0) and
+not((?j = 0))
+  -->
+
+
+Q.E.D.
+
+=================================== 1_1 ===================================
+
+[PROVED] via:
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(min_int <= j) and
+(j <= max_int) and
+(min_int <= i) and
+(i <= max_int) and
+(min_int <= (i + j)) and
+((i + j) <= max_int) and
+(j >= 0) and
+((?i + ?j) = (i + j)) and
+(?j >= 0) and
+(?j = 0)
+  -->
+(?i = (i + j))
+
+Applied ?j = 0
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(min_int <= j) and
+(j <= max_int) and
+(min_int <= i) and
+(i <= max_int) and
+(min_int <= (i + j)) and
+((i + j) <= max_int) and
+(j >= 0) and
+((?i + 0) = (i + j)) and
+(?j >= 0) and
+(?j = 0)
+  -->
+(?i = (i + j))
+
+Applied (i + 0) = i
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(min_int <= j) and
+(j <= max_int) and
+(min_int <= i) and
+(i <= max_int) and
+(min_int <= (i + j)) and
+((i + j) <= max_int) and
+(j >= 0) and
+(?i = (i + j)) and
+(?j >= 0) and
+(?j = 0)
+  -->
+(?i = (i + j))
+
+Applied ?i = (i + j)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(min_int <= j) and
+(j <= max_int) and
+(min_int <= i) and
+(i <= max_int) and
+(min_int <= (i + j)) and
+((i + j) <= max_int) and
+(j >= 0) and
+((i + j) = (i + j)) and
+(?j >= 0) and
+(?j = 0)
+  -->
+(?i = (i + j))
+
+Applied ?i = (i + j)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(min_int <= j) and
+(j <= max_int) and
+(min_int <= i) and
+(i <= max_int) and
+(min_int <= (i + j)) and
+((i + j) <= max_int) and
+(j >= 0) and
+((i + j) = (i + j)) and
+(?j >= 0) and
+(?j = 0)
+  -->
+((i + j) = (i + j))
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+--- Done Minimizing Consequent ---
+
+Applied Symmetric equality is true
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(min_int <= j) and
+(j <= max_int) and
+(min_int <= i) and
+(i <= max_int) and
+(min_int <= (i + j)) and
+((i + j) <= max_int) and
+(j >= 0) and
+((i + j) = (i + j)) and
+(?j >= 0) and
+(?j = 0)
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(min_int <= j) and
+(j <= max_int) and
+(min_int <= i) and
+(i <= max_int) and
+(min_int <= (i + j)) and
+((i + j) <= max_int) and
+(j >= 0) and
+((i + j) = (i + j)) and
+(?j >= 0) and
+(?j = 0)
+  -->
+
+
+Q.E.D.
+

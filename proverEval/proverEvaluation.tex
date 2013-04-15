@@ -5,7 +5,7 @@
 %-----------------------------------------------------------------------------
 The evaluation of our minimalist prover orbits three fundamental questions: first, does our prover succeed in verifying programs; second, are our heuristics effective at increasing the usefulness of the prover; and third, does the data gathered by our prover expose any interesting properties of the VCs that arise from well-engineered programs.
 
-The first and second question are explored by considering a series of verification benchmarks.  In Section \ref{canProve} we present each benchmark, then explore the effectiveness of the automated prover when applied to that benchmark.  Following that, in Section \ref{evalHeuristics}, we use those same benchmarks to explore how our various heuristics impact the effectiveness of the prover.  Finally, the third question is addressed in Section \ref{proverEvalConclusion}, where we provide some observations and conclusions based on the collected data.
+The first and second question are explored by considering a series of verification benchmarks.  In Section \ref{canProve} we present each benchmark, then explore the effectiveness of the automated prover when applied to that benchmark.  Following that, in Section \ref{heuristicsEval}, we use those same benchmarks to explore how our various heuristics impact the effectiveness of the prover.  Finally, the third question is addressed in Section \ref{proverEvalConclusion}, where we provide some observations and conclusions based on the collected data.
 
 This chapter focuses on the specifications and realizations of the benchmarks, with discussion of relevant mathematics forming the basis of Chapter \ref{ch:mathEvaluation}.  We will generally present only enough of each specification and realization to motivate our discussion, but the full specifications of each benchmark and any associated datastructures can be found in Appendix \ref{apx:spec} and full realizations in Appendix \ref{apx:real}.  Full listings of the proofs generated as solutions to the benchmarks in this chapter are available in Appendix \ref{apx:proofs}.
 
@@ -18,7 +18,7 @@ While the usability of our prover and its application in educational settings is
 For this chapter we focus on four primary metrics for exploring the effectiveness of the prover and the difficulty of the VCs.  These are:
 
 \begin{itemize}
-	\item \textbf{VCs proved.}  The number of VCs that were successfully dispatched by the prover.  Since the proof space is quite large, the prover often runs with a set timeout, after which it gives up, in which case this metric refers to the number of VCs that were proved within the timeout.  Where relevant, the timeout will be stated.
+	\item \textbf{VCs proved.}  The number of VCs that were successfully dispatched by the prover.  Since the proof space is quite large, the prover often runs with a set timeout, after which it gives up, so in reality this metric refers to the number of VCs that were proved within the timeout.  Throughout this chapter, the timeout was set at 20 seconds.
 	\item \textbf{Real time.}  The amount of time required to dispatch the VC, generally measured in milliseconds.  Because this metric can vary depending on a number of variables, we will generally use the median of five repeated trials.
 	\item \textbf{Proof steps.}  The number of relevant steps taken by the prover.  One of the features of the prover is to prune steps that did not impact the final result.
 	\item \textbf{Search steps.}  A subset of the overall proof steps including only those steps taken during the ``consequent exploration'' phase described in Section \ref{consequentExploration}, and not including those consequent steps that are ``obvious'', namely: replacing a consequent that matches a given with \texttt{true}, replacing a consequent that is a symmetric equality with \texttt{true}, and eliminating a conjunct that is \texttt{true}.  Intuitively this metric refers to the number of steps that were blind exploration of the proof space and which may have to be backtracked over, rather than deterministic steps over which we do not backtrack.
@@ -60,39 +60,39 @@ Integers are partially built-in to RESOLVE, which makes using one enhancement to
 
 \begin{figure}
 	\centering
-	\begin{subfigure}[b]{0.4\textwidth}
+	\begin{subfigure}[b]{0.45\textwidth}
 		\centering
-		\begin{tabular}{lrrr}
+		\begin{tabular}{lrrrr}
 			\toprule
-				& Time (ms)	& Steps	& Search \\
+				& Time (ms)	& $\sigma$& Steps & Search \\
 			\midrule
-			VC 0\_1	& 5418		& 5	& 0     \\
-			VC 0\_2	& 3388		& 5	& 0     \\
-			VC 0\_3	& 520		& 10	& 0     \\
-			VC 0\_4	& 754		& 9	& 0     \\
-			VC 0\_5	& 3841		& 6	& 0     \\
-			VC 0\_6	& 616		& 8	& 0     \\
-			VC 0\_7	& 528		& 5	& 0     \\
-			VC 1\_1	& 4846		& 9	& 0     \\
+			VC 0\_1	& 5560		& 182	& 5	& 0     \\
+			VC 0\_2	& 3456		& 280	& 5	& 0     \\
+			VC 0\_3	& 565		& 78	& 10	& 0     \\
+			VC 0\_4	& 834		& 197	& 9	& 0     \\
+			VC 0\_5	& 3873		& 219	& 6	& 0     \\
+			VC 0\_6	& 613		& 101	& 8	& 0     \\
+			VC 0\_7	& 591		& 106	& 5	& 0     \\
+			VC 1\_1	& 5020		& 286	& 9	& 0     \\
 			\bottomrule
 		\end{tabular}
 		\caption{Iterative \texttt{Adding\_Capabilitiy} results\label{fig:iterAddResults}}
 	\end{subfigure}
 	\qquad
-	\begin{subfigure}[b]{0.4\textwidth}
+	\begin{subfigure}[b]{0.45\textwidth}
 		\centering
-		\begin{tabular}{lrrr}
+		\begin{tabular}{lrrrr}
 			\toprule
-				& Time (ms)	& Steps	& Search \\
+				& Time (ms)	& $\sigma$& Steps & Search \\
 			\midrule
-			VC 0\_1	& 2494		& 9	& 0     \\
-			VC 0\_2	& 1225		& 9	& 0     \\
-			VC 0\_3	& 931		& 5	& 0     \\
-			VC 0\_4	& 1448		& 6	& 0     \\
-			VC 0\_5	& 1086		& 6	& 0     \\
-			VC 0\_6	& 745		& 8	& 0     \\
-			VC 0\_7	& 1157		& 5	& 0     \\
-			VC 1\_1	& 334		& 8	& 0     \\
+			VC 0\_1	& 2549		& 124	& 9	& 0     \\
+			VC 0\_2	& 1244		& 221	& 9	& 0     \\
+			VC 0\_3	& 977		& 177	& 5	& 0     \\
+			VC 0\_4	& 1379		& 222	& 6	& 0     \\
+			VC 0\_5	& 1118		& 159	& 6	& 0     \\
+			VC 0\_6	& 757		& 82	& 8	& 0     \\
+			VC 0\_7	& 1113		& 178	& 5	& 0     \\
+			VC 1\_1	& 379		& 76	& 8	& 0     \\
 			\bottomrule
 		\end{tabular}
 		\caption{Recursive \texttt{Adding\_Capabilitiy} results\label{fig:recAddResults}}
@@ -101,21 +101,21 @@ Integers are partially built-in to RESOLVE, which makes using one enhancement to
 	\vspace{2em}
 	\begin{subfigure}[b]{0.6\textwidth}
 		\centering
-		\begin{tabular}{lrrr}
+		\begin{tabular}{lrrrr}
 			\toprule
-				& Time (ms)	& Steps	& Search \\
+				& Time (ms)	& $\sigma$& Steps & Search \\
 			\midrule
-			VC 0\_1	& 6201		& 7	& 0     \\
-			VC 0\_2	& 3513		& 5	& 0     \\
-			VC 0\_3	& 3535		& 7	& 2     \\
-			VC 0\_4	& 342		& 7	& 0     \\
-			VC 0\_5	& 307		& 5	& 0     \\
-			VC 1\_1	& 5854		& 8	& 0     \\
+			VC 0\_1	& 6264		& 195	& 7	& 0     \\
+			VC 0\_2	& 3484		& 365	& 5	& 0     \\
+			VC 0\_3	& 3495		& 182	& 7	& 2     \\
+			VC 0\_4	& 393		& 149	& 7	& 0     \\
+			VC 0\_5	& 333		& 53	& 5	& 0     \\
+			VC 1\_1	& 5917		& 124	& 8	& 0     \\
 			\bottomrule
 		\end{tabular}
-		\caption{Iterative \texttt{Multiplying\_Capabilitiy} results\label{fig:recAddResults}}
+		\caption{Iterative \texttt{Multiplying\_Capabilitiy} results\label{fig:iterMultResults}}
 	\end{subfigure}
-  \caption{Results from verification of Benchmark 1 solutions}
+  \caption{Results from verification of Benchmark 1 solutions\label{fig:addMultResults}}
 \end{figure}
 
 
@@ -150,7 +150,7 @@ While we provide syntactic sugar for array operations, they are supported by an 
 
 \paragraph{Solution Discussion}In Listing \ref{lst:sortingSpec} we present a specification of a queue sorting enhancement.  As with Benchmark 2, it takes as a parameter a client-provided definition to define the sorted order, \texttt{LEQV}.  It uses two higher-order definitions \texttt{Is\_Coformal\_With()} and \texttt{Is\_Permutation()} to ensure that the final queue is ordered according to \texttt{LEQV} and contains the same elements as those original provided, respectively.
 
-\lstinputlisting[float=h,language=resolve,caption={The specification of \texttt{Sorting\_Capabilitiy}\label{lst:sortingSpec}}]{proverEval/examples/Sorting_Capability.en}
+\lstinputlisting[float=h,language=resolve,caption={The specification of \texttt{Sorting\_Capability}\label{lst:sortingSpec}}]{proverEval/examples/Sorting_Capability.en}
 
 A straightforward selection sort realization is provided in Listing \ref{lst:sortingImpl}.
 
@@ -162,48 +162,48 @@ Again, as in Benchmark 2, we take a client-provided operation, \texttt{Compare()
 
 \begin{figure}
 	\centering
-	\begin{tabular}{lrrr}
+	\begin{tabular}{lrrrr}
 		\toprule
-			& Time (ms)	& Steps	& Search \\
+			& Time (ms)	& $\sigma$& Steps & Search \\
 		\midrule
-		VC 0\_1	& 1179		& 6 	& 0     \\
-		VC 0\_2	& 445		& 5 	& 0     \\
-		VC 0\_3	& 878		& 5 	& 0     \\
-		VC 0\_4	& 1298		& 6 	& 1     \\
-		VC 0\_5	& 2789		& 8	& 0     \\
-		VC 0\_6	& 2947		& 9 	& 3     \\
-		VC 0\_7	& 1438		& 8 	& 0     \\
-		VC 0\_8	& 1685		& 10	& 1     \\
-		VC 0\_9	& 2220		& 9 	& 3     \\
-		VC 1\_1	& 516 		& 5 	& 0     \\
-		VC 1\_2	& 912 		& 10	& 1     \\
-		VC 2\_1	& 731 		& 5 	& 0     \\
-		VC 2\_2	& 1816		& 8 	& 0     \\
-		VC 2\_3	& 1708		& 5 	& 0     \\
-		VC 2\_4	& 1557		& 6 	& 1     \\
-		VC 2\_5	& 2826		& 14	& 0     \\
+		VC 0\_1	& 1344		& 242 	& 6 	& 0     \\
+		VC 0\_2	& 479		& 73	& 5 	& 0     \\
+		VC 0\_3	& 912		& 56	& 5 	& 0     \\
+		VC 0\_4	& 1305		& 198	& 6 	& 1     \\
+		VC 0\_5	& 2762		& 300	& 8	& 0     \\
+		VC 0\_6	& 3128		& 372	& 9 	& 3     \\
+		VC 0\_7	& 1513		& 271	& 8 	& 0     \\
+		VC 0\_8	& 1710		& 136	& 10	& 1     \\
+		VC 0\_9	& 2219		& 166	& 9 	& 3     \\
+		VC 1\_1	& 501 		& 100	& 5 	& 0     \\
+		VC 1\_2	& 1012 		& 165	& 10	& 1     \\
+		VC 2\_1	& 806 		& 136	& 5 	& 0     \\
+		VC 2\_2	& 1918		& 237	& 8 	& 0     \\
+		VC 2\_3	& 1781		& 197	& 5 	& 0     \\
+		VC 2\_4	& 1620		& 284	& 6 	& 1     \\
+		VC 2\_5	& 3021		& 387	& 14	& 0     \\
 		\bottomrule
 	\end{tabular}
 	\qquad
-	\begin{tabular}{lrrr}
+	\begin{tabular}{lrrrr}
 		\toprule
-			& Time (ms)	& Steps	& Search \\
+			& Time (ms)	& $\sigma$& Steps & Search \\
 		\midrule
-		VC 2\_6	& 4360		& 12	& 3     \\
-		VC 2\_7	& 1864		& 10	& 2     \\
-		VC 2\_8	& 1869		& 7 	& 0     \\
-		VC 3\_1	& 795 		& 5 	& 0     \\
-		VC 3\_2	& 1834		& 8 	& 0     \\
-		VC 3\_3	& 1657		& 5 	& 0     \\
-		VC 3\_4	& 1473		& 6 	& 1     \\
-		VC 3\_5	& 2842		& 14	& 0     \\
-		VC 3\_6	& 4027		& 10	& 1     \\
-		VC 3\_7	& 1755		& 10	& 2     \\
-		VC 3\_8	& 1851		& 7 	& 0     \\
-		VC 4\_1	& 759 		& 5 	& 0     \\
-		VC 4\_2	& 2858		& 12	& 0     \\
-		VC 4\_3	& 1154		& 5 	& 0     \\
-		VC 4\_4	& 2864		& 18	& 3     \\
+		VC 2\_6	& 4441		& 278	& 12	& 3     \\
+		VC 2\_7	& 1919		& 108	& 10	& 2     \\
+		VC 2\_8	& 1843		& 139	& 7 	& 0     \\
+		VC 3\_1	& 819 		& 141	& 5 	& 0     \\
+		VC 3\_2	& 1896		& 213	& 8 	& 0     \\
+		VC 3\_3	& 1642		& 124	& 5 	& 0     \\
+		VC 3\_4	& 1493		& 197	& 6 	& 1     \\
+		VC 3\_5	& 2965		& 239	& 14	& 0     \\
+		VC 3\_6	& 4202		& 200	& 10	& 1     \\
+		VC 3\_7	& 1897		& 194	& 10	& 2     \\
+		VC 3\_8	& 1863		& 165	& 7 	& 0     \\
+		VC 4\_1	& 838 		& 139	& 5 	& 0     \\
+		VC 4\_2	& 2939		& 150	& 12	& 0     \\
+		VC 4\_3	& 1132		& 189	& 5 	& 0     \\
+		VC 4\_4	& 3056		& 262	& 18	& 3     \\
 		\bottomrule
 	\end{tabular}
 	\caption{Selection sort \texttt{Sorting\_Capabilitiy} results\label{fig:sortingResults}}
@@ -230,15 +230,15 @@ Again, as in Benchmark 2, we take a client-provided operation, \texttt{Compare()
 
 \begin{figure}
 	\centering
-	\begin{tabular}{lrrr}
+	\begin{tabular}{lrrrr}
 		\toprule
-			& Time (ms)	& Steps	& Search \\
+			& Time (ms)	& $\sigma$& Steps & Search \\
 		\midrule
-		VC 0\_1	& 1441		& 5 	& 0     \\
-		VC 0\_2	& 3055		& 7 	& 0     \\
-		VC 0\_3	& 2679		& 8 	& 0     \\
-		VC 0\_4	& 2127		& 9 	& 2     \\
-		VC 1\_1	& 335		& 10	& 0     \\
+		VC 0\_1	& 1520		& 141	& 5 	& 0     \\
+		VC 0\_2	& 3118		& 295	& 7 	& 0     \\
+		VC 0\_3	& 2741		& 222	& 8 	& 0     \\
+		VC 0\_4	& 2174		& 170	& 9 	& 2     \\
+		VC 1\_1	& 366		& 83	& 10	& 0     \\
 		\bottomrule
 	\end{tabular}
 	\caption{Recursive \texttt{Flipping\_Capabilitiy} results\label{fig:flippingResults}}
@@ -262,45 +262,84 @@ We implement this specification on top of an array, which, as in Benchmark 2, is
 
 \begin{figure}
 	\centering
-	\begin{tabular}{lrrr}
+	\begin{tabular}{lrrrr}
 		\toprule
-			& Time (ms)	& Steps	& Search \\
+			& Time (ms)	& $\sigma$& Steps & Search \\
 		\midrule
-		VC 0\_1	& 1441		& 5 	& 0     \\
-		VC 1\_1	& 3055		& 7 	& 0     \\
-		VC 2\_1	& 2679		& 8 	& 0     \\
-		VC 2\_2	& 2127		& 9 	& 2     \\
-		VC 2\_3	& 335		& 10	& 0     \\
-		VC 3\_1	& 795 		& 5 	& 0     \\
-		VC 3\_2	& 1834		& 8 	& 0     \\
-		VC 3\_3	& 1657		& 5 	& 0     \\
-		VC 3\_4	& 1473		& 6 	& 1     \\
-		VC 3\_5	& 2842		& 14	& 0     \\
-		VC 4\_1	& 795 		& 5 	& 0     \\
-		VC 4\_2	& 1834		& 8 	& 0     \\
-		VC 4\_3	& 1657		& 5 	& 0     \\
-		VC 4\_4	& 1473		& 6 	& 1     \\
+		VC 0\_1	& 493		& 58	& 5 	& 0     \\
+		VC 1\_1	& 4116		& 552	& 7 	& 0     \\
+		VC 2\_1	& 240		& 132	& 5 	& 0     \\
+		VC 2\_2	& 4324		& 268	& 7 	& 1     \\
+		VC 2\_3	& 200		& 42	& 6 	& 0     \\
+		VC 3\_1	& 18583		& 490	& 7 	& 2     \\
+		VC 3\_2	& 2331		& 516	& 8 	& 0     \\
+		VC 3\_3	& 1709		& 178	& 6 	& 1     \\
+		VC 3\_4	& 2038		& 83	& 8 	& 0     \\
+		VC 3\_5	& 2243		& 475	& 9 	& 2     \\
+		VC 4\_1	& 6592 		& 314	& 11	& 3     \\
+		VC 4\_2	& 1187		& 234	& 5 	& 0     \\
+		VC 4\_3	& 891		& 216	& 9 	& 0     \\
+		VC 4\_4	& 1124		& 142	& 6 	& 1     \\
 		\bottomrule
 	\end{tabular}
 	\qquad
-	\begin{tabular}{lrrr}
+	\begin{tabular}{lrrrr}
 		\toprule
-			& Time (ms)	& Steps	& Search \\
+			& Time (ms)	& $\sigma$& Steps & Search \\
 		\midrule
-		VC 4\_5	& 2842		& 14	& 0     \\
-		VC 5\_1	& 795 		& 5 	& 0     \\
-		VC 5\_2	& 1834		& 8 	& 0     \\
-		VC 5\_3	& 1657		& 5 	& 0     \\
-		VC 5\_4	& 1473		& 6 	& 1     \\
-		VC 6\_1	& 795 		& 5 	& 0     \\
-		VC 6\_2	& 1834		& 8 	& 0     \\
-		VC 6\_3	& 1657		& 5 	& 0     \\
-		VC 6\_4	& 1473		& 6 	& 1     \\
-		VC 7\_1	& 795 		& 5 	& 0     \\
-		VC 7\_2	& 1834		& 8 	& 0     \\
-		VC 7\_3	& 1657		& 5 	& 0     \\
-		VC 7\_4	& 1473		& 6 	& 1     \\
+		VC 4\_5	& 956		& 291	& 7 	& 0     \\
+		VC 5\_1	& 1558 		& 408	& 5 	& 0     \\
+		VC 5\_2	& 2070		& 300	& 5 	& 0     \\
+		VC 5\_3	& 1705		& 299	& 7 	& 0     \\
+		VC 5\_4	& 1769		& 428	& 5 	& 0     \\
+		VC 6\_1	& 1668 		& 465	& 5 	& 0     \\
+		VC 6\_2	& 2344		& 300	& 5 	& 0     \\
+		VC 6\_3	& 2217		& 386	& 7 	& 0     \\
+		VC 6\_4	& 1729		& 392	& 5 	& 0     \\
+		VC 7\_1	& 625 		& 146	& 5 	& 0     \\
+		VC 7\_2	& 1390		& 342	& 7 	& 0     \\
+		VC 7\_3	& 598		& 169	& 4 	& 0     \\
+		VC 7\_4	& 683		& 217	& 6 	& 0     \\
 		\bottomrule
 	\end{tabular}
 	\caption{Array-based \texttt{Stack} implementation results\label{fig:stackResults}}
 \end{figure}
+
+
+%-----------------------------------------------------------------------------
+	\subsection{Summary}
+%-----------------------------------------------------------------------------
+\textbf{XXX This section is pending data from binary search, but will contain a couple of graphs about the number of VCs we can prove and the frequency of proofs with different search metric values XXX}
+
+%-----------------------------------------------------------------------------
+\section{Heuristic Evaluation\label{heuristicsEval}}
+%-----------------------------------------------------------------------------
+\textbf{XXX The tables and specific values in the section will change once we have the data from binary search, but barring very unusual results, the conclusions should be the same XXX}
+
+In order to evaluate the effectiveness of our heuristics from Section \ref{domainSpecific}, the prover was instrumented so that each of six different heuristics could be disabled individually.  The heuristics we targetted were: ignoring useless transformations, developing the antecedent only about relevant terms, focus on diversity in antecedent development, minimization of both consequent and antecedent, cycle detection, and transformation prioritization.
+
+We then re-ran the verification process on each of our benchmarks and collected data about the changes to our various metrics.  This data is summarized in Figure \ref{heuristicEvalTable}.
+
+\setlength{\tabcolsep}{8pt}
+\begin{figure}
+	\centering
+	\begin{tabular}{lrrrrrrr}
+		\toprule
+			& $\sum \Delta\text{Proved}$	& $\overline{\Delta t / \sigma}$	& $\sum\Delta t$ & $\overline{\Delta\text{steps}}$ & $\sum\Delta\text{steps}$ & $\overline{\Delta\text{search}}$ & $\sum\Delta\text{search}$ \\
+		\midrule
+		With useless \\transformations		& -3	& 2.38	& 40172		& 0	& 0	& 0	& 0	\\
+		\midrule
+		Developing about \\irrelevant terms	& 0	& 8.24	& 95103		& 0	& 0	& 0	& 0\\
+		\midrule
+		Not checking for \\diversity of givens	& -5	& -6.82	& -127690	& -0.05	& -4	& -0.01 & -1	\\
+		\midrule
+		No minimization				& -9	& -1.56	& -63621	& 0.26	& 2	& 0.33	& 25	\\
+		\midrule
+		No cycle detection			& 0	& -1.24	& -19777	& 0.08	& 7	& 0.08	& 7	\\
+		\midrule
+		No prioritization \\of transformations	& -2	& 41.82	& -17458	& 0.04	& 3	& 0.01	& 1	\\
+		\bottomrule
+	\end{tabular}
+	\caption{Summary of heuristic evaluation results.  From left to right the columns are: total change in the number of proved VCs (negative means fewer were proved), average standard deviations change in time to prove, total change in time to prove, average change to the number of steps required, total change in number of steps required, average change in number of search steps required, and total change in number of search steps required.\label{heuristicEvalTable}}
+\end{figure}
+\setlength{\tabcolsep}{6pt}

@@ -1,0 +1,2441 @@
+Proofs for Array_Realiz generated Sun Apr 14 19:05:44 EDT 2013
+
+=================================== Summary ===================================
+
+	0_1	......... proved in 581ms via 5 steps (0 search)
+	1_1	......... proved in 4325ms via 7 steps (0 search)
+	2_1	......... proved in 171ms via 5 steps (0 search)
+	2_2	......... proved in 4648ms via 7 steps (1 search)
+	2_3	......... proved in 188ms via 6 steps (0 search)
+	3_1	......... proved in 18903ms via 7 steps (2 search)
+	3_2	......... proved in 2909ms via 8 steps (0 search)
+	3_3	......... proved in 1621ms via 6 steps (1 search)
+	3_4	......... proved in 1991ms via 8 steps (0 search)
+	3_5	......... proved in 2661ms via 9 steps (2 search)
+	4_1	......... proved in 6981ms via 11 steps (3 search)
+	4_2	......... proved in 1306ms via 5 steps (0 search)
+	4_3	......... proved in 1162ms via 9 steps (0 search)
+	4_4	......... proved in 1343ms via 6 steps (1 search)
+	4_5	......... proved in 1190ms via 7 steps (0 search)
+	5_1	......... proved in 1944ms via 5 steps (0 search)
+	5_2	......... proved in 2575ms via 5 steps (0 search)
+	5_3	......... proved in 1648ms via 7 steps (0 search)
+	5_4	......... proved in 1899ms via 5 steps (0 search)
+	6_1	......... proved in 2079ms via 5 steps (0 search)
+	6_2	......... proved in 2688ms via 5 steps (0 search)
+	6_3	......... proved in 2290ms via 7 steps (0 search)
+	6_4	......... proved in 1710ms via 5 steps (0 search)
+	7_1	......... proved in 676ms via 5 steps (0 search)
+	7_2	......... proved in 1584ms via 7 steps (0 search)
+	7_3	......... proved in 538ms via 4 steps (0 search)
+	7_4	......... proved in 837ms via 6 steps (0 search)
+
+=================================== 0_1 ===================================
+
+[PROVED] via:
+
+(Lower_Bound <= Upper_Bound)
+  -->
+(Lower_Bound <= Upper_Bound)
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+--- Done Minimizing Consequent ---
+
+Applied (Lower_Bound <= Upper_Bound)
+
+(Lower_Bound <= Upper_Bound)
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(Lower_Bound <= Upper_Bound)
+  -->
+
+
+Q.E.D.
+
+=================================== 1_1 ===================================
+
+[PROVED] via:
+
+(Max_Depth > 0) and
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth)
+  -->
+(|Reverse(Concatenate(S.Contents, S.Top))| <= Max_Depth)
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+Applied |Reverse(S)| = |S|
+
+(Max_Depth > 0) and
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth)
+  -->
+(|Concatenate(S.Contents, S.Top)| <= Max_Depth)
+
+Applied |Concatenate(f, i)| = i
+
+(Max_Depth > 0) and
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth)
+  -->
+(S.Top <= Max_Depth)
+
+--- Done Minimizing Consequent ---
+
+Applied (S.Top <= Max_Depth)
+
+(Max_Depth > 0) and
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth)
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(Max_Depth > 0) and
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth)
+  -->
+
+
+Q.E.D.
+
+=================================== 2_1 ===================================
+
+[PROVED] via:
+
+Entry.Is_Initial(S.Contents(i)) and
+(Max_Depth > 0)
+  -->
+(0 <= 0)
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+Applied (i <= i)
+
+Entry.Is_Initial(S.Contents(i)) and
+(Max_Depth > 0)
+  -->
+true
+
+--- Done Minimizing Consequent ---
+
+Applied Eliminate true conjunct
+
+Entry.Is_Initial(S.Contents(i)) and
+(Max_Depth > 0)
+  -->
+
+
+Q.E.D.
+
+=================================== 2_2 ===================================
+
+[PROVED] via:
+
+Entry.Is_Initial(S.Contents(i)) and
+(Max_Depth > 0)
+  -->
+(0 <= Max_Depth)
+
+--- Done Minimizing Antecedent ---
+
+Applied ((i > j) = (j < i))
+
+Entry.Is_Initial(S.Contents(i)) and
+(Max_Depth > 0) and
+(0 < Max_Depth)
+  -->
+(0 <= Max_Depth)
+
+--- Done Developing Antecedent ---
+
+--- Done Minimizing Consequent ---
+
+Applied Strengthen to (i < j)
+
+Entry.Is_Initial(S.Contents(i)) and
+(Max_Depth > 0) and
+(0 < Max_Depth)
+  -->
+(0 < Max_Depth)
+
+Applied (0 < Max_Depth)
+
+Entry.Is_Initial(S.Contents(i)) and
+(Max_Depth > 0) and
+(0 < Max_Depth)
+  -->
+true
+
+Applied Eliminate true conjunct
+
+Entry.Is_Initial(S.Contents(i)) and
+(Max_Depth > 0) and
+(0 < Max_Depth)
+  -->
+
+
+Q.E.D.
+
+=================================== 2_3 ===================================
+
+[PROVED] via:
+
+Entry.Is_Initial(S.Contents(i)) and
+(Max_Depth > 0) and
+(Conc_S = Reverse(Concatenate(S.Contents, 0)))
+  -->
+(Reverse(Concatenate(S.Contents, 0)) = Empty_String)
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+Applied Concatenate(f, 0) = Empty_String
+
+Entry.Is_Initial(S.Contents(i)) and
+(Max_Depth > 0) and
+(Conc_S = Reverse(Concatenate(S.Contents, 0)))
+  -->
+(Reverse(Empty_String) = Empty_String)
+
+Applied (Reverse(Empty_String) = Empty_String)
+
+Entry.Is_Initial(S.Contents(i)) and
+(Max_Depth > 0) and
+(Conc_S = Reverse(Concatenate(S.Contents, 0)))
+  -->
+true
+
+--- Done Minimizing Consequent ---
+
+Applied Eliminate true conjunct
+
+Entry.Is_Initial(S.Contents(i)) and
+(Max_Depth > 0) and
+(Conc_S = Reverse(Concatenate(S.Contents, 0)))
+  -->
+
+
+Q.E.D.
+
+=================================== 3_1 ===================================
+
+[PROVED] via:
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+(|Reverse(Concatenate(S.Contents, S.Top))| < Max_Depth)
+  -->
+(1 <= (S.Top + 1))
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+--- Done Minimizing Consequent ---
+
+Applied (i <= (j + k)) = ((i - k) <= j)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+(|Reverse(Concatenate(S.Contents, S.Top))| < Max_Depth)
+  -->
+((1 - 1) <= S.Top)
+
+Applied (i - i) = 0
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+(|Reverse(Concatenate(S.Contents, S.Top))| < Max_Depth)
+  -->
+(0 <= S.Top)
+
+Applied (0 <= S.Top)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+(|Reverse(Concatenate(S.Contents, S.Top))| < Max_Depth)
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+(|Reverse(Concatenate(S.Contents, S.Top))| < Max_Depth)
+  -->
+
+
+Q.E.D.
+
+=================================== 3_2 ===================================
+
+[PROVED] via:
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+(|Reverse(Concatenate(S.Contents, S.Top))| < Max_Depth)
+  -->
+((S.Top + 1) <= Max_Depth)
+
+Applied |Reverse(S)| = |S|
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+(|Concatenate(S.Contents, S.Top)| < Max_Depth)
+  -->
+((S.Top + 1) <= Max_Depth)
+
+Applied |Concatenate(f, i)| = i
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+(S.Top < Max_Depth)
+  -->
+((S.Top + 1) <= Max_Depth)
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+Applied ((i + 1) <= j) = (i < j)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+(S.Top < Max_Depth)
+  -->
+(S.Top < Max_Depth)
+
+--- Done Minimizing Consequent ---
+
+Applied (S.Top < Max_Depth)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+(S.Top < Max_Depth)
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+(S.Top < Max_Depth)
+  -->
+
+
+Q.E.D.
+
+=================================== 3_3 ===================================
+
+[PROVED] via:
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+(|Reverse(Concatenate(S.Contents, S.Top))| < Max_Depth) and
+(?E = S.Contents((S.Top + 1)))
+  -->
+(0 <= (S.Top + 1))
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+--- Done Minimizing Consequent ---
+
+Applied Strengthen to (i <= j)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+(|Reverse(Concatenate(S.Contents, S.Top))| < Max_Depth) and
+(?E = S.Contents((S.Top + 1)))
+  -->
+(0 <= S.Top)
+
+Applied (0 <= S.Top)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+(|Reverse(Concatenate(S.Contents, S.Top))| < Max_Depth) and
+(?E = S.Contents((S.Top + 1)))
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+(|Reverse(Concatenate(S.Contents, S.Top))| < Max_Depth) and
+(?E = S.Contents((S.Top + 1)))
+  -->
+
+
+Q.E.D.
+
+=================================== 3_4 ===================================
+
+[PROVED] via:
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+(|Reverse(Concatenate(S.Contents, S.Top))| < Max_Depth) and
+(?E = S.Contents((S.Top + 1)))
+  -->
+((S.Top + 1) <= Max_Depth)
+
+Applied |Reverse(S)| = |S|
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+(|Concatenate(S.Contents, S.Top)| < Max_Depth) and
+(?E = S.Contents((S.Top + 1)))
+  -->
+((S.Top + 1) <= Max_Depth)
+
+Applied |Concatenate(f, i)| = i
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+(S.Top < Max_Depth) and
+(?E = S.Contents((S.Top + 1)))
+  -->
+((S.Top + 1) <= Max_Depth)
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+Applied ((i + 1) <= j) = (i < j)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+(S.Top < Max_Depth) and
+(?E = S.Contents((S.Top + 1)))
+  -->
+(S.Top < Max_Depth)
+
+--- Done Minimizing Consequent ---
+
+Applied (S.Top < Max_Depth)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+(S.Top < Max_Depth) and
+(?E = S.Contents((S.Top + 1)))
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+(S.Top < Max_Depth) and
+(?E = S.Contents((S.Top + 1)))
+  -->
+
+
+Q.E.D.
+
+=================================== 3_5 ===================================
+
+[PROVED] via:
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+(|Reverse(Concatenate(S.Contents, S.Top))| < Max_Depth) and
+(?E = S.Contents((S.Top + 1)))
+  -->
+(Reverse(Concatenate(lambda (j : Z).{E(j = (S.Top + 1)); S.Contents(j), otherwise}, (S.Top + 1))) = (<E> o Reverse(Concatenate(S.Contents, S.Top))))
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+Applied Concatenate(lambda (j : Z).{e(j = i); f(j), otherwise}, i) = (Concatenate(f, (i - 1)) o <e>)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+(|Reverse(Concatenate(S.Contents, S.Top))| < Max_Depth) and
+(?E = S.Contents((S.Top + 1)))
+  -->
+(Reverse((Concatenate(S.Contents, ((S.Top + 1) - 1)) o <E>)) = (<E> o Reverse(Concatenate(S.Contents, S.Top))))
+
+Applied ((i + j) - j) = i
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+(|Reverse(Concatenate(S.Contents, S.Top))| < Max_Depth) and
+(?E = S.Contents((S.Top + 1)))
+  -->
+(Reverse((Concatenate(S.Contents, S.Top) o <E>)) = (<E> o Reverse(Concatenate(S.Contents, S.Top))))
+
+--- Done Minimizing Consequent ---
+
+Applied Reverse((U o V)) = (Reverse(V) o Reverse(U))
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+(|Reverse(Concatenate(S.Contents, S.Top))| < Max_Depth) and
+(?E = S.Contents((S.Top + 1)))
+  -->
+((Reverse(<E>) o Reverse(Concatenate(S.Contents, S.Top))) = (<E> o Reverse(Concatenate(S.Contents, S.Top))))
+
+Applied Reverse(<E>) = <E>
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+(|Reverse(Concatenate(S.Contents, S.Top))| < Max_Depth) and
+(?E = S.Contents((S.Top + 1)))
+  -->
+((<E> o Reverse(Concatenate(S.Contents, S.Top))) = (<E> o Reverse(Concatenate(S.Contents, S.Top))))
+
+Applied Symmetric equality is true
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+(|Reverse(Concatenate(S.Contents, S.Top))| < Max_Depth) and
+(?E = S.Contents((S.Top + 1)))
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+(|Reverse(Concatenate(S.Contents, S.Top))| < Max_Depth) and
+(?E = S.Contents((S.Top + 1)))
+  -->
+
+
+Q.E.D.
+
+=================================== 4_1 ===================================
+
+[PROVED] via:
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+Entry.is_initial(R) and
+(|Reverse(Concatenate(S.Contents, S.Top))| /= 0)
+  -->
+(1 <= S.Top)
+
+Applied |Reverse(S)| = |S|
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+Entry.is_initial(R) and
+(|Concatenate(S.Contents, S.Top)| /= 0)
+  -->
+(1 <= S.Top)
+
+Applied |Concatenate(f, i)| = i
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+Entry.is_initial(R) and
+(S.Top /= 0)
+  -->
+(1 <= S.Top)
+
+Applied ((i <= j) and (j /= i)) = (i < j)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+Entry.is_initial(R) and
+(0 < S.Top)
+  -->
+(1 <= S.Top)
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+--- Done Minimizing Consequent ---
+
+Applied (i <= j) = ((i - 1) <= (j - 1))
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+Entry.is_initial(R) and
+(0 < S.Top)
+  -->
+((1 - 1) <= (S.Top - 1))
+
+Applied (i - i) = 0
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+Entry.is_initial(R) and
+(0 < S.Top)
+  -->
+(0 <= (S.Top - 1))
+
+Applied (i <= (j - 1)) = (i < j)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+Entry.is_initial(R) and
+(0 < S.Top)
+  -->
+(0 < S.Top)
+
+Applied (0 < S.Top)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+Entry.is_initial(R) and
+(0 < S.Top)
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+Entry.is_initial(R) and
+(0 < S.Top)
+  -->
+
+
+Q.E.D.
+
+=================================== 4_2 ===================================
+
+[PROVED] via:
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+Entry.is_initial(R) and
+(|Reverse(Concatenate(S.Contents, S.Top))| /= 0)
+  -->
+(S.Top <= Max_Depth)
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+--- Done Minimizing Consequent ---
+
+Applied (S.Top <= Max_Depth)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+Entry.is_initial(R) and
+(|Reverse(Concatenate(S.Contents, S.Top))| /= 0)
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+Entry.is_initial(R) and
+(|Reverse(Concatenate(S.Contents, S.Top))| /= 0)
+  -->
+
+
+Q.E.D.
+
+=================================== 4_3 ===================================
+
+[PROVED] via:
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+Entry.is_initial(R) and
+(|Reverse(Concatenate(S.Contents, S.Top))| /= 0)
+  -->
+(0 <= (S.Top - 1))
+
+Applied |Reverse(S)| = |S|
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+Entry.is_initial(R) and
+(|Concatenate(S.Contents, S.Top)| /= 0)
+  -->
+(0 <= (S.Top - 1))
+
+Applied |Concatenate(f, i)| = i
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+Entry.is_initial(R) and
+(S.Top /= 0)
+  -->
+(0 <= (S.Top - 1))
+
+Applied ((i <= j) and (j /= i)) = (i < j)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+Entry.is_initial(R) and
+(0 < S.Top)
+  -->
+(0 <= (S.Top - 1))
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+Applied (i <= (j - 1)) = (i < j)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+Entry.is_initial(R) and
+(0 < S.Top)
+  -->
+(0 < S.Top)
+
+--- Done Minimizing Consequent ---
+
+Applied (0 < S.Top)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+Entry.is_initial(R) and
+(0 < S.Top)
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+Entry.is_initial(R) and
+(0 < S.Top)
+  -->
+
+
+Q.E.D.
+
+=================================== 4_4 ===================================
+
+[PROVED] via:
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+Entry.is_initial(R) and
+(|Reverse(Concatenate(S.Contents, S.Top))| /= 0)
+  -->
+((S.Top - 1) <= Max_Depth)
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+--- Done Minimizing Consequent ---
+
+Applied Strengthen to (i <= j)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+Entry.is_initial(R) and
+(|Reverse(Concatenate(S.Contents, S.Top))| /= 0)
+  -->
+(S.Top <= Max_Depth)
+
+Applied (S.Top <= Max_Depth)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+Entry.is_initial(R) and
+(|Reverse(Concatenate(S.Contents, S.Top))| /= 0)
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+Entry.is_initial(R) and
+(|Reverse(Concatenate(S.Contents, S.Top))| /= 0)
+  -->
+
+
+Q.E.D.
+
+=================================== 4_5 ===================================
+
+[PROVED] via:
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+Entry.is_initial(R) and
+(|Reverse(Concatenate(S.Contents, S.Top))| /= 0)
+  -->
+(Reverse(Concatenate(S.Contents, S.Top)) = (<S.Contents(S.Top)> o Reverse(Concatenate(lambda (j : Z).{R(j = S.Top); S.Contents(j), otherwise}, (S.Top - 1)))))
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+Applied Concatenate(lambda (j : Z).{e(j = i); f(j), otherwise}, (i - 1)) = Concatenate(f, (i - 1))
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+Entry.is_initial(R) and
+(|Reverse(Concatenate(S.Contents, S.Top))| /= 0)
+  -->
+(Reverse(Concatenate(S.Contents, S.Top)) = (<S.Contents(S.Top)> o Reverse(Concatenate(S.Contents, (S.Top - 1)))))
+
+Applied (<f(i)> o Reverse(Concatenate(f, (i - 1)))) = Reverse(Concatenate(f, i))
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+Entry.is_initial(R) and
+(|Reverse(Concatenate(S.Contents, S.Top))| /= 0)
+  -->
+(Reverse(Concatenate(S.Contents, S.Top)) = Reverse(Concatenate(S.Contents, S.Top)))
+
+--- Done Minimizing Consequent ---
+
+Applied Symmetric equality is true
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+Entry.is_initial(R) and
+(|Reverse(Concatenate(S.Contents, S.Top))| /= 0)
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top))) and
+Entry.is_initial(R) and
+(|Reverse(Concatenate(S.Contents, S.Top))| /= 0)
+  -->
+
+
+Q.E.D.
+
+=================================== 5_1 ===================================
+
+[PROVED] via:
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top)))
+  -->
+(0 <= S.Top)
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+--- Done Minimizing Consequent ---
+
+Applied (0 <= S.Top)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top)))
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top)))
+  -->
+
+
+Q.E.D.
+
+=================================== 5_2 ===================================
+
+[PROVED] via:
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top)))
+  -->
+(S.Top <= Max_Depth)
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+--- Done Minimizing Consequent ---
+
+Applied (S.Top <= Max_Depth)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top)))
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top)))
+  -->
+
+
+Q.E.D.
+
+=================================== 5_3 ===================================
+
+[PROVED] via:
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top)))
+  -->
+(S.Top = |Reverse(Concatenate(S.Contents, S.Top))|)
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+Applied |Reverse(S)| = |S|
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top)))
+  -->
+(S.Top = |Concatenate(S.Contents, S.Top)|)
+
+Applied |Concatenate(f, i)| = i
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top)))
+  -->
+(S.Top = S.Top)
+
+--- Done Minimizing Consequent ---
+
+Applied Symmetric equality is true
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top)))
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top)))
+  -->
+
+
+Q.E.D.
+
+=================================== 5_4 ===================================
+
+[PROVED] via:
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top)))
+  -->
+(Reverse(Concatenate(S.Contents, S.Top)) = Reverse(Concatenate(S.Contents, S.Top)))
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+--- Done Minimizing Consequent ---
+
+Applied Symmetric equality is true
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top)))
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top)))
+  -->
+
+
+Q.E.D.
+
+=================================== 6_1 ===================================
+
+[PROVED] via:
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top)))
+  -->
+(0 <= S.Top)
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+--- Done Minimizing Consequent ---
+
+Applied (0 <= S.Top)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top)))
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top)))
+  -->
+
+
+Q.E.D.
+
+=================================== 6_2 ===================================
+
+[PROVED] via:
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top)))
+  -->
+(S.Top <= Max_Depth)
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+--- Done Minimizing Consequent ---
+
+Applied (S.Top <= Max_Depth)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top)))
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top)))
+  -->
+
+
+Q.E.D.
+
+=================================== 6_3 ===================================
+
+[PROVED] via:
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top)))
+  -->
+((Max_Depth - S.Top) = (Max_Depth - |Reverse(Concatenate(S.Contents, S.Top))|))
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+Applied |Reverse(S)| = |S|
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top)))
+  -->
+((Max_Depth - S.Top) = (Max_Depth - |Concatenate(S.Contents, S.Top)|))
+
+Applied |Concatenate(f, i)| = i
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top)))
+  -->
+((Max_Depth - S.Top) = (Max_Depth - S.Top))
+
+--- Done Minimizing Consequent ---
+
+Applied Symmetric equality is true
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top)))
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top)))
+  -->
+
+
+Q.E.D.
+
+=================================== 6_4 ===================================
+
+[PROVED] via:
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top)))
+  -->
+(Reverse(Concatenate(S.Contents, S.Top)) = Reverse(Concatenate(S.Contents, S.Top)))
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+--- Done Minimizing Consequent ---
+
+Applied Symmetric equality is true
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top)))
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(Conc_S = Reverse(Concatenate(S.Contents, S.Top)))
+  -->
+
+
+Q.E.D.
+
+=================================== 7_1 ===================================
+
+[PROVED] via:
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth)
+  -->
+(0 <= 0)
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+Applied (i <= i)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth)
+  -->
+true
+
+--- Done Minimizing Consequent ---
+
+Applied Eliminate true conjunct
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth)
+  -->
+
+
+Q.E.D.
+
+=================================== 7_2 ===================================
+
+[PROVED] via:
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth)
+  -->
+(0 <= Max_Depth)
+
+--- Done Minimizing Antecedent ---
+
+Applied (i < j) and (j <= k) implies (i < k)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(0 < Max_Depth)
+  -->
+(0 <= Max_Depth)
+
+Applied (((i <= j) and (j /= i)) = (i < j))
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(0 < Max_Depth) and
+(0 <= Max_Depth) and
+(Max_Depth /= 0)
+  -->
+(0 <= Max_Depth)
+
+--- Done Developing Antecedent ---
+
+--- Done Minimizing Consequent ---
+
+Applied (0 <= Max_Depth)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(0 < Max_Depth) and
+(0 <= Max_Depth) and
+(Max_Depth /= 0)
+  -->
+true
+
+Applied Eliminate true conjunct
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth) and
+(0 < Max_Depth) and
+(0 <= Max_Depth) and
+(Max_Depth /= 0)
+  -->
+
+
+Q.E.D.
+
+=================================== 7_3 ===================================
+
+[PROVED] via:
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth)
+  -->
+true
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+--- Done Minimizing Consequent ---
+
+Applied Eliminate true conjunct
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth)
+  -->
+
+
+Q.E.D.
+
+=================================== 7_4 ===================================
+
+[PROVED] via:
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth)
+  -->
+(Reverse(Concatenate(S.Contents, 0)) = Empty_String)
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+Applied Concatenate(f, 0) = Empty_String
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth)
+  -->
+(Reverse(Empty_String) = Empty_String)
+
+Applied (Reverse(Empty_String) = Empty_String)
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth)
+  -->
+true
+
+--- Done Minimizing Consequent ---
+
+Applied Eliminate true conjunct
+
+(Last_Char_Num > 0) and
+(min_int <= 0) and
+(0 < max_int) and
+(1 <= Max_Depth) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(min_int <= 1) and
+(1 <= max_int) and
+(Max_Depth > 0) and
+(min_int <= Max_Depth) and
+(Max_Depth <= max_int) and
+(0 <= S.Top) and
+(S.Top <= Max_Depth)
+  -->
+
+
+Q.E.D.
+
