@@ -107,8 +107,8 @@
 \contentsline {paragraph}{Problem Statement}{82}{section*.65}
 \contentsline {paragraph}{Solution Discussion}{82}{section*.66}
 \contentsline {paragraph}{Results}{82}{section*.69}
-\contentsline {subsection}{\numberline {6.2.3}Summary}{82}{subsection.6.2.3}
-\contentsline {section}{\numberline {6.3}Heuristic Evaluation}{83}{section.6.3}
+\contentsline {section}{\numberline {6.3}Heuristic Evaluation}{84}{section.6.3}
+\contentsline {subsection}{\numberline {6.3.1}Observations and Conclusions}{85}{subsection.6.3.1}
 \contentsline {chapter}{\numberline {7}Evaluation of Mathematical System}{86}{chapter.7}
 \contentsline {section}{\numberline {7.1}VSTTE Benchmarks}{86}{section.7.1}
 \contentsline {subsection}{\numberline {7.1.1}Benchmark 1: Adding and Multiplying Integers}{86}{subsection.7.1.1}
@@ -128,15 +128,15 @@
 \contentsline {subsection}{\numberline {7.2.2}Array Realization of Stack}{98}{subsection.7.2.2}
 \contentsline {subsubsection}{\numberline {7.2.2.1}Supporting Mathematics}{98}{subsubsection.7.2.2.1}
 \contentsline {subsubsection}{\numberline {7.2.2.2}When Things Go Wrong}{100}{subsubsection.7.2.2.2}
-\contentsline {chapter}{\numberline {8}Conclusion}{102}{chapter.8}
-\contentsline {chapter}{Appendices}{103}{section*.97}
-\contentsline {section}{\numberline {A}Dragga and Gong's Editing Process Model}{104}{section.2.A}
-\contentsline {section}{\numberline {B}Manuscript Review Sign-In Datat Aheet for Students}{107}{section.2.B}
-\contentsline {section}{\numberline {C}Institutional Review Board (IRB) Application and Attachments}{112}{section.2.C}
-\contentsline {subsection}{\numberline {C.1}Importance of the Study}{112}{subsection.2.C.1}
-\contentsline {subsection}{\numberline {C.2}Purpose of the Study}{112}{subsection.2.C.2}
-\contentsline {subsection}{\numberline {C.3}Explanation of Research Design}{113}{subsection.2.C.3}
-\contentsline {subsection}{\numberline {C.4}Delimitations of the Study}{113}{subsection.2.C.4}
-\contentsline {subsection}{\numberline {C.5}Institutional Review Board (IRB) Approval Information}{114}{subsection.2.C.5}
-\contentsline {subsection}{\numberline {C.6}Justification for an Overview of the Methodological Decisions and Their Limits}{115}{subsection.2.C.6}
-\contentsline {subsection}{\numberline {C.7}Summary of Methods}{116}{subsection.2.C.7}
+\contentsline {chapter}{\numberline {8}Conclusion and Future Research}{102}{chapter.8}
+\contentsline {chapter}{Appendices}{105}{section*.97}
+\contentsline {section}{\numberline {A}Dragga and Gong's Editing Process Model}{106}{section.2.A}
+\contentsline {section}{\numberline {B}Manuscript Review Sign-In Datat Aheet for Students}{109}{section.2.B}
+\contentsline {section}{\numberline {C}Institutional Review Board (IRB) Application and Attachments}{114}{section.2.C}
+\contentsline {subsection}{\numberline {C.1}Importance of the Study}{114}{subsection.2.C.1}
+\contentsline {subsection}{\numberline {C.2}Purpose of the Study}{114}{subsection.2.C.2}
+\contentsline {subsection}{\numberline {C.3}Explanation of Research Design}{115}{subsection.2.C.3}
+\contentsline {subsection}{\numberline {C.4}Delimitations of the Study}{115}{subsection.2.C.4}
+\contentsline {subsection}{\numberline {C.5}Institutional Review Board (IRB) Approval Information}{116}{subsection.2.C.5}
+\contentsline {subsection}{\numberline {C.6}Justification for an Overview of the Methodological Decisions and Their Limits}{117}{subsection.2.C.6}
+\contentsline {subsection}{\numberline {C.7}Summary of Methods}{118}{subsection.2.C.7}

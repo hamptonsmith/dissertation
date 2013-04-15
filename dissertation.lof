@@ -17,7 +17,7 @@
 \contentsline {figure}{\numberline {6.1}{\ignorespaces Results from verification of Benchmark 1 solutions\relax }}{74}{figure.caption.46}
 \contentsline {figure}{\numberline {6.2}{\ignorespaces Selection sort \texttt {Sorting\_Capabilitiy} results\relax }}{79}{figure.caption.58}
 \contentsline {figure}{\numberline {6.3}{\ignorespaces Recursive \texttt {Flipping\_Capabilitiy} results\relax }}{81}{figure.caption.64}
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Array-based \texttt {Stack} implementation results\relax }}{84}{figure.caption.70}
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Summary of heuristic evaluation results. From left to right the columns are: total change in the number of proved VCs (negative means fewer were proved), average standard deviations change in time to prove, total change in time to prove, average change to the number of steps required, total change in number of steps required, average change in number of search steps required, and total change in number of search steps required.\relax }}{85}{figure.caption.71}
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Array-based \texttt {Stack} implementation results\relax }}{83}{figure.caption.70}
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Summary of heuristic evaluation results. From left to right the columns are: total change in the number of proved VCs (negative means fewer were proved), average standard deviations change in time to prove, total change in time to prove, average change to the number of steps required, total change in number of steps required, average change in number of search steps required, and total change in number of search steps required. Average and total changes only take into account VCs that were proved.\relax }}{85}{figure.caption.71}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

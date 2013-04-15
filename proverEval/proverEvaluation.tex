@@ -158,7 +158,7 @@ A straightforward selection sort realization is provided in Listing \ref{lst:sor
 
 Again, as in Benchmark 2, we take a client-provided operation, \texttt{Compare()}, that implements \texttt{LEQV}, and use it to implement our \texttt{Remove\_Min()} sub-operation.  The \texttt{One()} and \texttt{Two()} procedures simply provide a way of getting the programmatic values \texttt{1} and \texttt{2} using a normal specification.
 
-\paragraph{Results}This implementation is fully verifiable.  The results of that verifications, with associated metrics, is presented in Figure \ref{fig:sortingResults}.
+\paragraph{Results}This implementation is fully verifiable.  The results of that verifications, with associated metrics, is presented in Figure \ref{fig:sortingResults}.  Based on our literature review, we believe that RESOLVE is the only verification effort with a generic, automatically-verifiable selection sort\footnote{The RESOLVE group at The Ohio State University has their own version of this automatically-verifiable selection sort.  We note, however, that their system takes advantage of a specialized decision procedure for reasoning about strings, whereas our solution uses only our generalized minimalist prover.}
 
 \begin{figure}
 	\centering
@@ -256,7 +256,7 @@ Again, as in Benchmark 2, we take a client-provided operation, \texttt{Compare()
 
 We implement this specification on top of an array, which, as in Benchmark 2, is a first-class component with its own template and operation specifications.  This array-based implementation is provided in Listing \ref{lst:stackImpl}.
 
-\lstinputlisting[float=h,language=resolve,caption={An array-based implementation of \texttt{Stack}\label{lst:flippingImpl}}]{proverEval/examples/Array_Realiz.rb}
+\lstinputlisting[float=h,language=resolve,caption={An array-based implementation of \texttt{Stack}\label{lst:stackImpl}}]{proverEval/examples/Array_Realiz.rb}
 
 \paragraph{Results}This implementation is fully verifiable.  The results of that verifications, with associated metrics, is presented in Figure \ref{fig:stackResults}.
 
@@ -306,11 +306,7 @@ We implement this specification on top of an array, which, as in Benchmark 2, is
 \end{figure}
 
 
-%-----------------------------------------------------------------------------
-	\subsection{Summary}
-%-----------------------------------------------------------------------------
-\textbf{XXX This section is pending data from binary search, but will contain a couple of graphs about the number of VCs we can prove and the frequency of proofs with different search metric values XXX}
-
+\FloatBarrier
 %-----------------------------------------------------------------------------
 \section{Heuristic Evaluation\label{heuristicsEval}}
 %-----------------------------------------------------------------------------
@@ -320,26 +316,40 @@ In order to evaluate the effectiveness of our heuristics from Section \ref{domai
 
 We then re-ran the verification process on each of our benchmarks and collected data about the changes to our various metrics.  This data is summarized in Figure \ref{heuristicEvalTable}.
 
-\setlength{\tabcolsep}{8pt}
+\setlength{\tabcolsep}{7pt}
 \begin{figure}
 	\centering
 	\begin{tabular}{lrrrrrrr}
 		\toprule
-			& $\sum \Delta\text{Proved}$	& $\overline{\Delta t / \sigma}$	& $\sum\Delta t$ & $\overline{\Delta\text{steps}}$ & $\sum\Delta\text{steps}$ & $\overline{\Delta\text{search}}$ & $\sum\Delta\text{search}$ \\
+			& $\sum \Delta\text{\footnotesize Proved}$	& $\overline{\Delta t / \sigma}$	& $\sum\Delta t$ & $\overline{\Delta\text{\footnotesize steps}}$ & $\sum\Delta\text{\footnotesize steps}$ & $\overline{\Delta\text{\footnotesize search}}$ & $\sum\Delta\text{\footnotesize search}$ \\
 		\midrule
-		With useless \\transformations		& -3	& 2.38	& 40172		& 0	& 0	& 0	& 0	\\
+		\footnotesize With useless \\
+		\footnotesize transformations		& -3	& 2.38	& 40172		& 0	& 0	& 0	& 0	\\
 		\midrule
-		Developing about \\irrelevant terms	& 0	& 8.24	& 95103		& 0	& 0	& 0	& 0\\
+		\footnotesize Developing about \\
+		\footnotesize irrelevant terms		& 0	& 8.24	& 95103		& 0	& 0	& 0	& 0\\
 		\midrule
-		Not checking for \\diversity of givens	& -5	& -6.82	& -127690	& -0.05	& -4	& -0.01 & -1	\\
+		\footnotesize Not checking for \\
+		\footnotesize diversity of givens	& -5	& -6.82	& -127690	& -0.05	& -4	& -0.01 & -1	\\
 		\midrule
-		No minimization				& -9	& -1.56	& -63621	& 0.26	& 2	& 0.33	& 25	\\
+		\footnotesize No minimization		& -9	& -1.56	& -63621	& 0.03	& 2	& 0.33	& 25	\\
 		\midrule
-		No cycle detection			& 0	& -1.24	& -19777	& 0.08	& 7	& 0.08	& 7	\\
+		\footnotesize No cycle detection	& 0	& -1.24	& -19777	& 0.08	& 7	& 0.08	& 7	\\
 		\midrule
-		No prioritization \\of transformations	& -2	& 41.82	& -17458	& 0.04	& 3	& 0.01	& 1	\\
+		\footnotesize No prioritization \\
+		\footnotesize of transformations	& -2	& 0.50	& -17458	& 0.04	& 3	& 0.01	& 1	\\
 		\bottomrule
 	\end{tabular}
-	\caption{Summary of heuristic evaluation results.  From left to right the columns are: total change in the number of proved VCs (negative means fewer were proved), average standard deviations change in time to prove, total change in time to prove, average change to the number of steps required, total change in number of steps required, average change in number of search steps required, and total change in number of search steps required.\label{heuristicEvalTable}}
+	\caption{Summary of heuristic evaluation results.  From left to right the columns are: total change in the number of proved VCs (negative means fewer were proved), average standard deviations change in time to prove, total change in time to prove, average change to the number of steps required, total change in number of steps required, average change in number of search steps required, and total change in number of search steps required.  Average and total changes only take into account VCs that were proved.\label{heuristicEvalTable}}
 \end{figure}
 \setlength{\tabcolsep}{6pt}
+
+As expected, we see that our heuristics are at least partially responsible for a number of VCs being proved.  Ignoring useless transformations, diversifying antecedents, minimizing, and prioritizing transformations all make the difference between some VCs proving or not proving.  Of those, it is interesting to note that diversifying antecedents and minimization pose a trade off---they require more time (over three minutes, combined, on just these 85 VCs), but they enable significantly more VCs to prove (14, together, though so of these overlap).  This may indicate that these heuristics would benefit from being targetted for further optimization to reduce the cost of applying them.  We note that ignoring useless transformations is nothing but a net gain, while prioritization has a strange profile.  Digging into the data, we find that a few outlier VCs (four of them---three in queue sorting, one in the array stack realization) take significantly longer (all of them at least 10 standard deviations longer, one over 50 standard deviations).  Most of the rest of the VCs experience a small gain, accounting for the positive average difference in standard deviation, but the net gain of time.  Clearly our fitness metric is not a good one and needs to be reevaluated.
+
+An important metric is the change in search steps, since from an algorithmic perspective these steps are the most expensive to take: they contribute to the overall combinatorial explosion of time as we must inductively search deeper and deeper for a solution.  We note that three of our heuristics improve this metric, while only one has adverse effects (and a small one at that).  It may at first be unclear how minimization can eliminate twenty-five search steps but only two steps---after all, search steps are a subset of minimization---but consider that minimization is, at its core, a heuristic for taking \emph{extra steps} that are likely to be useful.  The discrepancy of twenty-three steps represent steps that were \emph{not} taken in the preprocessing phase where they contributed no combinatorial complexity, and were instead deferred to the consequent exploration phase, where they were much more expensive.
+
+
+%-----------------------------------------------------------------------------
+\subsection{Observations and Conclusions\label{proverEvalConclusion}}
+%-----------------------------------------------------------------------------
+\textbf{XXX This section is pending data from binary search, but will contain a couple of graphs about the number of VCs we can prove and the frequency of proofs with different search metric values XXX}
