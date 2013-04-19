@@ -35,7 +35,7 @@ Using the specifications of these operations, the RESOLVE compiler is able to ge
 
 Note that in Given \#10, the length of the result of the concatenation is clearly equal to \texttt{S.Top}, thus we know that \texttt{S.Top + 1} is less than \texttt{Max\_Depth}, satisfying half the goal.  Then, by Given \#9, we see that \texttt{0 <= S.Top}, so clearly \texttt{0 <= (S.Top + 1)}, satisfying the other half.
 
-Once generated, VCs are passed to RESOLVE's integrated minimalist prover.  This prover was built as an extensible prover platform for verification experimentation\cite{smith10} and is discussed more thoroughly in Section \ref{sec:researchProver}.
+Once generated, VCs are passed to RESOLVE's integrated minimalist prover.  This prover was built as an extensible prover platform for verification experimentation\cite{smith10} and is discussed more thoroughly in Chapter \ref{ch:prover}.
 
 It is possible to define \emph{extension operations} to a concept.  These are secondary operations that permit useful additional functionality.  As an example, \texttt{Stack\_Template} has an extension operation called \texttt{Flip}, presented here as an enhancement:
 
@@ -51,4 +51,4 @@ Notice that the while loop requires programmer-supplied annotations.  The \emph{
 
 Such annotations are standard operating procedure for verification systems and can be seen across the board at, for example, the first VSTTE verification competition\cite{klebanovVSTTEExperience}.  Some work has been done on automatically discovering, e.g., loop invariants on the programmer's behalf\cite{ernstInfer}, however for the time being such automatic inferences remain limited, especially in the presence of data abstractions.  Regardless, RESOLVE's explicit invariants do not preclude such a method from being employed to fill them in.
 
-Using RESOLVE's integrated minimalist prover, a component of this research, we are able to fully and mechanically verify this procedure, as will be discussed further in Section \ref{sec:research}.
+Using RESOLVE's integrated minimalist prover, a component of this research, we are able to fully and mechanically verify this procedure, as will be discussed further in Chapter \ref{ch:proverEval}.
