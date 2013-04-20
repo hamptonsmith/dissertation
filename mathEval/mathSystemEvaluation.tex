@@ -3,7 +3,7 @@
 
 \chapter{Evaluation of Mathematical System\label{ch:mathEvaluation}}
 %-----------------------------------------------------------------------------
-The evaluation of our mathematical system is fundamentally based on the ease with which it permits us to express the necessary and diverse mathematical ideas that arise when specifying programs formally.  In Chapter \ref{ch:proverEvaluation}, we present a number of solutions to selected benchmarks from \cite{benchmarks} and discuss the effectiveness of our automated prover at discharging the VCs that arise from those implementations.  In this chapter, we will consider the mathematical developments that arise when specifying those benchmarks and provide commentary on the effectiveness of our mathematical system.  Afterward, we present some of the mathematical developments required for benchmarks beyond \cite{benchmarks}.
+The evaluation of our mathematical system is fundamentally based on the ease with which it permits us to express the necessary and diverse mathematical ideas that arise when specifying programs formally.  In Chapter \ref{ch:proverEvaluation}, we present a number of solutions to selected verification benchmarks and discuss the effectiveness of our automated prover at discharging the VCs that arise from those implementations.  In this chapter, we will consider the mathematical developments that arise when specifying those benchmarks and provide commentary on the effectiveness of our mathematical system.
 
 
 %-----------------------------------------------------------------------------
@@ -14,7 +14,7 @@ The evaluation of our mathematical system is fundamentally based on the ease wit
 	\subsection{Benchmark 1: Adding and Multiplying Integers}
 	%-----------------------------------------------------------------------------
 
-\textbf{Problem Statement:}\footnote{This and all other problem statements quote directly from \cite{benchmarks}.} Verify an operation that adds two numbers by repeated incrementing. Verify an operation that multiplies two numbers by repeated addition, using the first operation to do the addition. Make one algorithm iterative, the other recursive.
+\textbf{Problem Statement:}\footnote{This and all other problem statements quote directly from \cite{Benchmarks}.} Verify an operation that adds two numbers by repeated incrementing. Verify an operation that multiplies two numbers by repeated addition, using the first operation to do the addition. Make one algorithm iterative, the other recursive.
 
 		%-----------------------------------------------------------------------------
 		\subsubsection{Supporting Mathematics}
@@ -97,7 +97,7 @@ In order to model a queue, we will need access to a suitable mathematical object
 
 \lstinputlisting[float=h,language=resolve,caption={A snippet of \texttt{String\_Theory}\label{lst:stringtheory1}}]{mathEval/examples/String_Theory1.mt}
 
-First, note that this module is labeled as a \emph{prec\`{i}s} rather than a \emph{theory}.  As we have published in \cite{something}, RESOLVE permits us to separate the public signatures of definitions from their full details in a way similar to how C++ separates header files from class files.  This increases readability for the consumer of the theory and here conveniently allows us to focus on interesting features rather than getting tangled in fine details.
+First, note that this module is labeled as a \emph{prec\`{i}s} rather than a \emph{theory}.  As we have published in \cite{smith08}, RESOLVE permits us to separate the public signatures of definitions from their full details in a way similar to how C++ separates header files from class files.  This increases readability for the consumer of the theory and here conveniently allows us to focus on interesting features rather than getting tangled in fine details.
 
 We begin by introducing the type \texttt{SStr}, which represents the type of all strings containing elements of hetergenous type.  We then introduce a function from types to types (which thus takes advantage of first-class types) called \texttt{Str()}, which conceptually restricts \texttt{SStr} to only those strings containing elements of the provided type.  I.e., \texttt{Str(Z)} is the type of all \texttt{SStr}s containing only integers, \texttt{Str(SStr)} is the type of all \texttt{SStr}s containing only other \texttt{SStr}s, and so forth.
 

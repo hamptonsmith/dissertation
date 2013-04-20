@@ -53,11 +53,11 @@ The VC is easily solvable by expanding the variable S'', then applying a few rel
 \section{Version 1 Prover}
 %-----------------------------------------------------------------------------
 
-The first prover was extremely straightforward.  As a preprocessing step, it expanded any variables (so for the VC in Listing \ref{easyVCEg}, appearances of both \texttt{S} and \texttt{S''} would be replaced with their full values), then read in theorems from any available theories.  These theorems were applied in alphabetical order by theorem name (in order to ensure consistence between tests) in a depth-first manner, with the search tethered at 6 steps to prevent infinite cycles.
+The first prover was extremely straightforward.  As a preprocessing step, it expanded any variables (so for the VC in Listing \ref{lst:easyVCEg}, appearances of both \texttt{S} and \texttt{S''} would be replaced with their full values), then read in theorems from any available theories.  These theorems were applied in alphabetical order by theorem name (in order to ensure consistence between tests) in a depth-first manner, with the search tethered at 6 steps to prevent infinite cycles.
 
 Initially, only equality theorems (i.e., those of the form \texttt{A = B}) were considered, and they were permitted to travel in travel in either direction (i.e., replacing \texttt{A} with \texttt{B} or replacing \texttt{B} with \texttt{A}).
 
-This alone turned out to be sufficient to prove a surprising number of VCs arising from various contexts (for more information, see Chapter \ref{proverEvaluation} for an analysis of the efficacy of these various techniques.)  However, we quickly found VCs like the one given in listing \ref{lst:lessEasyVCEg}.
+This alone turned out to be sufficient to prove a surprising number of VCs arising from various contexts (for more information, see Chapter \ref{ch:proverEvaluation} for an analysis of the efficacy of these various techniques.)  However, we quickly found VCs like the one given in listing \ref{lst:lessEasyVCEg}.
 
 \lstinputlisting[language=RESOLVE,caption={VC for the Requires Clause of Push\label{lst:lessEasyVCEg}}]{StackFlipVC2.asrt}
 
@@ -92,7 +92,7 @@ This version of the prover was based on our existing abstract syntax tree data s
 \section{Version 2 Prover\label{proverV2}}
 %-----------------------------------------------------------------------------
 
-As the first prover continued to mature and found its way into our web integrated environment, we continued to experiment with more complex components, including those derived from our burgeoning ideas on specification engineering\cite{specEngineering} and one born out of our collaboration with the Intelligent River project here at clemson, that required a routine for averaging the integers in a queue datastructure\cite{queueAverage}.  
+As the first prover continued to mature and found its way into our web integrated environment, we continued to experiment with more complex components, including those derived from our burgeoning ideas on specification engineering\cite{smithSpecificationAbstractions} and one born out of our collaboration with the Intelligent River project here at clemson, that required a routine for averaging the integers in a queue datastructure\cite{regula2012case}.  
 
 These new domains yielded VCs that exposed fundamental weaknesses in the first prover and motivated the design and creation of the second prover.  As an example of this sort of VC, consider Listing \ref{lst:longVC}.
 
@@ -210,7 +210,7 @@ The version two prover was still reliant on the old type system to function.  Th
 
 For the third prover, visualization and control of the proof process, along with a design amenable to debugging and the writing of unit tests were made first-class design concerns.  To this end, it eschewed the functional, recursive design of the first two provers in favor of a model/view/controller decomposition.
 
-The third prover maintained the immutable expression data structures of the second version, and replaced the old type system with the new one implemented for Chapter \ref{math}, which also uses immutable structures for the representation of types.
+The third prover maintained the immutable expression data structures of the second version, and replaced the old type system with the new one implemented for Chapter \ref{ch:math}, which also uses immutable structures for the representation of types.
 
 While the expressions are immutable, this version of the prover uses a single, mutable proof state object to hold information about proof state, implementing backtracking via explicit undoing of steps rather than recursive unrolling with copies at each level.  This is significantly more efficient since often a proof step impacts only one small part of the proof state.
 
@@ -244,7 +244,7 @@ Finally, for the collection of metrics, the final version of the prover outputs 
 
 An important hypothesis of this research is that a cutting-edge automated prover should not be required to prove the sorts of VCs that arise from well-engineered code.  To this end a significant thrust of our experimentation with the prover was developing heuristics that assist it in dispatching not general mathematical statements, but rather the sorts of obligations that arise from code.
 
-Each heuristic technique is presented at a high level here, and data on its effectiveness is presented in Chapter \ref{proverEvaluation}.
+Each heuristic technique is presented at a high level here, and data on its effectiveness is presented in Chapter \ref{ch:proverEvaluation}.
 
  		%-----------------------------------------------------------------------------
 		\subsubsection{Intelligent Antecedent Development}
@@ -254,7 +254,7 @@ Antecedent development refers to the process of establishing new known facts bas
 
 However, given the comparatively-large number of knowns at any step of a program (almost always more than is strictly neccessary to establish the VC), combined with the large number of available theorems and their frequently closed nature, blindly adding antecedents results in a combinatorial explosion of required space that yields a low number of useful facts compared to irrelevant ones.  We therefore use a number of heuristics to attempt to improve this situation.
 
-\paragraph{Qualify and Ignore Useless Transformations.}  As part of our goal for RESOLVE to remain scalable, we seek to insulate the end users---whether the programmer or the mathematician---from the details of the prover.  To this end we have routinely rejected designs and methodologies that require the theory developer to ``tag'' theorems or otherwise provide hints to the prover inside a theory or program, a technique that is frequently employed by other mathematical reasoning systems\cite{something}.
+\paragraph{Qualify and Ignore Useless Transformations.}  As part of our goal for RESOLVE to remain scalable, we seek to insulate the end users---whether the programmer or the mathematician---from the details of the prover.  To this end we have routinely rejected designs and methodologies that require the theory developer to ``tag'' theorems or otherwise provide hints to the prover inside a theory or program, a technique that is frequently employed by other mathematical reasoning systems (see, e.g., \cite{kaufmannACL2}).
 
 First, note that while we often use language such as ``applying a theorem'', there is not a one-to-one correspondence between a theorem, which is a general statements of mathematical truth, and the ways that it can be applied.  For example, a theorem that states \texttt{A = B} could be applied to reduce the expression \texttt{A = B} to \texttt{true}, or to replace an \texttt{A} with a \texttt{B}, or in the other direction to replace a \texttt{B} with an \texttt{A}.  We term these individual ways of applying a theorem \emph{transformations}.
 
@@ -299,7 +299,7 @@ However, given the large number of available theorems and their frequently close
 
 \paragraph{Detect Cycles.}  While the VC state itself is mutable, all components of the state (the expressions and their types) are immutable, which lends itself to efficient calculation of expression hashes.  Using a polynomial hash, the overall hash of the VC state can be updated in constant time each time an expression is added, removed, or modified.  In this way, we can efficiently detect cycles and thus not bother to inductively explore beyond them.
 
-This ability also supports our desire to divorce theory creation from reasoning about the prover in the following way: mathematical systems like ACL2\cite{ACL2} and Issabelle\cite{Issabelle} require theorems to be annotated with the direction in which they should be applied in order to prevent cycles that arise from the same theorem being applied repeatedly backward and forward.  Our prover is able to detect such a situation and avoid it.
+This ability also supports our desire to divorce theory creation from reasoning about the prover in the following way: mathematical systems like ACL2\cite{kaufmannACL2} and Issabelle\cite{wenzelIsar} require theorems to be annotated with the direction in which they should be applied in order to prevent cycles that arise from the same theorem being applied repeatedly backward and forward.  Our prover is able to detect such a situation and avoid it.
 
 \paragraph{Tether Search.}  The main consequent exploration algorithm is a depth-first search.  While cycle-detection eliminates one class of infinite, unproductive path, others exist.  For example: the prover might repeatedly add one to both sides of an equation.  Consistent with our hypothesis that VCs should be straightforward to prove, we tether the search to a short length, after which no further exploration will be applied.  While this depth is parameterizable, we've found that the default of four is generally sufficient.
 

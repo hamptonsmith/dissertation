@@ -1,0 +1,322 @@
+\begin{thebibliography}{10}
+
+\bibitem{specsharp}
+Mike Barnett, Robert DeLine, Manuel F{\"a}hndrich, Bart Jacobs, K.~Leino,
+  Wolfram Schulte, and Herman Venter.
+\newblock The \mbox{S}pec\# programming system: Challenges and directions.
+\newblock In Bertrand Meyer and Jim Woodcock, editors, {\em Verified Software:
+  Theories, Tools, Experiments}, volume 4171 of {\em Lecture Notes in Computer
+  Science}, pages 144--152. Springer Berlin / Heidelberg, 2008.
+\newblock 10.1007/978-3-540-69149-5\_16.
+
+\bibitem{barretCVC3}
+Clark Barrett and Cesare Tinelli.
+\newblock {CVC3}.
+\newblock In Werner Damm and Holger Hermanns, editors, {\em Proceedings of the
+  $19^{th}$ International Conference on Computer Aided Verification (CAV '07)},
+  volume 4590 of {\em Lecture Notes in Computer Science}, pages 298--302.
+  Springer-Verlag, July 2007.
+\newblock Berlin, Germany.
+
+\bibitem{bentleyProgrammingPearls}
+J.L. Bentley.
+\newblock {\em Programming pearls}.
+\newblock ACM Press Series. Addison-Wesley, 2000.
+
+\bibitem{blochBinarySearch}
+Joshua Bloch.
+\newblock Extra, extra - read all about it: Nearly all binary searches and
+  mergesorts are broken, June 2006.
+
+\bibitem{bobotWhy}
+Fran\c{c}ois Bobot, Jean-Christophe Filli\^atre, Claude March\'e, and Andrei
+  Paskevich.
+\newblock Why3: Shepherd your herd of provers.
+\newblock In {\em Boogie 2011: First International Workshop on Intermediate
+  Verification Languages}, Wroc\l{}aw, Poland, August 2011.
+
+\bibitem{bouillaguetJahobFirstOrder}
+Charles Bouillaguet, Viktor Kuncak, Thomas Wies, Karen Zee, and Martin Rinard.
+\newblock Using first-order theorem provers in the jahob data structure
+  verification system.
+\newblock In Byron Cook and Andreas Podelski, editors, {\em Verification, Model
+  Checking, and Abstract Interpretation}, volume 4349 of {\em Lecture Notes in
+  Computer Science}, pages 74--88. Springer Berlin / Heidelberg, 2007.
+\newblock 10.1007/978-3-540-69738-1\_5.
+
+\bibitem{bronishMap}
+Derek Bronish and Hampton Smith.
+\newblock Robust, generic, modularly-verified map: a software verification
+  challenge problem.
+\newblock In {\em Proceedings of the 5th ACM workshop on Programming languages
+  meets program verification}, PLPV '11, pages 27--30, New York, NY, USA, 2011.
+  ACM.
+
+\bibitem{deMouraZ3}
+Leonardo de~Moura and Nikolaj Bjørner.
+\newblock Z3: An efficient smt solver.
+\newblock In C.~Ramakrishnan and Jakob Rehof, editors, {\em Tools and
+  Algorithms for the Construction and Analysis of Systems}, volume 4963 of {\em
+  Lecture Notes in Computer Science}, pages 337--340. Springer Berlin /
+  Heidelberg, 2008.
+\newblock 10.1007/978-3-540-78800-3\_24.
+
+\bibitem{dillerZ}
+Antoni Diller.
+\newblock {\em Z: An Introduction to Formal Methods}.
+\newblock John Wiley \& Sons, Inc., New York, NY, USA, 1990.
+
+\bibitem{yices}
+Bruno Dutertre and Leonardo~De Moura.
+\newblock The \mbox{Y}ices \mbox{SMT} solver.
+\newblock Technical report, SRI International, 2006.
+
+\bibitem{ernstInfer}
+Michael~D. Ernst, Jake Cockrell, William~G. Griswold, and David Notkin.
+\newblock Dynamically discovering likely program invariants to support program
+  evolution.
+\newblock {\em IEEE Trans. Softw. Eng.}, 27:99--123, February 2001.
+
+\bibitem{ganeshArrayDecision}
+Vijay Ganesh and David~L. Dill.
+\newblock A decision procedure for bit-vectors and arrays.
+\newblock In {\em Proceedings of the 19th international conference on Computer
+  aided verification}, CAV'07, pages 519--531, Berlin, Heidelberg, 2007.
+  Springer-Verlag.
+
+\bibitem{guttagLarch}
+John~V. Guttag and James~J. Horning.
+\newblock {\em Larch: languages and tools for formal specification}.
+\newblock Springer-Verlag New York, Inc., New York, NY, USA, 1993.
+
+\bibitem{harmsSwapping}
+Douglas~E. Harms and Bruce~W. Weide.
+\newblock Copying and swapping: Influences on the design of reusable software
+  components.
+\newblock {\em IEEE Trans. Softw. Eng.}, 17:424--435, May 1991.
+
+\bibitem{hartonDissertation}
+Heather Harton.
+\newblock {\em Mechanical and Modular Verification Condition Generation for
+  Object-Based Software}.
+\newblock Phd dissertation, Clemson University, School of Computing, December
+  2011.
+
+\bibitem{bisl}
+John Hatcliff, Gary~T. Leavens, K.~Rustan, M.~Leino, Peter M{\"u}ller, and
+  Matthew Parkinson.
+\newblock Behavioral interface specification languages.
+\newblock 2009.
+
+\bibitem{hoareAxiomaticProgramming}
+C.~A.~R. Hoare.
+\newblock An axiomatic basis for computer programming.
+\newblock {\em Commun. ACM}, 12:576--580, October 1969.
+
+\bibitem{hoareGrandChallenge}
+Tony Hoare.
+\newblock The verifying compiler: A grand challenge for computing research.
+\newblock {\em J. ACM}, 50:63--69, January 2003.
+
+\bibitem{jacobsVerifast}
+Bart Jacobs, Jan Smans, Pieter Philippaerts, Fr\'{e}d\'{e}ric Vogels, Willem
+  Penninckx, and Frank Piessens.
+\newblock Verifast: a powerful, sound, predictable, fast verifier for c and
+  java.
+\newblock In {\em Proceedings of the Third international conference on NASA
+  Formal methods}, NFM'11, pages 41--55, Berlin, Heidelberg, 2011.
+  Springer-Verlag.
+
+\bibitem{kaufmannACL2}
+Matt Kaufmann and J.~S. Moore.
+\newblock An industrial strength theorem prover for a logic based on common
+  lisp.
+\newblock {\em IEEE Trans. Softw. Eng.}, 23:203--213, April 1997.
+
+\bibitem{kingVerifier}
+James~Cornelius King.
+\newblock {\em A program verifier}.
+\newblock PhD thesis, Carnegie Mellon University, Pittsburgh, PA, USA, 1970.
+\newblock AAI7018026.
+
+\bibitem{klebanovVSTTEExperience}
+Vladimir Klebanov, Peter M\"{u}ller, Natarajan Shankar, Gary~T. Leavens,
+  Valentin W\"{u}stholz, Eyad Alkassar, Rob Arthan, Derek Bronish, Rod Chapman,
+  Ernie Cohen, Mark Hillebrand, Bart Jacobs, K.~Rustan~M. Leino, Rosemary
+  Monahan, Frank Piessens, Nadia Polikarpova, Tom Ridge, Jan Smans, Stephan
+  Tobies, Thomas Tuerk, Mattias Ulbrich, and Benjamin Wei\ss.
+\newblock The 1st verified software competition: experience report.
+\newblock In {\em Proceedings of the 17th international conference on Formal
+  methods}, FM'11, pages 154--168, Berlin, Heidelberg, 2011. Springer-Verlag.
+
+\bibitem{kleinVerifiedOS}
+Gerwin Klein, Kevin Elphinstone, Gernot Heiser, June Andronick, David Cock,
+  Philip Derrin, Dhammika Elkaduwe, Kai Engelhardt, Rafal Kolanski, Michael
+  Norrish, Thomas Sewell, Harvey Tuch, and Simon Winwood.
+\newblock sel4: formal verification of an os kernel.
+\newblock In {\em Proceedings of the ACM SIGOPS 22nd symposium on Operating
+  systems principles}, SOSP '09, pages 207--220, New York, NY, USA, 2009. ACM.
+
+\bibitem{kulczyckiPointers}
+Greg Kulczycki, Hampton Smith, Heather Harton, Murali Sitaraman, William~F.
+  Ogden, and Joseph~E. Hollingsworth.
+\newblock The location linking concept: A basis for verification of code using
+  pointers.
+\newblock In {\em Proceedings of VSTTE 2012 (to appear)}, Berlin, Heidelberg,
+  2012. Springer-Verlag.
+
+\bibitem{kuncakJahobOverview}
+Viktor Kuncak and Martin Rinard.
+\newblock An overview of the jahob analysis system: project goals and current
+  status.
+\newblock In {\em Proceedings of the 20th international conference on Parallel
+  and distributed processing}, IPDPS'06, pages 285--285, Washington, DC, USA,
+  2006. IEEE Computer Society.
+
+\bibitem{leavensJML}
+Gary~T. Leavens, Albert~L. Baker, and Clyde Ruby.
+\newblock {JML}: a {Java Modeling Language}.
+\newblock In {\em Formal Underpinnings of Java Workshop (at OOPSLA '98)},
+  October 1998.
+\newblock {\tt http://www-dse.doc.ic.ac.uk/{\char'176}sue/oopsla/cfp.html}.
+
+\bibitem{DafnySolutions}
+K.~Leino and Rosemary Monahan.
+\newblock Dafny meets the verification benchmarks challenge.
+\newblock In Gary Leavens, Peter O'Hearn, and Sriram Rajamani, editors, {\em
+  Verified Software: Theories, Tools, Experiments}, volume 6217 of {\em Lecture
+  Notes in Computer Science}, pages 112--126. Springer Berlin / Heidelberg,
+  2010.
+\newblock 10.1007/978-3-642-15057-9\_8.
+
+\bibitem{leroyVerifiedcompiler}
+Xavier Leroy.
+\newblock Formal verification of a realistic compiler.
+\newblock {\em Commun. ACM}, 52:107--115, July 2009.
+
+\bibitem{coq}
+LogiCal Project.
+\newblock {\em The \mbox{C}oq proof assistant reference manual}, 2004.
+\newblock Version 8.0.
+
+\bibitem{meyer1988eiffel}
+Bertrand Meyer.
+\newblock Eiffel: A language and environment for software engineering.
+\newblock {\em Journal of Systems and Software}, 8(3):199--246, 1988.
+
+\bibitem{nieuwenhuisDPLL}
+Robert Nieuwenhuis, Albert Oliveras, and Cesare Tinelli.
+\newblock Solving sat and sat modulo theories: From an abstract
+  davis--putnam--logemann--loveland procedure to dpll(t).
+\newblock {\em J. ACM}, 53:937--977, November 2006.
+
+\bibitem{nipkowIsabelle}
+Tobias Nipkow, Markus Wenzel, and Lawrence~C. Paulson.
+\newblock {\em Isabelle/HOL: a proof assistant for higher-order logic}.
+\newblock Springer-Verlag, Berlin, Heidelberg, 2002.
+
+\bibitem{regula2012case}
+Kalyan~C Regula, Hampton Smith, Heather~Harton Keown, Jason~O Hallstrom,
+  Nigamanth Sridhar, and Murali Sitaraman.
+\newblock A case study in verification of embedded network software.
+\newblock In {\em NASA Formal Methods}, pages 433--448. Springer, 2012.
+
+\bibitem{reynoldsSeparationLogic}
+John~C. Reynolds.
+\newblock Separation logic: A logic for shared mutable data structures.
+\newblock In {\em Proceedings of the 17th Annual IEEE Symposium on Logic in
+  Computer Science}, LICS '02, pages 55--74, Washington, DC, USA, 2002. IEEE
+  Computer Society.
+
+\bibitem{sheiniIntegerDecision}
+Hossein Sheini and Karem Sakallah.
+\newblock A sat-based decision procedure for mixed logical/integer linear
+  problems.
+\newblock In Roman Barták and Michela Milano, editors, {\em Integration of AI
+  and OR Techniques in Constraint Programming for Combinatorial Optimization
+  Problems}, volume 3524 of {\em Lecture Notes in Computer Science}, pages
+  847--849. Springer Berlin / Heidelberg, 2005.
+\newblock 10.1007/11493853\_24.
+
+\bibitem{Sit11}
+Murali Sitaraman, Bruce Adcock, Jeremy Avigad, Derek Bronish, Paolo Bucci,
+  David Frazier, Harvey Friedman, Heather Harton, Wayne Heym, Jason
+  Kirschenbaum, Joan Krone, Hampton Smith, and Bruce Weide.
+\newblock Building a push-button resolve verifier: Progress and challenges.
+\newblock {\em Formal Aspects of Computing}, 23:607--626, 2011.
+\newblock 10.1007/s00165-010-0154-3.
+
+\bibitem{RESOLVE}
+Murali Sitaraman and Bruce Weide.
+\newblock Component-based software using \mbox{RESOLVE}.
+\newblock {\em SIGSOFT Softw. Eng. Notes}, 19(4):21--22, 1994.
+
+\bibitem{sitariman1994component}
+Marulli Sitariman and Bruce Weide.
+\newblock Component-based software using resolve.
+\newblock {\em ACM SIGSOFT Software Engineering Notes}, 19(4):21--22, 1994.
+
+\bibitem{smith10}
+Hampton Smith.
+\newblock Anatomy of a platform for prover experimentation.
+\newblock Technical report, Clemson University, 2010.
+
+\bibitem{smithSpecificationAbstractions}
+Hampton Smith.
+\newblock Impact of specification abstractions on client verification.
+\newblock In {\em Proceedings of SAVCBS 2010}, SAVCBS 2010, November 2010.
+
+\bibitem{smith08}
+Hampton Smith, Kim Roche, Murali Sitaraman, Joan Krone, and William~F. Ogden.
+\newblock Integrating math units and proof checking for specification and
+  verification.
+\newblock In {\em Proceedings of the Seventh International Workshop on
+  Specification and Verification of Component-Based Systems (SAVCBS 2008)},
+  pages 59--66, 2008.
+
+\bibitem{tagoreExpand}
+Aditi Tagore, Diego Zaccai, and Bruce.~W. Weide.
+\newblock To expand or not to expand: Automatically verifying software
+  specified with complex mathematical definitions.
+\newblock Technical report, The Ohio State University, September 2011.
+
+\bibitem{vlissides1995design}
+John Vlissides, R~Helm, R~Johnson, and E~Gamma.
+\newblock Design patterns: Elements of reusable object-oriented software.
+\newblock {\em Reading: Addison-Wesley}, 49, 1995.
+
+\bibitem{weideVerificationReferences}
+Bruce~W. Weide and Wayne~D. Heym.
+\newblock Specification and verification with references.
+\newblock In {\em Proceedings of 2001 OOPSLA workshop on Specification and
+  Verification of Component-Based Systems}, SAVCBS 2001, pages 50--59, 2001.
+
+\bibitem{Benchmarks}
+Bruce~W. Weide, Murali Sitaraman, Heather~K. Harton, Bruce~M. Adcock, Paolo
+  Bucci, Derek Bronish, Wayne~D. Heym, Jason Kirschenbaum, and David Frazier.
+\newblock Incremental benchmarks for software verification tools and
+  techniques.
+\newblock In {\em Verified Software: Theories, Tools, and Experiments (VSTTE)},
+  pages 84--98, 2008.
+
+\bibitem{wenzelIsar}
+Markus~M. Wenzel and Technische~Universität München.
+\newblock Isabelle/isar - a versatile environment for human-readable formal
+  proof documents.
+\newblock In {\em TPHOLS}, pages 167--184, 1999.
+
+\bibitem{zee:annotations}
+Karen Zee, Viktor Kuncak, and Martin Rinard.
+\newblock Full functional verification of linked data structures.
+\newblock In {\em PLDI '08: Proceedings of the 2008 ACM SIGPLAN conference on
+  Programming language design and implementation}, pages 349--361, New York,
+  NY, USA, 2008. ACM.
+
+\bibitem{zeeIntegratedProofLanguage}
+Karen Zee, Viktor Kuncak, and Martin~C. Rinard.
+\newblock An integrated proof language for imperative programs.
+\newblock In {\em Proceedings of the 2009 ACM SIGPLAN conference on Programming
+  language design and implementation}, PLDI '09, pages 338--351, New York, NY,
+  USA, 2009. ACM.
+
+\end{thebibliography}

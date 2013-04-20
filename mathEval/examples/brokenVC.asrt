@@ -1,0 +1,16 @@
+VC: 1_12: 
+Inductive Case of Invariant of While Statement in Procedure Is_Present , If "if" condition at Bin_Search_Realiz.rb(45) is true: Bin_Search_Realiz.rb(39)
+
+Goal:
+lambda ( j : Z ).({{key if j = (low'  + ((high'  - low')  / 2))
+A'(j) otherwise
+}}) = A
+
+Given:
+A'' = A and
+A' = lambda ( j : Z ).(
+	{{midVal'' if j = (low'  + ((high'  - low')  / 2))
+	  A''(j) otherwise}}) and
+A''((low'  + ((high'  - low')  / 2))) = key) and
+midVal' = A'((low'  + ((high'  - low')  / 2)))
+

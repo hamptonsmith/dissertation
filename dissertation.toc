@@ -94,50 +94,50 @@
 \contentsline {paragraph}{Problem Statement}{74}{section*.47}
 \contentsline {paragraph}{Solution Discussion}{74}{section*.48}
 \contentsline {paragraph}{Results}{75}{section*.52}
-\contentsline {subsubsection}{\numberline {6.2.1.3}Benchmark 3: Sorting a Queue}{78}{subsubsection.6.2.1.3}
-\contentsline {paragraph}{Problem Statement}{78}{section*.53}
-\contentsline {paragraph}{Solution Discussion}{78}{section*.54}
-\contentsline {paragraph}{Results}{78}{section*.57}
-\contentsline {subsection}{\numberline {6.2.2}Other Benchmarks}{81}{subsection.6.2.2}
-\contentsline {subsubsection}{\numberline {6.2.2.1}Benchmark 4: Reversing a Queue}{81}{subsubsection.6.2.2.1}
-\contentsline {paragraph}{Problem Statement}{81}{section*.59}
-\contentsline {paragraph}{Solution Discussion}{81}{section*.60}
-\contentsline {paragraph}{Results}{81}{section*.63}
-\contentsline {subsubsection}{\numberline {6.2.2.2}Benchmark 5: Array Realization of Stack}{82}{subsubsection.6.2.2.2}
-\contentsline {paragraph}{Problem Statement}{82}{section*.65}
-\contentsline {paragraph}{Solution Discussion}{82}{section*.66}
-\contentsline {paragraph}{Results}{82}{section*.69}
-\contentsline {section}{\numberline {6.3}Heuristic Evaluation}{84}{section.6.3}
-\contentsline {subsection}{\numberline {6.3.1}Observations and Conclusions}{85}{subsection.6.3.1}
-\contentsline {chapter}{\numberline {7}Evaluation of Mathematical System}{86}{chapter.7}
-\contentsline {section}{\numberline {7.1}VSTTE Benchmarks}{86}{section.7.1}
-\contentsline {subsection}{\numberline {7.1.1}Benchmark 1: Adding and Multiplying Integers}{86}{subsection.7.1.1}
-\contentsline {subsubsection}{\numberline {7.1.1.1}Supporting Mathematics}{87}{subsubsection.7.1.1.1}
-\contentsline {subsubsection}{\numberline {7.1.1.2}When Things Go Wrong}{88}{subsubsection.7.1.1.2}
-\contentsline {subsection}{\numberline {7.1.2}Benchmark 2: Binary Search an Array}{89}{subsection.7.1.2}
-\contentsline {subsubsection}{\numberline {7.1.2.1}Supporting Mathematics}{89}{subsubsection.7.1.2.1}
-\contentsline {subsection}{\numberline {7.1.3}Benchmark 3: Reversing a Queue}{90}{subsection.7.1.3}
-\contentsline {subsubsection}{\numberline {7.1.3.1}Supporting Mathematics}{90}{subsubsection.7.1.3.1}
-\contentsline {subsubsection}{\numberline {7.1.3.2}When Things Go Wrong}{93}{subsubsection.7.1.3.2}
-\contentsline {subsection}{\numberline {7.1.4}Benchmark 4: Sorting a Queue}{94}{subsection.7.1.4}
-\contentsline {subsubsection}{\numberline {7.1.4.1}Supporting Mathematics}{94}{subsubsection.7.1.4.1}
-\contentsline {section}{\numberline {7.2}Other Benchmarks}{96}{section.7.2}
-\contentsline {subsection}{\numberline {7.2.1}Cartesian Product Subtypes}{96}{subsection.7.2.1}
-\contentsline {subsubsection}{\numberline {7.2.1.1}Supporting Mathematics}{97}{subsubsection.7.2.1.1}
-\contentsline {subsubsection}{\numberline {7.2.1.2}When Things Go Wrong}{97}{subsubsection.7.2.1.2}
-\contentsline {subsection}{\numberline {7.2.2}Array Realization of Stack}{98}{subsection.7.2.2}
-\contentsline {subsubsection}{\numberline {7.2.2.1}Supporting Mathematics}{98}{subsubsection.7.2.2.1}
-\contentsline {subsubsection}{\numberline {7.2.2.2}When Things Go Wrong}{100}{subsubsection.7.2.2.2}
-\contentsline {chapter}{\numberline {8}Conclusion and Future Research}{102}{chapter.8}
-\contentsline {chapter}{Appendices}{105}{section*.97}
-\contentsline {section}{\numberline {A}Dragga and Gong's Editing Process Model}{106}{section.2.A}
-\contentsline {section}{\numberline {B}Manuscript Review Sign-In Datat Aheet for Students}{109}{section.2.B}
-\contentsline {section}{\numberline {C}Institutional Review Board (IRB) Application and Attachments}{114}{section.2.C}
-\contentsline {subsection}{\numberline {C.1}Importance of the Study}{114}{subsection.2.C.1}
-\contentsline {subsection}{\numberline {C.2}Purpose of the Study}{114}{subsection.2.C.2}
-\contentsline {subsection}{\numberline {C.3}Explanation of Research Design}{115}{subsection.2.C.3}
-\contentsline {subsection}{\numberline {C.4}Delimitations of the Study}{115}{subsection.2.C.4}
-\contentsline {subsection}{\numberline {C.5}Institutional Review Board (IRB) Approval Information}{116}{subsection.2.C.5}
-\contentsline {subsection}{\numberline {C.6}Justification for an Overview of the Methodological Decisions and Their Limits}{117}{subsection.2.C.6}
-\contentsline {subsection}{\numberline {C.7}Summary of Methods}{118}{subsection.2.C.7}
-\contentsline {chapter}{Bibliography}{120}{section*.99}
+\contentsline {subsubsection}{\numberline {6.2.1.3}Benchmark 3: Sorting a Queue}{80}{subsubsection.6.2.1.3}
+\contentsline {paragraph}{Problem Statement}{80}{section*.56}
+\contentsline {paragraph}{Solution Discussion}{80}{section*.57}
+\contentsline {paragraph}{Results}{80}{section*.60}
+\contentsline {subsection}{\numberline {6.2.2}Other Benchmarks}{83}{subsection.6.2.2}
+\contentsline {subsubsection}{\numberline {6.2.2.1}Benchmark 4: Reversing a Queue}{83}{subsubsection.6.2.2.1}
+\contentsline {paragraph}{Problem Statement}{83}{section*.62}
+\contentsline {paragraph}{Solution Discussion}{83}{section*.63}
+\contentsline {paragraph}{Results}{83}{section*.66}
+\contentsline {subsubsection}{\numberline {6.2.2.2}Benchmark 5: Array Realization of Stack}{84}{subsubsection.6.2.2.2}
+\contentsline {paragraph}{Problem Statement}{84}{section*.68}
+\contentsline {paragraph}{Solution Discussion}{84}{section*.69}
+\contentsline {paragraph}{Results}{84}{section*.72}
+\contentsline {section}{\numberline {6.3}Heuristic Evaluation}{86}{section.6.3}
+\contentsline {section}{\numberline {6.4}Observations and Conclusions}{87}{section.6.4}
+\contentsline {chapter}{\numberline {7}Evaluation of Mathematical System}{89}{chapter.7}
+\contentsline {section}{\numberline {7.1}VSTTE Benchmarks}{89}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Benchmark 1: Adding and Multiplying Integers}{89}{subsection.7.1.1}
+\contentsline {subsubsection}{\numberline {7.1.1.1}Supporting Mathematics}{90}{subsubsection.7.1.1.1}
+\contentsline {subsubsection}{\numberline {7.1.1.2}When Things Go Wrong}{91}{subsubsection.7.1.1.2}
+\contentsline {subsection}{\numberline {7.1.2}Benchmark 2: Binary Search an Array}{92}{subsection.7.1.2}
+\contentsline {subsubsection}{\numberline {7.1.2.1}Supporting Mathematics}{92}{subsubsection.7.1.2.1}
+\contentsline {subsection}{\numberline {7.1.3}Benchmark 3: Reversing a Queue}{93}{subsection.7.1.3}
+\contentsline {subsubsection}{\numberline {7.1.3.1}Supporting Mathematics}{93}{subsubsection.7.1.3.1}
+\contentsline {subsubsection}{\numberline {7.1.3.2}When Things Go Wrong}{96}{subsubsection.7.1.3.2}
+\contentsline {subsection}{\numberline {7.1.4}Benchmark 4: Sorting a Queue}{97}{subsection.7.1.4}
+\contentsline {subsubsection}{\numberline {7.1.4.1}Supporting Mathematics}{97}{subsubsection.7.1.4.1}
+\contentsline {section}{\numberline {7.2}Other Benchmarks}{99}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}Cartesian Product Subtypes}{99}{subsection.7.2.1}
+\contentsline {subsubsection}{\numberline {7.2.1.1}Supporting Mathematics}{100}{subsubsection.7.2.1.1}
+\contentsline {subsubsection}{\numberline {7.2.1.2}When Things Go Wrong}{100}{subsubsection.7.2.1.2}
+\contentsline {subsection}{\numberline {7.2.2}Array Realization of Stack}{101}{subsection.7.2.2}
+\contentsline {subsubsection}{\numberline {7.2.2.1}Supporting Mathematics}{101}{subsubsection.7.2.2.1}
+\contentsline {subsubsection}{\numberline {7.2.2.2}When Things Go Wrong}{103}{subsubsection.7.2.2.2}
+\contentsline {chapter}{\numberline {8}Conclusion and Future Research}{105}{chapter.8}
+\contentsline {chapter}{Appendices}{108}{section*.101}
+\contentsline {section}{\numberline {A}Dragga and Gong's Editing Process Model}{109}{section.2.A}
+\contentsline {section}{\numberline {B}Manuscript Review Sign-In Datat Aheet for Students}{112}{section.2.B}
+\contentsline {section}{\numberline {C}Institutional Review Board (IRB) Application and Attachments}{117}{section.2.C}
+\contentsline {subsection}{\numberline {C.1}Importance of the Study}{117}{subsection.2.C.1}
+\contentsline {subsection}{\numberline {C.2}Purpose of the Study}{117}{subsection.2.C.2}
+\contentsline {subsection}{\numberline {C.3}Explanation of Research Design}{118}{subsection.2.C.3}
+\contentsline {subsection}{\numberline {C.4}Delimitations of the Study}{118}{subsection.2.C.4}
+\contentsline {subsection}{\numberline {C.5}Institutional Review Board (IRB) Approval Information}{119}{subsection.2.C.5}
+\contentsline {subsection}{\numberline {C.6}Justification for an Overview of the Methodological Decisions and Their Limits}{120}{subsection.2.C.6}
+\contentsline {subsection}{\numberline {C.7}Summary of Methods}{121}{subsection.2.C.7}
+\contentsline {chapter}{Bibliography}{123}{section*.103}

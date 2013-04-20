@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2012.11.17)  15 APR 2013 23:07
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2012.11.17)  20 APR 2013 01:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -558,17 +558,17 @@ File: ursfs.fd 1998/03/24 rsfs font definition file (jk)
 
 ]
 Overfull \hbox (2.2499pt too wide) detected at line 131
- \OT1/cmr/bx/n/10 102
- []
-
-
-Overfull \hbox (2.2499pt too wide) detected at line 132
  \OT1/cmr/bx/n/10 105
  []
 
 
+Overfull \hbox (2.2499pt too wide) detected at line 132
+ \OT1/cmr/bx/n/10 108
+ []
+
+
 Overfull \hbox (2.2499pt too wide) detected at line 143
- \OT1/cmr/bx/n/10 120
+ \OT1/cmr/bx/n/10 123
  []
 
 )
@@ -600,7 +600,7 @@ Chapter 1.
 
 
 
-] <verification_pipeline.png, id=428, 819.06pt x 255.95625pt>
+] <verification_pipeline.png, id=441, 819.06pt x 255.95625pt>
 File: verification_pipeline.png Graphic file (type png)
 
 <use verification_pipeline.png>
@@ -635,7 +635,7 @@ LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <8> not available
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[3] [4] [5] <proverpart.png, id=509, 819.06pt x 255.95625pt>
+[3] [4] [5] <proverpart.png, id=522, 819.06pt x 255.95625pt>
 File: proverpart.png Graphic file (type png)
 
 <use proverpart.png>
@@ -643,12 +643,12 @@ Package pdftex.def Info: proverpart.png used on input line 55.
 (pdftex.def)             Requested size: 433.62001pt x 135.50774pt.
  [6 <./proverpart.png>] (./DivPred.coq) (./DivImpl.coq)
 (./DivTheorem.coq) [7] (./DivProof.coq) [8]
-<vcpart.png, id=568, 819.06pt x 255.95625pt>
+<vcpart.png, id=581, 819.06pt x 255.95625pt>
 File: vcpart.png Graphic file (type png)
  <use vcpart.png>
 Package pdftex.def Info: vcpart.png used on input line 88.
 (pdftex.def)             Requested size: 433.62001pt x 135.50774pt.
- [9 <./vcpart.png>] <specpart.png, id=575, 819.06pt x 255.95625pt>
+ [9 <./vcpart.png>] <specpart.png, id=588, 819.06pt x 255.95625pt>
 File: specpart.png Graphic file (type png)
  <use specpart.png>
 Package pdftex.def Info: specpart.png used on input line 105.
@@ -673,33 +673,13 @@ Overfull \hbox (2.70596pt too wide) in paragraph at lines 44--45
 the re-al-iza-tion of \OT1/cmtt/m/n/10 Flipping[]Capability
  []
 
-(./Obvious_Flip_Realiz.rb [26])
-
-LaTeX Warning: Reference `ch:proverEval' on page 27 undefined on input line 54.
-
-
-) [27] (./prover.tex
+(./Obvious_Flip_Realiz.rb [26])) [27] (./prover.tex
 Chapter 4.
 [28
 
 
-] (./JMLAdd.jml) [29] (./StackFlipVC1.asrt [30])
-
-LaTeX Warning: Reference `easyVCEg' on page 31 undefined on input line 56.
-
-
-LaTeX Warning: Reference `proverEvaluation' on page 31 undefined on input line 
-60.
-
-(./StackFlipVC2.asrt [31]) [32]
-
-LaTeX Warning: Citation `specEngineering' on page 33 undefined on input line 95
-.
-
-
-LaTeX Warning: Citation `queueAverage' on page 33 undefined on input line 95.
-
-(./longVC.asrt
+] (./JMLAdd.jml) [29] (./StackFlipVC1.asrt [30]) (./StackFlipVC2.asrt
+[31]) [32] (./longVC.asrt
 Overfull \hbox (15.18993pt too wide) in paragraph at lines 4--5
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -710,47 +690,26 @@ Overfull \hbox (15.18993pt too wide) in paragraph at lines 8--9
  []
 
 [33]) (./longVCReduced.asrt [34]) [35] [36] [37] [38]
-<proverDebugMode.png, id=992, 415.5525pt x 552.0625pt>
+<proverDebugMode.png, id=1012, 415.5525pt x 552.0625pt>
 File: proverDebugMode.png Graphic file (type png)
 
 <use proverDebugMode.png>
 Package pdftex.def Info: proverDebugMode.png used on input line 197.
 (pdftex.def)             Requested size: 195.12767pt x 259.22511pt.
  [39 <./proverDebugMode.png>]
-
-LaTeX Warning: Reference `math' on page 40 undefined on input line 213.
-
-<newProverInterface.png, id=1000, 663.47874pt x 456.70625pt>
+<newProverInterface.png, id=1021, 663.47874pt x 456.70625pt>
 File: newProverInterface.png Graphic file (type png)
 
 <use newProverInterface.png>
 Package pdftex.def Info: newProverInterface.png used on input line 225.
 (pdftex.def)             Requested size: 325.215pt x 223.86467pt.
- [40] [41 <./newProverInterface.png>]
-
-LaTeX Warning: Reference `proverEvaluation' on page 42 undefined on input line 
-247.
-
-
-LaTeX Warning: Citation `something' on page 42 undefined on input line 257.
-
-[42] [43] [44]
-
-LaTeX Warning: Citation `ACL2' on page 45 undefined on input line 302.
-
-
-LaTeX Warning: Citation `Issabelle' on page 45 undefined on input line 302.
-
-[45]) [46] (./mathSystem.tex
+ [40] [41 <./newProverInterface.png>] [42] [43]
+[44] [45]) [46] (./mathSystem.tex
 Chapter 5.
 [47
 
 
-] [48] [49] [50] [51] [52]
-
-LaTeX Warning: Citation `something' on page 53 undefined on input line 160.
-
-[53] [54] [55]
+] [48] [49] [50] [51] [52] [53] [54] [55]
 Overfull \hbox (8.21243pt too wide) in paragraph at lines 315--318
  []$[]$ 
  []
@@ -760,7 +719,7 @@ Overfull \hbox (23.71912pt too wide) in paragraph at lines 329--332
  []$[]$ 
  []
 
-[56] [57] [58] [59] <universe.png, id=1264, 273.49678pt x 302.40479pt>
+[56] [57] [58] [59] <universe.png, id=1291, 273.49678pt x 302.40479pt>
 File: universe.png Graphic file (type png)
 
 <use universe.png>
@@ -774,7 +733,7 @@ e: $\OML/cmm/m/it/10 T[] \OT1/cmr/m/n/10 : \OML/cmm/m/it/10 MType; T[] \OT1/cmr
 /n/10 )\OML/cmm/m/it/10 ; T[] \OT1/cmr/m/n/10 =
  []
 
-[65] <typeGraph.png, id=1361, 328.427pt x 336.457pt>
+[65] <typeGraph.png, id=1388, 328.427pt x 336.457pt>
 File: typeGraph.png Graphic file (type png)
  <use typeGraph.png>
 Package pdftex.def Info: typeGraph.png used on input line 614.
@@ -803,23 +762,7 @@ LaTeX Warning: Citation `something' on page 70 undefined on input line 12.
 [70
 
 
-]
-
-LaTeX Warning: Citation `benchmarks' on page 71 undefined on input line 35.
-
-
-LaTeX Warning: Citation `heatherDissertation' on page 71 undefined on input lin
-e 35.
-
-
-LaTeX Warning: Citation `heatherDissertation' on page 71 undefined on input lin
-e 35.
-
-[71]
-
-LaTeX Warning: Citation `benchmarks' on page 72 undefined on input line 39.
-
-(./proverEval/examples/IntegerPlusTimesSpecs.en)
+] [71] (./proverEval/examples/IntegerPlusTimesSpecs.en)
 
 LaTeX Warning: Reference `apx:spec' on page 72 undefined on input line 47.
 
@@ -848,9 +791,6 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-LaTeX Warning: Citation `thingy' on page 74 undefined on input line 137.
-
 [74] (./proverEval/examples/Static_Array_Template.co
 Overfull \hbox (10.08981pt too wide) in paragraph at lines 1--2
 [][][][][][][][][][][][][][][][][][][][][][] 
@@ -865,15 +805,23 @@ Overfull \hbox (45.7906pt too wide) in paragraph at lines 11--12
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[75] [76] [77] (./proverEval/examples/Sorting_Capability.en)
+(./proverEval/examples/BrokenVC.asrt)
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[75] [76]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[77] [78] [79] (./proverEval/examples/Sorting_Capability.en)
 (./proverEval/examples/Selection_Sort_Realization.rb)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[78
+[80
 
-] [79] [80] (./proverEval/examples/Flipping_Capability.en)
-(./proverEval/examples/Recursive_Flipping_Realiz.rb) [81
+] [81] [82] (./proverEval/examples/Flipping_Capability.en)
+(./proverEval/examples/Recursive_Flipping_Realiz.rb) [83
 
 ]
 (./proverEval/examples/Stack_Template.co)
@@ -881,20 +829,25 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[82] [83] [84
+[84] [85] [86
 
-]) [85] (./mathEval/mathSystemEvaluation.tex
+] <proverEval/proofResults.png, id=1864, 348.30125pt x 285.065pt>
+File: proverEval/proofResults.png Graphic file (type png)
+
+<use proverEval/proofResults.png>
+Package pdftex.def Info: proverEval/proofResults.png used on input line 483.
+(pdftex.def)             Requested size: 190.79385pt x 156.15552pt.
+
+<proverEval/searchSteps.png, id=1865, 414.54875pt x 227.85126pt>
+File: proverEval/searchSteps.png Graphic file (type png)
+
+<use proverEval/searchSteps.png>
+Package pdftex.def Info: proverEval/searchSteps.png used on input line 488.
+(pdftex.def)             Requested size: 238.49232pt x 131.08298pt.
+ [87]) [88 <./proverEval/proofResults.png> <./proverEval/searchSteps.png>] (./m
+athEval/mathSystemEvaluation.tex
 Chapter 7.
-
-LaTeX Warning: Citation `benchmarks' on page 86 undefined on input line 6.
-
-
-LaTeX Warning: Citation `benchmarks' on page 86 undefined on input line 6.
-
-
-LaTeX Warning: Citation `benchmarks' on page 86 undefined on input line 17.
-
-[86
+[89
 
 
 ] (./mathEval/examples/Integer_Theory1.mt)
@@ -918,22 +871,22 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[87] (./mathEval/examples/Integer_Theory2.mt)
+[90] (./mathEval/examples/Integer_Theory2.mt)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[88]
+[91]
 
-LaTeX Warning: Citation `something' on page 89 undefined on input line 72.
-
-
-LaTeX Warning: Citation `something' on page 89 undefined on input line 72.
+LaTeX Warning: Citation `something' on page 92 undefined on input line 72.
 
 
-LaTeX Warning: Citation `something' on page 89 undefined on input line 72.
+LaTeX Warning: Citation `something' on page 92 undefined on input line 72.
+
+
+LaTeX Warning: Citation `something' on page 92 undefined on input line 72.
 
 (./mathEval/examples/Static_Array_Template1.co
 Overfull \hbox (10.08981pt too wide) in paragraph at lines 1--2
@@ -944,7 +897,7 @@ Overfull \hbox (10.08981pt too wide) in paragraph at lines 1--2
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[89] (./mathEval/examples/String_Theory1.mt
+[92] (./mathEval/examples/String_Theory1.mt
 Overfull \hbox (4.9897pt too wide) in paragraph at lines 6--7
 [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][] 
  []
@@ -953,36 +906,33 @@ Overfull \hbox (4.9897pt too wide) in paragraph at lines 6--7
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-
-LaTeX Warning: Citation `something' on page 90 undefined on input line 100.
-
-[90]
+[93]
 Overfull \hbox (16.39114pt too wide) in paragraph at lines 106--107
 []\OT1/cmr/m/n/10 A tricky nu-ance of per-mit-ting such type-parameterized stri
 ngs is how to type the \OT1/cmtt/m/n/10 Empty[]String[][][][][]\OT1/cmr/m/n/10 
 .
  []
 
-[91]
+[94]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[92] [93] (./mathEval/examples/Sorting_Capability.en)
+[95] [96] (./mathEval/examples/Sorting_Capability.en)
 (./mathEval/examples/Total_Preordering_Theory1.mt)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[94] (./mathEval/examples/totalpreorderingvc.asrt)
+[97] (./mathEval/examples/totalpreorderingvc.asrt)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[95] [96] [97] (./mathEval/examples/Array_Realiz1.rb)
-(./mathEval/examples/Binary_Iterator_Theory1.mt) [98]
+[98] [99] [100] (./mathEval/examples/Array_Realiz1.rb)
+(./mathEval/examples/Binary_Iterator_Theory1.mt) [101]
 (./mathEval/examples/arrayrealizvc.asrt)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[99]
+[102]
 Overfull \hbox (34.32404pt too wide) in paragraph at lines 330--331
 []\OT1/cmr/m/n/10 First, con-sider List-ing [][]7.22[][], where rather than pas
 s \OT1/cmtt/m/n/10 Value[]Function \OT1/cmr/m/n/10 through to \OT1/cmtt/m/n/10 
@@ -998,35 +948,35 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) [100] [101] (./conclusion.tex
+) [103] [104] (./conclusion.tex
 Chapter 8.
-[102
+[105
 
 
-]) [103] [104] [105
+]) [106] [107] [108
 
 
 
-] (./appendixA.tex [106]
-<testbed.jpg, id=2267, 321.2pt x 229.85875pt>
+] (./appendixA.tex [109]
+<testbed.jpg, id=2349, 321.2pt x 229.85875pt>
 File: testbed.jpg Graphic file (type jpg)
  <use testbed.jpg>
 Package pdftex.def Info: testbed.jpg used on input line 54.
 (pdftex.def)             Requested size: 321.19922pt x 229.85817pt.
- [107 <./testbed.jpg>]) [108] (./appendixB.tex
+ [110 <./testbed.jpg>]) [111] (./appendixB.tex
 Overfull \hbox (6.11957pt too wide) in paragraph at lines 1--1
 []\OT1/cmr/bx/n/14.4 Manuscript Re-view Sign-In Datat Aheet for Stu-
  []
 
-[109
+[112
 
-] [110] [111] [112]) [113] (./appendixC.tex [114
+] [113] [114] [115]) [116] (./appendixC.tex [117
 
-] [115] [116] [117])
-[118] [119] (./dissertation.bbl
+] [118] [119] [120])
+[121] [122] (./dissertation.bbl
 Missing character: There is no Ã in font cmr10!
 Missing character: There is no ¸ in font cmr10!
- [120
+ [123
 
 
 ]
@@ -1035,22 +985,22 @@ Underfull \hbox (badness 1158) in paragraph at lines 177--182
 ava Mod-el-ing Lan-
  []
 
-[121]
+[124]
 Missing character: There is no Ã in font cmr10!
 Missing character: There is no ¡ in font cmr10!
- [122]
+ [125]
 Missing character: There is no Ã in font cmr10!
 Missing character: There is no ¤ in font cmr10!
 Missing character: There is no Ã in font cmr10!
 Missing character: There is no ¼ in font cmr10!
-) [123]
+) [126]
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 166.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 166.
  (./dissertation.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 166.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 166.
 Package rerunfilecheck Info: File `dissertation.out' has not changed.
-(rerunfilecheck)             Checksum: CC9699D9A66AC0B511016953181E2646;2672.
+(rerunfilecheck)             Checksum: 755AF90B460714374E9829B43E249980;2752.
 
 
 LaTeX Warning: There were undefined references.
@@ -1061,10 +1011,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 166.
  ) 
 Here is how much of TeX's memory you used:
- 11747 strings out of 495059
- 175155 string characters out of 3182029
- 335333 words of memory out of 3000000
- 13151 multiletter control sequences out of 15000+200000
+ 11808 strings out of 495059
+ 176341 string characters out of 3182029
+ 346925 words of memory out of 3000000
+ 13169 multiletter control sequences out of 15000+200000
  16077 words of font info for 63 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  39i,14n,45p,1672b,1771s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1150,10 +1100,10 @@ pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></u
 sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/shar
 e/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on dissertation.pdf (135 pages, 1003485 bytes).
+Output written on dissertation.pdf (138 pages, 1032542 bytes).
 PDF statistics:
- 2737 PDF objects out of 2984 (max. 8388607)
- 2532 compressed objects within 26 object streams
- 1451 named destinations out of 1728 (max. 500000)
- 374 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2826 PDF objects out of 2984 (max. 8388607)
+ 2615 compressed objects within 27 object streams
+ 1489 named destinations out of 1728 (max. 500000)
+ 392 words of extra memory for PDF output out of 10000 (max. 10000000)
 

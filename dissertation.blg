@@ -1,0 +1,54 @@
+This is BibTeX, Version 0.99d (TeX Live 2012/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: dissertation.aux
+The style file: plain.bst
+Database file #1: dissertation.bib
+I was expecting a `,' or a `}'---line 1435 of file dissertation.bib
+ :  
+ :  location = {Santa Fe, New Mexico}
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--I didn't find a database entry for "something"
+Warning--empty journal in bisl
+You've used 48 entries,
+            2118 wiz_defined-function locations,
+            831 strings with 14463 characters,
+and the built_in function-call counts, 19499 in all, are:
+= -- 1930
+> -- 1031
+< -- 26
++ -- 415
+- -- 353
+* -- 1387
+:= -- 3167
+add.period$ -- 170
+call.type$ -- 48
+change.case$ -- 312
+chr.to.int$ -- 0
+cite$ -- 49
+duplicate$ -- 760
+empty$ -- 1418
+format.name$ -- 353
+if$ -- 4166
+int.to.chr$ -- 0
+int.to.str$ -- 48
+missing$ -- 45
+newline$ -- 251
+num.names$ -- 106
+pop$ -- 331
+preamble$ -- 1
+purify$ -- 267
+quote$ -- 0
+skip$ -- 556
+stack$ -- 0
+substring$ -- 1061
+swap$ -- 229
+text.length$ -- 26
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 184
+warning$ -- 1
+while$ -- 174
+width$ -- 50
+write$ -- 584
+(There was 1 error message)
