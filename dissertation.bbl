@@ -52,6 +52,22 @@ Derek Bronish and Hampton Smith.
   meets program verification}, PLPV '11, pages 27--30, New York, NY, USA, 2011.
   ACM.
 
+\bibitem{cok:esc}
+David~R. Cok and Joseph~R. Kiniry.
+\newblock Esc/\mbox{J}ava2: Uniting \mbox{ESC}/\mbox{J}ava and \mbox{JML}.
+\newblock In Gilles Barthe, Lilian Burdy, Marieke Huisman, Jean-Louis Lanet,
+  and Traian Muntean, editors, {\em Construction and Analysis of Safe, Secure,
+  and Interoperable Smart Devices}, volume 3362 of {\em Lecture Notes in
+  Computer Science}, pages 108--128. Springer Berlin / Heidelberg, 2005.
+\newblock 10.1007/978-3-540-30569-9\_6.
+
+\bibitem{cook2012specification}
+Charles~T Cook, Heather Harton, Hampton Smith, and Murali Sitaraman.
+\newblock Specification engineering and modular verification using a
+  web-integrated verifying compiler.
+\newblock In {\em Software Engineering (ICSE), 2012 34th International
+  Conference on}, pages 1379--1382. IEEE, 2012.
+
 \bibitem{deMouraZ3}
 Leonardo de~Moura and Nikolaj Bjørner.
 \newblock Z3: An efficient smt solver.
@@ -165,6 +181,12 @@ Greg Kulczycki, Hampton Smith, Heather Harton, Murali Sitaraman, William~F.
 \newblock In {\em Proceedings of VSTTE 2012 (to appear)}, Berlin, Heidelberg,
   2012. Springer-Verlag.
 
+\bibitem{kul:dis}
+Gregory Kulczycki.
+\newblock {\em Direct Reasoning}.
+\newblock Phd dissertation, Clemson University, School of Computing, January
+  2004.
+
 \bibitem{kuncakJahobOverview}
 Viktor Kuncak and Martin Rinard.
 \newblock An overview of the jahob analysis system: project goals and current
@@ -228,6 +250,11 @@ John~C. Reynolds.
   Computer Science}, LICS '02, pages 55--74, Washington, DC, USA, 2002. IEEE
   Computer Society.
 
+\bibitem{DafnyOverview}
+K.~Rustan and M.~Leino.
+\newblock Dafny: An automatic program verifier for functional correctness.
+\newblock LPAR 16 (to appear), 2010.
+
 \bibitem{sheiniIntegerDecision}
 Hossein Sheini and Karem Sakallah.
 \newblock A sat-based decision procedure for mixed logical/integer linear
@@ -245,6 +272,13 @@ Murali Sitaraman, Bruce Adcock, Jeremy Avigad, Derek Bronish, Paolo Bucci,
 \newblock Building a push-button resolve verifier: Progress and challenges.
 \newblock {\em Formal Aspects of Computing}, 23:607--626, 2011.
 \newblock 10.1007/s00165-010-0154-3.
+
+\bibitem{sitaraman2009engaging}
+Murali Sitaraman, Jason~O Hallstrom, Jarred White, Svetlana Drachova-Strang,
+  Heather~K Harton, Dana Leonard, Joan Krone, and Rich Pak.
+\newblock Engaging students in specification and reasoning: hands-on
+  experimentation and evaluation.
+\newblock In {\em ACM SIGCSE Bulletin}, volume~41, pages 50--54. ACM, 2009.
 
 \bibitem{RESOLVE}
 Murali Sitaraman and Bruce Weide.

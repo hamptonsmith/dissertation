@@ -3,52 +3,52 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: dissertation.aux
 The style file: plain.bst
 Database file #1: dissertation.bib
-I was expecting a `,' or a `}'---line 1435 of file dissertation.bib
+I was expecting a `,' or a `}'---line 1455 of file dissertation.bib
  :  
  :  location = {Santa Fe, New Mexico}
 (Error may have been on previous line)
 I'm skipping whatever remains of this entry
-Warning--I didn't find a database entry for "something"
 Warning--empty journal in bisl
-You've used 48 entries,
+Warning--can't use both volume and number fields in sitaraman2009engaging
+You've used 53 entries,
             2118 wiz_defined-function locations,
-            831 strings with 14463 characters,
-and the built_in function-call counts, 19499 in all, are:
-= -- 1930
-> -- 1031
-< -- 26
-+ -- 415
-- -- 353
-* -- 1387
-:= -- 3167
-add.period$ -- 170
-call.type$ -- 48
-change.case$ -- 312
+            858 strings with 15502 characters,
+and the built_in function-call counts, 21705 in all, are:
+= -- 2149
+> -- 1147
+< -- 31
++ -- 459
+- -- 392
+* -- 1542
+:= -- 3512
+add.period$ -- 189
+call.type$ -- 53
+change.case$ -- 344
 chr.to.int$ -- 0
-cite$ -- 49
-duplicate$ -- 760
-empty$ -- 1418
-format.name$ -- 353
-if$ -- 4166
+cite$ -- 55
+duplicate$ -- 847
+empty$ -- 1579
+format.name$ -- 392
+if$ -- 4651
 int.to.chr$ -- 0
-int.to.str$ -- 48
-missing$ -- 45
-newline$ -- 251
-num.names$ -- 106
-pop$ -- 331
+int.to.str$ -- 53
+missing$ -- 48
+newline$ -- 277
+num.names$ -- 118
+pop$ -- 371
 preamble$ -- 1
-purify$ -- 267
+purify$ -- 294
 quote$ -- 0
-skip$ -- 556
+skip$ -- 625
 stack$ -- 0
-substring$ -- 1061
-swap$ -- 229
-text.length$ -- 26
+substring$ -- 1178
+swap$ -- 267
+text.length$ -- 31
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 184
-warning$ -- 1
-while$ -- 174
-width$ -- 50
-write$ -- 584
+type$ -- 204
+warning$ -- 2
+while$ -- 193
+width$ -- 55
+write$ -- 646
 (There was 1 error message)

@@ -1,0 +1,49 @@
+Proofs for Recursive_Flipping_Realiz generated Sun Apr 14 18:20:48 EDT 2013
+
+=================================== Summary ===================================
+
+	0_1	......... proved in 1441ms via 5 steps (0 search)
+	0_2	......... proved in 3055ms via 7 steps (0 search)
+	0_3	......... proved in 2888ms via 8 steps (0 search)
+	0_4	......... proved in 2127ms via 9 steps (2 search)
+	1_1	......... proved in 340ms via 10 steps (0 search)
+
+...
+
+=================================== 0_4 ===================================
+
+...
+  -->
+((Reverse(?Q) o <?E>) = Reverse((<?E> o ?Q)))
+
+--- Done Minimizing Antecedent ---
+
+--- Done Developing Antecedent ---
+
+--- Done Minimizing Consequent ---
+
+Applied Reverse((U o V)) = (Reverse(V) o Reverse(U))
+
+...
+  -->
+((Reverse(?Q) o <?E>) = (Reverse(?Q) o Reverse(<?E>)))
+
+Applied Reverse(<E>) = <E>
+
+...
+  -->
+((Reverse(?Q) o <?E>) = (Reverse(?Q) o <?E>))
+
+Applied Symmetric equality is true
+
+...
+  -->
+true
+
+Applied Eliminate true conjunct
+
+...
+  -->
+
+
+Q.E.D.

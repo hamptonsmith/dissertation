@@ -11,14 +11,12 @@ The evaluation of our mathematical system is fundamentally based on the ease wit
 %-----------------------------------------------------------------------------
 
 	%-----------------------------------------------------------------------------
-	\subsection{Benchmark 1: Adding and Multiplying Integers}
-	%-----------------------------------------------------------------------------
+	\subsection{Benchmark 1: Adding and Multiplying Integers}	%-----------------------------------------------------------------------------
 
 \textbf{Problem Statement:}\footnote{This and all other problem statements quote directly from \cite{Benchmarks}.} Verify an operation that adds two numbers by repeated incrementing. Verify an operation that multiplies two numbers by repeated addition, using the first operation to do the addition. Make one algorithm iterative, the other recursive.
 
 		%-----------------------------------------------------------------------------
-		\subsubsection{Supporting Mathematics}
-		%-----------------------------------------------------------------------------
+		\subsubsection{Supporting Mathematics}	%-----------------------------------------------------------------------------
 
 The primary mathematical support required for verifying this benchmark is simply the availability of the integers, along with operators for manipulating them and theorems for reasoning about them.  The set \texttt{Z} and its fundamental operations are built-in for RESOLVE (since they must back up programmatic integers), making this benchmark somewhat trivial.  However, we can still use it as a launching-point for exploring our mathematical flexibility by engaging in the exercise of introducing an identically-behaving mathematical set, \texttt{OtherZ}.
 
@@ -37,8 +35,7 @@ This definition takes advantage of first class types, permitting us to pass in a
 \texttt{Is\_Injective()} uses the implicit type parameter feature described in Section \ref{inferredGenericTypes} to establish the domain (\texttt{D}) and range (\texttt{R}) of the function \texttt{F}.
 
 		%-----------------------------------------------------------------------------
-		\subsubsection{When Things Go Wrong}
-		%-----------------------------------------------------------------------------
+		\subsubsection{When Things Go Wrong}	%-----------------------------------------------------------------------------
 
 Of course, a mathematical system could easily support all of these features if it simply accepted all inputs.  An important component of any static system is raising appropriate errors on invalid input.  We will present an example here of how the input could be changed to be in error and the output of the compiler in that case.
 
@@ -60,16 +57,14 @@ Candidates:
 
 
 	%-----------------------------------------------------------------------------
-	\subsection{Benchmark 2: Binary Search an Array}
-	%-----------------------------------------------------------------------------
+	\subsection{Benchmark 2: Binary Search an Array}	%-----------------------------------------------------------------------------
 
 \textbf{Problem Statement:} Verify an operation that uses binary search to find a given entry in an array of entries that are in sorted order.
 
 		%-----------------------------------------------------------------------------
-		\subsubsection{Supporting Mathematics}
-		%-----------------------------------------------------------------------------
+		\subsubsection{Supporting Mathematics}	%-----------------------------------------------------------------------------
 
-An important design goal of RESOLVE is that as much reasoning as possible happens through the general component machinery.  As a result, RESOLVE does not elevate arrays (or pointers, as we will see later) to special status, unlike nearly all other practical verification languages (\cite{something}, \cite{something}, or \cite{something}, e.g.).
+An important design goal of RESOLVE is that as much reasoning as possible happens through the general component machinery.  As a result, RESOLVE does not elevate arrays (or pointers, as we discuss in \cite{kulczyckiPointers}) to special status, unlike nearly all other practical verification languages (\cite{DafnyOverview}, \cite{cok:esc}, or \cite{kuncakJahobOverview}, e.g.).
 
 While some syntactic sugar exists to ease working with arrays, this is all translated to normal object operations as a pre-processing step, after which reasoning about arrays based on an ordinary concept with operations and specifications.  Listing \ref{lst:staticarraytemplate1} shows the first part of that specification, including the definition of the array type and a common operation, \texttt{Swap()}.
 
@@ -81,17 +76,13 @@ The double-curly-bracket notation in the \emph{ensures} clause of the operation 
 
 Function composition is used extensively in \texttt{Static\_Array\_Template} to represent the changing value of the array.  In \texttt{Swap\_Entry}, the lambda function that represents the final value of the array simply wraps the existing array---defering to that array at all indecis other than \texttt{i}, and providing the value of \texttt{\#E} otherwise.
 
-\textbf{XXX A little more info once we have some VCs for binary search XXX}
-
 	%-----------------------------------------------------------------------------
-	\subsection{Benchmark 3: Reversing a Queue}
-	%-----------------------------------------------------------------------------
+	\subsection{Benchmark 3: Reversing a Queue}	%-----------------------------------------------------------------------------
 
 \textbf{Problem Statement:} Specify a user-defined FIFO queue ADT. Verify two implementations (one iterative, one recursive) for an operation that reverses a queue. (Note: the iterative version may need to use another component, e.g., a LIFO stack ADT, in which case that also needs to be specified, of course.)
 
 		%-----------------------------------------------------------------------------
-		\subsubsection{Supporting Mathematics}
-		%-----------------------------------------------------------------------------
+		\subsubsection{Supporting Mathematics}	%-----------------------------------------------------------------------------
 
 In order to model a queue, we will need access to a suitable mathematical object for representing it.  We choose mathematical \emph{strings}, which are finite sequences.  A portion of \texttt{String\_Theory} is given in Listing \ref{lst:stringtheory1}.
 
@@ -148,8 +139,7 @@ end;
 We define the concatenation operator (\texttt{o}) to operate on two \texttt{SStr}s instead of taking advantage of implicit type parameters.  This design decision permits flexibility when constructing intermediate strings that might have heterogenous type, and also prevents each theorem about concatenation (of which there are many) from having to individually quantify over all types, leading to a more succinct theory.  That the result when the two parameters happen to be \texttt{Str}s with the same parameterized type is closed on that parmeterization is established by the type theorem, which permits us to provide the results of such a concatenation to a function that requires the more specific type.  This technique is used with many other string manipulation operations.
 
 		%-----------------------------------------------------------------------------
-		\subsubsection{When Things Go Wrong}
-		%-----------------------------------------------------------------------------
+		\subsubsection{When Things Go Wrong}	%-----------------------------------------------------------------------------
 
 As an example of what would happen without one of the necessary type theorems, we can remove the type theorem that establishes that all parameterized strings are also in \texttt{SStr}.  If we then attempt to compile \texttt{Queue\_Template}, the RESOLVE compiler gives the output given in Listing \ref{lst:stringLengthError}.
 
@@ -167,14 +157,12 @@ Candidates:
 
 
 	%-----------------------------------------------------------------------------
-	\subsection{Benchmark 4: Sorting a Queue}
-	%-----------------------------------------------------------------------------
+	\subsection{Benchmark 4: Sorting a Queue}	%-----------------------------------------------------------------------------
 
 \textbf{Problem Statement:} Specify a user-defined FIFO queue ADT that is generic (i.e., parameterized by the type of entries in a queue). Verify an operation that uses this component to sort the entries in a queue into some client-defined order.
 
 		%-----------------------------------------------------------------------------
-		\subsubsection{Supporting Mathematics}
-		%-----------------------------------------------------------------------------
+		\subsubsection{Supporting Mathematics}	%-----------------------------------------------------------------------------
 
 The previous benchmarks had straightforward specifications and most of the interesting things were happening in the supporting mathematics.  Starting with Benchmark 4, we begin to see specifications that make use of interesting features of our mathematical system directly.
 
@@ -231,14 +219,12 @@ This use of higher-order definitions provides the possibility of a generic sorti
 This section contains other examples that we feel highlight the capabilities of the mathematical type system.
 
 	%-----------------------------------------------------------------------------
-	\subsection{Cartesian Product Subtypes}
-	%-----------------------------------------------------------------------------
+	\subsection{Cartesian Product Subtypes}	%-----------------------------------------------------------------------------
 
 Cartesian products are a built-in notion in RESOLVE, primarly so that they can support multi-parameter functions.  However, the design of our type theorems is flexible enough that it was not necessary to build in important type-relationships between cartesian product types.
 
 		%-----------------------------------------------------------------------------
-		\subsubsection{Supporting Mathematics}
-		%-----------------------------------------------------------------------------
+		\subsubsection{Supporting Mathematics}	%-----------------------------------------------------------------------------
 
 As an example, consider the snippet of theory in Listing \ref{lst:cartprod1}.
 
@@ -263,8 +249,7 @@ Type Theorem Cart_Prod_Thingy:
 Because of the inductive structure of our representation of Cartesian products (namely, \texttt{(N~*~N~*~N)} is merely shorthand for \texttt{((N~*~N)~*~N)}), this single definition covers arbitrarily large and nested products.
 
 		%-----------------------------------------------------------------------------
-		\subsubsection{When Things Go Wrong}
-		%-----------------------------------------------------------------------------
+		\subsubsection{When Things Go Wrong}	%-----------------------------------------------------------------------------
 
 Removing the type theorem and running the same input, the RESOLVE compiler gives the error given in Listing \ref{lst:cartprod3}.
 
@@ -280,14 +265,12 @@ Candidates:
 \end{lstlisting}
 
 	%-----------------------------------------------------------------------------
-	\subsection{Array Realization of Stack}
-	%-----------------------------------------------------------------------------
+	\subsection{Array Realization of Stack}	%-----------------------------------------------------------------------------
 
 For this benchmark, we used the \texttt{Static\_Array\_Template} discussed in Benchmark 2 to implement \texttt{Stack\_Template}, which was an excellent stress-test for our array reasoning and highlights a number of interesting features.
 
 		%-----------------------------------------------------------------------------
-		\subsubsection{Supporting Mathematics}
-		%-----------------------------------------------------------------------------
+		\subsubsection{Supporting Mathematics}	%-----------------------------------------------------------------------------
 
 Consider the representation clause from \texttt{Array\_Realiz} provided in Listing \ref{lst:arrayrealiz1}.
 
@@ -322,8 +305,7 @@ Theorem Inductive_Reverse_1:
 Because of the flexibility of our type system, reasoning about these constructs requires no special machinery---functions can be defined and supporting theorems provided using standard syntax.
 
 		%-----------------------------------------------------------------------------
-		\subsubsection{When Things Go Wrong}
-		%-----------------------------------------------------------------------------
+		\subsubsection{When Things Go Wrong}	%-----------------------------------------------------------------------------
 
 We will explore two things that could go wrong in the definition of \texttt{Concatenate()} offered in Listing \ref{lst:binaryiteratortheory1}.
 
