@@ -1,5 +1,5 @@
 %----------------------------------------------------------------------------
-\chapter{Introduction}\label{sect:introduction}
+\chapter{Introduction}\label{ch:introduction}
 %----------------------------------------------------------------------------
 The verifying compiler is a grand challenge in computing, perhaps most famously stated by Tony Hoare in 2003\cite{hoareGrandChallenge}, but based on research into program correctness stretching back to King's thesis\cite{kingVerifier} and research in the 1960s\cite{hoareAxiomaticProgramming}.  The goal of the verifying compiler is to prove mathematically that software is correct---i.e., it behaves according to its specification.  Such a compiler would ideally eliminate the need for testing to reveal functional bugs by accomplishing what testing cannot: demonstrating the \emph{absence} of any bugs.  Unlike testing and informal reasoning, formal verification demonstrates that code behaves as specified under every possible valuation and along every possible path of execution.
 
@@ -114,9 +114,10 @@ Developments such as these would also benefit existing systems of all types.  In
 This dissertation explores if the mechanical verifiability of software components can be improved by better-engineered mathematics and specifications and, if so, which techniques best support these goals.  In the process we address the following open problems in the area of formal methods:
 
 \begin{itemize}
+\item Architecture and implementation of a minimalist rewrite prover to explore those prover capabilities practically necessary to mechanically verify well-engineered, modular components.
 \item Design and implementation of an extensible, flexible mathematical framework for a practical verification system that permits reuse as well as the development of a rich set of models and assertions.
 \item Design and implementation of a well-integrated specification framework that is explicitely designed to work with the mathematical system, supporting verifiability by allowing simple, flexible specifications and supporting scalability by encouraging verified component reuse.
-\item Validation of our central hypothesis via the architecture and implementation of a minimalist rewrite prover to support reasoning in the above framework and explore those prover capabilities practically necessary to mechanically verify well-engineered, modular components.
+\item Validation of our central hypothesis via application of the minimalist prover to software constructed using the mathematical and specification framework.
 \end{itemize}
 
 %----------------------------------------------------------------------------

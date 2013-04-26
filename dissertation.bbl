@@ -44,6 +44,17 @@ Charles Bouillaguet, Viktor Kuncak, Thomas Wies, Karen Zee, and Martin Rinard.
   Computer Science}, pages 74--88. Springer Berlin / Heidelberg, 2007.
 \newblock 10.1007/978-3-540-69738-1\_5.
 
+\bibitem{boyapati2003ownership}
+Chandrasekhar Boyapati, Barbara Liskov, and Liuba Shrira.
+\newblock Ownership types for object encapsulation.
+\newblock {\em ACM SIGPLAN Notices}, 38(1):213--223, 2003.
+
+\bibitem{bradley2006s}
+Aaron~R Bradley, Zohar Manna, and Henny~B Sipma.
+\newblock What’s decidable about arrays?
+\newblock In {\em Verification, Model Checking, and Abstract Interpretation},
+  pages 427--442. Springer, 2006.
+
 \bibitem{bronishMap}
 Derek Bronish and Hampton Smith.
 \newblock Robust, generic, modularly-verified map: a software verification
@@ -51,6 +62,12 @@ Derek Bronish and Hampton Smith.
 \newblock In {\em Proceedings of the 5th ACM workshop on Programming languages
   meets program verification}, PLPV '11, pages 27--30, New York, NY, USA, 2011.
   ACM.
+
+\bibitem{bronish2010review}
+Derek Bronish and Bruce~W Weide.
+\newblock A review of verification benchmark solutions using dafny.
+\newblock In {\em Proceedings of the 2010 Workshop on Verified Software:
+  Theories, Tools, and Experiments}, 2010.
 
 \bibitem{cok:esc}
 David~R. Cok and Joseph~R. Kiniry.
@@ -93,12 +110,42 @@ Michael~D. Ernst, Jake Cockrell, William~G. Griswold, and David Notkin.
   evolution.
 \newblock {\em IEEE Trans. Softw. Eng.}, 27:99--123, February 2001.
 
+\bibitem{ernst2007daikon}
+Michael~D Ernst, Jeff~H Perkins, Philip~J Guo, Stephen McCamant, Carlos
+  Pacheco, Matthew~S Tschantz, and Chen Xiao.
+\newblock The daikon system for dynamic detection of likely invariants.
+\newblock {\em Science of Computer Programming}, 69(1):35--45, 2007.
+
+\bibitem{filipovic2010blaming}
+Ivana Filipovi{\'c}, Peter O’Hearn, Noah Torp-Smith, and Hongseok Yang.
+\newblock Blaming the client: on data refinement in the presence of pointers.
+\newblock {\em Formal aspects of computing}, 22(5):547--583, 2010.
+
+\bibitem{fontaine2006expressiveness}
+Pascal Fontaine, Jean-Yves Marion, Stephan Merz, Leonor~Prensa Nieto, and Alwen
+  Tiu.
+\newblock Expressiveness+ automation+ soundness: Towards combining smt solvers
+  and interactive proof assistants.
+\newblock In {\em Tools and Algorithms for the Construction and Analysis of
+  Systems}, pages 167--181. Springer, 2006.
+
 \bibitem{ganeshArrayDecision}
 Vijay Ganesh and David~L. Dill.
 \newblock A decision procedure for bit-vectors and arrays.
 \newblock In {\em Proceedings of the 19th international conference on Computer
   aided verification}, CAV'07, pages 519--531, Berlin, Heidelberg, 2007.
   Springer-Verlag.
+
+\bibitem{gordon1993introduction}
+Michael~JC Gordon and Tom~F Melham.
+\newblock {\em Introduction to HOL: a theorem proving environment for higher
+  order logic}.
+\newblock Cambridge University Press, 1993.
+
+\bibitem{gordon2000lcf}
+Mike Gordon.
+\newblock From lcf to hol: a short history.
+\newblock {\em Proof, Language, and Interaction}, pages 169--185, 2000.
 
 \bibitem{guttagLarch}
 John~V. Guttag and James~J. Horning.
@@ -133,6 +180,12 @@ C.~A.~R. Hoare.
 Tony Hoare.
 \newblock The verifying compiler: A grand challenge for computing research.
 \newblock {\em J. ACM}, 50:63--69, January 2003.
+
+\bibitem{hollingsworth2000experience}
+Joseph~E Hollingsworth, Lori Blankenship, and Bruce~W Weide.
+\newblock Experience report: Using \mbox{RESOLVE/C++} for commercial software.
+\newblock In {\em ACM SIGSOFT Software Engineering Notes}, volume~25, pages
+  11--19. ACM, 2000.
 
 \bibitem{jacobsVerifast}
 Bart Jacobs, Jan Smans, Pieter Philippaerts, Fr\'{e}d\'{e}ric Vogels, Willem
@@ -211,6 +264,12 @@ K.~Leino and Rosemary Monahan.
   2010.
 \newblock 10.1007/978-3-642-15057-9\_8.
 
+\bibitem{leonard2009injecting}
+Dana~P Leonard, Jason~O Hallstrom, and Murali Sitaraman.
+\newblock Injecting rapid feedback and collaborative reasoning in teaching
+  specifications.
+\newblock In {\em ACM SIGCSE Bulletin}, volume~41, pages 524--528. ACM, 2009.
+
 \bibitem{leroyVerifiedcompiler}
 Xavier Leroy.
 \newblock Formal verification of a realistic compiler.
@@ -226,6 +285,12 @@ Bertrand Meyer.
 \newblock Eiffel: A language and environment for software engineering.
 \newblock {\em Journal of Systems and Software}, 8(3):199--246, 1988.
 
+\bibitem{milner1972implementation}
+Robin Milner.
+\newblock Implementation and applications of scott's logic for computable
+  functions.
+\newblock In {\em ACM sigplan notices}, volume~7, pages 1--6. ACM, 1972.
+
 \bibitem{nieuwenhuisDPLL}
 Robert Nieuwenhuis, Albert Oliveras, and Cesare Tinelli.
 \newblock Solving sat and sat modulo theories: From an abstract
@@ -236,6 +301,14 @@ Robert Nieuwenhuis, Albert Oliveras, and Cesare Tinelli.
 Tobias Nipkow, Markus Wenzel, and Lawrence~C. Paulson.
 \newblock {\em Isabelle/HOL: a proof assistant for higher-order logic}.
 \newblock Springer-Verlag, Berlin, Heidelberg, 2002.
+
+\bibitem{pike2009traditional}
+Scott~M Pike, Wayne~D Heym, Bruce Adcock, Derek Bronish, Jason Kirschenbaum,
+  and Bruce~W Weide.
+\newblock Traditional assignment considered harmful.
+\newblock In {\em Proceedings of the 24th ACM SIGPLAN conference companion on
+  Object oriented programming systems languages and applications}, pages
+  909--916. ACM, 2009.
 
 \bibitem{regula2012case}
 Kalyan~C Regula, Hampton Smith, Heather~Harton Keown, Jason~O Hallstrom,
@@ -279,6 +352,14 @@ Murali Sitaraman, Jason~O Hallstrom, Jarred White, Svetlana Drachova-Strang,
 \newblock Engaging students in specification and reasoning: hands-on
   experimentation and evaluation.
 \newblock In {\em ACM SIGCSE Bulletin}, volume~41, pages 50--54. ACM, 2009.
+
+\bibitem{sitaraman2001formal}
+Murali Sitaraman, Timothy~J Long, Bruce~W Weide, E~James Harpner, and Liqing
+  Wang.
+\newblock A formal approach to component-based software engineering: education
+  and evaluation.
+\newblock In {\em Proceedings of the 23rd international conference on Software
+  engineering}, pages 601--609. IEEE Computer Society, 2001.
 
 \bibitem{RESOLVE}
 Murali Sitaraman and Bruce Weide.

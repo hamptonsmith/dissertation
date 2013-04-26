@@ -1,11 +1,11 @@
 Precis String_Theory;
 
 	--The type of all strings of heterogenous type
-	Definition SStr : MType;
+	Definition SStr : MType = ...;
 
 	--A function that restricts SStr to the type of all strings of some homogenous
 	--type
-	Definition Str : MType -> MType;
+	Definition Str : MType -> MType = ...;
 
 	Type Theorem All_Strs_In_SStr:
 		For all T : MType,
@@ -19,14 +19,14 @@ Precis String_Theory;
 		For all s : Str(R),
 			s : Str(T);
 
-	Definition Empty_String : SStr;
+	Definition Empty_String : SStr = ...;
 
 	Type Theorem Empty_String_In_All_Strs:
 		For all T : MType,
 			Empty_String : Str(T);	
 
 	--String length
-	Definition |(s : SStr)| : N;
+	Definition |(s : SStr)| : N = ...;
 
    ...
 end;

@@ -11,7 +11,9 @@ Realization Selection_Sort_Realization(
 
 		While (Length(Q) > 0)
 			changing Q, Sorted_Queue, Lowest_Remaining;
-			maintaining ...;
+			maintaining Is_Permutation(Q o Sorted_Queue, #Q) and
+				Is_Conformal_With(LEQV, Sorted_Queue) and 
+				Is_Universally_Related(Sorted_Queue, Q, LEQV);;
 			decreasing |Q|;
 		do
 			Remove_Min(Q, Lowest_Remaining);
@@ -22,14 +24,18 @@ Realization Selection_Sort_Realization(
 
 	Operation Remove_Min(updates Q : Queue; replaces Min : Entry);
 		requires |Q| /= 0;
-		ensures ...;
+		ensures Is_Permutation(Q o <Min>, #Q) and
+			Is_Universally_Related(<Min>, Q, LEQV) and
+			|Q| = |#Q| - 1;
 	Procedure
 		Var Considered_Entry : Entry;
 		Var New_Queue : Queue;
 		Dequeue(Min, Q);		
 		While (Length(Q) > 0)
 			changing Q, New_Queue, Min, Considered_Entry;
-			maintaining ...;
+			maintaining Is_Permutation(
+					New_Queue o Q o <Min>, #Q) and
+				Is_Universally_Related(<Min>, New_Queue, LEQV);
 			decreasing |Q|;
 		do
 			Dequeue(Considered_Entry, Q);

@@ -1,26 +1,26 @@
 
 
 
-\chapter{Evaluation of Minimalist Prover\label{ch:proverEvaluation}}
+\chapter{Experimental Evaluation of the Minimalist Prover\label{ch:proverEvaluation}}
 %-----------------------------------------------------------------------------
-The evaluation of our minimalist prover orbits three fundamental questions: first, does our prover succeed in verifying programs; second, are our heuristics effective at increasing the usefulness of the prover; and third, does the data gathered by our prover expose any interesting properties of the VCs that arise from well-engineered programs.
+The evaluation of the minimalist prover orbits three fundamental questions: first, does it succeed in proving verification conditions arising programs; second, are our heuristics effective at increasing the usefulness of the prover; and third, does the data gathered by the prover expose any interesting properties of VCs that arise from well-engineered programs.
 
-The first and second question are explored by considering a series of verification benchmarks.  In Section \ref{canProve} we present each benchmark, then explore the effectiveness of the automated prover when applied to that benchmark.  Following that, in Section \ref{heuristicsEval}, we use those same benchmarks to explore how our various heuristics impact the effectiveness of the prover.  Finally, the third question is addressed in Section \ref{proverEvalConclusion}, where we provide some observations and conclusions based on the collected data.
+The first and second questions are explored by considering a series of verification benchmarks.  In Section \ref{canProve} we present each benchmark and explore the effectiveness of the automated prover when applied to that benchmark.  Following that, in Section \ref{heuristicsEval}, we use those same benchmarks to explore how our various heuristics impact the effectiveness of the prover.  Finally, the third question is addressed in Section \ref{proverEvalConclusion}, where we provide some observations and conclusions based on the collected data.
 
-This chapter focuses on the specifications and realizations of the benchmarks, with discussion of relevant mathematics forming the basis of Chapter \ref{ch:mathEvaluation}.  We will generally present only enough of each specification and realization to motivate our discussion, but the full specifications of each benchmark and any associated datastructures can be found in Appendix \ref{apx:spec} and full realizations in Appendix \ref{apx:real}.  Full listings of the proofs generated as solutions to the benchmarks in this chapter are available in Appendix \ref{apx:proofs}.
+This chapter focuses on the specifications and realizations of the benchmarks.  We defer the discussion of relevant mathematics to Chapter \ref{ch:mathEvaluation}.  We present only enough of each specification and realization to motivate our discussion, but the full specifications of each benchmark and any associated data abstractions can be found in Appendix \ref{apx:specs} and full realizations in Appendix \ref{apx:real}.  Full listings of the proofs generated as solutions to the benchmarks in this chapter are available in Appendix \ref{apx:proofs}.
 
-While the usability of our prover and its application in educational settings is not a core part of this thesis, we take this opportunity to note that our minimalistic prover has provided the backbone of our educational web-interface for three years now, and point the interested reader at \cite{cook2012specification} or \cite{sitaraman2009engaging} for examples of research where our prover is applied in educational settings.
+While the usability of our prover and its application in educational settings is not a core part of this thesis, we take this opportunity to note that our minimalistic prover provides the backbone of the RESOLVE verifying compiler and has facilitated teaching reasoning at Clemson and a variety of other institutions.  We point the interested reader to \cite{cook2012specification} or \cite{sitaraman2009engaging} for results of experimentation with the prover in educational settings.
 
 
 %-----------------------------------------------------------------------------
 \section{Description of Metrics}
 %-----------------------------------------------------------------------------
-For this chapter we focus on four primary metrics for exploring the effectiveness of the prover and the difficulty of the VCs.  These are:
+For this chapter we focus on four primary metrics for exploring the effectiveness of the prover and analyzing the difficulty of VCs.  These are:
 
 \begin{itemize}
-	\item \textbf{VCs proved.}  The number of VCs that were successfully dispatched by the prover.  Since the proof space is quite large, the prover often runs with a set timeout, after which it gives up, so in reality this metric refers to the number of VCs that were proved within the timeout.  Throughout this chapter, the timeout was set at 20 seconds.
-	\item \textbf{Real time.}  The amount of time required to dispatch the VC, generally measured in milliseconds.  Because this metric can vary depending on a number of variables, we will generally use the median of five repeated trials.
-	\item \textbf{Proof steps.}  The number of relevant steps taken by the prover.  One of the features of the prover is to prune steps that did not impact the final result.
+	\item \textbf{VCs proved.}  The number of VCs that are successfully dispatched by the prover.  Since the proof space is quite large, the prover often runs with a set timeout, so in reality this metric refers to the number of VCs that were proved within the timeout.  In the experiments discussed throughout this chapter, the timeout was set at 20 seconds.
+	\item \textbf{Real time.}  The amount of time required to dispatch the VC, generally measured in milliseconds.  Because this metric can vary depending on a number of variables, we present the mean of of five repeated trials along with the standard deviation.
+	\item \textbf{Proof steps.}  The number of relevant steps taken by the prover.  One of the features of the prover is to prune steps that do not impact the final result.
 	\item \textbf{Search steps.}  A subset of the overall proof steps including only those steps taken during the ``consequent exploration'' phase described in Section \ref{consequentExploration}, and not including those consequent steps that are ``obvious'', namely: replacing a consequent that matches a given with \texttt{true}, replacing a consequent that is a symmetric equality with \texttt{true}, and eliminating a conjunct that is \texttt{true}.  Intuitively this metric refers to the number of steps that were blind exploration of the proof space and which may have to be backtracked over, rather than deterministic steps over which we do not backtrack.
 \end{itemize}
 
@@ -32,7 +32,7 @@ For this chapter we focus on four primary metrics for exploring the effectivenes
 %-----------------------------------------------------------------------------
 	\subsection{VSTTE Benchmarks}
 %-----------------------------------------------------------------------------
-In 2010, members of the RSRG at Clemson and The Ohio State University published a set of incremental verification benchmarks at the Verified Software: Tools, Theories, and Experiments workshopVSTTE\cite{Benchmarks}.  These benchmarks were intended to provide a basis for experimentation and discussion between verification efforts.  In \cite{hartonDissertation}, the author presents a selection of these benchmarks implemented in RESOLVE in order to demonstrate the VC-generation capabilities of the RESOLVE compiler.  We mirror that methodology in this section, presenting a selection of the VSTTE benchmarks, including several that are borrowed or adapted from \cite{hartonDissertation}, before applying our minimalist prover to them and presenting resulting data.
+In 2010, members of the RSRG at Clemson and The Ohio State University published a set of incremental verification benchmarks at the Verified Software: Tools, Theories, and Experiments conference (VSSTE)\cite{Benchmarks}.  These benchmarks are intended to provide a basis for experimentation and discussion among verification efforts.  In \cite{hartonDissertation}, the author presents a selection of these benchmarks implemented in RESOLVE in order to demonstrate the VC-generation capabilities of the RESOLVE compiler.  We mirror that methodology in this section, presenting a selection of the VSTTE benchmarks, including several that are borrowed or adapted from \cite{hartonDissertation}, before applying our minimalist prover to them and presenting resulting data.
 	%-----------------------------------------------------------------------------
 		\subsubsection{Benchmark 1: Adding and Multiplying Integers}	%-----------------------------------------------------------------------------
 
@@ -42,21 +42,21 @@ In 2010, members of the RSRG at Clemson and The Ohio State University published 
 
 \lstinputlisting[float=h,language=resolve,caption={The specification of \texttt{Adding\_Capabilitiy} and \texttt{Multiplying\_Capability}\label{lst:integerAddMultSpec}}]{proverEval/examples/IntegerPlusTimesSpecs.en}
 
-Each specifies that its second parameter must be positive---dealing correctly with the presence of negative numbers adds a surprising amount of implementation complexity for a language like RESOLVE that strives to correctly reason about bounded integers, since the maximum and minimum integer are generally not symmetrical.  Note, however, that we lose no generality---a more general addition or multiplication function could be specified and wrapped around the ones presented in this section, transforming any addition or multiplication task into a finite subset of tasks that could computed correctly by these implementations.
+Each operation specifies that its second parameter must be positive---dealing correctly with the presence of negative numbers adds a surprising amount of implementation complexity for a language like RESOLVE that strives to correctly reason about bounded integers, since the maximum and minimum integer are generally not symmetrical.  Note, however, that we lose no generality---a more general addition or multiplication function could be specified and wrapped around the ones presented in this section, transforming any addition or multiplication task into a finite subset of tasks that could computed correctly by these implementations.
 
-We experimented both with an iterative and recursive implementation of \texttt{Adding\_Capability}.  We present the rescursive implementation in Listing \ref{lst:addImpl}.  The iterative implementation is available in Appendix \ref{apx:spec}.
+We experimented both with an iterative and recursive implementation of \texttt{Adding\_Capability}.  We present the rescursive implementation in Listing \ref{lst:addImpl}.  Note that the \texttt{decreasing} clause currently lists the integer \texttt{j}, but once we have a true theory of ordinals we would like for such clauses to take an ordinal.  The iterative implementation of \texttt{Adding\_Capability} is available in Appendix \ref{apx:specs}.
 
-\lstinputlisting[float=h,language=resolve,caption={A recursive implementation of \texttt{Adding\_Capabilitiy}\label{lst:addImpl}}]{proverEval/examples/Recursive_Add_to_Realiz.rb}
+\lstinputlisting[float=h,language=resolve,caption={A recursive implementation of \texttt{Adding\_Capability}\label{lst:addImpl}}]{proverEval/examples/Recursive_Add_to_Realiz.rb}
 
 Our implementation of \texttt{Multiplying\_Capabilitiy} is iterative and presented in Listing \ref{lst:multImpl}.
 
-\lstinputlisting[float=h,language=resolve,caption={An iterative implementation of \texttt{Multiplying\_Capabilitiy}\label{lst:multImpl}}]{proverEval/examples/Iterative_Multiply_into_Realiz.rb}
+\lstinputlisting[float=h,language=resolve,caption={An iterative implementation of \texttt{Multiplying\_Capability}\label{lst:multImpl}}]{proverEval/examples/Iterative_Multiply_into_Realiz.rb}
 
 \begin{sloppypar}
-Integers are partially built-in to RESOLVE, which makes using one enhancement to \texttt{Integer\_Template} from another fairly unweildy, which is why we do not use \texttt{Adding\_Capability} to implement \texttt{Multiplying\_Capability} as requested by the benchmark, but rather the normal integer \texttt{+}.  We note, however, that \texttt{+} is drawn from \texttt{Integer\_Template} as a normal specification and thus presents the same verification challenges (that is: reasoning about it is not built in).
+Integer syntax is built-in to RESOLVE for convenience, though Integers are specified and used through concepts like any other data abstraction. This makes using one enhancement to \texttt{Integer\_Template} from another fairly unweildy, which is why we do not use \texttt{Adding\_Capability} to implement \texttt{Multiplying\_Capability} as requested by the benchmark, but rather the normal integer \texttt{+}. We note, however, that \texttt{+} is drawn from \texttt{Integer\_Template} as a normal specification and thus presents the same verification challenges (that is: reasoning about it is not built in).
 \end{sloppypar}
 
-\paragraph{Results}Each of our three implementations is fully verifiable.  The results of those verifications, with associated metrics is presented in Figure \ref{fig:addMultResults}.
+\paragraph{Results}Each of the three implementations is fully verifiable.  The results of those verifications, with associated metrics are presented in Figure \ref{fig:addMultResults}.
 
 \begin{figure}
 	\centering
@@ -118,9 +118,10 @@ Integers are partially built-in to RESOLVE, which makes using one enhancement to
   \caption{Results from verification of Benchmark 1 solutions\label{fig:addMultResults}}
 \end{figure}
 
-
+\FloatBarrier
 %-----------------------------------------------------------------------------
-		\subsubsection{Benchmark 2: Benchmark 2: Binary Search an Array}	%-----------------------------------------------------------------------------
+		\subsubsection{Benchmark 2: Binary Search an Array}
+%-----------------------------------------------------------------------------
 
 \paragraph{Problem Statement}Verify an operation that uses binary search to find a given entry in an array of entries that are in sorted order.
 
@@ -132,17 +133,20 @@ The \emph{requires} clause of the operation uses higher-order definitions to est
 
 An implementation for this operation is provided in Listing \ref{lst:searchImpl}.
 
-\lstinputlisting[float=h,language=resolve,caption={An implementation of \texttt{Searching\_Capabilitiy}\label{lst:searchImpl}}]{proverEval/examples/Bin_Search_Realiz.rb}
+\lstinputlisting[float=t,language=resolve,caption={An implementation of \texttt{Searching\_Capabilitiy}\label{lst:searchImpl}}]{proverEval/examples/Bin_Search_Realiz.rb}
 
 The realization takes a function, \texttt{Are\_Ordered()} which provides a programmatic way of establishing \texttt{LEQ}.  From there, the implementation is the usual straightforward binary search implementation.  Note that when calculating the new mid, we first take the difference, then divide, avoiding the overflow problem exposed in \cite{blochBinarySearch}.
 
+An important design goal of RESOLVE is that as much reasoning as possible happens through the general component machinery.  As a result, RESOLVE does not elevate arrays (or pointers, as we discuss in \cite{kulczyckiPointers}) to special status, unlike nearly all other practical verification languages (\cite{DafnyOverview}, \cite{cok:esc}, or \cite{kuncakJahobOverview}, e.g.).
+
 While we provide syntactic sugar for array operations, they are supported by an ordinary component that provides specifications for all array operations, a snippet of which is provided in Listing \ref{lst:arraySpec}.
 
-\lstinputlisting[float=h,language=resolve,caption={A snippet of the specification of arrays\label{lst:arraySpec}}]{proverEval/examples/Static_Array_Template.co}
+\FloatBarrier
+\lstinputlisting[float=!h,language=resolve,caption={A snippet of the specification of arrays\label{lst:arraySpec}}]{proverEval/examples/Static_Array_Template.co}
 
-\paragraph{Results} Of the 45 VCs generated by this example, we are able to mechanically verify 39.  These result are summarized in Figure \ref{fig:binSearchResults}.
+\paragraph{Results} Of the 45 VCs generated by this example, we are able to mechanically verify 39.  These results are summarized in Figure \ref{fig:binSearchResults}.
 
-\begin{figure}
+\begin{figure}[t]
 	\centering
 	\begin{tabular}{lrrrr}
 		\toprule
@@ -209,33 +213,33 @@ The six VCs that are not mechanically verified represent a failure not of the pr
 
 We now present a manual proof of a representative one of these VCs by hand and argue that once this syntactic problem is resolved, our minimalist prover will be easily able to dispatch the VC.
 
-Consider the VC in Listing \ref{lst:brokenVC} corresponding to the inductive case of the while loop's maintaining clause.  Irrelevant givens have been ommited for brevity.
+Consider the VC in Listing \ref{lst:brokenVC} corresponding to the inductive case of the while loop's maintaining clause.  Irrelevant givens have been omitted for brevity.
 
-\lstinputlisting[float=h,language=resolve,caption={A problematic VC\label{lst:brokenVC}}]{proverEval/examples/BrokenVC.asrt}
+\lstinputlisting[float=!h,language=resolve,caption={A problematic VC\label{lst:brokenVC}}]{proverEval/examples/BrokenVC.asrt}
 
-Let us now proceed as the mechanical prover would.  We first replace instances of \texttt{A''} with \texttt{A}, resulting in these givens:
+Let us now proceed as the mechanical prover would.  We first replace instances of \texttt{A''} with \texttt{A}, resulting in the givens shown in Listing \ref{lst:givens2}.
 
-\begin{verbatim}
+\begin{lstlisting}[float=!h,language=,caption={New givens after replacing \texttt{A''} with \texttt{A}\label{lst:givens2}}]
 A' = lambda ( j : Z ).(
 	{{midVal'' if j = (low'  + ((high'  - low')  / 2))
 	  A(j) otherwise}}) and
 A((low'  + ((high'  - low')  / 2))) = key)
-\end{verbatim}
+\end{lstlisting}
 
-We now replace \texttt{A'} with its full expansion in the goal, resulting in this new goal:
+We now replace \texttt{A'} with its full expansion in the goal, resulting in the new goal shown in Listing \ref{lst:goal2}.
 
-\begin{verbatim}
+\begin{lstlisting}[float=!h,language=,caption={New goal after expanding \texttt{A'}\label{lst:goal2}}]
 lambda ( j : Z ).(
 	{{key if j = (low'  + ((high'  - low')  / 2))
 	  lambda ( j : Z ).(
 		{{midVal'' if j = (low'  + ((high'  - low')  / 2))
 	  	A(j) otherwise}}(j) otherwise}})
 = A
-\end{verbatim}
+\end{lstlisting}
 
-Finally, we replace instances of \texttt{key} with its expansion, resulting in this new goal (we change the internal lambda's variable to \texttt{k} for clarity, though the prover does not have to deal with this complication):
+Finally, we replace instances of \texttt{key} with its expansion, resulting in the final goal shown in Listing \ref{lst:goal3} (we change the internal lambda's variable to \texttt{k} for clarity, though the prover does not have to deal with this complication).
 
-\begin{verbatim}
+\begin{lstlisting}[float=!h,language=,caption={New goal after expanding \texttt{key}\label{lst:goal3}}]
 lambda ( j : Z ).(
 	{{A((low'  + ((high'  - low')  / 2))) 
 		if j = (low'  + ((high'  - low')  / 2))
@@ -243,11 +247,11 @@ lambda ( j : Z ).(
 		{{midVal'' if k = (low'  + ((high'  - low')  / 2))
 	  	A(k) otherwise}})(j) otherwise}})
 = A
-\end{verbatim}
+\end{lstlisting}
 
 At this point we are able to apply the theorem given in Listing \ref{lst:lambdaThm} (note that it applies a function-valued expression when it evaluates a lambda expression at \texttt{x} and therefore cannot be represented in our current syntax).
 
-\begin{lstlisting}[float=h,language=resolve,caption={A useful theorem about lambda expressions\label{lst:lambdaThm}}]
+\begin{lstlisting}[float=!h,language=resolve,caption={A useful theorem about lambda expressions\label{lst:lambdaThm}}]
 Theorem Shadowed_Function_Piece:
 	For all T, R : MType,
 	For all t : T,
@@ -264,7 +268,8 @@ We are then left with simply \texttt{A~=~A}, at which point the remainder of the
 
 \FloatBarrier
 %-----------------------------------------------------------------------------
-		\subsubsection{Benchmark 3: Sorting a Queue}	%-----------------------------------------------------------------------------
+		\subsubsection{Benchmark 3: Sorting a Queue}	
+%-----------------------------------------------------------------------------
 
 \paragraph{Problem Statement}Specify a user-defined FIFO queue ADT that is generic (i.e., parameterized by the type of entries in a queue). Verify an operation that uses this component to sort the entries in a queue into some client-defined order.
 
@@ -274,13 +279,13 @@ We are then left with simply \texttt{A~=~A}, at which point the remainder of the
 
 A straightforward selection sort realization is provided in Listing \ref{lst:sortingImpl}.
 
-\lstinputlisting[float=h,language=resolve,caption={A selection sort realization of \texttt{Sorting\_Capabilitiy}\label{lst:sortingImpl}}]{proverEval/examples/Selection_Sort_Realization.rb}
+\lstinputlisting[float=!h,language=resolve,caption={A selection sort realization of \texttt{Sorting\_Capabilitiy}\label{lst:sortingImpl}}]{proverEval/examples/Selection_Sort_Realization.rb}
 
 Again, as in Benchmark 2, we take a client-provided operation, \texttt{Compare()}, that implements \texttt{LEQV}, and use it to implement our \texttt{Remove\_Min()} sub-operation.  The \texttt{One()} and \texttt{Two()} procedures simply provide a way of getting the programmatic values \texttt{1} and \texttt{2} using a normal specification.
 
-\paragraph{Results}This implementation is fully verifiable.  The results of that verifications, with associated metrics, is presented in Figure \ref{fig:sortingResults}.  Based on our literature review, we believe that RESOLVE is the only verification effort with a generic, automatically-verifiable selection sort\footnote{The RESOLVE group at The Ohio State University has their own version of this automatically-verifiable selection sort.  We note, however, that their system takes advantage of a specialized decision procedure for reasoning about strings, whereas our solution uses only our generalized minimalist prover.}
+\paragraph{Results}This implementation is fully verifiable.  The results of that verifications, with associated metrics, is presented in Figure \ref{fig:sortingResults}.  Based on our literature review, we believe that RESOLVE is the only verification effort with a generic, automatically-verifiable selection sort\footnote{The RESOLVE group at The Ohio State University has their own version of this automatically-verifiable selection sort.  We note, however, that their system takes advantage of a specialized decision procedure for reasoning about strings, whereas our solution uses only our generalized minimalist prover.}.  One notable automatically-verifiable attempt is from a series of implementations of the VSTTE benchmarks in Dafny\cite{DafnySolutions}, but that solution operates only on integers where ours is generic.
 
-\begin{figure}
+\begin{figure}[!h]
 	\centering
 	\begin{tabular}{lrrrr}
 		\toprule
@@ -430,9 +435,9 @@ We implement this specification on top of an array, which, as in Benchmark 2, is
 %-----------------------------------------------------------------------------
 \section{Heuristic Evaluation\label{heuristicsEval}}
 %-----------------------------------------------------------------------------
-In order to evaluate the effectiveness of our heuristics from Section \ref{domainSpecific}, the prover was instrumented so that each of six different heuristics could be disabled individually.  The heuristics we targetted were: ignoring useless transformations, developing the antecedent only about relevant terms, focus on diversity in antecedent development, minimization of both consequent and antecedent, cycle detection, and transformation prioritization.
+In order to evaluate the effectiveness of our heuristics from Section \ref{domainSpecific}, the prover has been instrumented so that each of six different heuristics could be disabled individually.  The heuristics we targetted are: ignoring useless transformations, developing the antecedent only about relevant terms, focusing on diversity in antecedent development, minimizing both consequent and antecedent, cycle detection, and transformation prioritization.
 
-We then re-ran the verification process on each of our benchmarks and collected data about the changes to our various metrics.  This data is summarized in Figure \ref{heuristicEvalTable}.
+We then re-ran the verification process on each of the benchmarks and collected data about the changes to our various metrics.  This data is summarized in Figure \ref{heuristicEvalTable}.  Time here is based on the median of three repeated trials, simply to eliminate outlier times.
 
 \setlength{\tabcolsep}{7pt}
 \begin{figure}
@@ -462,11 +467,11 @@ We then re-ran the verification process on each of our benchmarks and collected 
 \end{figure}
 \setlength{\tabcolsep}{6pt}
 
-As expected, we see that our heuristics are at least partially responsible for a number of VCs being proved.  Ignoring useless transformations, limiting development to relevant terms, diversifying antecedents, minimizing, and prioritizing transformations all make the difference between some VCs proving or not proving.  Of those, it is interesting to note that diversifying antecedents poses a trade off---it requires more time (2 minutes, 33 seconds on these 130 VCs), but it enabled five more VCs to prove.  This may indicate that it would benefit from being targetted for further optimization to reduce the cost of applying it.  On the other hand, ignoring useless transformations, limiting development to relevant terms, minimization, and prioritization are nothing but a net gain.  They are collectively responsible for speeding up the proving process by over four and a half minutes and permitting 42 additional VCs to prove (though, for both time and the provability of VCs we imagine that there is overlap in the time saved and VCs proved and thus this is not a strictly additive relationship).
+As expected, we see that the heuristics are at least partially responsible for a number of VCs being proved.  Ignoring useless transformations, limiting development to relevant terms, diversifying antecedents, minimizing, and prioritizing transformations all make the difference between some VCs proving or not proving.  Of those, it is interesting to note that diversifying antecedents poses a trade off---it requires more time (2 minutes, 33 seconds on these 130 VCs), but it enabled five more VCs to prove.  This may indicate that it would benefit from being targetted for further optimization to reduce the cost of applying it.  On the other hand, ignoring useless transformations, limiting development to relevant terms, minimization, and prioritization are nothing but a net gain.  They are collectively responsible for speeding up the proving process by over four and a half minutes and permitting 42 additional VCs to prove (though, for both time and the provability of VCs we imagine that there is an overlap in the time saved and VCs proved and thus this is not a strictly additive relationship).
 
-An important metric is the change in search steps, since from an algorithmic perspective these steps are the most expensive to take: they contribute to the overall combinatorial explosion of time as we must inductively search deeper and deeper for a solution.  We note that three of our heuristics improve this metric, while only one has adverse effects (and a small one at that).  All told, the may summarize the net effect of all our heuristics as saving 48 search steps.
+An important metric is the change in search steps, since from an algorithmic perspective these steps are the most expensive to take: they contribute to the overall combinatorial explosion of time as we must inductively search deeper and deeper for a solution.  We note that three of our heuristics improve this metric, while only one has adverse effects (and a small one at that).  All told, we may summarize the net effect of all our heuristics as saving 48 search steps.
 
-It may at first be unclear how minimization can eliminate thiry-five search steps but only three steps---after all, search steps are a subset of minimization---but consider that minimization is, at its core, a heuristic for taking \emph{extra steps} that are likely to be useful.  The discrepancy of twenty-three steps represent steps that were \emph{not} taken in the preprocessing phase where they contributed no combinatorial complexity, and were instead deferred to the consequent exploration phase, where they were much more expensive.
+It may at first be unclear how minimization can eliminate thirty-five search steps but only three total proof steps---after all, search steps are a subset of total proof steps.  Consider, however, that minimization is a heuristic for taking \emph{extra steps} that are likely to be useful.  The discrepancy of thirty-two steps represent steps that were \emph{not} taken in the preprocessing phase, but instead delayed to the consequent exploration phase.  This increases the complexity of the search as steps taken in the exporation phase contribute to the combinatorial explosion of the search space, while steps taken in the preprocessing phase do not.
 
 
 %-----------------------------------------------------------------------------
@@ -474,15 +479,16 @@ It may at first be unclear how minimization can eliminate thiry-five search step
 %-----------------------------------------------------------------------------
 These five examples were chosen to be representative of the sorts of problems to which our prover can be applied, but do not constitute the total body of components we can automatically verify.  We have a library of many other verified operations operating on stacks, queues, lists, and integers.
 
-These benchmarks together involve 130 VCs ranging over the mathematical domains of functions, strings, integers, and booleans.  Of those, we are able to mechanically verify 124, with an additional 5 provable by hand, and a single VC that appears to be unprovable.  This is visualized in Figure \ref{fig:pie}.  Of the mechanically verifiable VCs, the median time to prove was 1696 milliseconds, and the mean time was 2487 milliseconds.  The median number of proof steps was seven and the median number of search steps was zero.
+These benchmarks together involve 130 VCs ranging over the mathematical domains of functions, strings, integers, and booleans.  Of those, we are able to mechanically verify 124, with the remaining 6 provable module improvements to RESOLVE's language representation.  This is visualized in Figure \ref{fig:pie}.  Of the mechanically verifiable VCs, the median time to prove was 1696 milliseconds, and the mean time was 2487 milliseconds.  The median number of proof steps was seven and the median number of search steps was zero.
 
 \begin{figure}
 	\centering
-	\begin{subfigure}[b]{0.44\textwidth}
+	\begin{subfigure}[b]{0.40\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{proverEval/proofResults.png}
-		\caption{Number of Search Steps Required by VC\label{fig:pie}}
+		\includegraphics[width=\textwidth]{proverEval/proofResults2.png}
+		\caption{Verification results\label{fig:pie}}
 	\end{subfigure}
+	\quad
 	\begin{subfigure}[b]{0.55\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{proverEval/searchSteps.png}
@@ -491,6 +497,6 @@ These benchmarks together involve 130 VCs ranging over the mathematical domains 
 	\caption{Summary of Proof Evaluation Results}
 \end{figure}
 
-As we have previously mentioned, we are particularly interested in the search step metric since it represents the only non-deterministic portion of the proof search.  That the median number of such steps was zero is extremely heartening and we are further encouraged that no VC required more than four.  Figure \ref{fig:histogram} shows a histogram of the number of VCs requiring different numbers of search steps.
+As we have previously mentioned, we are particularly interested in the search step metric since it represents the only non-deterministic portion of the proof search.  That the median number of such steps is zero is extremely heartening and we are further encouraged that no VC required more than four.  Figure \ref{fig:histogram} shows a histogram of the number of VCs requiring different numbers of search steps.
 
-The vast majority (84, or 68\%) of VCs required no search steps once all heuristics were applied.  39 (31\%) required three or fewer steps, while only a single VC required four search steps.  This data supports our hypothesis that VCs arising from well-engineered software should require only simple analysis to dispatch.
+The vast majority (84, or 68\%) of VCs required no search steps once all heuristics were applied.  39 (31\%) required three or fewer steps, while only a single VC required four search steps.  This data supports our hypothesis that VCs arising from well-engineered software should require only simple analysis with a minimalist prover to dispatch.

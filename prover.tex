@@ -125,12 +125,14 @@ While the second prover was much more flexible and brought many new VCs into the
 	\subsection{Issues}	%-----------------------------------------------------------------------------
 
 		%-----------------------------------------------------------------------------
-		\subsubsection{Performance}	%-----------------------------------------------------------------------------
+		\subsubsection{Performance}	
+		%-----------------------------------------------------------------------------
 
 The second prover eliminated the need to make deep copies at each step by ensuring that VCs were immutable and could thus be safely shared with deeper parts of the recursion.  However, it did this at the cost of eliminating the possibility of making changes to expressions in place---each change had to spawn a completely new structure.  While any unchanged subexpressions could be recycled, this generated a great deal of dynamic memory allocations that slowed down the tight prover loop.  Additionally, while it shared this weakness with the first prover, the second prover's reliance on the old type system prevented proof states from being hashed efficiently and thus precluded a number of optimizations such as efficiently detecting proof cycles.
 
 		%-----------------------------------------------------------------------------
-		\subsubsection{Debugging and Understandability}	%-----------------------------------------------------------------------------
+		\subsubsection{Debugging and Understandability}	
+		%-----------------------------------------------------------------------------
 
 The capabilities and requirements of the prover are rapidly changing in a research environment and a number of design decisions of the second prover made implementation of new features or the improvement of existing ones very difficult.
 
@@ -139,14 +141,16 @@ Because of the tight recursive loop that applied steps and handled backtracking,
 Additionally, the object that served to ``direct'' the proof was unweildy and difficult to understand or update.  Many layers of inductive, embedded decisions were represented in a functional way that often required straightforward conceptual decisions (e.g., ``apply this strategy until it cannot be applied anymore, then move on to this strategy'', ``only apply this strategy if this other one is not applicable'') to be encoded in counterintuitive ways.
 
 		%-----------------------------------------------------------------------------
-		\subsubsection{Metric Collection}	%-----------------------------------------------------------------------------
+		\subsubsection{Metric Collection}	
+		%-----------------------------------------------------------------------------
 
 While the second prover was an improvement, it still fell short of our metric-collection needs.  Most steps were now governed by the consistent machinery of the main proof loop, but not all.  For example, variable expansion was still the purview of a hard-coded pre-processing step.  Additionally, in order to enable the sorts of complexities we required to be described by the strategy object, what should have been considered entire ``phases'' of the proof were occasionally embedded into single steps that made many different, unrelated modifications to the proof state.
 
 An additional issue was that, with antecedent development now under the purview of the main prover loop, these steps contributed to proof-length-based metrics.  However, since antecedent developments are purely speculative, in most cases, the vast majority of those steps did not contribute in any useful way to the eventual final proof.  A mechanism was required to trace which steps actually contributed to the eventual result.
 
 		%-----------------------------------------------------------------------------
-		\subsubsection{Educational Suitability}	%-----------------------------------------------------------------------------
+		\subsubsection{Educational Suitability}	
+		%-----------------------------------------------------------------------------
 
 While the primary thrust of the RSRG's research is the development of a toolchain to broaden the scope of verified software, another important aspect of our research is the use of formal reasoning as an educational tool for teaching software engineering.  Because the design of the first two provers had been single-mindedly on mathematical power and cross-cutting concerns were difficult to satisfy under that design, creating visualizations of the proof state, permitting the user to slow down and ``watch'' the automated prover work, or effectively allowing the user to control the course of the proof was very difficult.  Both of the first two versions of the prover had a debug mode in which a window would appear at each step and permit the user to select the next theorem, but it was extremely rudimentary by necessity (see Figure \ref{proverDebugMode}).
 
@@ -157,7 +161,8 @@ While the primary thrust of the RSRG's research is the development of a toolchai
 \end{figure}
 
 	%-----------------------------------------------------------------------------
-	\subsection{Design and Implementation}	%-----------------------------------------------------------------------------
+	\subsection{Design and Implementation}
+	%-----------------------------------------------------------------------------
 
 For the third prover, visualization and control of the proof process, along with features to aid debugging and the writing of unit tests have been made first-class design concerns.  To this end, it eschews the functional, recursive design of the first two provers in favor of a model/view/controller decomposition.
 
@@ -190,7 +195,8 @@ Finally, for the collection of metrics, the current version of the prover output
 \lstinputlisting[float=!h,language=,caption={An example of prover output from a Queue reversal operation (antecedents have been omitted for brevity))\label{lst:proofOutput}}]{proverOutput.proof}
 
 	%-----------------------------------------------------------------------------
-	\subsection{Domain-Specific Optimizations\label{domainSpecific}}	%-----------------------------------------------------------------------------
+	\subsection{Domain-Specific Optimizations\label{domainSpecific}}
+	%-----------------------------------------------------------------------------
 
 An important hypothesis of this research is that a cutting-edge automated prover should not be required to prove the sorts of VCs that arise from well-engineered code.  To this end a significant thrust of our experimentation with the prover has been in developing heuristics that assist it in dispatching not general mathematical statements, but rather the sorts of obligations that arise from code.
 
@@ -260,3 +266,46 @@ We identified three criteria on which to determine the fitness of a transformati
 After experimentation, we have found that the third criteria is not useful, since a transformation attempting to match symbols not contained in the VC can never be applied, and thus any such symbols that might be \emph{produced} by the transformation, must be newly unique, which is subsumed by the second criteria.
 
 By deprioritizing transformations that will introduce new symbols, we prevent the prover from ``entering new territory'' before it's finished exploring all the ways it can transform the current symbols.  Similarly, by deprioritizing transformations that increase the number of function applications, we encourage proof states toward simplicity and parsimony that are easier to explore.  In a \emph{general} proof system, one might assert that these tactics are just as likely to lead us \emph{away} from a correct proof as to bring us closer, but in the specific domain of verifying well-engineered software, we hypothesize that the programmer is not taking leaps of logic and thus the reasoning should be simple.
+
+
+%-----------------------------------------------------------------------------
+\section{Soundness and Completeness}
+%-----------------------------------------------------------------------------
+Issues of soundness and completeness are important in any verification system.  While demonstrating the soundness and completeness of the prover is not a core goal of this thesis, we will nonetheless give a brief overview of all possible proof steps in this section, along with informal reasoning for why we believe they maintain these properties.
+
+%-----------------------------------------------------------------------------
+	\subsection{Eliminate \texttt{true} conjunct\label{sec:eliminateTrue}}
+%-----------------------------------------------------------------------------
+The most basic step we perform is to remove \texttt{true} when it appears as a conjunct in the antecedent or consequent.  Removing a conjunct certainly does nothing to threaten the soundness of the system, as it only has the potential to eliminate proof paths, not introduce new ones.  As a given, a \texttt{true} conjunct adds nothing, since it cannot be applied as a theorem, so removing it does not threaten soundness.  Consequents are only the source of one kind of step that adds any new information: existential instantiation, described in Section \ref{sec:existentialInstantiation}, which is only applicable when a conjunct contains an existentially quantified variable.  Since \texttt{true} does not contain any quantified variables, it is not the source of any steps aside from simplifications, and thus removing it does not threaten soundness.
+
+%-----------------------------------------------------------------------------
+	\subsection{Symmetric equality is \texttt{true}}
+%-----------------------------------------------------------------------------
+Another basic step is to seek out antecedents and consequents of the form \texttt{A~=~A} and replace them with \texttt{true}.  Certainly this does not introduce an unsoundness, since such reflexive equality is definitely true.  In the antecedent, changing this conjunct does reduce the theorems available for future steps, but none of them are useful---any proof achieved by replacing \texttt{A} with \texttt{A} could be achieved more easily by skipping that step, and any instance of \texttt{A~=~A} that we used such a given to reduce to \texttt{true} could just as easily be reduced via an application of this more general rule.
+
+%-----------------------------------------------------------------------------
+	\subsection{Replace theorem with \texttt{true}}
+%-----------------------------------------------------------------------------
+If a conjunct matches a theorem (or an antecedent, which is a kind of ``local theorem''), then it is itself a theorem and can be replaced with \texttt{true}.  Practically, it is only useful to perform this substitution in the consequent of the VC (after all, the givens are theorems by definition).  Doing so can not threaten soundness, since we're only exposing a theorem as a truth.  Since this step is only undertaken during the consequent exploration step, it can be backtracked over, protecting completeness.
+
+%-----------------------------------------------------------------------------
+	\subsection{Substitute}
+%-----------------------------------------------------------------------------
+Given a theorem of the form \texttt{A~=~B}, we can identify occurrences of \texttt{A} or \texttt{B} and replace them with the other.  If we make this replacement in the antecedent, we can choose to simply add the transformed version of the base conjunct without removing the original.  Clearly this does not impact soundness, since we've replaced a value with an equivalent one.  Completeness is uneffected because our prover applies such substitutions in both directions and so any subtitution has the potential to be undone.
+
+%-----------------------------------------------------------------------------
+	\subsection{Develop Antecedent via Implication}
+%-----------------------------------------------------------------------------
+With theorems that take the form \texttt{A~and~B~implies~C}, if we can establish \texttt{A} and \texttt{B} from the theory library and antecedents, we can add \texttt{C} as an antecedent.  This does not impact soundness since it only introduces a consequent of an implication we can establish.  Because it introduces a new antecedent without removing any, it has no effect on completeness.
+
+%-----------------------------------------------------------------------------
+	\subsection{Strengthen Conseqent via Implication}
+%-----------------------------------------------------------------------------
+Again, with a theorem that takes the form \texttt{A~and~B~implies~C}, if a consequent takes the form of \texttt{C}, we can strengthen it to \texttt{A~and~B}.  This is sound because, if we could establish \texttt{A} and \texttt{B}, we could certainly establish \texttt{C}.  By itself, it would threaten soundness, since a strictly stronger statement might not be provable when the original statement was, but this step is only undertaken during the consequent exploration phase and thus can be backtracked over.
+
+%-----------------------------------------------------------------------------
+	\subsection{Existential Instantiation\label{sec:existentialInstantiation}}
+%-----------------------------------------------------------------------------
+In general, we prohibit steps that introduce quantified variables.  Empirically such steps do not often lead to proofs and often represent theorems being applied the ``wrong way'' from how they are intended.  However, in the case of implication theorems, the necessary bindings are often immediately available either in the antecedent or the library of theorems, so in that specific case we permit steps that introduce quantifiers.  Having done so, an \emph{existential instantiation} step permits us to bind a conjunct containing an existential quantifier against an antecedent or theorem, ``filling in'' unbound variables that are then replaced throughout the consequent.
+
+From a soundness perspective, we only permit existential variables to bind against theorems or antecedents---we do not speculate on potential concrete values, so there's no risk of choosing something that might be violated by some other theorem.  Binding an existential variable one way prevents it from being bound anywhere else, so this does threaten soundness, but this step is only undertaken during consequent exploration when it can be backtracked over, and so soundness maintained.

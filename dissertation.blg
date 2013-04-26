@@ -3,52 +3,50 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: dissertation.aux
 The style file: plain.bst
 Database file #1: dissertation.bib
-I was expecting a `,' or a `}'---line 1455 of file dissertation.bib
- :  
- :  location = {Santa Fe, New Mexico}
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
 Warning--empty journal in bisl
+Warning--can't use both volume and number fields in hollingsworth2000experience
+Warning--can't use both volume and number fields in leonard2009injecting
+Warning--can't use both volume and number fields in milner1972implementation
 Warning--can't use both volume and number fields in sitaraman2009engaging
-You've used 53 entries,
+You've used 66 entries,
             2118 wiz_defined-function locations,
-            858 strings with 15502 characters,
-and the built_in function-call counts, 21705 in all, are:
-= -- 2149
-> -- 1147
-< -- 31
-+ -- 459
-- -- 392
-* -- 1542
-:= -- 3512
-add.period$ -- 189
-call.type$ -- 53
-change.case$ -- 344
+            924 strings with 17907 characters,
+and the built_in function-call counts, 27408 in all, are:
+= -- 2732
+> -- 1409
+< -- 42
++ -- 565
+- -- 482
+* -- 1938
+:= -- 4382
+add.period$ -- 235
+call.type$ -- 66
+change.case$ -- 427
 chr.to.int$ -- 0
-cite$ -- 55
-duplicate$ -- 847
-empty$ -- 1579
-format.name$ -- 392
-if$ -- 4651
+cite$ -- 71
+duplicate$ -- 1082
+empty$ -- 2018
+format.name$ -- 482
+if$ -- 5904
 int.to.chr$ -- 0
-int.to.str$ -- 53
-missing$ -- 48
-newline$ -- 277
-num.names$ -- 118
-pop$ -- 371
+int.to.str$ -- 66
+missing$ -- 62
+newline$ -- 342
+num.names$ -- 144
+pop$ -- 472
 preamble$ -- 1
-purify$ -- 294
+purify$ -- 365
 quote$ -- 0
-skip$ -- 625
+skip$ -- 800
 stack$ -- 0
-substring$ -- 1178
-swap$ -- 267
-text.length$ -- 31
+substring$ -- 1547
+swap$ -- 359
+text.length$ -- 42
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 204
-warning$ -- 2
-while$ -- 193
-width$ -- 55
-write$ -- 646
-(There was 1 error message)
+type$ -- 254
+warning$ -- 5
+while$ -- 249
+width$ -- 68
+write$ -- 797
+(There were 5 warnings)

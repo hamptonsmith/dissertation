@@ -1,0 +1,387 @@
+
+
+\section{Specifications\label{apx:specs}}
+%----------------------------------------------------------------
+
+%-----------------------------------------------------------------------------
+	\subsection{Integer\_Template}	%-----------------------------------------------------------------------------
+
+%-----------------------------------------------------------------------------
+		\subsubsection{Concept}	%-----------------------------------------------------------------------------
+
+\begin{lstlisting}[language=resolve]
+Concept Integer_Template;
+	uses Integer_Theory, Std_Boolean_Fac;
+
+    Defines min_int: Z;
+    Defines max_int: Z;
+
+    Constraint min_int <= 0 and 0 < max_int;
+
+    Type Family Integer is modeled by Z;
+        exemplar i;
+        constraint min_int <= i <= max_int;
+        initialization ensures i = 0;
+
+    Operation Is_Zero(evaluates i: Integer): Boolean;
+        ensures	Is_Zero = ( i = 0 );
+
+    Operation Is_Not_Zero(evaluates i: Integer): Boolean;
+        ensures	Is_Not_Zero = ( i /= 0 );
+
+    Operation Increment(updates i: Integer);
+        requires i + 1 <= max_int;
+        ensures	i = #i + 1;
+
+    Operation Decrement(updates i: Integer);
+        requires min_int <= i - 1;
+        ensures	i = #i - 1;
+
+    Operation Less_Or_Equal(evaluates i, j: Integer): Boolean;
+        ensures	Less_Or_Equal = ( i <= j );
+
+    Operation Less(evaluates i, j: Integer): Boolean;
+        ensures Less = ( i < j );
+
+    Operation Greater(evaluates i, j: Integer): Boolean;
+        ensures Greater = ( i > j );
+
+    Operation Greater_Or_Equal(evaluates i, j: Integer): Boolean;
+        ensures Greater_Or_Equal = ( i >= j );
+
+    Operation Sum(evaluates i, j: Integer): Integer;
+        requires min_int <= i + j <= max_int;
+        ensures	Sum = ( i + j );
+
+    Operation Negate(evaluates i: Integer): Integer;
+        requires min_int <= -i <= max_int;
+        ensures Negate = ( -i );
+
+    Operation Difference(evaluates i, j: Integer): Integer;
+        requires min_int <= i - j <= max_int;
+        ensures Difference = ( i - j );
+
+    Operation Product(evaluates i, j: Integer): Integer;
+        requires min_int <= i * j <= max_int;
+        ensures Product = ( i * j );
+
+    Operation Power(evaluates i, j: Integer): Integer;
+        requires min_int <= i**j <= max_int;
+        ensures Power = ( i**j );
+
+    Operation Divide(evaluates i, j: Integer; replaces q: Integer);
+	requires j /= 0 and min_int <= i / j <= max_int;
+        ensures (|j*q| <= |i|) and (|i - j*q| < |j|);
+
+    Operation Mod(evaluates i, j: Integer): Integer;
+	requires j /= 0;
+	ensures Mod = ( i mod j );
+
+    Operation Rem(evaluates i, j: Integer): Integer;
+
+    Operation Quotient(evaluates i, j: Integer): Integer;
+
+    Operation Div(evaluates i, j: Integer): Integer;
+	requires j /= 0;
+	ensures Div = ( i/j );
+
+    Operation Are_Equal(evaluates i, j: Integer): Boolean;
+        ensures Are_Equal = (i = j);
+
+    Operation Are_Not_Equal(evaluates i, j: Integer): Boolean;
+        ensures Are_Not_Equal = (i /= j);
+
+    Operation Replica(restores i: Integer): Integer;
+        ensures Replica = (i);
+
+    Operation Read(replaces i: Integer);
+
+    Operation Write(evaluates i: Integer);
+
+    Operation Write_Line(evaluates i: Integer);
+
+    Operation Max_Int(): Integer;
+        ensures Max_Int = max_int;
+		
+    Operation Min_Int(): Integer;
+        ensures Min_Int = min_int;
+
+    Operation Clear(clears i: Integer);
+
+	Operation One() : Integer;
+		ensures One = 1;
+
+	Operation Two() : Integer;
+		requires max_int >= 2;
+		ensures Two = 2;
+
+-- 	Integer generator operations are included in this concept implicitly.
+-- 	The following function assignment statement, for example, 
+--		i := 10;
+-- 	invokes the following operation implicitly:
+--    	Operation Ten( ): Integer;
+--			ensures Ten = 10;
+
+end Integer_Template;
+\end{lstlisting}
+
+%-----------------------------------------------------------------------------
+		\subsubsection{Enhancements}	%-----------------------------------------------------------------------------
+
+\begin{lstlisting}[language=resolve]
+Enhancement Adding_Capability for Integer_Template;
+	uses Integer_Theory, Std_Integer_Fac;
+
+    Operation Add_to(updates i:Integer; evaluates j:Integer);
+        requires min_int <= i + j and i + j <= max_int and j >= 0;
+        ensures	i= #i + j;
+
+end Adding_Capability;
+\end{lstlisting}
+
+\begin{lstlisting}[language=resolve]
+Enhancement Multiplying_Capability for Integer_Template;
+
+    Operation Multiply_into(updates i:Integer; evaluates j:Integer);
+        requires min_int <= i * j and i * j <= max_int and j >= 0;
+        ensures	i = #i * j;
+
+end;
+\end{lstlisting}
+
+%-----------------------------------------------------------------------------
+	\subsection{One\_Way\_List\_Template}	%-----------------------------------------------------------------------------
+
+%-----------------------------------------------------------------------------
+		\subsubsection{Concept}	%-----------------------------------------------------------------------------
+
+\begin{lstlisting}[language=resolve]
+Concept One_Way_List_Template(type Element;
+		evaluates Max_Length : Integer);
+		uses String_Theory;
+		requires Max_Length >= 0;
+		
+
+	Family One_Way_List is modeled by Cart_Prod
+		Prec, Rem: Str(Element);
+	end;
+	exemplar P;
+	constraint
+		|P.Prec o P.Rem| <= Max_Length;
+	initialization
+		ensures P.Prec = Empty_String and P.Rem = Empty_String;
+
+	Operation Advance(updates P : One_Way_List);
+		requires P.Rem /= Empty_String;
+		ensures P.Prec o P.Rem = #P.Prec o #P.Rem 
+			and |P.Prec| = |#P.Prec| + 1;
+
+	Operation Reset(updates P : One_Way_List);
+		ensures P.Prec = Empty_String and P.Rem = #P.Prec o #P.Rem;
+
+	Operation Length_of_Rem(restores P : One_Way_List) : Integer;
+		ensures Length_of_Rem = |P.Rem|;
+
+	Operation Length_of_Prec(restores P : One_Way_List) : Integer;
+		ensures Length_of_Prec = |P.Prec|;
+
+	Operation Insert(alters New_Entry : Element; updates P : One_Way_List);
+		requires |P.Prec o P.Rem| < Max_Length;
+		ensures P.Prec = #P.Prec and P.Rem = <#New_Entry> o #P.Rem;
+
+	Operation Remove(replaces Entry_Removed : Element; 
+			updates P: One_Way_List);
+		requires P.Rem /= Empty_String;
+		ensures P.Prec = #P.Prec and #P.Rem = <Entry_Removed> o P.Rem;
+
+	Operation Advance_to_End(updates P : One_Way_List);
+		ensures P.Prec = #P.Prec o #P.Rem and P.Rem = Empty_String;
+
+	Operation Swap_Prev_Entry_w(updates E : Element; 
+			updates P : One_Way_List);
+		ensures P.Rem = #P.Rem and 
+			P.Prec = Substring(#P.Prec, 0, |#P.Prec| - 1) o <E> and
+			E = Element_At(|#P.Prec| - 1, P.Prec);
+	
+	Operation Clear_List(clears P: One_Way_List);
+			ensures P.Prec = Empty_String and P.Rem = Empty_String;
+
+	Operation Remaining_Capacity(restores P : One_Way_List) : Integer;
+		ensures Remaining_Capacity = Max_Length - |P.Prec| - |P.Rem|;
+end;
+\end{lstlisting}
+
+%-----------------------------------------------------------------------------
+	\subsection{Queue\_Template}	%-----------------------------------------------------------------------------
+
+%-----------------------------------------------------------------------------
+		\subsubsection{Concept}	%-----------------------------------------------------------------------------
+
+\begin{lstlisting}[language=resolve]
+Concept Queue_Template(type Entry; evaluates Max_Length: Integer);
+    uses String_Theory;
+    requires Max_Length > 0;
+ 
+    Type Family Queue is modeled by Str(Entry);
+    exemplar Q;
+    constraint |Q| <= Max_Length;
+    initialization ensures Q = Empty_String;
+ 
+    Operation Enqueue(alters E: Entry; updates Q: Queue);
+        requires |Q| < Max_Length;
+        ensures Q = #Q o <#E>;
+ 
+    Operation Dequeue(replaces R: Entry; updates Q: Queue);
+        requires |Q| /= 0;
+        ensures #Q = <R> o Q;
+
+    Operation Swap_First_Entry(updates E: Entry; updates Q: Queue);
+        requires |Q| /= 0;
+        ensures E = Element_At(0, #Q) and Q = <#E> o Substring(#Q, 1, |#Q| - 1);
+
+    Operation Length(restores Q: Queue): Integer;
+     ensures Length = (|Q|);
+ 
+    Operation Rem_Capacity(restores Q: Queue): Integer;
+        ensures Rem_Capacity = (Max_Length - |Q|);
+ 
+    Operation Clear(clears Q: Queue);
+ 
+end Queue_Template;
+\end{lstlisting}
+
+%-----------------------------------------------------------------------------
+		\subsubsection{Enhancements}	%-----------------------------------------------------------------------------
+
+\begin{lstlisting}[language=resolve]
+Enhancement Flipping_Capability for Queue_Template;
+    Operation Flip (updates Q: Queue);
+        ensures Q = Reverse(#Q);
+end Flipping_Capability;
+\end{lstlisting}
+
+\begin{lstlisting}[language=resolve]
+Enhancement Sorting_Capability(Definition LEQV(x, y : Entry) : B) for 
+		Queue_Template;
+	uses String_Theory, Total_Preordering_Theory;
+	requires Is_Total_Preordering(LEQV);
+
+	Operation Sort(updates Q : Queue);
+		ensures Is_Conformal_With(LEQV, Q) and Is_Permutation(#Q, Q);
+
+end Sorting_Capability;
+\end{lstlisting}
+
+%-----------------------------------------------------------------------------
+	\subsection{Stack\_Template}	%-----------------------------------------------------------------------------
+
+%-----------------------------------------------------------------------------
+		\subsubsection{Concept}	%-----------------------------------------------------------------------------
+
+\begin{lstlisting}[language=resolve]
+Concept Stack_Template(type Entry; evaluates Max_Depth: Integer);
+        uses Std_Integer_Fac, String_Theory, Integer_Theory;
+        requires Max_Depth > 0;
+
+    Type Family Stack is modeled by Str(Entry);
+        exemplar S;
+        constraint |S| <= Max_Depth;
+        initialization ensures S = Empty_String;
+
+    Operation Push(alters E: Entry; updates S: Stack); 
+        requires |S| < Max_Depth;
+        ensures  S = <#E> o #S;
+
+    Operation Pop(replaces R: Entry; updates S: Stack);
+        requires |S| /= 0;
+        ensures #S = <R> o S;
+
+    Operation Depth(restores S: Stack): Integer;
+        ensures Depth = (|S|);
+
+    Operation Rem_Capacity(restores S: Stack): Integer;
+        ensures Rem_Capacity = (Max_Depth - |S|);
+
+    Operation Clear(clears S: Stack);
+
+end;
+\end{lstlisting}
+
+%-----------------------------------------------------------------------------
+		\subsubsection{Enhancements}	%-----------------------------------------------------------------------------
+
+\begin{lstlisting}[language=resolve]
+Enhancement Flipping_Capability for Stack_Template;
+
+	Operation Flip(updates S: Stack);
+		ensures S = Reverse(#S);
+
+end Flipping_Capability;
+\end{lstlisting}
+
+%-----------------------------------------------------------------------------
+	\subsection{Static\_Array\_Template}	%-----------------------------------------------------------------------------
+
+%-----------------------------------------------------------------------------
+		\subsubsection{Concept}	%-----------------------------------------------------------------------------
+
+\begin{lstlisting}[language=resolve]
+Concept Static_Array_Template(type Entry; evaluates Lower_Bound, Upper_Bound: Integer);
+    uses Std_Integer_Fac, Integer_Theory, Conditional_Function_Theory;
+    requires (Lower_Bound <= Upper_Bound);
+
+    Type Family Static_Array is modeled by (Z -> Entry);
+        exemplar A;
+      constraint true;
+        initialization ensures 
+		for all i: Z, Entry.Is_Initial(A(i));
+
+    Operation Swap_Entry(updates A: Static_Array; updates E: Entry; evaluates i: Integer); 
+        requires Lower_Bound <= i  and i <= Upper_Bound;
+	  ensures E = #A(i) and A = lambda (j : Z).(
+		{{#E if j = i;
+		  #A(j) otherwise;}});
+
+	Operation Swap_Two_Entries(updates A: Static_Array; evaluates i, j: Integer); 
+        	requires Lower_Bound <= i  and i <= Upper_Bound and
+			Lower_Bound <= j  and j <= Upper_Bound;
+		ensures A = lambda (k : Z).(
+			{{#A(j) if k = i; 
+			  #A(i) if k = j; 
+			  #A(k) otherwise;}});
+
+    Operation Assign_Entry(updates A: Static_Array; evaluates Exp: Entry; evaluates i: Integer);
+        requires Lower_Bound <= i  and i <= Upper_Bound;
+	ensures A = lambda (j : Z).({{
+		Exp if j = i;
+		#A(j) otherwise;}});
+
+    Operation Entry_Replica(restores A: Static_Array; evaluates i: Integer): Entry;
+        requires Lower_Bound <= i  and i <= Upper_Bound;
+        ensures Entry_Replica = A(i);
+end;
+\end{lstlisting}
+
+%-----------------------------------------------------------------------------
+		\subsubsection{Enhancements}	%-----------------------------------------------------------------------------
+
+\begin{lstlisting}[language=resolve]
+Enhancement Search_Capability(definition LEQ(x,y: Entry): B)
+			for Static_Array_Template;
+		uses Std_Boolean_Fac, Total_Preordering_Theory,
+			Binary_Relation_Properties_Theory, 
+			Binary_Iterator_Theory;
+		requires Is_Total_Preordering(LEQ) and Is_Antisymmetric(LEQ);
+
+	Operation Is_Present(restores key: Entry; 
+			restores A: Static_Array) : Boolean;
+		requires Is_Conformal_With(LEQ, Concatenate(
+			Shift(A, (Lower_Bound - 1) * -1), Upper_Bound - 
+				Lower_Bound));
+		ensures Is_Present = 
+			Exists_Between(key, Concatenate(
+					Shift(A, (Lower_Bound - 1) * -1), 
+					Upper_Bound - Lower_Bound), 
+				Lower_Bound, Upper_Bound);
+end;
+\end{lstlisting}

@@ -7,6 +7,7 @@
 \usepackage{subcaption}
 \usepackage{mathrsfs}
 \usepackage{booktabs}
+\usepackage{placeins}
 
 \setcounter{secnumdepth}{3}
 

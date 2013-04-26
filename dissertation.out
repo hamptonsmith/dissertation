@@ -23,21 +23,24 @@
 \BOOKMARK [1][-]{section.4.1}{Version 1 Prover}{chapter.4}% 23
 \BOOKMARK [1][-]{section.4.2}{Version 2 Prover}{chapter.4}% 24
 \BOOKMARK [1][-]{section.4.3}{Version 3 Prover}{chapter.4}% 25
-\BOOKMARK [0][-]{chapter.5}{Mathematical Flexibility}{}% 26
-\BOOKMARK [1][-]{section.5.1}{Preliminaries}{chapter.5}% 27
-\BOOKMARK [1][-]{section.5.2}{General Design Goals}{chapter.5}% 28
-\BOOKMARK [1][-]{section.5.3}{Concrete Features}{chapter.5}% 29
-\BOOKMARK [0][-]{chapter.6}{Evaluation of Minimalist Prover}{}% 30
-\BOOKMARK [1][-]{section.6.1}{Description of Metrics}{chapter.6}% 31
-\BOOKMARK [1][-]{section.6.2}{Benchmark Solutions}{chapter.6}% 32
-\BOOKMARK [1][-]{section.6.3}{Heuristic Evaluation}{chapter.6}% 33
-\BOOKMARK [1][-]{section.6.4}{Observations and Conclusions}{chapter.6}% 34
-\BOOKMARK [0][-]{chapter.7}{Evaluation of Mathematical System}{}% 35
-\BOOKMARK [1][-]{section.7.1}{VSTTE Benchmarks}{chapter.7}% 36
-\BOOKMARK [1][-]{section.7.2}{Other Benchmarks}{chapter.7}% 37
-\BOOKMARK [0][-]{chapter.8}{Conclusion and Future Research}{}% 38
-\BOOKMARK [0][-]{section*.103}{Appendices}{}% 39
-\BOOKMARK [1][-]{section.2.A}{Dragga and Gong's Editing Process Model}{section*.103}% 40
-\BOOKMARK [1][-]{section.2.B}{Manuscript Review Sign-In Datat Aheet for Students}{section*.103}% 41
-\BOOKMARK [1][-]{section.2.C}{Institutional Review Board \(IRB\) Application and Attachments}{section*.103}% 42
-\BOOKMARK [0][-]{section*.105}{Bibliography}{}% 43
+\BOOKMARK [1][-]{section.4.4}{Soundness and Completeness}{chapter.4}% 26
+\BOOKMARK [0][-]{chapter.5}{Mathematical Flexibility}{}% 27
+\BOOKMARK [1][-]{section.5.1}{General Design Goals}{chapter.5}% 28
+\BOOKMARK [1][-]{section.5.2}{Preliminaries}{chapter.5}% 29
+\BOOKMARK [1][-]{section.5.3}{Concrete Features}{chapter.5}% 30
+\BOOKMARK [0][-]{chapter.6}{Experimental Evaluation of the Minimalist Prover}{}% 31
+\BOOKMARK [1][-]{section.6.1}{Description of Metrics}{chapter.6}% 32
+\BOOKMARK [1][-]{section.6.2}{Benchmark Solutions}{chapter.6}% 33
+\BOOKMARK [1][-]{section.6.3}{Heuristic Evaluation}{chapter.6}% 34
+\BOOKMARK [1][-]{section.6.4}{Observations and Conclusions}{chapter.6}% 35
+\BOOKMARK [0][-]{chapter.7}{Evaluation of the Mathematical System}{}% 36
+\BOOKMARK [1][-]{section.7.1}{VSTTE Benchmarks}{chapter.7}% 37
+\BOOKMARK [1][-]{section.7.2}{Other Benchmarks}{chapter.7}% 38
+\BOOKMARK [1][-]{section.7.3}{Summary}{chapter.7}% 39
+\BOOKMARK [0][-]{chapter.8}{Conclusion and Future Research}{}% 40
+\BOOKMARK [0][-]{section*.108}{Appendices}{}% 41
+\BOOKMARK [1][-]{section.2.A}{Theories}{section*.108}% 42
+\BOOKMARK [1][-]{section.2.B}{Specifications}{section*.108}% 43
+\BOOKMARK [1][-]{section.2.C}{Realizations}{section*.108}% 44
+\BOOKMARK [1][-]{section.2.D}{Automated Proofs}{section*.108}% 45
+\BOOKMARK [0][-]{section*.109}{Bibliography}{}% 46

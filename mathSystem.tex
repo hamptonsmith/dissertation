@@ -4,34 +4,9 @@
 \chapter{Mathematical Flexibility\label{ch:math}}
 %-----------------------------------------------------------------------------
 
-Introducing formal methods into a software engineering project causes a sharp increase in the up-front effort required to develop the software.  Appropriate mathematical theories must be developed, components must be formally specified by a software engineer trained in formal techniques, and verification conditions must be dispatched by a mathematician in a formal environment that eliminates the possibility of human error, possibly with the assistance of an automated proving tool.
+Introducing formal methods into a software engineering project causes a sharp increase in the up-front effort required to develop the software.  Appropriate and sound mathematical theories must be developed, components must be formally specified by a software engineer trained in formal techniques, and verification conditions must be dispatched by a mathematician in a formal environment that eliminates the possibility of human error, possibly with the assistance of an automated proving tool.
 
-While we argue that this cost is justified in critical or long-running deployments by a corresponding reduction in effort during the maintenance phase of the software lifecycle, it is undeniable that this remains a barrier for entry to many projects that could otherwise benefit from formal methods of quality assurance.  We hypothesized that a number of steps could be taken to reduce the real or percieved additional effort, as well as increase the corresponding long-term benefits.
-
-
-%-----------------------------------------------------------------------------
-\section{Preliminaries\label{preliminaries}}
-%-----------------------------------------------------------------------------
-
-For the sake of clarity and brevity, we will explain a few important concepts and notations for this section upfront.
-
-	%-----------------------------------------------------------------------------
-	\subsection{Objects \emph{vs.} Expressions\label{objectsVsExpressions}}
-	%-----------------------------------------------------------------------------
-
-We will occasionally need to distinguish between a \emph{mathematical value and its corresponding type} and a \emph{RESOLVE expression and its corresponding type}.  The former is a mathematical object representable in the universe of RESOLVE.  The latter is a meta-concept pertaining to syntax.  When we wish to indicate a mathematical value, we will use the standard mathematical syntax.  E.g., $\forall i : \mathbb{Z}, ...$ quantifies over all mathematical integers.  When we wish to indicate a RESOLVE expression of some type, we will use the meta-type \textbf{Exp}, subscripted with the type of the expression.  E.g., $\forall i : \textbf{Exp}_\mathbb{Z}, ...$ quantifies over all RESOLVE expressions that, when evaluated, would yield a mathematical integer.  We will also use the meta-function \emph{Eval}, which takes an \textbf{Exp} and returns the results of evaluating the expression.
-
-	%-----------------------------------------------------------------------------
-	\subsection{Operating on Expressions\label{operatingOnExpressions}}
-	%-----------------------------------------------------------------------------
-
-When normal mathematical functions (e.g., $\cup$, $\times$, etc.) are shown operating on \textbf{Exp}s, this is a shorthand for constructing a new RESOLVE expression resembling the given expression, with any \textbf{Exp}-valued variables macro-expanded into their full expression value.  For example, $\forall R, T : \textbf{Exp}_{\mathcal{P}(\mathbb{Z})}, \text{Eval}(R \cup T) \supseteq \text{Eval}(R)$ does not contain an attempt to somehow ``union'' two expressions ($\cup$ operates on types, not expressions), but rather is constructing a new union expression with $R$ and $T$ as sub-expressions.
-
-	%-----------------------------------------------------------------------------
-	\subsection{Type Equality\label{typeEquality}}
-	%-----------------------------------------------------------------------------
-
-Equality of types can be a complex topic.  In this text, when we say, for some types $T$ and $R$, that $T = R$ (or use the word ``equals'') we mean that $T$ and $R$ are \emph{alpha equivalent}.  Two types are alpha equivalent if they are identical except for the names of any quantified variables, which may be different so long as they do not change the internal relationships between the variables (i.e., the names can not be changed to make two previously differently-named variables the same.)
+While we argue that this cost is justified in critical or long-running deployments by a corresponding reduction in effort during the maintenance phase of the software lifecycle, it is undeniable that this remains a barrier for entry to many projects that could otherwise benefit from formal methods of quality assurance.  The hypothesis is that a number of steps could be taken to reduce the real or percieved additional effort, as well as increase the corresponding long-term benefits.
 
 %-----------------------------------------------------------------------------
 \section{General Design Goals\label{mathDesignGoals}}
@@ -43,27 +18,50 @@ After considering the problem, we arrived at three overarching strategies to add
 	\subsection{Usable Theories\label{usableTheories}}
 	%---------------------------------------------------------------------
 
-Certainly the most straightforward way of addressing this issue is simply to reduce the effort associated with formal verification.  These complexities may generally be understood to arise from two situations: writing theories, along with utilizing them in specifications (that is, \emph{producing} mathematical content) and dispatching verification conditions, either by hand or via an automated prover (that is, \emph{consuming} mathematical content).
+Certainly the most straightforward way of addressing the complexity issue is simply to reduce the effort associated with formal verification.  The central mathematical challenges in developing verified software may generally be understood to arise from two sources: \emph{producing} mathematical content, which includes writing sound and sufficiently complete theories, along with utilizing them in specifications; and \emph{employing} mathematical content, which mostly manifests as the dispatching of verification conditions, either by hand or via an automated prover.
 
-The first situation may be addressed by making it as easy as possible to work with the mathematical subsystem of the verification tool.  \emph{Familiarity} is the most obvious kind of ease and encompasses both syntax and environment.  Because the target users of the RESOLVE mathematical subsystem are mathematicians, we strive to make the RESOLVE theory language look and behave as much like traditional mathematics as possible.  Another kind of ease is \emph{tool support}, wherein the compiler assists the user in spotting and correcting errors.
+The complexity of developing mathematical theories and specifications may be addressed by making it as easy as possible to work with the mathematical subsystem of the verification tool.  \emph{Familiarity} is the most obvious kind of ease.  It encompasses both syntax and environment.  Because the target users of the RESOLVE mathematical subsystem are mathematicians, we strive to make the RESOLVE theory language look and behave as much like traditional mathematics as possible.  Another kind of ease is \emph{tool support}, wherein the compiler assists the user in spotting and correcting errors.
 
-The second situation may be addressed by making VCs easier to dispatch.  While the subject of increasing the power of the automated prover to encompass more VCs is the topic of Chapter \ref{ch:prover} of this dissertation, we can affect this effort in the theory development domain by creating theories that result in \emph{more straightforward} VCs.
+The complexity of the verification problem may be addressed by making VCs easier to dispatch.  While the subject of increasing the power of the automated prover to encompass more VCs is the topic of Chapter \ref{ch:prover} of this dissertation, we can affect this effort in the theory development domain by creating theories that result in \emph{more straightforward} VCs.  This is the process we term \emph{specification engineering}, which encompasses techniques such as choosing appropriate abstractions, limiting quantifier use, and appropriate theory modularity, all of which necessitate the significant amounts of mathematical flexibility introduced in this chapter.
 
 	%---------------------------------------------------------------------
 	\subsection{Modular Theories\label{modularTheories}}
 	%---------------------------------------------------------------------
 
-Borrowing from the software development world, we note that when complexity is unavoidable, it can be mitigated by strong modularity in the form of clear demarcations between atomic conceptual units.   Such units serve both to organize the thoughts of the human user and to provide a finer granularity with which to import such concepts, decreasing the clutter in namespaces and ensuring that only the resources that are truly needed are loaded.  In the presence of an automated prover, we hypothesized that such a strategy would also assist the ease with which VCs can be dispatched by ensuring that the prover only considers those theorems relevant to the current domain.
+Borrowing from the software development world, we note that when complexity is unavoidable, it can be mitigated by strong modularity in the form of clear demarcations between atomic conceptual units.   Such units serve both to organize the thoughts of the human user and to provide a finer granularity with which to import such concepts, decreasing the clutter in namespaces and ensuring that only the resources that are truly needed are brought into context.  In the presence of an automated prover, we hypothesize that such a strategy assists the ease with which VCs can be dispatched by ensuring that the prover only considers those theorems relevant to the current domain.
 
-Note that it's not our desire to place on the user the burden of deciding which theorems might be relevant, but rather to ensure that appropriate theorems are bundled with the mathematical objects upon which they operate.  A user might work with binary relations a great deal, but only when she wishes to use the \texttt{Is\_Total\_Preordering} predicate would she import \texttt{Preordering\_Theory}.  By importing what is necessary to gain access to such a predicate, she also gains a body of theorems for reasoning about such relations.
+Note that it's not our desire to place on the user the burden of deciding which mathematical results might be relevant, but rather to ensure that appropriate theorems are bundled with the mathematical objects upon which they operate.  A user might work with binary relations a great deal, but only when she wishes to use the \texttt{Is\_Total\_Preordering} predicate would she import \texttt{Preordering\_Theory}.  By importing what is necessary to gain access to such a predicate, she also gains a body of mathematical results for reasoning about such relations.
 
 	%---------------------------------------------------------------------
 	\subsection{Reusable Theories\label{reusableTheories}}
 	%---------------------------------------------------------------------
 
-Finally, we note that a theory or component that enjoys continuous reuse amortizes over time the up-front effort required to create and verify it.  We therefore sought to create and add those features that would permit the development of reusable theories, types, theorems, and components.  Such a strategy both decreases the effort required to create new theories and increases the liklihood that an existing theory is already available that can meet the user's needs.
+A theory or component that enjoys continuous reuse amortizes over time the up-front effort required to create and verify it.  We therefore have saught to create and add those features that would permit the development of reusable theories, types, theorems, and components.  Such a strategy both decreases the effort required to create new theories and increases the liklihood that an existing theory is already available that can meet the user's needs.  In seeking out such features, we draw from the body of existing programming languages techniques, including encapsulation, polymorphism, and inheritance, and seek to adapt them for theories and specifications.
 
-In seeking out such features, we drew from the body of existing programming languages techniques, including encapsulation, polymorphism, and inheritance, and sought to adapt them for specifications and theories.
+
+%-----------------------------------------------------------------------------
+\section{Preliminaries\label{preliminaries}}
+%-----------------------------------------------------------------------------
+
+Before discussing the concrete features that address these general goals, it is useful for the sake of clarity and brevity to explain a few important concepts and notational conveniences that we will use for the remainder of this chapter.
+	%-----------------------------------------------------------------------------
+	\subsection{Objects \emph{vs.} Expressions\label{objectsVsExpressions}}
+	%-----------------------------------------------------------------------------
+
+We will occasionally need to distinguish between a \emph{mathematical value and its corresponding type} and a \emph{RESOLVE expression and its corresponding type}.  The former is a mathematical object representable in the universe of RESOLVE.  The latter is a meta-concept pertaining to syntax.  When we wish to indicate a mathematical value, we will use the standard mathematical syntax.  E.g., $\forall i : \mathbb{Z}, ...$ quantifies over all mathematical integers.  When we wish to indicate a RESOLVE expression of some type, we will use the meta-type \textbf{Exp}, subscripted with the type of the expression.  E.g., $\forall i : \textbf{Exp}_\mathbb{Z}, ...$ quantifies over all RESOLVE expressions that, when evaluated, would yield a mathematical integer.  We will also use the meta-function \emph{Eval}, which takes an \textbf{Exp} and returns the results of evaluating the expression.
+	%-----------------------------------------------------------------------------
+	\subsection{Operating on Expressions\label{operatingOnExpressions}}
+	%-----------------------------------------------------------------------------
+
+\begin{sloppypar}
+When normal mathematical functions (e.g., $\cup$, $\times$, etc.) are shown operating on \textbf{Exp}s, this is a shorthand for constructing a new RESOLVE expression resembling the given expression, with any \textbf{Exp}-valued variables macro-expanded into their full expression values.  For example, the assertion $\forall~R,~T~:~\textbf{Exp}_{\mathcal{P}(\mathbb{Z})},~\text{Eval}(R~\cup~T)~\supseteq~\text{Eval}(R)$ does not contain an attempt to somehow ``union'' two expressions ($\cup$ operates on types, not expressions), but rather constructs a new union expression with $R$ and $T$ as sub-expressions.
+\end{sloppypar}
+	%-----------------------------------------------------------------------------
+	\subsection{Type Equality\label{typeEquality}}	
+	%-----------------------------------------------------------------------------
+
+Equality of types can be a complex topic.  In this text, when we say, for some types $T$ and $R$, that $T~=~R$ (or use the word ``equals'') we mean that $T$ and $R$ are \emph{alpha-equivalent}.  Two types are alpha-equivalent if they are identical except for the names of any quantified variables, which may be different so long as they do not change the internal relationships among the variables (i.e., the names can not be changed to make two previously differently-named variables the same.)
+
 
 %-----------------------------------------------------------------------------
 \section{Concrete Features\label{mathFeatures}}
@@ -73,9 +71,13 @@ In seeking out such features, we drew from the body of existing programming lang
 	\subsection{Higher-order Logic\label{higherOrderLogic}}
 	%---------------------------------------------------------------------
 
-The availability of first-class functions in theories and specifications both increases mathematically \emph{familiarity} (supporting usability) and encourage patterns of reuse.  Many reuse patterns found in modern programming languages are difficult or impossible to specify or verify using the first-order logic dictated by most practical verification systems and automated provers.  For example, the Strategy patten, functional constructs, and program templates all become impossible to specify.
+The availability of first-class functions in theories and specifications both increases mathematical \emph{familiarity} (supporting usability) and encourages patterns of reuse.  Specifications of non-trivial reusable software components and patterns supported in programming languages are difficult or impossible to specify or verify using the first-order logic dictated by most practical verification systems and automated provers.  For example, the Strategy patten, functional constructs, and program templates all become impossible to specify.
 
-Higher-order logic is presumably omitted from such systems because of the added complexity introduced by reasoning over quantified functions.  However, as discussed further in Chapter \ref{ch:prover}, our minimalist prover leaves functions and definitions \emph{uninterpretted}.  A function or definition is uninterpretted when we do not expand it to consider its definition---i.e., the mathematical subsystem looks at a function or definition variable as a black box, treating it no differently from an ordinary variable.  As a result, quantifying over functions introduces no additional complexity.  The tradeoffs inherent in such a design decision are discussed more completely in \cite{tagoreExpand}.
+Higher-order logic has long been the norm in the functional language and proof assistant community where a small core logic and extensibility have been a focus.  A fascinating history is presented in \cite{gordon2000lcf} tracing such systems from Robin Milner's original Logic of Computable Functions system\cite{milner1972implementation}, which is based on first-order logic, through the original motivations in hardware verification for expanding and updating that system into what would become HOL\cite{gordon1993introduction}, a higher-order logic proof assistant.  HOL would become the predecessor to Isabelle\cite{nipkowIsabelle}.
+
+Despite this near-ubiquity of higher-order logic in the realm of pure systems, it is not often found in practical ones.  This is in large part due to the inability of SMT-solvers, which form the backbone of most practical systems due to their efficiency, to be applied soundly to proving higher-order assertions.  This limitation and a technique for mitigating it are discussed in \cite{fontaine2006expressiveness}.
+
+As discussed in Chapter \ref{ch:prover}, our minimalist prover leaves functions and definitions \emph{uninterpretted}.  A function or definition is uninterpretted when we do not expand it to consider its definition---i.e., the mathematical subsystem looks at a function or definition variable as a black box, treating it no differently from an ordinary variable.  As a result, quantifying over functions introduces no additional complexity.  The tradeoffs inherent in such a design decision are discussed more completely in \cite{tagoreExpand}.
 
 In addition to the familiarity gained by permitting mathematicians to treat functions as first-class citizens, their presence introduces a number of dimensions of usability and reuse:
 
@@ -83,7 +85,7 @@ In addition to the familiarity gained by permitting mathematicians to treat func
 		\subsubsection{Higher-order Theorems\label{higherOrderTheorems}}
 		%------------------------------------------------------------
 
-Consider, for example the $foldr$ function ubiquitous in functional languages.  $foldr$ takes as its parameters a starting value of type $\gamma$, a function of type $(\gamma*\delta)\rightarrow\gamma$, and a list of elements of type $\delta$.  Starting with the starting value and the first element of the list, the function is applied to yield a new value of type $\gamma$ before repeating the procedure with the resultant value and the next element of the list.  The result of the final function application is returned.  A summing function for lists of integers could thus be defined as:
+Consider, for example the $foldr$ function ubiquitous in functional languages.  $foldr$ takes as its parameters a starting value of type $\gamma$, a function of type $(\gamma*\delta)\rightarrow\gamma$, and a list of elements of type $\delta$.  Begining with the starting value and the first element of the list, the function is applied to yield a new value of type $\gamma$ before repeating the procedure with the resultant value and the next element of the list.  The result of the final function application is returned.  A summing function for lists of integers could thus be defined as:
 
 $sum(zs) = foldr(0, +, zs)$
 
@@ -94,7 +96,7 @@ $\forall f : (\gamma*\delta)\rightarrow\gamma, \forall ds : List(\delta), (|ds| 
 \label{thm:foldremptylist}
 \end{thm}
 
-RESOLVE permits such a theorem, enabling the development of a \emph{theory} of $foldr$, that in turn permits the automated prover to reason about expressions using such an expression at a high level of abstraction.
+Higher-order specification languages such as RESOLVE permit such a theorem, enabling the development of a \emph{theory} of $foldr$, that in turn permits the automated prover to reason about expressions using such an expression at a high level of abstraction.
 
 		%------------------------------------------------------------
 		\subsubsection{Generic Theories of Functions\label{genericTheoriesFunctions}}
@@ -103,7 +105,7 @@ RESOLVE permits such a theorem, enabling the development of a \emph{theory} of $
 Quantifying over functions also provides a straightforward mechanism for developing bodies of theorems that may be quickly applied to a new function.  This permits a number of useful properties to be proved once in the general case, and then be reused over multiple different instantiations.  Consider this snippet from \texttt{Preordering\_Theory}:
 
 \newcommand{\reflexiveTheorem}{Preorder\_Reflexive}
-\newcommand{\totalTheorem}{Total\_Preorder\_Total}
+\newcommand{\totalTheorem}{Total\_Preorder\_Is\_Total}
 
 \begin{lstlisting}
 Precis Preordering_Theory;
@@ -151,7 +153,7 @@ This theorem must be supported with a proof, of course, which requires that we e
 
 It may at first seem that this is not much of a help---in order to use some of the theorems, we must first establish them, saving us no work.  However, note that the \texttt{\reflexiveTheorem} theorem is not a defining property of a total preordering, but rather follows from \texttt{\totalTheorem}.  Such theorems are now available for free with \texttt{Compare\_Zero\_Count}, because we are able to establish, once, in this module, that any function meeting the two properties of total preorder also meet these other theorems.
 
-Note also that since such a statement serves to associate a symbol in one module with those in another, and that only those theorems in imported modules will be available---a decision which may be delayed until a third module \emph{incorporates} \texttt{Compare\_Zero\_Count}, this also strengthens the modularity of our theorems.
+Note also that this arrangement decouples the decision of flagging a symbol with a particular property, and thus of including the entire body of results about that property, from the time of that symbol's definition.  This provides the option of allowing a third module to establish this relationship only when the property is semantically relevant, strengthening mosularity.
 
 		%------------------------------------------------------------
 		\subsubsection{Extensible Specification\label{extensibleSpecification}}
@@ -167,7 +169,7 @@ Concept Predicate_Stack(Type Entry, Definition Predicate : Entry -> B);
 	...
 
 	Operation Push(alters E : Entry, updates S : Predicate_Stack);
-		requires Predicate(#E);
+		requires Predicate(E);
 		ensures S = #S o <#E>;
 
 	Operation Pop(replaces E : Entry, updates S : Predicate_Stack);
@@ -183,9 +185,9 @@ Just as a type-parameterized stack component prevents the user from needing to r
 		\subsubsection{Strategy Pattern\label{strategyPattern}}
 		%------------------------------------------------------------
 
-The \emph{Strategy Pattern} permits an operation to be encapsulated in an object that can then be programmatically manipulated, e.g., by being passed as a parameter.  This pattern is an important one for resuse, since it allows a client to inject an algorithmic decision into a larger component.  By utilizing first-class functions in specifications, we are able to formally specify the strategy pattern, which to our knowledge is unique among practical programming systems.
+The \emph{Strategy Pattern} permits an operation to be encapsulated in an object that can then be programmatically manipulated, e.g., by being passed as a parameter.  This pattern is an important one for resuse, since it allows a client to inject an algorithmic decision into a larger component.  By utilizing first-class functions in specifications, we are able to formally specify the strategy pattern, which to our knowledge is a novel result among practical programming systems.
 
-Consider \texttt{Lazy\_Filtering\_Bag}, a component which permits elements to be added, the retrieved in no particular order.   At instantiation time, the client provides a \emph{filtering strategy}, which is applied to each element as it is removed:
+Consider \texttt{Lazy\_Filtering\_Bag}, a component that permits elements to be added, then retrieved in no particular order.   At instantiation time, a client provides a \emph{filtering strategy}, which is applied to each element as it is removed:
 
 \begin{lstlisting}
 Concept Lazy_Filtering_Bag_Template(Type Entry, Definition Filter : Entry -> Entry);
@@ -255,9 +257,7 @@ end;
 
 First-class types are a feature of several mathematical systems and a handful of experimental programming languages, but are rarely found in practical verification systems.  When types are treated as a special case they are difficult and inconsistent to manipulate, limiting the facility of mathematical extension.
 
-RESOLVE now incorporates first-class mathematical types that are treated as normal mathematical values.  They can be manipulated, passed as parameters, returned as the result of a relation, and quantified over.  This provides both a great deal of flexibilty, as well as a straightforward mechanic for specifying certain generic programming paradigms (most obviously: parameterized type variables).
-
-Because there are now type values, this implies those values are, in some sense, \emph{of type Type}.  We call this type \textbf{MType} as an abbreviation for \emph{Math Type}\footnote{\texttt{MType} is comparable to * in Haskell, where * is the kind of a type.}.
+RESOLVE now incorporates first-class mathematical types that are treated as normal mathematical values.  They can be manipulated, passed as parameters, returned as the result of a relation, and quantified over.  This provides both a great deal of flexibilty, as well as a straightforward mechanic for specifying certain generic programming paradigms, particularly parameterized type variables.  Because there are now type values, this implies that those values are, in some sense, \emph{of type Type}.  We call this type \textbf{MType} as an abbreviation for \emph{Math Type}\footnote{\texttt{MType} is comparable to * in Haskell, where * is the kind of a type.}.
 
 For example, the following line would introduce a particular integer called \textbf{1}:
 
@@ -268,10 +268,10 @@ Definition 1 : Z = succ(0);
 In exactly the same way, a new type called \textbf{N} could be defined:
 
 \begin{lstlisting}
-Definition N : Power(Z) = {n : Z | n >= 0};
+Definition N : Powerset(Z) = {n : Z | n >= 0};
 \end{lstlisting}
 
-The symbol table maintains information about the kinds of elements that make up any existing class and can thus infer when the symbol introduced by a definition can safely be used as a type.  This corresponds to the static surety that \emph{the declared type of the symbol is a class known to contain only \textbf{MType}s.}  For brevity we will call this predicate $\tau$.  That is, $\tau(T)$ is true if $T$ is known to contain only \textbf{MType}s.  The question of whether or not such a class is inhabited is important, and our current design calls for any assertion that an element is in a set raise a proof obligation that the set is inhabited.  We note, however, that this may be cumbersome and alternatives exist, including insisting that such a type be demonstrated to be inhabited when it is defined, and requiring the user to explicitly state that the set is inhabited (and proving that statement), before permitting the set to be used as a type.  Module this complexity, the full list of judgements for statically determining if a symbol's type meets this property is given in Figure~\ref{typeJudgements}. (Judgement syntax is read as follows: ``in order to demonstrate what is below the line, it is sufficient to demonstrate what is above the lone''.)
+The symbol table maintains information about the kinds of elements that make up any existing class and can thus infer when the symbol introduced by a definition can safely be used as a type.  This corresponds to the static surety that \emph{the declared type of the symbol is a class known to contain only \textbf{MType}s.}  For brevity we will call this predicate $\tau$.  That is, $\tau(T)$ is true if $T$ is known to contain only \textbf{MType}s.  The question of whether or not such a class is inhabited is important, and our current design calls for any assertion that an element is in a set raise a proof obligation that the set is inhabited.  We note, however, that this may be cumbersome and alternatives exist, including insisting that such a type be demonstrated to be inhabited when it is defined, and requiring the user to explicitly state that the set is inhabited (and proving that statement), before permitting the set to be used as a type.  Modulo this complexity, the full list of judgements for statically determining if a symbol's type meets this property is given in Figure~\ref{typeJudgements}. Judgement notation is read as follows: ``in order to demonstrate what is below the line, it is sufficient to demonstrate what is above the line''.
 
 \begin{figure}
 \caption{Static judgements for determining if a symbol may be used as a type\label{typeJudgements}}
@@ -333,10 +333,12 @@ The symbol table maintains information about the kinds of elements that make up 
 	\end{subfigure}%
 \end{figure}
 
+Rules \ref{rule:mtype} and \ref{rule:set} state explicitly that \textbf{MType} and \textbf{Set} are known to contain only \textbf{MType}s.  Rule \ref{rule:power} states that the powerset of an existing type is known to contain only types---its result is a set of sets.  Rule \ref{rule:restrict} states that the result of set restriction is known to contain only types if the type being restricted is known to contain only types.  Rule \ref{rule:union} states that the result of unioning existing types is known to contain only types if each of the componen types is known to contain only types.  Rule \ref{rule:intersect} states that the result of the intersection of existing types is known to contain only types if one of the component types contains only types.  Rules \ref{rule:cross} and \ref{rule:application} state that the result of applying the cross product or the function constructor never contains only types.
+
 Thus this is a valid sequence of definitions:
 
 \begin{lstlisting}
-Definition N : Power(Z) = {n : Z | n >= 0};
+Definition N : Powerset(Z) = {n : Z | n >= 0};
 Definition NAcceptor(m : N) : B = true;
 \end{lstlisting}
 
@@ -347,22 +349,20 @@ Definition 1 : Z = succ(0);
 Definition OneAcceptor(o : 1) : B = true;
 \end{lstlisting}
 
-Type schemas and dependent types, which define generalized types parameterized by arbitrary values take advantage of the first-class nature of types and can be defined as normal relations that return a type, rather than using a special syntax.  
-
-In addition increasing usability by reducing special cases, this flexibility permits increased modularity and reuse in a number of ways:
+Type schemas and dependent types, which define generalized types parameterized by arbitrary values, take advantage of the first-class nature of types and can be defined as normal relations that return a type, rather than using a special syntax.  In addition to increasing usability by reducing special cases, this flexibility permits increased modularity and reuse in a number of ways.
 
 		%------------------------------------------------------------
 		\subsubsection{Generic Types\label{genericTypes}}
 		%------------------------------------------------------------
 
-Generics in the mathematical space fall out of first-class types easily.  In fact, in the examples above, the ``type'' \texttt{Power(Z)} is not a type at all, but rather the application of a function from a type to a type.  We say such a function defines a \emph{type schema}.  As another example, we may consider this snippet of \texttt{String\_Theory}, where we first introduce the set of strings of heterogenous type, \texttt{SStr}, before introducing a function to yield restricted strings of homogenous type, \texttt{Str}:
+Generics in the mathematical space fall out of first-class types easily.  In fact, in the examples above, the ``type'' \texttt{Powerset(Z)} is not a type at all, but rather the application of a function from a type to a type.  We say such a function defines a \emph{type schema}.  As another example, we may consider this snippet of \texttt{String\_Theory}, where we first introduce the set of strings of heterogenous type, \texttt{SStr}, before introducing a function to yield restricted strings of homogenous type, \texttt{Str}:
 
 \begin{lstlisting}
 Definition SStr : MType = ...;
-Definition Str : MType -> Power(SStr) = ...;
+Definition Str : MType -> Powerset(SStr) = ...;
 \end{lstlisting}
 
-We are thereafter able to declare variables of type, e.g., \texttt{Str(Z)} without issue.  Happily for reuse, any theorems defined to operate on \texttt{SStr}s are equally applicable to \texttt{Str(...)}s.
+We are thereafter able to declare variables of type, e.g., \texttt{Str(Z)} without issue and reuse any theorems defined to operate on \texttt{SStr}s because they are equally applicable to expressions of type \texttt{Str(...)}.
 
 		%------------------------------------------------------------
 		\subsubsection{Generic Theories of Types\label{genericTheoriesTypes}}
@@ -370,13 +370,13 @@ We are thereafter able to declare variables of type, e.g., \texttt{Str(Z)} witho
 
 Just as we are able to create generic theories of functions, we may do the same for types---after all, both functions and types are merely mathematical values.  This means that theories of kinds of types may be developed to provide utility functions and useful theorems.
 
-Consider the class of types with inductive structure such as lambda expressions, mathematical strings, and trees.  Such a theory might establish important properties of well-foundedness, the finite nature of the objects, as well as provide utility functions for traversing them.
+Consider the class of types with an inductive structure such as lambda expressions, mathematical strings, or trees.  Such a theory might establish important properties of well-foundedness, the finite nature of the objects, as well as provide utility functions for traversing them.
 
 		%------------------------------------------------------------
 		\subsubsection{Higher-order Types\label{higherOrderTypes}}
 		%------------------------------------------------------------
 
-With first class types it becomes possible to quantify over them, and thus to support type schemas with theorems.  For example:
+With first class types it becomes possible to quantify over them, and thus to support type schemas with theorems.  For example, consider this theorem about the nature of non-singleton types (i.e., types that do not contain exactly one instance):
 
 \begin{lstlisting}
 Theorem All_Equivalent_and_Not_Singleton_Means_Empty:
@@ -404,15 +404,13 @@ Definition Is_In_Set(S : Set(T : MType), E : T), B;
 
 Such inferred type parameters may be nested arbitrarily deep and are extremely flexible.  As with explicit type parameters, they are evaluated left to right and a captured type may be used later in the same signature.
 
-In order to keep the type system simple (from the user's perspective) each actual parameter may take advantage of only one of the type theorem mechanism or the inferred generic type mechanism.  The type system will not search for equivalent types that might have a form suitable to bind an inferred generic type.
+In order to keep the type system simple (from the user's perspective), each actual parameter may take advantage of only one of the type theorem mechanism or the inferred generic type mechanism.  The type system will not search for equivalent types that might have a form suitable to bind an inferred generic type.
 
 	%---------------------------------------------------------------------
 	\subsection{Rich Type System\label{richTypeSystem}}
 	%---------------------------------------------------------------------
 
 When expressing types in a mathematical system, it is natural to look to the Set abstraction.  However, in doing so one must be careful not to inherit any of the many paradoxes and inconsistencies that have dogged the development of theories of sets.  Many schemes exist to correct the deficiencies in naive set theory, with most pure systems using theories based on inductive structures and intuitionistic logics, as these are often well suited to computation.  However, these are quite disjoint from a modern mathematician's conception of the universe.  We choose instead Morse-Kelley Set Theory to be our basis, augmented with higher-order functions.
-
-First, note that RESOLVE values come in two flavors---mathematical values like the empty set, $\phi$, and programming values like the empty array.  We may trivially show that there are a finite collection of progamming values (after all, there are only a finite number of machine states,) and thus, without loss of generality, we may confine our thinking to the mathematical values, trusting that we can, if nothing else, provide an explicit mapping between the two later.  We thus dispense with distinguishing between them for the moment, using ``value'' to mean ``mathematical value''.
 
 Morse-Kelley Set Theory (MK) defeats Russel's Paradox in the same way as, for example, von Neumann-Bernays-G\"{o}del Set Theory, by imagining that sets are each members of a larger meta-set called the \emph{classes} and admitting the existence of \emph{proper classes}---i.e., set-like objects that are not sets.  We then restrict sets to containing only non-set values, while proper classes may contain sets (but nothing may contain a proper class.)  Under this light, we may rephrase the classic example of Russel's Paradox into ``the class of sets that don't contain themselves'', and view its contradiction not as an inconsistency, but rather as a proof that the class in question is proper.
 
@@ -422,7 +420,7 @@ We will imagine the universe of MK classes to be our universe of types---that is
 
 We will imagine that the union of \texttt{MType} with all those things that can be elements of some class to be the universe of RESOLVE values.  We will call this meta-class \texttt{Entity}.  Note that while we may permit \texttt{MType} to be used as part of a type signature, we must be careful not to let it be passed as a parameter---it is not a value.  Though we might permit it to be used informally by imagining that when used as a value it indicates some broad subset of types.
 
-With all this in mind, the RESOLVE mathematical universe can be visualized as in Figure \ref{fig:universe}.
+With all this in mind, the RESOLVE mathematical universe can be visualized as in Figure \ref{fig:universe}.  The solid circle represents the meta-class of all RESOLVE values---\texttt{Entity}.  The shaded portion represents those values that may be used as types, which are collectively contained in the explicitly defined meta-value \texttt{MType}.
 
 \begin{figure}
   \centering
@@ -434,7 +432,7 @@ With all this in mind, the RESOLVE mathematical universe can be visualized as in
 	\subsection{Mechanisms for Static Reasoning\label{staticReasoning}}
 	%---------------------------------------------------------------------
 
-While the flexibilities in the previous sections result in a very expressive language that allows mathematical theories to be created in straightforward, obvious ways, this section is devoted to those features that permit tool support in the form of static reasoning despite the complexities introduced by this expressiveness.  At a high level, we use the technique of allowing the mathematician to explicitly state important relationships that would otherwise by undecidable to reason able.  These relationships must be proved, at which point they are incorporated into the static checker.
+While the flexibilities in the previous sections result in an expressive language that allows mathematical theories to be created in straightforward, obvious ways, this section is devoted to those features that permit tool support in the form of static reasoning despite the complexities introduced by this expressiveness.  At a high level, we use the technique of allowing the mathematician to explicitly state important relationships that would otherwise be undecidable to reason about.  These relationships must be proved, at which point they are incorporated into the static checker.
 
 		%-------------------------------------------------------------
 		\subsubsection{Type Theorems\label{typeTheorems}}
@@ -452,20 +450,20 @@ Definition T2 : MType = {E : MType | Q(E)};
 
 Determining whether or not an object modeled by \texttt{T1} can be passed where one modeled by \texttt{T2} is expected is equivalent to asking if $\forall e : $\texttt{MType}$, Q(e) \rightarrow P(e)$, which is, of course, undecidable.
 
-Some verification systems (e.g., Coq) take advantage of this very property as an aid to verification, reducing all programs to reasoning about complex types and casting verification as a type-matching problems.  However, because our goal is to increase the usability of our system by providing the user with strong tool support, we would ideally like to provide the usual static type-safety expected by object-oriented programmers.
+Some verification systems (e.g., Coq) take advantage of this very property as an aid to verification, reducing all programs to reasoning about complex types and casting verification as a type-matching problems.  However, because our goal is to increase the usability of our system by providing the user with strong tool support, we would ideally like to make the usual static type-safety supported by modern industrial programming languages available in the realm of mathematics.
 
-In order to provide such static type checking in a variety of useful (but potentially undecideable) situations, we rely on the mathematician to provide and prove explicit type mappings in cases where the reasoning is complicated.
+In order to provide such static type checking in a variety of useful (but potentially undecideable) situations, we rely on the mathematician to provide and prove explicit type mappings in cases where the reasoning may be complicated.
 
-In some cases, relationships can be easily inferred.  For example, the case of simple sub-types:
+In some cases, relationships can be easily inferred.  For example, consider the case of simple sub-types:
 
 \begin{lstlisting}
 Definition Z : MType = ...;
-Definition N : Power(Z) = ...;
+Definition N : Powerset(Z) = ...;
 \end{lstlisting}
 
 Here we can easily note in the symbol table that an \texttt{N} would be acceptable wherever a \texttt{Z} is required and permit such a shift in conception-of-type in certain well-defined cases.
 
-However, hard-coding such relationships does not provide a general mechanism for reasoning about type relationships and with first-class types, we may quickly arrive in situations where we'd expect the ability to reason about complex type relationships without requiring explicit assertions from the programmer or mathematician.  Consider this application of \texttt{Str}s:
+However, hard-coding such relationships does not provide a general mechanism for reasoning about type relationships and with first-class types, we may quickly arrive at situations where we would expect the ability to reason about complex type relationships without requiring explicit assertions from the programmer or mathematician.  Consider this application of \texttt{Str}s:
 
 \begin{lstlisting}
 Definition Average(S : Str(Z)) : Z = ...;
@@ -473,7 +471,7 @@ Definition SomeNs : Str(N) = <1, 10, 3, 19>;
 Definition AverageOfSomeNs : Z = Average(SomeNs);
 \end{lstlisting}
 
-In an ideal world we would expect this to type-check.  But it is not the case that for two arbitrary type schemas, if the parameters of the one are subtypes of the parameters for the other, then the results are themselves subtypes.  Consider this (somewhat contrived) complement string type:
+In an ideal world we would expect this to type-check.  But it is not the case that for two arbitrary type schemas, if the parameters of the one are subtypes of the parameters for the other, then the results are themselves subtypes.  For such a case, consider this (somewhat contrived) complement string type:
 
 \begin{lstlisting}
 Definition ComplementStr(T : MType) : MType = 
@@ -489,9 +487,7 @@ Definition NotSomeNs : ComplementStr(N) = <-1, -10, -3, -19>;
 Definition AverageOfNotSomeNs : Z = Average(SomeNs);
 \end{lstlisting}
 
-However, the same thing that got us into this mess---first-class types---provides a road out.  Because types are normal mathematical values and we already have a mechanism for asserting theorems about mathematical values, we can use that existing mechanism to provide information about type relationships.
-
-Because such theorems must take a specific form if they're to be understood by the static type-checker, we add some special syntax, calling them \texttt{Type Theorem}s instead of ordinary \texttt{Theorem}s.  This flags these theorems for the type checker and ensures that we can raise an error if they do not have the proper form.
+Fortunately, the same expressive machinery that created this dilemma---first-class types---also provides a road out.  Because types are normal mathematical values and we already have a mechanism for asserting theorems about mathematical values, we can use that existing mechanism to provide information about type relationships.  Because such theorems must take a specific form if they are to be understood by the static type-checker, we add some special syntax, calling them \texttt{Type Theorem}s instead of ordinary \texttt{Theorem}s.  This flags these theorems for the type checker and ensures that we can raise an error if they do not have the proper form.
 
 This design splits the difference between a rich, expressive type system and the straightforward static typing programmers have come to expect.  Simple cases can be covered without thought on the part of the programmer, while complex, undecidable cases are permitted by explicitely deferring to the prover.
 
@@ -502,7 +498,7 @@ Here is a type theorem stating that, among other things, \texttt{Str(N)}s should
 
 \begin{lstlisting}
 Type Theorem Str_Subtype_Theorem:
-	For all T1 : MType, For all T2 : Power(T1),
+	For all T1 : MType, For all T2 : Powerset(T1),
 	For all S : Str(T2),
 		S : Str(T1);
 \end{lstlisting}
@@ -510,17 +506,17 @@ Type Theorem Str_Subtype_Theorem:
 As with any other theorem in the RESOLVE system, this one would require a proof to establish its correctness and maintain soundness.  We assume the presence of a proof-checking subsystem and leave such proofs outside the scope of this research.
 
 \subparagraph{Overlapping Types}
-Sometimes, more complex relationships are required.  For example, in some circumstances, providing a \texttt{Z} where an \texttt{N} is expected should be acceptable.  We can use the same mechanism to provide for this case:
+Sometimes, more complex relationships are required.  For example, in some circumstances, providing a variable of type \texttt{Z} where one of type \texttt{N} is expected should be acceptable.  We can use a type theorem to provide for this case:
 
 \begin{lstlisting}
 Type Theorem Z_Superset_of_N:
 	For all m : Z, (m >= 0) implies m : N;
 \end{lstlisting}
 
-This permits us, under a limited set of circumstances, to provisionally accept a ``sane'' type reassignment, while raising an appropriate proof obligation that the value in question is non-negative.  This is similar to Java, where sane typecasts (i.e., from a \texttt{List} to an \texttt{ArrayList}) are permitted, but cause a run-time check to be compiled into the code.  Here, however, we pay the penalty only once---during verification-time---rather than with each run of the program.
+This permits us, under a limited set of circumstances, to provisionally accept a ``sane'' type reassignment, while raising an appropriate proof obligation that the value in question is non-negative.  This is similar to Java, where sane typecasts (i.e., from a \texttt{List} to an \texttt{ArrayList}) are permitted, but cause a run-time check to be compiled into the code.  Here, however, we are working in the realm of mathematics and thus pay the penalty only once---during verification-time---rather than with each run of the program.
 
 \subparagraph{Complex Expression Type}
-We can also use this flexibility to assure the static type-checker that expressions with certain forms have particular types.  For example, we may indicate that, while multiplication generally yields \texttt{Z}s, when one of the factors is from the set of even numbers, \texttt{E}, the result will be as well:
+We can also use the flexibility provided by type theorems to assure the static type-checker that expressions with certain forms have particular types.  For example, we may indicate that, while multiplication generally yields \texttt{Z}s, when one of the factors is from the set of even numbers, \texttt{E}, the result will be as well:
 
 \begin{lstlisting}
 Type Theorem Multiplication_By_Even_Also_Even_Right:
@@ -528,10 +524,10 @@ Type Theorem Multiplication_By_Even_Also_Even_Right:
 		i * e : E;
 \end{lstlisting}
 
-Such theorems need no be quantified.  And so, for example, we can use one to resolve a tricky design problem: given that we'd usually like to work with restricted sets that contain only elements of some homogenous type, do we define a separate \texttt{Empty\_Set} for each?  Clearly this is non-intuitive and introduces a number of strange situations.  But type theorems resolves this issue easily.  Given RESOLVE's built-in ``class of all sets'', \texttt{SSet}:
+Such theorems need not be quantified.  And so, for example, we can use one to resolve a tricky design problem: given that we'd usually like to work with restricted sets that contain only elements of some homogenous type, do we define a separate \texttt{Empty\_Set} for each?  Clearly this is non-intuitive and introduces a number of strange situations.  But type theorems resolves this issue easily.  Given RESOLVE's built-in ``class of all sets'', \texttt{SSet}:
 
 \begin{lstlisting}
-Definition Set : MType -> Power(SSet);
+Definition Set : MType -> Powerset(SSet);
 
 Definition Empty_Set : Set;
 
@@ -544,9 +540,9 @@ Type Theorem Empty_Set_In_All_Sets:
 We now have a single term, \texttt{Empty\_Set}, that is defined to be a member of the hetergenous \texttt{SSet}, but then stated to be in any restricted \texttt{Set}.
 
 \subparagraph{Modular Relationships}
-In addition to the obvious usability this flexibility adds to RESOLVE's mathematical theories, it also support modularity by permitting types to relate to each other only when they are loaded.  A common arrangement in virtually all mathematical systems is to have a ``numerical tower'', in which \texttt{N} is defined in terms of \texttt{Z}, which is in term defined in terms of \texttt{R}, and so forth.
+In addition to the obvious usability type theorems add to RESOLVE's mathematical theories, they also support modularity by permitting types to relate to each other only when they are loaded.  A common arrangement in virtually all mathematical systems is to have a ``numerical tower'', in which \texttt{N} is defined in terms of \texttt{Z}, which is in turn defined in terms of \texttt{R}, and so forth.
 
-To begin with, this creates complexity for the end user if the numeric tower is not rooted sufficiently deep for their needs.  The system's entire conception of numbers must change as a higher theory is added.  But more importantly for our design, this violates modularity---in order to use \texttt{N}s, I must also import \texttt{Z}s and \texttt{R}s and complex numbers and the rest of the tower.  The user, and more importantly the automated prover, has no idea which body of theorems are practically relevant.
+To begin with, this creates complexity for the end user if the numeric tower is not rooted sufficiently deep for their needs.  The system's entire conception of numbers must change as a higher theory is added.  But more importantly for our design, this violates modularity---in order to use \texttt{N}s, I must also import \texttt{Z}s and \texttt{R}s and complex numbers and the rest of the tower.  The user, and more importantly the automated prover, has no idea which body of theorems are practically relevant.  Additionally, some types do not fit neatly in the tower.  Natural numbers, for example, may equally be thought of as a subset of the integers or of the ordinals.
 
 By using type theorems, relationships can be established as needed.  For example, natural number theory need not advertise a relationship to \texttt{Z} (though practically, integers will likely form part of its internal definition details):
 
@@ -566,7 +562,7 @@ Type Theorem N_Subset_of_Z:
 
 \paragraph{Implementation\label{typeTheoremImplementation}}
 
-Most of the features listed in this chapter exist in other systems and are novel primarily for being gathered in one place alongside a practical, imperative programming lanaguage.  Type theorems, however, are to our knowledge entirely novel, and we therefore will spend a short amount of time discussing their implementation.
+In this chapter, we have discussed the elements of a comprehensive mathematical type system, necessary to specify and verify software systems.  Given that it is not possible to discuss all implementation details, we focus our attention on the implementation of type theorems, a non-trivial and novel construct.
 
 Each type theorem introduces two, possibly three pieces of information: an \emph{expression pattern}, which we seek to bind against the actual provided expression, an \emph{asserted type}, which the pattern is said to inhabit, and, optionally, a \emph{condition}, which the actual value must meet in order for the relationship to hold.  As a practical example, consider:
 
@@ -581,11 +577,11 @@ Each time a new type theorem is accepted, we take the type of the expression pat
 
 Canonicalization transforms a type expression that possibly contains free type variables into a Big Union type containing every possible valuation of those variables (and possibly more).  This is accomplished by locating any free type variables in the type expression, giving them unique names, then binding those unique variable names at the top level in a Big Union expression, each ranging over \textbf{MType}.
 
-So, if a type expression started life as $T \cup W \cup T$, where $T$ ranges over \texttt{MType} and $W$ over \texttt{Power(T)}, it would be canonicalized into $\left( \bigcup \limits_{T_1 : MType, T_2 : MType, T_3 : MType} T_1 \cup T_2 \cup T_3 \right)$.  Clearly, we have lost a fair bit of information here, but that will be attached to the newly added edge in the form of \emph{static requirements}.
+So, if a type expression started life as $T \cup W \cup T$, where $T$ ranges over \texttt{MType} and $W$ over \texttt{Powerset(T)}, it would be canonicalized into $\left( \bigcup \limits_{T_1 : MType, T_2 : MType, T_3 : MType} T_1 \cup T_2 \cup T_3 \right)$.  Clearly, we have lost a fair bit of information here, but that will be attached to the newly added edge in the form of \emph{static requirements}.
 
 Static requirements encode the relationships between the original free type variables.  Two types of relationships are permitted: 1) \emph{equality}---two type variables were originally the same and 2) \emph{membership}---a variable was originally declared as a member of a certain type.
 
-So, in our above example, the static requirements would be: $T_1 : MType, T_2 : Power(T_1), T_3 = T_1$, recapturing the information we lost during canonicalization.
+So, in our above example, the static requirements would be: $T_1 : MType, T_2 : Powerset(T_1), T_3 = T_1$.  The first two requirements are examples of membership relationships and simply encode the declared types of the variables that (in the case of $T_2$, at least) were weakened during canonicalization.  The third requirements is an example of an equality relationship and establishes that in the original expression $T_1$ and $T_3$ represented the same value.
 
 In addition to these static requirements, the expression pattern and condition are added to the edge.
 
@@ -602,7 +598,7 @@ Type Theorem Positive_Zs_Are_Ns:
 
 Type Theorem String_Generics_Related:
 	For all T : MType,
-	For all R : Power(T),
+	For all R : Powerset(T),
 	For all S : Str(R),
 		S : Str(T);
 \end{lstlisting}
@@ -615,7 +611,7 @@ The resulting type graph would appear as in Figure \ref{typeGraph}.  Note that i
   \caption{Example Type Graph\label{typeGraph}}
 \end{figure}
 
-When we seek to determine if a given expression is acceptable as a particular type, we first canonicalize the type of the expression, then seek out any canonical buckets that are \emph{syntactic supertypes} of that type, which is a simpler kind of type reasoning based on a short list of hard-coded rules.  For brevity, we establish the predicate $\sigma(T, R)$, which is true if $T$ is a \emph{syntactic subtype} of R.  The full list of judgements for making this determination is provided in Figure~\ref{syntacticSubtypeJudgements}.  We do the same for the expected type.  We then determine if there are edges from any of the provided value's buckets to any of the expected type's buckets.  For each such edge, we iterate, attempting to bind the value to the pattern expression, then use the resulting bindings to satisfy the static requirements, before finally instantiating the condition and adding it to a list.
+When we seek to determine if a given expression is acceptable as a particular type, we first canonicalize the type of the expression, then seek out any canonical buckets that are \emph{syntactic supertypes} of that type, which is a simpler kind of type reasoning based on a short list of hard-coded rules.  For brevity, we establish the predicate $\sigma(T, R)$, which is true if $T$ is a \emph{syntactic subtype} of R.  The full list of judgements for making this determination is provided in Figure~\ref{syntacticSubtypeJudgements}.  The notation $e[x~\rightsquigarrow~y]$ represents replacing instances of the free variable $x$ inside the expression $e$ with the concrete value $y$.
 
 \begin{figure}
 \caption{Syntactic judgements for determining if one type expression is a subtype of another\label{syntacticSubtypeJudgements}}
@@ -628,7 +624,7 @@ When we seek to determine if a given expression is acceptable as a particular ty
 	\end{subfigure}%
 	\begin{subfigure}{0.35\textwidth}
 		\centering
-		$\dfrac{\top}{\forall T : \textbf{MType}, \sigma(T, \textbf{Element})}$
+		$\dfrac{\top}{\forall T : \textbf{MType}, \sigma(T, \textbf{Entity})}$
 		\vspace{0.5em}
 		\caption{\label{ssrule:element}}
 	\end{subfigure}%
@@ -651,25 +647,45 @@ When we seek to determine if a given expression is acceptable as a particular ty
 		$\dfrac{\sigma\left(\bigcup\limits_{t_1, t_2, ... t_n : \textbf{MType}}T, R\right), \text{where } t_1, t_2, ... t_n \text{ do not appear in } T}{\forall T, R : \textbf{MType}, \sigma(T, R)}$
 		\vspace{0.5em}
 		\caption{\label{ssrule:promote}}
-	\end{subfigure}%
-	\vspace{1em}
+	\end{subfigure}
+
 	\begin{subfigure}{.9\textwidth}
 		\centering
-		$\dfrac{\sigma\left(\bigcup\limits_{t_1, t_2, ... t_n : \textbf{MType}}T, R\right), \text{where } t_1, t_2, ... t_n \text{ do not appear in } T}{\forall T, R : \textbf{MType}, \sigma(T, R)}$
+		\[
+			\dfrac{
+				\begin{gathered}
+					T = \bigcup\limits_{t_1 : T_C^1, t_2 : T_C^2, ... t_n : T_C^n}T' \text{ and}\\
+					R = \bigcup\limits_{r_1 : R_C^1, r_2 : R_C^2, ... r_k : R_C^n}R',\\
+					\begin{aligned}
+						\text{ where } &n < k \wedge \exists M \subseteq \{1..k\}, f : M \rightarrow \{1..n\} \text{ s.t. }\\
+						&|M| = n \wedge (\forall i : \{1..n\}, \exists m : M \text{ s.t. } f(m) = i) \wedge (\forall m : M, \sigma(T_C^{f(m)}, R_C^m)) \text{ } \wedge\\
+						&\begin{aligned}
+							\exists g : \bar{M} &\rightarrow \textbf{MType}, \bar{M}_I : \{1..|\bar{M}|\} \rightarrow \bar{M} \text{ s.t. }\\
+							&((\forall m : \bar{M}, \exists i : \{1..|\bar{M}|\} \text{ s.t. } \bar{M}_I(i) = m) \text{ }\wedge\\
+								&T = R[r_{\bar{M}_I(1)} \rightsquigarrow g(\bar{M}_I(1)),
+								r_{\bar{M}_I(2)} \rightsquigarrow g(\bar{M}_I(2)), ...
+								r_{\bar{M}_I(|\bar{M}|)} \rightsquigarrow g(\bar{M}_I(|\bar{M}|))])
+				\end{aligned}\end{aligned}\end{gathered}}%
+	{\forall T, R : \textbf{MType}, \sigma(T, R)}
+		\]
 		\vspace{0.5em}
-		\caption{\label{ssrule:promote}}
+		\caption{\label{ssrule:bigunion}}
 	\end{subfigure}%
 \end{figure}
 
-We continue searching until we find an edge whose condition is simply \texttt{true}, or we run out of edges.  If any edge's condition is \texttt{true}, we simply return true.  If no edge matched, we return \texttt{false}.  In any other case, we return the disjunction of the condition of each matched edge.
+Rules \ref{ssrule:mtype} and \ref{ssrule:element} establish that all types are subtypes of \textbf{MType} and \textbf{Entity}.  This is because \textbf{MType} contains all RESOLVE types and \textbf{Entity} is a superset of \textbf{MType}.  Rule \ref{ssrule:emptyset} establishes that the empty set is a subtype of any type.  Rule \ref{ssrule:symmetric} establishes that any type is a subtype of a second type to which it is alpha equivalent.  Rule \ref{ssrule:promote} establishes that ``promoting'' an existing type to a ``big union'' type by surrounding it in a trivial big union that introduces an arbitrary number of free variables that do not appear in the type maintains the subtype relationship.  Rule \ref{ssrule:bigunion} establishes that one big union type is a subtype of a second if there is an assignment of free variables in the first to unique free variables in the second such that the declared types of the free variables in the first are syntactic subtypes of those in the second and for each of any remaining, un-mapped free variables in the second there is a concrete instantiation such that the resulting two big union types are alpha equivalent.
+
+We repeat this process for the expected type.  We then determine if there are edges from any of the provided value's buckets to any of the expected type's buckets.  For each such edge, we iterate, attempting to bind the value to the pattern expression, then use the resulting bindings to satisfy the static requirements, before finally instantiating the condition and adding it to a list.
+
+We continue searching until we find an edge whose condition is simply \texttt{true}, or we run out of edges.  If any edge's condition is \texttt{true}, we simply return true.  If no edge matches, we return \texttt{false}.  In any other case, we return the disjunction of the condition of each matched edge.
 
 		%-------------------------------------------------------------
 		\subsubsection{Subsumption Theorems\label{subsumptionTheorems}}
 		%-------------------------------------------------------------
 
-With such a complex type system in play, binding a function invocation to its intended function definition can become tricky in the presence of overloading, which RESOLVE permits\footnote{While the same symbol may not be defined more than once in the same module, multiple modules may define the same symbol, which may simultaneously become available via imports.  This ensures that every symbol has a unique fully-qualified name.}.  Certainly, if the parameters types match exactly, it's obvious which definition to match to.  Ideally, we might choose the ``tightest'' definition, but with multiple parameters we quickly run into the mathematical equivalent of the double dispatch problem.
+With such a complex type system in play, binding a function invocation to its intended function definition can become tricky in the presence of overloading, which RESOLVE permits\footnote{While the same symbol may not be defined more than once in the same module, multiple modules may define the same symbol, which may simultaneously become available via imports.  This ensures that every symbol has a unique fully-qualified name.}.  Certainly, if the parameter types match exactly, it is obvious which definition to match to.  Ideally, we might choose the ``tightest'' definition, but with multiple parameters we quickly run into the mathematical equivalent of the double dispatch problem.
 
-Our solution was to keep the binding algorithm simple: for an unqualified function name, if there is exactly one function that matches parameters types exactly, we bind to it; if there is more than one such function, we give an ambiguous symbol error; if there are zero such functions, we then look for functions whose parameters are \emph{inexact} matches; again, if there is one such function we bind to that; if there is more than one, we give an ``ambiguous symbol'' error; and if there are zero we give a ``no such symbol'' error.
+Our solution is to keep the binding algorithm simple: for an unqualified function name, if there is exactly one function that matches parameters types exactly, we bind to it; if there is more than one such function, we give an ambiguous symbol error; if there are zero such functions, we then look for functions whose parameters are \emph{inexact} matches; again, if there is one such function we bind to that; if there is more than one, we give an ``ambiguous symbol'' error; and if there are zero we give a ``no such symbol'' error.
 
 This works reasonably well, but causes problems, e.g., when more than two levels of the numeric tower have been imported.  Consider this example:
 
@@ -679,7 +695,7 @@ Definition Problematic(i : Z, n : N) : R = i + n;
 
 Clearly, \texttt{Natural\_Number\_Theory}, \texttt{Integer\_Theory}, and \texttt{Real\_Number\_Theory} have all been imported to make this definition possible, along with the various type theorems that relate them.  With that in mind, which \texttt{+} does the right-hand-side of the definition bind to?  It can't bind to the one from \texttt{Natural\_Number\_Theory}, because its first parameter is a $\mathbb{Z}$.  Both the one from \texttt{Integer\_Theory} and \texttt{Real\_Number\_Theory} match inexactly.  As a result, our algorithm gives an ``ambiguous symbol'' error.
 
-While, as with type relationships, there's no general solution to this problem, it would be useful if we could flag for the type system that in this case the integer \texttt{+} is subsumed by the real-number \texttt{+} (i.e., all theorems that hold form integer \texttt{+} also hold for real-number \texttt{+}) and, thus, if the two are in competition, the integer \texttt{+} ought be chosen.  This would be equivalent to stating (and proving) that the integer \texttt{+} really is the ``tighter'' function.
+While, as with type relationships, there's no general solution to this problem, it would be useful if we could flag for the type system that in this case the integer \texttt{+} is subsumed by the real-number \texttt{+} (i.e., all theorems that hold for integer \texttt{+} also hold for real-number \texttt{+}) and, thus, if the two are in competition, the integer \texttt{+} ought be chosen.  This would be equivalent to stating (and proving) that the integer \texttt{+} really is the ``tighter'' function.
 
 Our system permits this in the form of a \emph{subsumption theorem}, which in this case would look like this:
 
@@ -706,4 +722,4 @@ related by
 			implies Is_In(N, e));
 \end{lstlisting}
 
-The definition introduces \texttt{N}, \texttt{0}, and \texttt{Succ} simultaneously.  They are defined only by the predicate that relates them to each other.  Because we lack the base case of an inductive definition or the witness of a direct definition, categorical definitions raise a proof obligation that they are inhabitted.  After all, nothing prevents the user from including \texttt{related by false}.
+The definition introduces \texttt{N}, \texttt{0}, and \texttt{Succ} simultaneously.  They are defined only by the predicate that relates them to each other.  Because we lack the base case of an inductive definition or the witness of a direct definition, categorical definitions raise a proof obligation that they are inhabited.  After all, nothing prevents the user from specifying \texttt{related by false}.

@@ -1,0 +1,12 @@
+1) Introduces a new type, E, that represents the even numbers.
+2) Introduces two named even numbers: 0 and 2.
+3) Introduces a definition, Next_Even, that takes an even number and returns another (this is a precis, so no need to provide a body.)
+4) Asserts for the type system that any even number is also an integer.
+5) Asserts for the type system that the product of two even numbers is also even.
+6) Asserts that for any two even numbers, e1 and e2, Next_Even(e1 * e2) = ((e1 + 1) * e2).
+7) Introduces a new type, T, that represents multiples of ten.
+8) Asserts for the type system that any multiple of ten is also an integer.
+9) Introduces a definition, Without_Last_Zero, that takes a T and returns a Z.
+10) Asserts that Without_Last_Zero(10) = 1.  This may require an extra step to establish proper symbols.
+11) Asserts that for any multiple of ten, t, Next_Even(t) mod 10 = 2.  This may require some additional steps to establish proper symbols and relationships.
+12) Asserts that for all multiples of ten, t, and integers, i, Without_Last_Zero(t * i) = i.  This may require some additional steps.

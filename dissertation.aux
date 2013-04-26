@@ -29,7 +29,7 @@
 \@writefile{toc}{\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{sect:introduction}{{1}{1}{Introduction\relax }{chapter.1}{}}
+\newlabel{ch:introduction}{{1}{1}{Introduction\relax }{chapter.1}{}}
 \citation{kuncakJahobOverview}
 \citation{specsharp}
 \citation{kaufmannACL2}
@@ -122,33 +122,43 @@
 \newlabel{sec:overviewEngineering}{{2.3}{20}{Benchmarks and Specification Engineering\relax }{section.2.3}{}}
 \citation{Benchmarks}
 \citation{DafnySolutions}
+\citation{bronish2010review}
 \citation{RESOLVE}
+\citation{hollingsworth2000experience}
+\citation{leonard2009injecting}
+\citation{sitaraman2009engaging}
+\citation{sitaraman2001formal}
 \@writefile{toc}{\contentsline {chapter}{\numberline {3}RESOLVE Background and Specification Engineering}{22}{chapter.3}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \newlabel{ch:resolveBackground}{{3}{22}{RESOLVE Background and Specification Engineering\relax }{chapter.3}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.1}RESOLVE Verification System}{22}{section.3.1}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {3.1}A Stack Concept}{22}{lstlisting.3.1}}
-\newlabel{lst:stack}{{3.1}{22}{RESOLVE Verification System\relax }{lstlisting.3.1}{}}
 \citation{smith08}
+\newlabel{lst:stack}{{3.1}{23}{RESOLVE Verification System\relax }{lstlisting.3.1}{}}
+\citation{bradley2006s}
 \citation{kulczyckiPointers}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {3.2}An Array Realization}{24}{lstlisting.3.2}}
 \newlabel{lst:linkingrealization}{{3.2}{24}{RESOLVE Verification System\relax }{lstlisting.3.2}{}}
 \citation{hartonDissertation}
-\@writefile{lol}{\contentsline {lstlisting}{Pop\textunderscore Convention.asrt}{25}{lstlisting.3.-1}}
 \citation{smith10}
+\@writefile{lol}{\contentsline {lstlisting}{Pop\textunderscore Convention.asrt}{26}{lstlisting.3.-1}}
 \@writefile{lol}{\contentsline {lstlisting}{Flipping\textunderscore Capability.en}{26}{lstlisting.3.-2}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {3.3}A Realization of Flip}{26}{lstlisting.3.3}}
-\newlabel{lst:flipRealiz}{{3.3}{26}{RESOLVE Verification System\relax }{lstlisting.3.3}{}}
 \citation{harmsSwapping}
+\citation{pike2009traditional}
+\citation{boyapati2003ownership}
 \citation{klebanovVSTTEExperience}
 \citation{ernstInfer}
+\citation{ernst2007daikon}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {3.3}A Realization of Flip}{27}{lstlisting.3.3}}
+\newlabel{lst:flipRealiz}{{3.3}{27}{RESOLVE Verification System\relax }{lstlisting.3.3}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3.2}Specification Engineering}{28}{section.3.2}}
 \@writefile{lol}{\contentsline {lstlisting}{\numberline {3.4}JML Specification for \texttt  {add()}}{28}{lstlisting.3.4}}
 \newlabel{lst:jmladd}{{3.4}{28}{Specification Engineering\relax }{lstlisting.3.4}{}}
+\citation{filipovic2010blaming}
 \citation{kul:dis}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {3.5}VC for the Inductive Case of Loop Invariant}{29}{lstlisting.3.5}}
-\newlabel{lst:easyVCEg}{{3.5}{29}{Specification Engineering\relax }{lstlisting.3.5}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {3.5}VC for the Inductive Case of Loop Invariant}{30}{lstlisting.3.5}}
+\newlabel{lst:easyVCEg}{{3.5}{30}{Specification Engineering\relax }{lstlisting.3.5}{}}
 \@writefile{toc}{\contentsline {chapter}{\numberline {4}Minimalist Automated Prover}{31}{chapter.4}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
@@ -198,289 +208,358 @@
 \@writefile{toc}{\contentsline {paragraph}{Detect Cycles.}{46}{section*.29}}
 \@writefile{toc}{\contentsline {paragraph}{Tether Search.}{47}{section*.30}}
 \@writefile{toc}{\contentsline {paragraph}{Step Intelligently.}{47}{section*.31}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {5}Mathematical Flexibility}{48}{chapter.5}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.4}Soundness and Completeness}{48}{section.4.4}}
+\newlabel{sec:eliminateTrue}{{4.4.1}{48}{Eliminate \texttt {true} conjunct\relax }{subsection.4.4.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.1}Eliminate \texttt  {true} conjunct}{48}{subsection.4.4.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.2}Symmetric equality is \texttt  {true}}{48}{subsection.4.4.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.3}Replace theorem with \texttt  {true}}{48}{subsection.4.4.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.4}Substitute}{49}{subsection.4.4.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.5}Develop Antecedent via Implication}{49}{subsection.4.4.5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.6}Strengthen Conseqent via Implication}{49}{subsection.4.4.6}}
+\newlabel{sec:existentialInstantiation}{{4.4.7}{49}{Existential Instantiation\relax }{subsection.4.4.7}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.4.7}Existential Instantiation}{49}{subsection.4.4.7}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {5}Mathematical Flexibility}{51}{chapter.5}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:math}{{5}{48}{Mathematical Flexibility\relax }{chapter.5}{}}
-\newlabel{preliminaries}{{5.1}{48}{Preliminaries\relax }{section.5.1}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.1}Preliminaries}{48}{section.5.1}}
-\newlabel{objectsVsExpressions}{{5.1.1}{48}{Objects \emph {vs.} Expressions\relax }{subsection.5.1.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Objects \emph  {vs.} Expressions}{48}{subsection.5.1.1}}
-\newlabel{operatingOnExpressions}{{5.1.2}{49}{Operating on Expressions\relax }{subsection.5.1.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}Operating on Expressions}{49}{subsection.5.1.2}}
-\newlabel{typeEquality}{{5.1.3}{49}{Type Equality\relax }{subsection.5.1.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.3}Type Equality}{49}{subsection.5.1.3}}
-\newlabel{mathDesignGoals}{{5.2}{49}{General Design Goals\relax }{section.5.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.2}General Design Goals}{49}{section.5.2}}
-\newlabel{usableTheories}{{5.2.1}{50}{Usable Theories\relax }{subsection.5.2.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Usable Theories}{50}{subsection.5.2.1}}
-\newlabel{modularTheories}{{5.2.2}{50}{Modular Theories\relax }{subsection.5.2.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}Modular Theories}{50}{subsection.5.2.2}}
+\newlabel{ch:math}{{5}{51}{Mathematical Flexibility\relax }{chapter.5}{}}
+\newlabel{mathDesignGoals}{{5.1}{51}{General Design Goals\relax }{section.5.1}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.1}General Design Goals}{51}{section.5.1}}
+\newlabel{usableTheories}{{5.1.1}{52}{Usable Theories\relax }{subsection.5.1.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.1}Usable Theories}{52}{subsection.5.1.1}}
+\newlabel{modularTheories}{{5.1.2}{52}{Modular Theories\relax }{subsection.5.1.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.2}Modular Theories}{52}{subsection.5.1.2}}
+\newlabel{reusableTheories}{{5.1.3}{53}{Reusable Theories\relax }{subsection.5.1.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1.3}Reusable Theories}{53}{subsection.5.1.3}}
+\newlabel{preliminaries}{{5.2}{53}{Preliminaries\relax }{section.5.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.2}Preliminaries}{53}{section.5.2}}
+\newlabel{objectsVsExpressions}{{5.2.1}{53}{Objects \emph {vs.} Expressions\relax }{subsection.5.2.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.1}Objects \emph  {vs.} Expressions}{53}{subsection.5.2.1}}
+\citation{gordon2000lcf}
+\citation{milner1972implementation}
+\citation{gordon1993introduction}
+\citation{nipkowIsabelle}
+\newlabel{operatingOnExpressions}{{5.2.2}{54}{Operating on Expressions\relax }{subsection.5.2.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.2}Operating on Expressions}{54}{subsection.5.2.2}}
+\newlabel{typeEquality}{{5.2.3}{54}{Type Equality\relax }{subsection.5.2.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.3}Type Equality}{54}{subsection.5.2.3}}
+\newlabel{mathFeatures}{{5.3}{54}{Concrete Features\relax }{section.5.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5.3}Concrete Features}{54}{section.5.3}}
+\newlabel{higherOrderLogic}{{5.3.1}{54}{Higher-order Logic\relax }{subsection.5.3.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}Higher-order Logic}{54}{subsection.5.3.1}}
+\citation{fontaine2006expressiveness}
 \citation{tagoreExpand}
-\newlabel{reusableTheories}{{5.2.3}{51}{Reusable Theories\relax }{subsection.5.2.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2.3}Reusable Theories}{51}{subsection.5.2.3}}
-\newlabel{mathFeatures}{{5.3}{51}{Concrete Features\relax }{section.5.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5.3}Concrete Features}{51}{section.5.3}}
-\newlabel{higherOrderLogic}{{5.3.1}{51}{Higher-order Logic\relax }{subsection.5.3.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.1}Higher-order Logic}{51}{subsection.5.3.1}}
-\newlabel{higherOrderTheorems}{{5.3.1.1}{52}{Higher-order Theorems\relax }{subsubsection.5.3.1.1}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.1.1}Higher-order Theorems}{52}{subsubsection.5.3.1.1}}
-\newlabel{thm:foldremptylist}{{1}{52}{\relax }{thm.1}{}}
-\newlabel{genericTheoriesFunctions}{{5.3.1.2}{52}{Generic Theories of Functions\relax }{subsubsection.5.3.1.2}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.1.2}Generic Theories of Functions}{52}{subsubsection.5.3.1.2}}
+\newlabel{higherOrderTheorems}{{5.3.1.1}{55}{Higher-order Theorems\relax }{subsubsection.5.3.1.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.1.1}Higher-order Theorems}{55}{subsubsection.5.3.1.1}}
+\newlabel{thm:foldremptylist}{{1}{55}{\relax }{thm.1}{}}
+\newlabel{genericTheoriesFunctions}{{5.3.1.2}{56}{Generic Theories of Functions\relax }{subsubsection.5.3.1.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.1.2}Generic Theories of Functions}{56}{subsubsection.5.3.1.2}}
 \citation{vlissides1995design}
-\newlabel{extensibleSpecification}{{5.3.1.3}{54}{Extensible Specification\relax }{subsubsection.5.3.1.3}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.1.3}Extensible Specification}{54}{subsubsection.5.3.1.3}}
-\newlabel{strategyPattern}{{5.3.1.4}{55}{Strategy Pattern\relax }{subsubsection.5.3.1.4}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.1.4}Strategy Pattern}{55}{subsubsection.5.3.1.4}}
-\newlabel{firstClassTypes}{{5.3.2}{56}{First-class Types\relax }{subsection.5.3.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.2}First-class Types}{56}{subsection.5.3.2}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Static judgements for determining if a symbol may be used as a type\relax }}{58}{figure.caption.32}}
-\newlabel{typeJudgements}{{5.1}{58}{Static judgements for determining if a symbol may be used as a type\relax \relax }{figure.caption.32}{}}
-\newlabel{rule:mtype}{{5.1a}{58}{\relax \relax }{figure.caption.32}{}}
-\newlabel{sub@rule:mtype}{{a}{58}{\relax \relax }{figure.caption.32}{}}
-\newlabel{rule:set}{{5.1b}{58}{\relax \relax }{figure.caption.32}{}}
-\newlabel{sub@rule:set}{{b}{58}{\relax \relax }{figure.caption.32}{}}
-\newlabel{rule:power}{{5.1c}{58}{\relax \relax }{figure.caption.32}{}}
-\newlabel{sub@rule:power}{{c}{58}{\relax \relax }{figure.caption.32}{}}
-\newlabel{rule:restrict}{{5.1d}{58}{\relax \relax }{figure.caption.32}{}}
-\newlabel{sub@rule:restrict}{{d}{58}{\relax \relax }{figure.caption.32}{}}
-\newlabel{rule:union}{{5.1e}{58}{\relax \relax }{figure.caption.32}{}}
-\newlabel{sub@rule:union}{{e}{58}{\relax \relax }{figure.caption.32}{}}
-\newlabel{rule:intersection}{{5.1f}{58}{\relax \relax }{figure.caption.32}{}}
-\newlabel{sub@rule:intersection}{{f}{58}{\relax \relax }{figure.caption.32}{}}
-\newlabel{rule:cross}{{5.1g}{58}{\relax \relax }{figure.caption.32}{}}
-\newlabel{sub@rule:cross}{{g}{58}{\relax \relax }{figure.caption.32}{}}
-\newlabel{rule:application}{{5.1h}{58}{\relax \relax }{figure.caption.32}{}}
-\newlabel{sub@rule:application}{{h}{58}{\relax \relax }{figure.caption.32}{}}
-\newlabel{genericTypes}{{5.3.2.1}{58}{Generic Types\relax }{subsubsection.5.3.2.1}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.2.1}Generic Types}{58}{subsubsection.5.3.2.1}}
-\newlabel{genericTheoriesTypes}{{5.3.2.2}{59}{Generic Theories of Types\relax }{subsubsection.5.3.2.2}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.2.2}Generic Theories of Types}{59}{subsubsection.5.3.2.2}}
-\newlabel{higherOrderTypes}{{5.3.2.3}{59}{Higher-order Types\relax }{subsubsection.5.3.2.3}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.2.3}Higher-order Types}{59}{subsubsection.5.3.2.3}}
-\newlabel{inferredGenericTypes}{{5.3.3}{59}{Inferred Generic Types\relax }{subsection.5.3.3}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.3}Inferred Generic Types}{59}{subsection.5.3.3}}
-\newlabel{richTypeSystem}{{5.3.4}{60}{Rich Type System\relax }{subsection.5.3.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.4}Rich Type System}{60}{subsection.5.3.4}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces A High-level View of the RESOLVE Mathematical Universe\relax }}{61}{figure.caption.33}}
-\newlabel{fig:universe}{{5.2}{61}{A High-level View of the RESOLVE Mathematical Universe\relax \relax }{figure.caption.33}{}}
-\newlabel{staticReasoning}{{5.3.5}{61}{Mechanisms for Static Reasoning\relax }{subsection.5.3.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.5}Mechanisms for Static Reasoning}{61}{subsection.5.3.5}}
-\newlabel{typeTheorems}{{5.3.5.1}{62}{Type Theorems\relax }{subsubsection.5.3.5.1}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.5.1}Type Theorems}{62}{subsubsection.5.3.5.1}}
-\newlabel{typeTheoremDesign}{{5.3.5.1}{62}{Design\relax }{section*.34}{}}
-\@writefile{toc}{\contentsline {paragraph}{Design}{62}{section*.34}}
-\@writefile{toc}{\contentsline {subparagraph}{Simple Subtype}{63}{section*.35}}
-\@writefile{toc}{\contentsline {subparagraph}{Overlapping Types}{64}{section*.36}}
-\@writefile{toc}{\contentsline {subparagraph}{Complex Expression Type}{64}{section*.37}}
-\@writefile{toc}{\contentsline {subparagraph}{Modular Relationships}{65}{section*.38}}
-\newlabel{typeTheoremImplementation}{{5.3.5.1}{65}{Implementation\relax }{section*.39}{}}
-\@writefile{toc}{\contentsline {paragraph}{Implementation}{65}{section*.39}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces Example Type Graph\relax }}{67}{figure.caption.40}}
-\newlabel{typeGraph}{{5.3}{67}{Example Type Graph\relax \relax }{figure.caption.40}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces Syntactic judgements for determining if one type expression is a subtype of another\relax }}{68}{figure.caption.41}}
-\newlabel{syntacticSubtypeJudgements}{{5.4}{68}{Syntactic judgements for determining if one type expression is a subtype of another\relax \relax }{figure.caption.41}{}}
-\newlabel{ssrule:mtype}{{5.4a}{68}{\relax \relax }{figure.caption.41}{}}
-\newlabel{sub@ssrule:mtype}{{a}{68}{\relax \relax }{figure.caption.41}{}}
-\newlabel{ssrule:element}{{5.4b}{68}{\relax \relax }{figure.caption.41}{}}
-\newlabel{sub@ssrule:element}{{b}{68}{\relax \relax }{figure.caption.41}{}}
-\newlabel{ssrule:emptyset}{{5.4c}{68}{\relax \relax }{figure.caption.41}{}}
-\newlabel{sub@ssrule:emptyset}{{c}{68}{\relax \relax }{figure.caption.41}{}}
-\newlabel{ssrule:symmetric}{{5.4d}{68}{\relax \relax }{figure.caption.41}{}}
-\newlabel{sub@ssrule:symmetric}{{d}{68}{\relax \relax }{figure.caption.41}{}}
-\newlabel{ssrule:promote}{{5.4e}{68}{\relax \relax }{figure.caption.41}{}}
-\newlabel{sub@ssrule:promote}{{e}{68}{\relax \relax }{figure.caption.41}{}}
-\newlabel{ssrule:promote}{{5.4f}{68}{\relax \relax }{figure.caption.41}{}}
-\newlabel{sub@ssrule:promote}{{f}{68}{\relax \relax }{figure.caption.41}{}}
-\newlabel{subsumptionTheorems}{{5.3.5.2}{68}{Subsumption Theorems\relax }{subsubsection.5.3.5.2}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.5.2}Subsumption Theorems}{68}{subsubsection.5.3.5.2}}
-\newlabel{sec:categoricalDefinitions}{{5.3.6}{69}{Categorical Definitions\relax }{subsection.5.3.6}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.6}Categorical Definitions}{69}{subsection.5.3.6}}
+\newlabel{extensibleSpecification}{{5.3.1.3}{57}{Extensible Specification\relax }{subsubsection.5.3.1.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.1.3}Extensible Specification}{57}{subsubsection.5.3.1.3}}
+\newlabel{strategyPattern}{{5.3.1.4}{58}{Strategy Pattern\relax }{subsubsection.5.3.1.4}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.1.4}Strategy Pattern}{58}{subsubsection.5.3.1.4}}
+\newlabel{firstClassTypes}{{5.3.2}{60}{First-class Types\relax }{subsection.5.3.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.2}First-class Types}{60}{subsection.5.3.2}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.1}{\ignorespaces Static judgements for determining if a symbol may be used as a type\relax }}{61}{figure.caption.32}}
+\newlabel{typeJudgements}{{5.1}{61}{Static judgements for determining if a symbol may be used as a type\relax \relax }{figure.caption.32}{}}
+\newlabel{rule:mtype}{{5.1a}{61}{\relax \relax }{figure.caption.32}{}}
+\newlabel{sub@rule:mtype}{{a}{61}{\relax \relax }{figure.caption.32}{}}
+\newlabel{rule:set}{{5.1b}{61}{\relax \relax }{figure.caption.32}{}}
+\newlabel{sub@rule:set}{{b}{61}{\relax \relax }{figure.caption.32}{}}
+\newlabel{rule:power}{{5.1c}{61}{\relax \relax }{figure.caption.32}{}}
+\newlabel{sub@rule:power}{{c}{61}{\relax \relax }{figure.caption.32}{}}
+\newlabel{rule:restrict}{{5.1d}{61}{\relax \relax }{figure.caption.32}{}}
+\newlabel{sub@rule:restrict}{{d}{61}{\relax \relax }{figure.caption.32}{}}
+\newlabel{rule:union}{{5.1e}{61}{\relax \relax }{figure.caption.32}{}}
+\newlabel{sub@rule:union}{{e}{61}{\relax \relax }{figure.caption.32}{}}
+\newlabel{rule:intersection}{{5.1f}{61}{\relax \relax }{figure.caption.32}{}}
+\newlabel{sub@rule:intersection}{{f}{61}{\relax \relax }{figure.caption.32}{}}
+\newlabel{rule:cross}{{5.1g}{61}{\relax \relax }{figure.caption.32}{}}
+\newlabel{sub@rule:cross}{{g}{61}{\relax \relax }{figure.caption.32}{}}
+\newlabel{rule:application}{{5.1h}{61}{\relax \relax }{figure.caption.32}{}}
+\newlabel{sub@rule:application}{{h}{61}{\relax \relax }{figure.caption.32}{}}
+\newlabel{genericTypes}{{5.3.2.1}{62}{Generic Types\relax }{subsubsection.5.3.2.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.2.1}Generic Types}{62}{subsubsection.5.3.2.1}}
+\newlabel{genericTheoriesTypes}{{5.3.2.2}{62}{Generic Theories of Types\relax }{subsubsection.5.3.2.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.2.2}Generic Theories of Types}{62}{subsubsection.5.3.2.2}}
+\newlabel{higherOrderTypes}{{5.3.2.3}{62}{Higher-order Types\relax }{subsubsection.5.3.2.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.2.3}Higher-order Types}{62}{subsubsection.5.3.2.3}}
+\newlabel{inferredGenericTypes}{{5.3.3}{63}{Inferred Generic Types\relax }{subsection.5.3.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.3}Inferred Generic Types}{63}{subsection.5.3.3}}
+\newlabel{richTypeSystem}{{5.3.4}{63}{Rich Type System\relax }{subsection.5.3.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.4}Rich Type System}{63}{subsection.5.3.4}}
+\newlabel{staticReasoning}{{5.3.5}{64}{Mechanisms for Static Reasoning\relax }{subsection.5.3.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.5}Mechanisms for Static Reasoning}{64}{subsection.5.3.5}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.2}{\ignorespaces A High-level View of the RESOLVE Mathematical Universe\relax }}{65}{figure.caption.33}}
+\newlabel{fig:universe}{{5.2}{65}{A High-level View of the RESOLVE Mathematical Universe\relax \relax }{figure.caption.33}{}}
+\newlabel{typeTheorems}{{5.3.5.1}{65}{Type Theorems\relax }{subsubsection.5.3.5.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.5.1}Type Theorems}{65}{subsubsection.5.3.5.1}}
+\newlabel{typeTheoremDesign}{{5.3.5.1}{65}{Design\relax }{section*.34}{}}
+\@writefile{toc}{\contentsline {paragraph}{Design}{65}{section*.34}}
+\@writefile{toc}{\contentsline {subparagraph}{Simple Subtype}{67}{section*.35}}
+\@writefile{toc}{\contentsline {subparagraph}{Overlapping Types}{67}{section*.36}}
+\@writefile{toc}{\contentsline {subparagraph}{Complex Expression Type}{67}{section*.37}}
+\@writefile{toc}{\contentsline {subparagraph}{Modular Relationships}{68}{section*.38}}
+\newlabel{typeTheoremImplementation}{{5.3.5.1}{69}{Implementation\relax }{section*.39}{}}
+\@writefile{toc}{\contentsline {paragraph}{Implementation}{69}{section*.39}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.3}{\ignorespaces Example Type Graph\relax }}{71}{figure.caption.40}}
+\newlabel{typeGraph}{{5.3}{71}{Example Type Graph\relax \relax }{figure.caption.40}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5.4}{\ignorespaces Syntactic judgements for determining if one type expression is a subtype of another\relax }}{72}{figure.caption.41}}
+\newlabel{syntacticSubtypeJudgements}{{5.4}{72}{Syntactic judgements for determining if one type expression is a subtype of another\relax \relax }{figure.caption.41}{}}
+\newlabel{ssrule:mtype}{{5.4a}{72}{\relax \relax }{figure.caption.41}{}}
+\newlabel{sub@ssrule:mtype}{{a}{72}{\relax \relax }{figure.caption.41}{}}
+\newlabel{ssrule:element}{{5.4b}{72}{\relax \relax }{figure.caption.41}{}}
+\newlabel{sub@ssrule:element}{{b}{72}{\relax \relax }{figure.caption.41}{}}
+\newlabel{ssrule:emptyset}{{5.4c}{72}{\relax \relax }{figure.caption.41}{}}
+\newlabel{sub@ssrule:emptyset}{{c}{72}{\relax \relax }{figure.caption.41}{}}
+\newlabel{ssrule:symmetric}{{5.4d}{72}{\relax \relax }{figure.caption.41}{}}
+\newlabel{sub@ssrule:symmetric}{{d}{72}{\relax \relax }{figure.caption.41}{}}
+\newlabel{ssrule:promote}{{5.4e}{72}{\relax \relax }{figure.caption.41}{}}
+\newlabel{sub@ssrule:promote}{{e}{72}{\relax \relax }{figure.caption.41}{}}
+\newlabel{ssrule:bigunion}{{5.4f}{72}{\relax \relax }{figure.caption.41}{}}
+\newlabel{sub@ssrule:bigunion}{{f}{72}{\relax \relax }{figure.caption.41}{}}
+\newlabel{subsumptionTheorems}{{5.3.5.2}{73}{Subsumption Theorems\relax }{subsubsection.5.3.5.2}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {5.3.5.2}Subsumption Theorems}{73}{subsubsection.5.3.5.2}}
+\newlabel{sec:categoricalDefinitions}{{5.3.6}{74}{Categorical Definitions\relax }{subsection.5.3.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.3.6}Categorical Definitions}{74}{subsection.5.3.6}}
 \citation{cook2012specification}
 \citation{sitaraman2009engaging}
-\@writefile{toc}{\contentsline {chapter}{\numberline {6}Evaluation of Minimalist Prover}{71}{chapter.6}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {6}Experimental Evaluation of the Minimalist Prover}{75}{chapter.6}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:proverEvaluation}{{6}{71}{Evaluation of Minimalist Prover\relax }{chapter.6}{}}
+\newlabel{ch:proverEvaluation}{{6}{75}{Experimental Evaluation of the Minimalist Prover\relax }{chapter.6}{}}
 \citation{Benchmarks}
 \citation{hartonDissertation}
 \citation{hartonDissertation}
-\@writefile{toc}{\contentsline {section}{\numberline {6.1}Description of Metrics}{72}{section.6.1}}
-\newlabel{canProve}{{6.2}{72}{Benchmark Solutions\relax }{section.6.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.2}Benchmark Solutions}{72}{section.6.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.1}VSTTE Benchmarks}{72}{subsection.6.2.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.1}Description of Metrics}{76}{section.6.1}}
 \citation{Benchmarks}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.2.1.1}Benchmark 1: Adding and Multiplying Integers}{73}{subsubsection.6.2.1.1}}
-\@writefile{toc}{\contentsline {paragraph}{Problem Statement}{73}{section*.42}}
-\@writefile{toc}{\contentsline {paragraph}{Solution Discussion}{73}{section*.43}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {6.1}The specification of \texttt  {Adding\_Capabilitiy} and \texttt  {Multiplying\_Capability}}{73}{lstlisting.6.1}}
-\newlabel{lst:integerAddMultSpec}{{6.1}{73}{Solution Discussion\relax }{lstlisting.6.1}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {6.2}A recursive implementation of \texttt  {Adding\_Capabilitiy}}{74}{lstlisting.6.2}}
-\newlabel{lst:addImpl}{{6.2}{74}{Solution Discussion\relax }{lstlisting.6.2}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {6.3}An iterative implementation of \texttt  {Multiplying\_Capabilitiy}}{74}{lstlisting.6.3}}
-\newlabel{lst:multImpl}{{6.3}{74}{Solution Discussion\relax }{lstlisting.6.3}{}}
-\@writefile{toc}{\contentsline {paragraph}{Results}{74}{section*.47}}
+\newlabel{canProve}{{6.2}{77}{Benchmark Solutions\relax }{section.6.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.2}Benchmark Solutions}{77}{section.6.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.1}VSTTE Benchmarks}{77}{subsection.6.2.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.2.1.1}Benchmark 1: Adding and Multiplying Integers}{77}{subsubsection.6.2.1.1}}
+\@writefile{toc}{\contentsline {paragraph}{Problem Statement}{77}{section*.42}}
+\@writefile{toc}{\contentsline {paragraph}{Solution Discussion}{77}{section*.43}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {6.1}The specification of \texttt  {Adding\_Capabilitiy} and \texttt  {Multiplying\_Capability}}{77}{lstlisting.6.1}}
+\newlabel{lst:integerAddMultSpec}{{6.1}{77}{Solution Discussion\relax }{lstlisting.6.1}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {6.2}A recursive implementation of \texttt  {Adding\_Capability}}{78}{lstlisting.6.2}}
+\newlabel{lst:addImpl}{{6.2}{78}{Solution Discussion\relax }{lstlisting.6.2}{}}
+\@writefile{toc}{\contentsline {paragraph}{Results}{78}{section*.47}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {6.3}An iterative implementation of \texttt  {Multiplying\_Capability}}{79}{lstlisting.6.3}}
+\newlabel{lst:multImpl}{{6.3}{79}{Solution Discussion\relax }{lstlisting.6.3}{}}
+\newlabel{fig:iterAddResults}{{6.1a}{79}{Iterative \texttt {Adding\_Capabilitiy} results\relax \relax }{figure.caption.48}{}}
+\newlabel{sub@fig:iterAddResults}{{a}{79}{Iterative \texttt {Adding\_Capabilitiy} results\relax \relax }{figure.caption.48}{}}
+\newlabel{fig:recAddResults}{{6.1b}{79}{Recursive \texttt {Adding\_Capabilitiy} results\relax \relax }{figure.caption.48}{}}
+\newlabel{sub@fig:recAddResults}{{b}{79}{Recursive \texttt {Adding\_Capabilitiy} results\relax \relax }{figure.caption.48}{}}
+\newlabel{fig:iterMultResults}{{6.1c}{79}{Iterative \texttt {Multiplying\_Capabilitiy} results\relax \relax }{figure.caption.48}{}}
+\newlabel{sub@fig:iterMultResults}{{c}{79}{Iterative \texttt {Multiplying\_Capabilitiy} results\relax \relax }{figure.caption.48}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Results from verification of Benchmark 1 solutions\relax }}{79}{figure.caption.48}}
+\newlabel{fig:addMultResults}{{6.1}{79}{Results from verification of Benchmark 1 solutions\relax \relax }{figure.caption.48}{}}
 \citation{blochBinarySearch}
-\newlabel{fig:iterAddResults}{{6.1a}{75}{Iterative \texttt {Adding\_Capabilitiy} results\relax \relax }{figure.caption.48}{}}
-\newlabel{sub@fig:iterAddResults}{{a}{75}{Iterative \texttt {Adding\_Capabilitiy} results\relax \relax }{figure.caption.48}{}}
-\newlabel{fig:recAddResults}{{6.1b}{75}{Recursive \texttt {Adding\_Capabilitiy} results\relax \relax }{figure.caption.48}{}}
-\newlabel{sub@fig:recAddResults}{{b}{75}{Recursive \texttt {Adding\_Capabilitiy} results\relax \relax }{figure.caption.48}{}}
-\newlabel{fig:iterMultResults}{{6.1c}{75}{Iterative \texttt {Multiplying\_Capabilitiy} results\relax \relax }{figure.caption.48}{}}
-\newlabel{sub@fig:iterMultResults}{{c}{75}{Iterative \texttt {Multiplying\_Capabilitiy} results\relax \relax }{figure.caption.48}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.1}{\ignorespaces Results from verification of Benchmark 1 solutions\relax }}{75}{figure.caption.48}}
-\newlabel{fig:addMultResults}{{6.1}{75}{Results from verification of Benchmark 1 solutions\relax \relax }{figure.caption.48}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.2.1.2}Benchmark 2: Benchmark 2: Binary Search an Array}{75}{subsubsection.6.2.1.2}}
-\@writefile{toc}{\contentsline {paragraph}{Problem Statement}{75}{section*.49}}
-\@writefile{toc}{\contentsline {paragraph}{Solution Discussion}{75}{section*.50}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {6.4}The specification of \texttt  {Searching\_Capabilitiy}}{76}{lstlisting.6.4}}
-\newlabel{lst:searchSpec}{{6.4}{76}{Solution Discussion\relax }{lstlisting.6.4}{}}
-\@writefile{toc}{\contentsline {paragraph}{Results}{76}{section*.54}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Binary search \texttt  {Searching\_Capabilitiy} results\relax }}{77}{figure.caption.55}}
-\newlabel{fig:binSearchResults}{{6.2}{77}{Binary search \texttt {Searching\_Capabilitiy} results\relax \relax }{figure.caption.55}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {6.5}An implementation of \texttt  {Searching\_Capabilitiy}}{79}{lstlisting.6.5}}
-\newlabel{lst:searchImpl}{{6.5}{79}{Solution Discussion\relax }{lstlisting.6.5}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {6.6}A snippet of the specification of arrays}{80}{lstlisting.6.6}}
-\newlabel{lst:arraySpec}{{6.6}{80}{Solution Discussion\relax }{lstlisting.6.6}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {6.7}A problematic VC}{80}{lstlisting.6.7}}
-\newlabel{lst:brokenVC}{{6.7}{80}{Results\relax }{lstlisting.6.7}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {6.8}A useful theorem about lambda expressions}{80}{lstlisting.6.8}}
-\newlabel{lst:lambdaThm}{{6.8}{80}{Results\relax }{lstlisting.6.8}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.2.1.3}Benchmark 3: Sorting a Queue}{81}{subsubsection.6.2.1.3}}
-\@writefile{toc}{\contentsline {paragraph}{Problem Statement}{81}{section*.58}}
-\@writefile{toc}{\contentsline {paragraph}{Solution Discussion}{81}{section*.59}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {6.9}The specification of \texttt  {Sorting\_Capability}}{81}{lstlisting.6.9}}
-\newlabel{lst:sortingSpec}{{6.9}{81}{Solution Discussion\relax }{lstlisting.6.9}{}}
-\@writefile{toc}{\contentsline {paragraph}{Results}{81}{section*.62}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces Selection sort \texttt  {Sorting\_Capabilitiy} results\relax }}{82}{figure.caption.63}}
-\newlabel{fig:sortingResults}{{6.3}{82}{Selection sort \texttt {Sorting\_Capabilitiy} results\relax \relax }{figure.caption.63}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {6.10}A selection sort realization of \texttt  {Sorting\_Capabilitiy}}{83}{lstlisting.6.10}}
-\newlabel{lst:sortingImpl}{{6.10}{83}{Solution Discussion\relax }{lstlisting.6.10}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.2}Other Benchmarks}{84}{subsection.6.2.2}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.2.2.1}Benchmark 4: Reversing a Queue}{84}{subsubsection.6.2.2.1}}
-\@writefile{toc}{\contentsline {paragraph}{Problem Statement}{84}{section*.64}}
-\@writefile{toc}{\contentsline {paragraph}{Solution Discussion}{84}{section*.65}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {6.11}The specification of \texttt  {Flipping\_Capabilitiy}}{84}{lstlisting.6.11}}
-\newlabel{lst:flippingSpec}{{6.11}{84}{Solution Discussion\relax }{lstlisting.6.11}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {6.12}A recursive realization of \texttt  {Flipping\_Capabilitiy}}{84}{lstlisting.6.12}}
-\newlabel{lst:flippingImpl}{{6.12}{84}{Solution Discussion\relax }{lstlisting.6.12}{}}
-\@writefile{toc}{\contentsline {paragraph}{Results}{84}{section*.68}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.4}{\ignorespaces Recursive \texttt  {Flipping\_Capabilitiy} results\relax }}{84}{figure.caption.69}}
-\newlabel{fig:flippingResults}{{6.4}{84}{Recursive \texttt {Flipping\_Capabilitiy} results\relax \relax }{figure.caption.69}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.2.2.2}Benchmark 5: Array Realization of Stack}{85}{subsubsection.6.2.2.2}}
-\@writefile{toc}{\contentsline {paragraph}{Problem Statement}{85}{section*.70}}
-\@writefile{toc}{\contentsline {paragraph}{Solution Discussion}{85}{section*.71}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {6.13}The specification of \texttt  {Stack}}{85}{lstlisting.6.13}}
-\newlabel{lst:stackSpec}{{6.13}{85}{Solution Discussion\relax }{lstlisting.6.13}{}}
-\@writefile{toc}{\contentsline {paragraph}{Results}{85}{section*.74}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {6.14}An array-based implementation of \texttt  {Stack}}{86}{lstlisting.6.14}}
-\newlabel{lst:stackImpl}{{6.14}{86}{Solution Discussion\relax }{lstlisting.6.14}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.5}{\ignorespaces Array-based \texttt  {Stack} implementation results\relax }}{86}{figure.caption.75}}
-\newlabel{fig:stackResults}{{6.5}{86}{Array-based \texttt {Stack} implementation results\relax \relax }{figure.caption.75}{}}
-\newlabel{heuristicsEval}{{6.3}{87}{Heuristic Evaluation\relax }{section.6.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.3}Heuristic Evaluation}{87}{section.6.3}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.6}{\ignorespaces Summary of heuristic evaluation results. From left to right the columns are: total change in the number of proved VCs (negative means fewer were proved), average standard deviations change in time to prove, total change in time to prove, average change to the number of steps required, total change in number of steps required, average change in number of search steps required, and total change in number of search steps required. Average and total changes only take into account VCs that were proved.\relax }}{88}{figure.caption.76}}
-\newlabel{heuristicEvalTable}{{6.6}{88}{Summary of heuristic evaluation results. From left to right the columns are: total change in the number of proved VCs (negative means fewer were proved), average standard deviations change in time to prove, total change in time to prove, average change to the number of steps required, total change in number of steps required, average change in number of search steps required, and total change in number of search steps required. Average and total changes only take into account VCs that were proved.\relax \relax }{figure.caption.76}{}}
-\newlabel{proverEvalConclusion}{{6.4}{88}{Observations and Conclusions\relax }{section.6.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {6.4}Observations and Conclusions}{88}{section.6.4}}
-\newlabel{fig:pie}{{6.7a}{89}{Number of Search Steps Required by VC\relax \relax }{figure.caption.77}{}}
-\newlabel{sub@fig:pie}{{a}{89}{Number of Search Steps Required by VC\relax \relax }{figure.caption.77}{}}
-\newlabel{fig:histogram}{{6.7b}{89}{Number of Search Steps Required by Proofs\relax \relax }{figure.caption.77}{}}
-\newlabel{sub@fig:histogram}{{b}{89}{Number of Search Steps Required by Proofs\relax \relax }{figure.caption.77}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6.7}{\ignorespaces Summary of Proof Evaluation Results\relax }}{89}{figure.caption.77}}
-\citation{Benchmarks}
-\@writefile{toc}{\contentsline {chapter}{\numberline {7}Evaluation of Mathematical System}{90}{chapter.7}}
-\@writefile{lof}{\addvspace {10\p@ }}
-\@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:mathEvaluation}{{7}{90}{Evaluation of Mathematical System\relax }{chapter.7}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.1}VSTTE Benchmarks}{90}{section.7.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.1.1}Benchmark 1: Adding and Multiplying Integers}{90}{subsection.7.1.1}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.1.1.1}Supporting Mathematics}{91}{subsubsection.7.1.1.1}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.1}The definition of \texttt  {OtherZ}}{91}{lstlisting.7.1}}
-\newlabel{lst:integertheory1}{{7.1}{91}{Supporting Mathematics\relax }{lstlisting.7.1}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.2}The definition of \texttt  {Is\_Monogenerator\_For()}}{92}{lstlisting.7.2}}
-\newlabel{lst:monogeneratortheory1}{{7.2}{92}{Supporting Mathematics\relax }{lstlisting.7.2}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.3}The definition of \texttt  {Is\_Injective()}}{92}{lstlisting.7.3}}
-\newlabel{lst:basicfunctionpropertiestheory1}{{7.3}{92}{Supporting Mathematics\relax }{lstlisting.7.3}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.1.1.2}When Things Go Wrong}{92}{subsubsection.7.1.1.2}}
 \citation{kulczyckiPointers}
 \citation{DafnyOverview}
 \citation{cok:esc}
 \citation{kuncakJahobOverview}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.4}Note that \texttt  {Bounce} no longer has an acceptable type}{93}{lstlisting.7.4}}
-\newlabel{lst:integerTheory2}{{7.4}{93}{When Things Go Wrong\relax }{lstlisting.7.4}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.5}\texttt  {Bounce} does not have the appropriate type}{93}{lstlisting.7.5}}
-\newlabel{fig:bounceError}{{7.5}{93}{When Things Go Wrong\relax }{lstlisting.7.5}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.1.2}Benchmark 2: Binary Search an Array}{93}{subsection.7.1.2}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.1.2.1}Supporting Mathematics}{93}{subsubsection.7.1.2.1}}
-\citation{smith08}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.6}A snippet of \texttt  {Static\_Array\_Template}}{94}{lstlisting.7.6}}
-\newlabel{lst:staticarraytemplate1}{{7.6}{94}{Supporting Mathematics\relax }{lstlisting.7.6}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.1.3}Benchmark 3: Reversing a Queue}{94}{subsection.7.1.3}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.1.3.1}Supporting Mathematics}{94}{subsubsection.7.1.3.1}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.7}A snippet of \texttt  {String\_Theory}}{95}{lstlisting.7.7}}
-\newlabel{lst:stringtheory1}{{7.7}{95}{Supporting Mathematics\relax }{lstlisting.7.7}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.8}Type theorems at work in \texttt  {Queue\_Template}}{96}{lstlisting.7.8}}
-\newlabel{lst:typeTheoremsInQueueTemplate}{{7.8}{96}{Supporting Mathematics\relax }{lstlisting.7.8}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.9}String concatenation and an associated type theorem}{97}{lstlisting.7.9}}
-\newlabel{lst:stringconcat}{{7.9}{97}{Supporting Mathematics\relax }{lstlisting.7.9}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.1.3.2}When Things Go Wrong}{97}{subsubsection.7.1.3.2}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.10}The vertical pipe operator is associated with input of type \texttt  {SStr} or \texttt  {Z}, neither of which is matched by \texttt  {Str('Entry')} without an appropriate type theorem.}{97}{lstlisting.7.10}}
-\newlabel{lst:stringLengthError}{{7.10}{97}{When Things Go Wrong\relax }{lstlisting.7.10}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.1.4}Benchmark 4: Sorting a Queue}{98}{subsection.7.1.4}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.1.4.1}Supporting Mathematics}{98}{subsubsection.7.1.4.1}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.11}\texttt  {Sorting\_Capability} provides the \texttt  {Sort} Operation}{98}{lstlisting.7.11}}
-\newlabel{lst:sortingenhancement}{{7.11}{98}{Supporting Mathematics\relax }{lstlisting.7.11}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.12}Definition of \texttt  {Is\_Total\_Preordering() and \texttt  {Is\_Conformal\_With()}}}{99}{lstlisting.7.12}}
-\newlabel{lst:totalpreorderingtheory1}{{7.12}{99}{Supporting Mathematics\relax }{lstlisting.7.12}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.13}A VC arising from a selection sort implementation}{99}{lstlisting.7.13}}
-\newlabel{lst:sortingCapabilityVC}{{7.13}{99}{Supporting Mathematics\relax }{lstlisting.7.13}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.14}A Useful \texttt  {Is\_Universally\_Related} theorem}{100}{lstlisting.7.14}}
-\newlabel{lst:universallyrelatedtheorem}{{7.14}{100}{Supporting Mathematics\relax }{lstlisting.7.14}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.15}\texttt  {Selection\_Sort\_Realization} taking an operation that implements \texttt  {LEQV}}{100}{lstlisting.7.15}}
-\newlabel{lst:selectionsortparameter}{{7.15}{100}{Supporting Mathematics\relax }{lstlisting.7.15}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {7.2}Other Benchmarks}{100}{section.7.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.2.1}Cartesian Product Subtypes}{100}{subsection.7.2.1}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.2.1.1}Supporting Mathematics}{101}{subsubsection.7.2.1.1}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.16}Passing a Cartesian product subtype}{101}{lstlisting.7.16}}
-\newlabel{lst:cartprod1}{{7.16}{101}{Supporting Mathematics\relax }{lstlisting.7.16}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.17}A type theorem expressing Cartesian subtypes}{101}{lstlisting.7.17}}
-\newlabel{lst:cartprod2}{{7.17}{101}{Supporting Mathematics\relax }{lstlisting.7.17}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.2.1.2}When Things Go Wrong}{101}{subsubsection.7.2.1.2}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.18}Results without type theorem}{101}{lstlisting.7.18}}
-\newlabel{lst:cartprod3}{{7.18}{101}{When Things Go Wrong\relax }{lstlisting.7.18}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {7.2.2}Array Realization of Stack}{102}{subsection.7.2.2}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.2.2.1}Supporting Mathematics}{102}{subsubsection.7.2.2.1}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.19}The representation of \texttt  {Stack}}{102}{lstlisting.7.19}}
-\newlabel{lst:arrayrealiz1}{{7.19}{102}{Supporting Mathematics\relax }{lstlisting.7.19}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.20}Definition of \texttt  {Concatenate}}{102}{lstlisting.7.20}}
-\newlabel{lst:binaryiteratortheory1}{{7.20}{102}{Supporting Mathematics\relax }{lstlisting.7.20}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.21}Complex VC arising from \texttt  {Array\_Realiz}}{104}{lstlisting.7.21}}
-\newlabel{lst:arrayrealizvc}{{7.21}{104}{Supporting Mathematics\relax }{lstlisting.7.21}{}}
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.2.2.2}When Things Go Wrong}{104}{subsubsection.7.2.2.2}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.22}Passing an incorrectly-typed \texttt  {Value\_Function}}{104}{lstlisting.7.22}}
-\newlabel{lst:binaryiteratorerror1}{{7.22}{104}{When Things Go Wrong\relax }{lstlisting.7.22}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.23}The third parameter does not have correct type}{105}{lstlisting.7.23}}
-\newlabel{lst:binaryiteratorerroroutput1}{{7.23}{105}{When Things Go Wrong\relax }{lstlisting.7.23}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.24}The expression returned by the lambda function does not maintain the string type}{105}{lstlisting.7.24}}
-\newlabel{lst:binaryiteratorerror2}{{7.24}{105}{When Things Go Wrong\relax }{lstlisting.7.24}{}}
-\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.25}The first parameter does not have correct type}{105}{lstlisting.7.25}}
-\newlabel{lst:binaryiteratorerroroutput2}{{7.25}{105}{When Things Go Wrong\relax }{lstlisting.7.25}{}}
-\@writefile{toc}{\contentsline {chapter}{\numberline {8}Conclusion and Future Research}{106}{chapter.8}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.2.1.2}Benchmark 2: Binary Search an Array}{80}{subsubsection.6.2.1.2}}
+\@writefile{toc}{\contentsline {paragraph}{Problem Statement}{80}{section*.49}}
+\@writefile{toc}{\contentsline {paragraph}{Solution Discussion}{80}{section*.50}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {6.4}The specification of \texttt  {Searching\_Capabilitiy}}{80}{lstlisting.6.4}}
+\newlabel{lst:searchSpec}{{6.4}{80}{Solution Discussion\relax }{lstlisting.6.4}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {6.5}An implementation of \texttt  {Searching\_Capabilitiy}}{82}{lstlisting.6.5}}
+\newlabel{lst:searchImpl}{{6.5}{82}{Solution Discussion\relax }{lstlisting.6.5}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {6.6}A snippet of the specification of arrays}{83}{lstlisting.6.6}}
+\newlabel{lst:arraySpec}{{6.6}{83}{Solution Discussion\relax }{lstlisting.6.6}{}}
+\@writefile{toc}{\contentsline {paragraph}{Results}{83}{section*.54}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {6.7}A problematic VC}{83}{lstlisting.6.7}}
+\newlabel{lst:brokenVC}{{6.7}{83}{Results\relax }{lstlisting.6.7}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.2}{\ignorespaces Binary search \texttt  {Searching\_Capabilitiy} results\relax }}{84}{figure.caption.55}}
+\newlabel{fig:binSearchResults}{{6.2}{84}{Binary search \texttt {Searching\_Capabilitiy} results\relax \relax }{figure.caption.55}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {6.8}New givens after replacing \texttt  {A''} with \texttt  {A}}{84}{lstlisting.6.8}}
+\newlabel{lst:givens2}{{6.8}{84}{Results\relax }{lstlisting.6.8}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {6.9}New goal after expanding \texttt  {A'}}{84}{lstlisting.6.9}}
+\newlabel{lst:goal2}{{6.9}{84}{Results\relax }{lstlisting.6.9}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {6.10}New goal after expanding \texttt  {key}}{85}{lstlisting.6.10}}
+\newlabel{lst:goal3}{{6.10}{85}{Results\relax }{lstlisting.6.10}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {6.11}A useful theorem about lambda expressions}{85}{lstlisting.6.11}}
+\newlabel{lst:lambdaThm}{{6.11}{85}{Results\relax }{lstlisting.6.11}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.2.1.3}Benchmark 3: Sorting a Queue}{85}{subsubsection.6.2.1.3}}
+\@writefile{toc}{\contentsline {paragraph}{Problem Statement}{85}{section*.61}}
+\@writefile{toc}{\contentsline {paragraph}{Solution Discussion}{85}{section*.62}}
+\citation{DafnySolutions}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {6.12}The specification of \texttt  {Sorting\_Capability}}{86}{lstlisting.6.12}}
+\newlabel{lst:sortingSpec}{{6.12}{86}{Solution Discussion\relax }{lstlisting.6.12}{}}
+\@writefile{toc}{\contentsline {paragraph}{Results}{86}{section*.65}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {6.13}A selection sort realization of \texttt  {Sorting\_Capabilitiy}}{87}{lstlisting.6.13}}
+\newlabel{lst:sortingImpl}{{6.13}{87}{Solution Discussion\relax }{lstlisting.6.13}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.3}{\ignorespaces Selection sort \texttt  {Sorting\_Capabilitiy} results\relax }}{88}{figure.caption.66}}
+\newlabel{fig:sortingResults}{{6.3}{88}{Selection sort \texttt {Sorting\_Capabilitiy} results\relax \relax }{figure.caption.66}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {6.2.2}Other Benchmarks}{89}{subsection.6.2.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.2.2.1}Benchmark 4: Reversing a Queue}{89}{subsubsection.6.2.2.1}}
+\@writefile{toc}{\contentsline {paragraph}{Problem Statement}{89}{section*.67}}
+\@writefile{toc}{\contentsline {paragraph}{Solution Discussion}{89}{section*.68}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {6.14}The specification of \texttt  {Flipping\_Capabilitiy}}{89}{lstlisting.6.14}}
+\newlabel{lst:flippingSpec}{{6.14}{89}{Solution Discussion\relax }{lstlisting.6.14}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {6.15}A recursive realization of \texttt  {Flipping\_Capabilitiy}}{89}{lstlisting.6.15}}
+\newlabel{lst:flippingImpl}{{6.15}{89}{Solution Discussion\relax }{lstlisting.6.15}{}}
+\@writefile{toc}{\contentsline {paragraph}{Results}{89}{section*.71}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.4}{\ignorespaces Recursive \texttt  {Flipping\_Capabilitiy} results\relax }}{89}{figure.caption.72}}
+\newlabel{fig:flippingResults}{{6.4}{89}{Recursive \texttt {Flipping\_Capabilitiy} results\relax \relax }{figure.caption.72}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {6.2.2.2}Benchmark 5: Array Realization of Stack}{90}{subsubsection.6.2.2.2}}
+\@writefile{toc}{\contentsline {paragraph}{Problem Statement}{90}{section*.73}}
+\@writefile{toc}{\contentsline {paragraph}{Solution Discussion}{90}{section*.74}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {6.16}The specification of \texttt  {Stack}}{90}{lstlisting.6.16}}
+\newlabel{lst:stackSpec}{{6.16}{90}{Solution Discussion\relax }{lstlisting.6.16}{}}
+\@writefile{toc}{\contentsline {paragraph}{Results}{90}{section*.77}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {6.17}An array-based implementation of \texttt  {Stack}}{91}{lstlisting.6.17}}
+\newlabel{lst:stackImpl}{{6.17}{91}{Solution Discussion\relax }{lstlisting.6.17}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.5}{\ignorespaces Array-based \texttt  {Stack} implementation results\relax }}{91}{figure.caption.78}}
+\newlabel{fig:stackResults}{{6.5}{91}{Array-based \texttt {Stack} implementation results\relax \relax }{figure.caption.78}{}}
+\newlabel{heuristicsEval}{{6.3}{92}{Heuristic Evaluation\relax }{section.6.3}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.3}Heuristic Evaluation}{92}{section.6.3}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.6}{\ignorespaces Summary of heuristic evaluation results. From left to right the columns are: total change in the number of proved VCs (negative means fewer were proved), average standard deviations change in time to prove, total change in time to prove, average change to the number of steps required, total change in number of steps required, average change in number of search steps required, and total change in number of search steps required. Average and total changes only take into account VCs that were proved.\relax }}{93}{figure.caption.79}}
+\newlabel{heuristicEvalTable}{{6.6}{93}{Summary of heuristic evaluation results. From left to right the columns are: total change in the number of proved VCs (negative means fewer were proved), average standard deviations change in time to prove, total change in time to prove, average change to the number of steps required, total change in number of steps required, average change in number of search steps required, and total change in number of search steps required. Average and total changes only take into account VCs that were proved.\relax \relax }{figure.caption.79}{}}
+\newlabel{proverEvalConclusion}{{6.4}{93}{Observations and Conclusions\relax }{section.6.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6.4}Observations and Conclusions}{93}{section.6.4}}
+\newlabel{fig:pie}{{6.7a}{94}{Verification results\relax \relax }{figure.caption.80}{}}
+\newlabel{sub@fig:pie}{{a}{94}{Verification results\relax \relax }{figure.caption.80}{}}
+\newlabel{fig:histogram}{{6.7b}{94}{Number of Search Steps Required by Proofs\relax \relax }{figure.caption.80}{}}
+\newlabel{sub@fig:histogram}{{b}{94}{Number of Search Steps Required by Proofs\relax \relax }{figure.caption.80}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6.7}{\ignorespaces Summary of Proof Evaluation Results\relax }}{94}{figure.caption.80}}
+\citation{Benchmarks}
+\@writefile{toc}{\contentsline {chapter}{\numberline {7}Evaluation of the Mathematical System}{95}{chapter.7}}
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
-\newlabel{ch:conclusion}{{8}{106}{Conclusion and Future Research\relax }{chapter.8}{}}
-\@writefile{toc}{\contentsline {chapter}{Appendices}{109}{section*.103}}
-\@writefile{toc}{\contentsline {section}{\numberline {A}Dragga and Gong's Editing Process Model}{110}{section.2.A}}
-\@writefile{toc}{\contentsline {section}{\numberline {B}Manuscript Review Sign-In Datat Aheet for Students}{113}{section.2.B}}
-\@writefile{toc}{\contentsline {section}{\numberline {C}Institutional Review Board (IRB) Application and Attachments}{118}{section.2.C}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {C.1}Importance of the Study}{118}{subsection.2.C.1}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {C.2}Purpose of the Study}{118}{subsection.2.C.2}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {C.3}Explanation of Research Design}{119}{subsection.2.C.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {C.4}Delimitations of the Study}{119}{subsection.2.C.4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {C.5}Institutional Review Board (IRB) Approval Information}{120}{subsection.2.C.5}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {C.6}Justification for an Overview of the Methodological Decisions and Their Limits}{121}{subsection.2.C.6}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {C.7}Summary of Methods}{122}{subsection.2.C.7}}
+\newlabel{ch:mathEvaluation}{{7}{95}{Evaluation of the Mathematical System\relax }{chapter.7}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.1}VSTTE Benchmarks}{95}{section.7.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.1.1}Benchmark 1: Adding and Multiplying Integers}{95}{subsection.7.1.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.1.1.1}Supporting Mathematics}{96}{subsubsection.7.1.1.1}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.1}The definition of \texttt  {OtherZ}}{96}{lstlisting.7.1}}
+\newlabel{lst:integertheory1}{{7.1}{96}{Supporting Mathematics\relax }{lstlisting.7.1}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.2}The definition of \texttt  {Is\_Monogenerator\_For()}}{97}{lstlisting.7.2}}
+\newlabel{lst:monogeneratortheory1}{{7.2}{97}{Supporting Mathematics\relax }{lstlisting.7.2}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.3}The definition of \texttt  {Is\_Injective()}}{97}{lstlisting.7.3}}
+\newlabel{lst:basicfunctionpropertiestheory1}{{7.3}{97}{Supporting Mathematics\relax }{lstlisting.7.3}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.1.1.2}Error Analysis and Reporting}{97}{subsubsection.7.1.1.2}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.4}Note that \texttt  {Bounce} no longer has an acceptable type}{98}{lstlisting.7.4}}
+\newlabel{lst:integerTheory2}{{7.4}{98}{Error Analysis and Reporting\relax }{lstlisting.7.4}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.5}\texttt  {Bounce} does not have the appropriate type}{98}{lstlisting.7.5}}
+\newlabel{fig:bounceError}{{7.5}{98}{Error Analysis and Reporting\relax }{lstlisting.7.5}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.1.2}Benchmark 2: Binary Search an Array}{98}{subsection.7.1.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.1.2.1}Supporting Mathematics}{98}{subsubsection.7.1.2.1}}
+\citation{smith08}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.6}A snippet of \texttt  {Static\_Array\_Template}}{99}{lstlisting.7.6}}
+\newlabel{lst:staticarraytemplate1}{{7.6}{99}{Supporting Mathematics\relax }{lstlisting.7.6}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.1.3}Benchmark 3: Reversing a Queue}{99}{subsection.7.1.3}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.1.3.1}Supporting Mathematics}{99}{subsubsection.7.1.3.1}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.7}A snippet of \texttt  {String\_Theory}}{100}{lstlisting.7.7}}
+\newlabel{lst:stringtheory1}{{7.7}{100}{Supporting Mathematics\relax }{lstlisting.7.7}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.8}Type theorems at work in \texttt  {Queue\_Template}}{101}{lstlisting.7.8}}
+\newlabel{lst:typeTheoremsInQueueTemplate}{{7.8}{101}{Supporting Mathematics\relax }{lstlisting.7.8}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.9}String concatenation and an associated type theorem}{102}{lstlisting.7.9}}
+\newlabel{lst:stringconcat}{{7.9}{102}{Supporting Mathematics\relax }{lstlisting.7.9}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.1.3.2}Error Analysis and Reporting}{102}{subsubsection.7.1.3.2}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.10}The vertical pipe operator is associated with input of type \texttt  {SStr} or \texttt  {Z}, neither of which is matched by \texttt  {Str('Entry')} without an appropriate type theorem.}{102}{lstlisting.7.10}}
+\newlabel{lst:stringLengthError}{{7.10}{102}{Error Analysis and Reporting\relax }{lstlisting.7.10}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.1.4}Benchmark 4: Sorting a Queue}{102}{subsection.7.1.4}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.1.4.1}Supporting Mathematics}{103}{subsubsection.7.1.4.1}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.11}\texttt  {Sorting\_Capability} provides the \texttt  {Sort} Operation}{103}{lstlisting.7.11}}
+\newlabel{lst:sortingenhancement}{{7.11}{103}{Supporting Mathematics\relax }{lstlisting.7.11}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.12}Definition of \texttt  {Is\_Total\_Preordering() and \texttt  {Is\_Conformal\_With()}}}{104}{lstlisting.7.12}}
+\newlabel{lst:totalpreorderingtheory1}{{7.12}{104}{Supporting Mathematics\relax }{lstlisting.7.12}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.13}A VC arising from a selection sort implementation}{104}{lstlisting.7.13}}
+\newlabel{lst:sortingCapabilityVC}{{7.13}{104}{Supporting Mathematics\relax }{lstlisting.7.13}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.14}A Useful \texttt  {Is\_Universally\_Related} theorem}{105}{lstlisting.7.14}}
+\newlabel{lst:universallyrelatedtheorem}{{7.14}{105}{Supporting Mathematics\relax }{lstlisting.7.14}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.15}\texttt  {Selection\_Sort\_Realization} taking an operation that implements \texttt  {LEQV}}{105}{lstlisting.7.15}}
+\newlabel{lst:selectionsortparameter}{{7.15}{105}{Supporting Mathematics\relax }{lstlisting.7.15}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.2}Other Benchmarks}{105}{section.7.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2.1}Cartesian Product Subtypes}{105}{subsection.7.2.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.2.1.1}Supporting Mathematics}{105}{subsubsection.7.2.1.1}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.16}Passing a Cartesian product subtype}{105}{lstlisting.7.16}}
+\newlabel{lst:cartprod1}{{7.16}{105}{Supporting Mathematics\relax }{lstlisting.7.16}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.17}A type theorem expressing Cartesian subtypes}{106}{lstlisting.7.17}}
+\newlabel{lst:cartprod2}{{7.17}{106}{Supporting Mathematics\relax }{lstlisting.7.17}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.2.1.2}Error Analysis and Reporting}{106}{subsubsection.7.2.1.2}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.18}Results without type theorem}{106}{lstlisting.7.18}}
+\newlabel{lst:cartprod3}{{7.18}{106}{Error Analysis and Reporting\relax }{lstlisting.7.18}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {7.2.2}Array Realization of Stack}{106}{subsection.7.2.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.2.2.1}Supporting Mathematics}{106}{subsubsection.7.2.2.1}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.19}The representation of \texttt  {Stack}}{107}{lstlisting.7.19}}
+\newlabel{lst:arrayrealiz1}{{7.19}{107}{Supporting Mathematics\relax }{lstlisting.7.19}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.20}Definition of \texttt  {Concatenate}}{107}{lstlisting.7.20}}
+\newlabel{lst:binaryiteratortheory1}{{7.20}{107}{Supporting Mathematics\relax }{lstlisting.7.20}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.21}A complex VC arising from \texttt  {Array\_Realiz}}{108}{lstlisting.7.21}}
+\newlabel{lst:arrayrealizvc}{{7.21}{108}{Supporting Mathematics\relax }{lstlisting.7.21}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {7.2.2.2}Error Analysis and Reporting}{109}{subsubsection.7.2.2.2}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.22}Passing an incorrectly-typed \texttt  {Value\_Function}}{109}{lstlisting.7.22}}
+\newlabel{lst:binaryiteratorerror1}{{7.22}{109}{Error Analysis and Reporting\relax }{lstlisting.7.22}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.23}The third parameter does not have correct type}{109}{lstlisting.7.23}}
+\newlabel{lst:binaryiteratorerroroutput1}{{7.23}{109}{Error Analysis and Reporting\relax }{lstlisting.7.23}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.24}The expression returned by the lambda function does not maintain the string type}{110}{lstlisting.7.24}}
+\newlabel{lst:binaryiteratorerror2}{{7.24}{110}{Error Analysis and Reporting\relax }{lstlisting.7.24}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.25}The first parameter does not have correct type}{110}{lstlisting.7.25}}
+\newlabel{lst:binaryiteratorerroroutput2}{{7.25}{110}{Error Analysis and Reporting\relax }{lstlisting.7.25}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {7.3}Summary}{110}{section.7.3}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.26}A type theorem stating that \texttt  {T} is a subset of \texttt  {E}}{111}{lstlisting.7.26}}
+\newlabel{lst:assignmentTheorem1}{{7.26}{111}{Summary\relax }{lstlisting.7.26}{}}
+\@writefile{lol}{\contentsline {lstlisting}{\numberline {7.27}A type theorem stating that \texttt  {t\nobreakspace  {}*\nobreakspace  {}i} returns a \texttt  {T}}{112}{lstlisting.7.27}}
+\newlabel{lst:assignmentTheorem2}{{7.27}{112}{Summary\relax }{lstlisting.7.27}{}}
+\@writefile{toc}{\contentsline {chapter}{\numberline {8}Conclusion and Future Research}{113}{chapter.8}}
+\@writefile{lof}{\addvspace {10\p@ }}
+\@writefile{lot}{\addvspace {10\p@ }}
+\newlabel{ch:conclusion}{{8}{113}{Conclusion and Future Research\relax }{chapter.8}{}}
+\@writefile{toc}{\contentsline {chapter}{Appendices}{116}{section*.108}}
+\newlabel{apx:math}{{A}{117}{Theories\relax }{section.2.A}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {A}Theories}{117}{section.2.A}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.1}Basic\_Function\_Properties\_Theory}{117}{subsection.2.A.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.2}Binary\_Iterator\_Theory}{117}{subsection.2.A.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.3}Binary\_Relation\_Properties\_Theory}{118}{subsection.2.A.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.4}Integer\_Theory}{119}{subsection.2.A.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.5}Monogenerator\_Theory}{127}{subsection.2.A.5}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.6}Set\_Theory}{128}{subsection.2.A.6}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.7}String\_Theory}{128}{subsection.2.A.7}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {A.8}Total\_Preordering\_Theory}{137}{subsection.2.A.8}}
+\newlabel{apx:specs}{{B}{139}{Specifications\relax }{section.2.B}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {B}Specifications}{139}{section.2.B}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.1}Integer\_Template}{139}{subsection.2.B.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {B.1.1}Concept}{139}{subsubsection.2.B.1.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {B.1.2}Enhancements}{142}{subsubsection.2.B.1.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.2}One\_Way\_List\_Template}{142}{subsection.2.B.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {B.2.1}Concept}{142}{subsubsection.2.B.2.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.3}Queue\_Template}{144}{subsection.2.B.3}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {B.3.1}Concept}{144}{subsubsection.2.B.3.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {B.3.2}Enhancements}{144}{subsubsection.2.B.3.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.4}Stack\_Template}{145}{subsection.2.B.4}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {B.4.1}Concept}{145}{subsubsection.2.B.4.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {B.4.2}Enhancements}{146}{subsubsection.2.B.4.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {B.5}Static\_Array\_Template}{146}{subsection.2.B.5}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {B.5.1}Concept}{146}{subsubsection.2.B.5.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {B.5.2}Enhancements}{147}{subsubsection.2.B.5.2}}
+\newlabel{apx:real}{{C}{148}{Realizations\relax }{section.2.C}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {C}Realizations}{148}{section.2.C}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {C.1}Integer\_Template}{148}{subsection.2.C.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {C.1.1}Iterative\_Add\_to\_Realiz}{148}{subsubsection.2.C.1.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {C.1.2}Iterative\_Multiply\_into\_Realiz}{148}{subsubsection.2.C.1.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {C.1.3}Recursive\_Add\_to\_Realiz}{149}{subsubsection.2.C.1.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {C.2}Queue\_Template}{149}{subsection.2.C.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {C.2.1}Recursive\_Flipping\_Realiz}{149}{subsubsection.2.C.2.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {C.2.2}Selection\_Sort\_Realiz}{149}{subsubsection.2.C.2.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {C.3}Stack\_Template}{151}{subsection.2.C.3}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {C.3.1}Array\_Realiz}{151}{subsubsection.2.C.3.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {C.4}Static\_Array\_Template}{152}{subsection.2.C.4}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {C.4.1}Bin\_Search\_Realiz}{152}{subsubsection.2.C.4.1}}
+\newlabel{apx:proofs}{{D}{154}{Automated Proofs\relax }{section.2.D}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {D}Automated Proofs}{154}{section.2.D}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {D.1}Integer\_Template}{154}{subsection.2.D.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {D.1.1}Iterative\_Add\_to\_Realiz}{154}{subsubsection.2.D.1.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {D.1.2}Iterative\_Multiply\_into\_Realiz}{174}{subsubsection.2.D.1.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {D.1.3}Recursive\_Add\_to\_Realiz}{188}{subsubsection.2.D.1.3}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {D.2}Queue\_Template}{208}{subsection.2.D.2}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {D.2.1}Recursive\_Flipping\_Realiz}{208}{subsubsection.2.D.2.1}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {D.2.2}Selection\_Sort\_Realiz}{220}{subsubsection.2.D.2.2}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {D.3}Stack\_Template}{325}{subsection.2.D.3}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {D.3.1}Array\_Realiz}{325}{subsubsection.2.D.3.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {D.4}Static\_Array\_Template}{388}{subsection.2.D.4}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {D.4.1}Binary\_Search\_Realiz}{388}{subsubsection.2.D.4.1}}
 \bibstyle{plain}
 \bibdata{dissertation}
 \bibcite{specsharp}{1}
@@ -489,51 +568,64 @@
 \bibcite{blochBinarySearch}{4}
 \bibcite{bobotWhy}{5}
 \bibcite{bouillaguetJahobFirstOrder}{6}
-\bibcite{bronishMap}{7}
-\bibcite{cok:esc}{8}
-\bibcite{cook2012specification}{9}
-\bibcite{deMouraZ3}{10}
-\bibcite{dillerZ}{11}
-\@writefile{toc}{\contentsline {chapter}{Bibliography}{124}{section*.105}}
-\bibcite{yices}{12}
-\bibcite{ernstInfer}{13}
-\bibcite{ganeshArrayDecision}{14}
-\bibcite{guttagLarch}{15}
-\bibcite{harmsSwapping}{16}
-\bibcite{hartonDissertation}{17}
-\bibcite{bisl}{18}
-\bibcite{hoareAxiomaticProgramming}{19}
-\bibcite{hoareGrandChallenge}{20}
-\bibcite{jacobsVerifast}{21}
-\bibcite{kaufmannACL2}{22}
-\bibcite{kingVerifier}{23}
-\bibcite{klebanovVSTTEExperience}{24}
-\bibcite{kleinVerifiedOS}{25}
-\bibcite{kulczyckiPointers}{26}
-\bibcite{kul:dis}{27}
-\bibcite{kuncakJahobOverview}{28}
-\bibcite{leavensJML}{29}
-\bibcite{DafnySolutions}{30}
-\bibcite{leroyVerifiedcompiler}{31}
-\bibcite{coq}{32}
-\bibcite{meyer1988eiffel}{33}
-\bibcite{nieuwenhuisDPLL}{34}
-\bibcite{nipkowIsabelle}{35}
-\bibcite{regula2012case}{36}
-\bibcite{reynoldsSeparationLogic}{37}
-\bibcite{DafnyOverview}{38}
-\bibcite{sheiniIntegerDecision}{39}
-\bibcite{Sit11}{40}
-\bibcite{sitaraman2009engaging}{41}
-\bibcite{RESOLVE}{42}
-\bibcite{sitariman1994component}{43}
-\bibcite{smith10}{44}
-\bibcite{smithSpecificationAbstractions}{45}
-\bibcite{smith08}{46}
-\bibcite{tagoreExpand}{47}
-\bibcite{vlissides1995design}{48}
-\bibcite{weideVerificationReferences}{49}
-\bibcite{Benchmarks}{50}
-\bibcite{wenzelIsar}{51}
-\bibcite{zee:annotations}{52}
-\bibcite{zeeIntegratedProofLanguage}{53}
+\bibcite{boyapati2003ownership}{7}
+\bibcite{bradley2006s}{8}
+\bibcite{bronishMap}{9}
+\bibcite{bronish2010review}{10}
+\bibcite{cok:esc}{11}
+\bibcite{cook2012specification}{12}
+\@writefile{toc}{\contentsline {chapter}{Bibliography}{526}{section*.109}}
+\bibcite{deMouraZ3}{13}
+\bibcite{dillerZ}{14}
+\bibcite{yices}{15}
+\bibcite{ernstInfer}{16}
+\bibcite{ernst2007daikon}{17}
+\bibcite{filipovic2010blaming}{18}
+\bibcite{fontaine2006expressiveness}{19}
+\bibcite{ganeshArrayDecision}{20}
+\bibcite{gordon1993introduction}{21}
+\bibcite{gordon2000lcf}{22}
+\bibcite{guttagLarch}{23}
+\bibcite{harmsSwapping}{24}
+\bibcite{hartonDissertation}{25}
+\bibcite{bisl}{26}
+\bibcite{hoareAxiomaticProgramming}{27}
+\bibcite{hoareGrandChallenge}{28}
+\bibcite{hollingsworth2000experience}{29}
+\bibcite{jacobsVerifast}{30}
+\bibcite{kaufmannACL2}{31}
+\bibcite{kingVerifier}{32}
+\bibcite{klebanovVSTTEExperience}{33}
+\bibcite{kleinVerifiedOS}{34}
+\bibcite{kulczyckiPointers}{35}
+\bibcite{kul:dis}{36}
+\bibcite{kuncakJahobOverview}{37}
+\bibcite{leavensJML}{38}
+\bibcite{DafnySolutions}{39}
+\bibcite{leonard2009injecting}{40}
+\bibcite{leroyVerifiedcompiler}{41}
+\bibcite{coq}{42}
+\bibcite{meyer1988eiffel}{43}
+\bibcite{milner1972implementation}{44}
+\bibcite{nieuwenhuisDPLL}{45}
+\bibcite{nipkowIsabelle}{46}
+\bibcite{pike2009traditional}{47}
+\bibcite{regula2012case}{48}
+\bibcite{reynoldsSeparationLogic}{49}
+\bibcite{DafnyOverview}{50}
+\bibcite{sheiniIntegerDecision}{51}
+\bibcite{Sit11}{52}
+\bibcite{sitaraman2009engaging}{53}
+\bibcite{sitaraman2001formal}{54}
+\bibcite{RESOLVE}{55}
+\bibcite{sitariman1994component}{56}
+\bibcite{smith10}{57}
+\bibcite{smithSpecificationAbstractions}{58}
+\bibcite{smith08}{59}
+\bibcite{tagoreExpand}{60}
+\bibcite{vlissides1995design}{61}
+\bibcite{weideVerificationReferences}{62}
+\bibcite{Benchmarks}{63}
+\bibcite{wenzelIsar}{64}
+\bibcite{zee:annotations}{65}
+\bibcite{zeeIntegratedProofLanguage}{66}

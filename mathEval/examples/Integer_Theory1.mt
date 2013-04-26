@@ -4,9 +4,9 @@ Theory Integer_Theory;
    ...
 
 	Categorical Definition introduces
-		OtherZ : MType, Other0 : OtherZ, Bounce : OtherZ -> OtherZ
+		Z : MType, 0 : Z, Bounce : Z -> Z
 	related by
-		Is_Monogenerator_For(OtherZ, Other0, Bounce);
+		Is_Monogenerator_For(Z, 0, Bounce);
 
    ...
 end;
