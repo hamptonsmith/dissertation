@@ -107,84 +107,90 @@
 \contentsline {paragraph}{Solution Discussion}{85}{section*.62}
 \contentsline {paragraph}{Results}{86}{section*.65}
 \contentsline {subsection}{\numberline {6.2.2}Other Benchmarks}{89}{subsection.6.2.2}
-\contentsline {subsubsection}{\numberline {6.2.2.1}Benchmark 4: Reversing a Queue}{89}{subsubsection.6.2.2.1}
+\contentsline {subsubsection}{\numberline {6.2.2.1}Reversing a Queue}{89}{subsubsection.6.2.2.1}
 \contentsline {paragraph}{Problem Statement}{89}{section*.67}
 \contentsline {paragraph}{Solution Discussion}{89}{section*.68}
 \contentsline {paragraph}{Results}{89}{section*.71}
-\contentsline {subsubsection}{\numberline {6.2.2.2}Benchmark 5: Array Realization of Stack}{90}{subsubsection.6.2.2.2}
+\contentsline {subsubsection}{\numberline {6.2.2.2}Array Realization of Stack}{90}{subsubsection.6.2.2.2}
 \contentsline {paragraph}{Problem Statement}{90}{section*.73}
 \contentsline {paragraph}{Solution Discussion}{90}{section*.74}
 \contentsline {paragraph}{Results}{90}{section*.77}
-\contentsline {section}{\numberline {6.3}Heuristic Evaluation}{92}{section.6.3}
-\contentsline {section}{\numberline {6.4}Observations and Conclusions}{93}{section.6.4}
-\contentsline {chapter}{\numberline {7}Evaluation of the Mathematical System}{95}{chapter.7}
-\contentsline {section}{\numberline {7.1}VSTTE Benchmarks}{95}{section.7.1}
-\contentsline {subsection}{\numberline {7.1.1}Benchmark 1: Adding and Multiplying Integers}{95}{subsection.7.1.1}
-\contentsline {subsubsection}{\numberline {7.1.1.1}Supporting Mathematics}{96}{subsubsection.7.1.1.1}
-\contentsline {subsubsection}{\numberline {7.1.1.2}Error Analysis and Reporting}{97}{subsubsection.7.1.1.2}
-\contentsline {subsection}{\numberline {7.1.2}Benchmark 2: Binary Search an Array}{98}{subsection.7.1.2}
-\contentsline {subsubsection}{\numberline {7.1.2.1}Supporting Mathematics}{98}{subsubsection.7.1.2.1}
-\contentsline {subsection}{\numberline {7.1.3}Benchmark 3: Reversing a Queue}{99}{subsection.7.1.3}
-\contentsline {subsubsection}{\numberline {7.1.3.1}Supporting Mathematics}{99}{subsubsection.7.1.3.1}
-\contentsline {subsubsection}{\numberline {7.1.3.2}Error Analysis and Reporting}{102}{subsubsection.7.1.3.2}
-\contentsline {subsection}{\numberline {7.1.4}Benchmark 4: Sorting a Queue}{102}{subsection.7.1.4}
-\contentsline {subsubsection}{\numberline {7.1.4.1}Supporting Mathematics}{103}{subsubsection.7.1.4.1}
-\contentsline {section}{\numberline {7.2}Other Benchmarks}{105}{section.7.2}
-\contentsline {subsection}{\numberline {7.2.1}Cartesian Product Subtypes}{105}{subsection.7.2.1}
-\contentsline {subsubsection}{\numberline {7.2.1.1}Supporting Mathematics}{105}{subsubsection.7.2.1.1}
-\contentsline {subsubsection}{\numberline {7.2.1.2}Error Analysis and Reporting}{106}{subsubsection.7.2.1.2}
-\contentsline {subsection}{\numberline {7.2.2}Array Realization of Stack}{106}{subsection.7.2.2}
-\contentsline {subsubsection}{\numberline {7.2.2.1}Supporting Mathematics}{106}{subsubsection.7.2.2.1}
-\contentsline {subsubsection}{\numberline {7.2.2.2}Error Analysis and Reporting}{109}{subsubsection.7.2.2.2}
-\contentsline {section}{\numberline {7.3}Summary}{110}{section.7.3}
-\contentsline {chapter}{\numberline {8}Conclusion and Future Research}{113}{chapter.8}
-\contentsline {chapter}{Appendices}{116}{section*.108}
-\contentsline {section}{\numberline {A}Theories}{117}{section.2.A}
-\contentsline {subsection}{\numberline {A.1}Basic\_Function\_Properties\_Theory}{117}{subsection.2.A.1}
-\contentsline {subsection}{\numberline {A.2}Binary\_Iterator\_Theory}{117}{subsection.2.A.2}
-\contentsline {subsection}{\numberline {A.3}Binary\_Relation\_Properties\_Theory}{118}{subsection.2.A.3}
-\contentsline {subsection}{\numberline {A.4}Integer\_Theory}{119}{subsection.2.A.4}
-\contentsline {subsection}{\numberline {A.5}Monogenerator\_Theory}{127}{subsection.2.A.5}
-\contentsline {subsection}{\numberline {A.6}Set\_Theory}{128}{subsection.2.A.6}
-\contentsline {subsection}{\numberline {A.7}String\_Theory}{128}{subsection.2.A.7}
-\contentsline {subsection}{\numberline {A.8}Total\_Preordering\_Theory}{137}{subsection.2.A.8}
-\contentsline {section}{\numberline {B}Specifications}{139}{section.2.B}
-\contentsline {subsection}{\numberline {B.1}Integer\_Template}{139}{subsection.2.B.1}
-\contentsline {subsubsection}{\numberline {B.1.1}Concept}{139}{subsubsection.2.B.1.1}
-\contentsline {subsubsection}{\numberline {B.1.2}Enhancements}{142}{subsubsection.2.B.1.2}
-\contentsline {subsection}{\numberline {B.2}One\_Way\_List\_Template}{142}{subsection.2.B.2}
-\contentsline {subsubsection}{\numberline {B.2.1}Concept}{142}{subsubsection.2.B.2.1}
-\contentsline {subsection}{\numberline {B.3}Queue\_Template}{144}{subsection.2.B.3}
-\contentsline {subsubsection}{\numberline {B.3.1}Concept}{144}{subsubsection.2.B.3.1}
-\contentsline {subsubsection}{\numberline {B.3.2}Enhancements}{144}{subsubsection.2.B.3.2}
-\contentsline {subsection}{\numberline {B.4}Stack\_Template}{145}{subsection.2.B.4}
-\contentsline {subsubsection}{\numberline {B.4.1}Concept}{145}{subsubsection.2.B.4.1}
-\contentsline {subsubsection}{\numberline {B.4.2}Enhancements}{146}{subsubsection.2.B.4.2}
-\contentsline {subsection}{\numberline {B.5}Static\_Array\_Template}{146}{subsection.2.B.5}
-\contentsline {subsubsection}{\numberline {B.5.1}Concept}{146}{subsubsection.2.B.5.1}
-\contentsline {subsubsection}{\numberline {B.5.2}Enhancements}{147}{subsubsection.2.B.5.2}
-\contentsline {section}{\numberline {C}Realizations}{148}{section.2.C}
-\contentsline {subsection}{\numberline {C.1}Integer\_Template}{148}{subsection.2.C.1}
-\contentsline {subsubsection}{\numberline {C.1.1}Iterative\_Add\_to\_Realiz}{148}{subsubsection.2.C.1.1}
-\contentsline {subsubsection}{\numberline {C.1.2}Iterative\_Multiply\_into\_Realiz}{148}{subsubsection.2.C.1.2}
-\contentsline {subsubsection}{\numberline {C.1.3}Recursive\_Add\_to\_Realiz}{149}{subsubsection.2.C.1.3}
-\contentsline {subsection}{\numberline {C.2}Queue\_Template}{149}{subsection.2.C.2}
-\contentsline {subsubsection}{\numberline {C.2.1}Recursive\_Flipping\_Realiz}{149}{subsubsection.2.C.2.1}
-\contentsline {subsubsection}{\numberline {C.2.2}Selection\_Sort\_Realiz}{149}{subsubsection.2.C.2.2}
-\contentsline {subsection}{\numberline {C.3}Stack\_Template}{151}{subsection.2.C.3}
-\contentsline {subsubsection}{\numberline {C.3.1}Array\_Realiz}{151}{subsubsection.2.C.3.1}
-\contentsline {subsection}{\numberline {C.4}Static\_Array\_Template}{152}{subsection.2.C.4}
-\contentsline {subsubsection}{\numberline {C.4.1}Bin\_Search\_Realiz}{152}{subsubsection.2.C.4.1}
-\contentsline {section}{\numberline {D}Automated Proofs}{154}{section.2.D}
-\contentsline {subsection}{\numberline {D.1}Integer\_Template}{154}{subsection.2.D.1}
-\contentsline {subsubsection}{\numberline {D.1.1}Iterative\_Add\_to\_Realiz}{154}{subsubsection.2.D.1.1}
-\contentsline {subsubsection}{\numberline {D.1.2}Iterative\_Multiply\_into\_Realiz}{174}{subsubsection.2.D.1.2}
-\contentsline {subsubsection}{\numberline {D.1.3}Recursive\_Add\_to\_Realiz}{188}{subsubsection.2.D.1.3}
-\contentsline {subsection}{\numberline {D.2}Queue\_Template}{208}{subsection.2.D.2}
-\contentsline {subsubsection}{\numberline {D.2.1}Recursive\_Flipping\_Realiz}{208}{subsubsection.2.D.2.1}
-\contentsline {subsubsection}{\numberline {D.2.2}Selection\_Sort\_Realiz}{220}{subsubsection.2.D.2.2}
-\contentsline {subsection}{\numberline {D.3}Stack\_Template}{325}{subsection.2.D.3}
-\contentsline {subsubsection}{\numberline {D.3.1}Array\_Realiz}{325}{subsubsection.2.D.3.1}
-\contentsline {subsection}{\numberline {D.4}Static\_Array\_Template}{388}{subsection.2.D.4}
-\contentsline {subsubsection}{\numberline {D.4.1}Binary\_Search\_Realiz}{388}{subsubsection.2.D.4.1}
-\contentsline {chapter}{Bibliography}{526}{section*.109}
+\contentsline {subsubsection}{\numberline {6.2.2.3}Do Nothing on Trees}{92}{subsubsection.6.2.2.3}
+\contentsline {paragraph}{Problem Statement}{92}{section*.79}
+\contentsline {paragraph}{Solution Discussion}{92}{section*.80}
+\contentsline {paragraph}{Results}{93}{section*.84}
+\contentsline {section}{\numberline {6.3}Heuristic Evaluation}{93}{section.6.3}
+\contentsline {section}{\numberline {6.4}Observations and Conclusions}{95}{section.6.4}
+\contentsline {chapter}{\numberline {7}Evaluation of the Mathematical System}{97}{chapter.7}
+\contentsline {section}{\numberline {7.1}VSTTE Benchmarks}{97}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Benchmark 1: Adding and Multiplying Integers}{97}{subsection.7.1.1}
+\contentsline {subsubsection}{\numberline {7.1.1.1}Supporting Mathematics}{98}{subsubsection.7.1.1.1}
+\contentsline {subsubsection}{\numberline {7.1.1.2}Error Analysis and Reporting}{99}{subsubsection.7.1.1.2}
+\contentsline {subsection}{\numberline {7.1.2}Benchmark 2: Binary Search an Array}{100}{subsection.7.1.2}
+\contentsline {subsubsection}{\numberline {7.1.2.1}Supporting Mathematics}{100}{subsubsection.7.1.2.1}
+\contentsline {subsection}{\numberline {7.1.3}Benchmark 3: Reversing a Queue}{101}{subsection.7.1.3}
+\contentsline {subsubsection}{\numberline {7.1.3.1}Supporting Mathematics}{101}{subsubsection.7.1.3.1}
+\contentsline {subsubsection}{\numberline {7.1.3.2}Error Analysis and Reporting}{104}{subsubsection.7.1.3.2}
+\contentsline {subsection}{\numberline {7.1.4}Benchmark 4: Sorting a Queue}{104}{subsection.7.1.4}
+\contentsline {subsubsection}{\numberline {7.1.4.1}Supporting Mathematics}{105}{subsubsection.7.1.4.1}
+\contentsline {section}{\numberline {7.2}Other Benchmarks}{107}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}Cartesian Product Subtypes}{107}{subsection.7.2.1}
+\contentsline {subsubsection}{\numberline {7.2.1.1}Supporting Mathematics}{107}{subsubsection.7.2.1.1}
+\contentsline {subsubsection}{\numberline {7.2.1.2}Error Analysis and Reporting}{108}{subsubsection.7.2.1.2}
+\contentsline {subsection}{\numberline {7.2.2}Array Realization of Stack}{108}{subsection.7.2.2}
+\contentsline {subsubsection}{\numberline {7.2.2.1}Supporting Mathematics}{108}{subsubsection.7.2.2.1}
+\contentsline {subsubsection}{\numberline {7.2.2.2}Error Analysis and Reporting}{111}{subsubsection.7.2.2.2}
+\contentsline {subsection}{\numberline {7.2.3}Benchmark 6: Do Nothing on Trees}{112}{subsection.7.2.3}
+\contentsline {subsubsection}{\numberline {7.2.3.1}Supporting Mathematics}{112}{subsubsection.7.2.3.1}
+\contentsline {section}{\numberline {7.3}Summary}{113}{section.7.3}
+\contentsline {chapter}{\numberline {8}Conclusion and Future Research}{116}{chapter.8}
+\contentsline {chapter}{Appendices}{119}{section*.116}
+\contentsline {section}{\numberline {A}Theories}{120}{section.2.A}
+\contentsline {subsection}{\numberline {A.1}Basic\_Function\_Properties\_Theory}{120}{subsection.2.A.1}
+\contentsline {subsection}{\numberline {A.2}Binary\_Iterator\_Theory}{120}{subsection.2.A.2}
+\contentsline {subsection}{\numberline {A.3}Binary\_Relation\_Properties\_Theory}{121}{subsection.2.A.3}
+\contentsline {subsection}{\numberline {A.4}Integer\_Theory}{122}{subsection.2.A.4}
+\contentsline {subsection}{\numberline {A.5}Monogenerator\_Theory}{130}{subsection.2.A.5}
+\contentsline {subsection}{\numberline {A.6}Set\_Theory}{131}{subsection.2.A.6}
+\contentsline {subsection}{\numberline {A.7}String\_Theory}{131}{subsection.2.A.7}
+\contentsline {subsection}{\numberline {A.8}Total\_Preordering\_Theory}{140}{subsection.2.A.8}
+\contentsline {section}{\numberline {B}Specifications}{142}{section.2.B}
+\contentsline {subsection}{\numberline {B.1}Integer\_Template}{142}{subsection.2.B.1}
+\contentsline {subsubsection}{\numberline {B.1.1}Concept}{142}{subsubsection.2.B.1.1}
+\contentsline {subsubsection}{\numberline {B.1.2}Enhancements}{145}{subsubsection.2.B.1.2}
+\contentsline {subsection}{\numberline {B.2}One\_Way\_List\_Template}{145}{subsection.2.B.2}
+\contentsline {subsubsection}{\numberline {B.2.1}Concept}{145}{subsubsection.2.B.2.1}
+\contentsline {subsection}{\numberline {B.3}Queue\_Template}{147}{subsection.2.B.3}
+\contentsline {subsubsection}{\numberline {B.3.1}Concept}{147}{subsubsection.2.B.3.1}
+\contentsline {subsubsection}{\numberline {B.3.2}Enhancements}{147}{subsubsection.2.B.3.2}
+\contentsline {subsection}{\numberline {B.4}Stack\_Template}{148}{subsection.2.B.4}
+\contentsline {subsubsection}{\numberline {B.4.1}Concept}{148}{subsubsection.2.B.4.1}
+\contentsline {subsubsection}{\numberline {B.4.2}Enhancements}{149}{subsubsection.2.B.4.2}
+\contentsline {subsection}{\numberline {B.5}Static\_Array\_Template}{149}{subsection.2.B.5}
+\contentsline {subsubsection}{\numberline {B.5.1}Concept}{149}{subsubsection.2.B.5.1}
+\contentsline {subsubsection}{\numberline {B.5.2}Enhancements}{150}{subsubsection.2.B.5.2}
+\contentsline {section}{\numberline {C}Realizations}{151}{section.2.C}
+\contentsline {subsection}{\numberline {C.1}Integer\_Template}{151}{subsection.2.C.1}
+\contentsline {subsubsection}{\numberline {C.1.1}Iterative\_Add\_to\_Realiz}{151}{subsubsection.2.C.1.1}
+\contentsline {subsubsection}{\numberline {C.1.2}Iterative\_Multiply\_into\_Realiz}{151}{subsubsection.2.C.1.2}
+\contentsline {subsubsection}{\numberline {C.1.3}Recursive\_Add\_to\_Realiz}{152}{subsubsection.2.C.1.3}
+\contentsline {subsection}{\numberline {C.2}Queue\_Template}{152}{subsection.2.C.2}
+\contentsline {subsubsection}{\numberline {C.2.1}Recursive\_Flipping\_Realiz}{152}{subsubsection.2.C.2.1}
+\contentsline {subsubsection}{\numberline {C.2.2}Selection\_Sort\_Realiz}{152}{subsubsection.2.C.2.2}
+\contentsline {subsection}{\numberline {C.3}Stack\_Template}{154}{subsection.2.C.3}
+\contentsline {subsubsection}{\numberline {C.3.1}Array\_Realiz}{154}{subsubsection.2.C.3.1}
+\contentsline {subsection}{\numberline {C.4}Static\_Array\_Template}{155}{subsection.2.C.4}
+\contentsline {subsubsection}{\numberline {C.4.1}Bin\_Search\_Realiz}{155}{subsubsection.2.C.4.1}
+\contentsline {section}{\numberline {D}Automated Proofs}{157}{section.2.D}
+\contentsline {subsection}{\numberline {D.1}Integer\_Template}{157}{subsection.2.D.1}
+\contentsline {subsubsection}{\numberline {D.1.1}Iterative\_Add\_to\_Realiz}{157}{subsubsection.2.D.1.1}
+\contentsline {subsubsection}{\numberline {D.1.2}Iterative\_Multiply\_into\_Realiz}{177}{subsubsection.2.D.1.2}
+\contentsline {subsubsection}{\numberline {D.1.3}Recursive\_Add\_to\_Realiz}{191}{subsubsection.2.D.1.3}
+\contentsline {subsection}{\numberline {D.2}Queue\_Template}{211}{subsection.2.D.2}
+\contentsline {subsubsection}{\numberline {D.2.1}Recursive\_Flipping\_Realiz}{211}{subsubsection.2.D.2.1}
+\contentsline {subsubsection}{\numberline {D.2.2}Selection\_Sort\_Realiz}{223}{subsubsection.2.D.2.2}
+\contentsline {subsection}{\numberline {D.3}Stack\_Template}{328}{subsection.2.D.3}
+\contentsline {subsubsection}{\numberline {D.3.1}Array\_Realiz}{328}{subsubsection.2.D.3.1}
+\contentsline {subsection}{\numberline {D.4}Static\_Array\_Template}{391}{subsection.2.D.4}
+\contentsline {subsubsection}{\numberline {D.4.1}Binary\_Search\_Realiz}{391}{subsubsection.2.D.4.1}
+\contentsline {chapter}{Bibliography}{529}{section*.117}

@@ -340,7 +340,8 @@ Again, as in Benchmark 2, we take a client-provided operation, \texttt{Compare()
 %-----------------------------------------------------------------------------
 
 %-----------------------------------------------------------------------------
-		\subsubsection{Benchmark 4: Reversing a Queue}	%-----------------------------------------------------------------------------
+		\subsubsection{Reversing a Queue}	
+%-----------------------------------------------------------------------------
 
 \paragraph{Problem Statement}Specify a user-defined FIFO queue ADT that is generic (i.e., parameterized by the type of entries in a queue). Verify an operation that reverses the entries in a given queue.
 
@@ -371,7 +372,8 @@ Again, as in Benchmark 2, we take a client-provided operation, \texttt{Compare()
 
 
 %-----------------------------------------------------------------------------
-		\subsubsection{Benchmark 5: Array Realization of Stack}	%-----------------------------------------------------------------------------
+		\subsubsection{Array Realization of Stack}	
+%-----------------------------------------------------------------------------
 
 \paragraph{Problem Statement}Specify a user-defined LIFO stack ADT that is generic (i.e., parameterized by the type of entries in a queue). Verify an implementation of that array.
 
@@ -430,8 +432,44 @@ We implement this specification on top of an array, which, as in Benchmark 2, is
 	\caption{Array-based \texttt{Stack} implementation results\label{fig:stackResults}}
 \end{figure}
 
-
 \FloatBarrier
+%-----------------------------------------------------------------------------
+		\subsubsection{Do Nothing on Trees}	
+%-----------------------------------------------------------------------------
+\paragraph{Problem Statement}Specify a tree abstraction, then specify, implement, and verify an operation that modifies the a tree before restoring it to its original form.
+
+\paragraph{Solution Discussion}Clearly, the usefulness of this benchmark is not in the operation itself, which is trivial.  Rather, this benchmark is designed to demonstrate the flexibility of our mathematical system by allowing us to showcase a proof-of-concept implementation involving trees and reasoned about using the same machinery as any other construct.
+
+Listing \ref{lst:treeSpec} gives a small snippet of a RESOLVE specification for a generic n-ary tree in the context of a \texttt{Tree\_Template}.
+
+\lstinputlisting[float=h,language=resolve,caption={A specification of \texttt{Tree}\label{lst:treeSpec}}]{proverEval/examples/Tree_Template.co}
+
+The function \texttt{Get\_Root()} returns the value at the root of the tree, while \texttt{Split()} returns each of the child subtrees of the specified tree as a \texttt{Str(Tree(Entity))}.  The mathematical basis for trees is discussed in more detail in Chapter \ref{ch:mathEvaluation}.
+
+We then specify an operation on trees, \texttt{Do\_Nothing()}, shown in \ref{lst:doNothingSpec}.  Note that the requires clause is in place simply to allow us to make some initial modification to the tree before restoring it to its original form.
+
+\lstinputlisting[float=h,language=resolve,caption={A \texttt{Do\_Nothing()} operation on \texttt{Tree}\label{lst:doNothingSpec}}]{proverEval/examples/Do_Nothing_Capability.en}
+
+Finally, we implement this operation in a straightforward way in Listing \ref{lst:doNothingImpl}.  First we add an arbitrary subtree, then we remove it again.
+
+\lstinputlisting[float=h,language=resolve,caption={A straightforward implementation of \texttt{Do\_Nothing}\label{lst:doNothingImpl}}]{proverEval/examples/Obvious_Do_Nothing_Realiz.rb}
+
+\paragraph{Results}This implementation is fully verifiable.  The results of that verifications, with associated metrics, is presented in Figure \ref{fig:treeResults}.
+
+\begin{figure}[h]
+	\centering
+	\begin{tabular}{lrrrr}
+		\toprule
+			& Time (ms)	& $\sigma$& Steps & Search \\
+		\midrule
+		VC 0\_1	& 2899		& 129	& 5 	& 0     \\
+		VC 0\_2	& 1782		& 241	& 6 	& 1     \\
+		VC 0\_3	& 3471		& 372	& 11 	& 0     \\
+		\bottomrule
+	\end{tabular}
+	\caption{Simple \texttt{Do\_Nothing\_Capabilitiy} results\label{fig:treeResults}}
+\end{figure}
+
 %-----------------------------------------------------------------------------
 \section{Heuristic Evaluation\label{heuristicsEval}}
 %-----------------------------------------------------------------------------
@@ -447,29 +485,29 @@ We then re-ran the verification process on each of the benchmarks and collected 
 			& $\sum \Delta\text{\footnotesize Proved}$	& $\overline{\Delta t / \sigma}$	& $\sum\Delta t$ & $\overline{\Delta\text{\footnotesize steps}}$ & $\sum\Delta\text{\footnotesize steps}$ & $\overline{\Delta\text{\footnotesize search}}$ & $\sum\Delta\text{\footnotesize search}$ \\
 		\midrule
 		\footnotesize With useless \\
-		\footnotesize transformations		& -12	& 4.04	& 80591		& 0	& 0	& 0	& 0	\\
+		\footnotesize transformations		& -12	& 4.07	& 83438		& 0	& 0	& 0	& 0	\\
 		\midrule
 		\footnotesize Developing about \\
-		\footnotesize irrelevant terms		& -1	& 8.92	& 152165	& 0	& 0	& 0	& 0\\
+		\footnotesize irrelevant terms		& -1	& 8.80	& 154530	& 0	& 0	& 0	& 0\\
 		\midrule
 		\footnotesize Not checking for \\
-		\footnotesize diversity of givens	& -5	& -5.51	& -139787	& -0.03	& -4	& -0.01	& -1	\\
+		\footnotesize diversity of givens	& -6	& -5.55	& -142026	& -0.02	& -4	& -0.01	& -1	\\
 		\midrule
-		\footnotesize No minimization		& -10	& 2.41	& 33794		& 0.03	& 3	& 0.31	& 35	\\
+		\footnotesize No minimization		& -10	& 2.53	& 36651		& 0.02	& 3	& 0.28	& 35	\\
 		\midrule
-		\footnotesize No cycle detection	& 0	& 0.62	& 9917		& 0.07	& 9	& 0.07	& 9	\\
+		\footnotesize No cycle detection	& 0	& 0.60	& 9629		& 0.08	& 11	& 0.08	& 11	\\
 		\midrule
 		\footnotesize No prioritization \\
-		\footnotesize of transformations	& -19	& 2.51	& 14386		& 0.06	& 6	& 0.05	& 5	\\
+		\footnotesize of transformations	& -19	& 2.60	& 17577		& 0.05	& 6	& 0.04	& 5	\\
 		\bottomrule
 	\end{tabular}
 	\caption{Summary of heuristic evaluation results.  From left to right the columns are: total change in the number of proved VCs (negative means fewer were proved), average standard deviations change in time to prove, total change in time to prove, average change to the number of steps required, total change in number of steps required, average change in number of search steps required, and total change in number of search steps required.  Average and total changes only take into account VCs that were proved.\label{heuristicEvalTable}}
 \end{figure}
 \setlength{\tabcolsep}{6pt}
 
-As expected, we see that the heuristics are at least partially responsible for a number of VCs being proved.  Ignoring useless transformations, limiting development to relevant terms, diversifying antecedents, minimizing, and prioritizing transformations all make the difference between some VCs proving or not proving.  Of those, it is interesting to note that diversifying antecedents poses a trade off---it requires more time (2 minutes, 33 seconds on these 130 VCs), but it enabled five more VCs to prove.  This may indicate that it would benefit from being targetted for further optimization to reduce the cost of applying it.  On the other hand, ignoring useless transformations, limiting development to relevant terms, minimization, and prioritization are nothing but a net gain.  They are collectively responsible for speeding up the proving process by over four and a half minutes and permitting 42 additional VCs to prove (though, for both time and the provability of VCs we imagine that there is an overlap in the time saved and VCs proved and thus this is not a strictly additive relationship).
+As expected, we see that the heuristics are at least partially responsible for a number of VCs being proved.  Ignoring useless transformations, limiting development to relevant terms, diversifying antecedents, minimizing, and prioritizing transformations all make the difference between some VCs proving or not proving.  Of those, it is interesting to note that diversifying antecedents poses a trade off---it requires more time (2 minutes, 37 seconds on these 133 VCs), but it enabled six more VCs to prove.  This may indicate that it would benefit from being targetted for further optimization to reduce the cost of applying it.  On the other hand, ignoring useless transformations, limiting development to relevant terms, minimization, and prioritization are nothing but a net gain.  They are collectively responsible for speeding up the proving process by over four and a half minutes and permitting 43 additional VCs to prove (though, for both time and the provability of VCs we imagine that there is an overlap in the time saved and VCs proved and thus this is not a strictly additive relationship).
 
-An important metric is the change in search steps, since from an algorithmic perspective these steps are the most expensive to take: they contribute to the overall combinatorial explosion of time as we must inductively search deeper and deeper for a solution.  We note that three of our heuristics improve this metric, while only one has adverse effects (and a small one at that).  All told, we may summarize the net effect of all our heuristics as saving 48 search steps.
+An important metric is the change in search steps, since from an algorithmic perspective these steps are the most expensive to take: they contribute to the overall combinatorial explosion of time as we must inductively search deeper and deeper for a solution.  We note that three of our heuristics improve this metric, while only one has adverse effects (and a small one at that).  All told, we may summarize the net effect of all our heuristics as saving 51 search steps.
 
 It may at first be unclear how minimization can eliminate thirty-five search steps but only three total proof steps---after all, search steps are a subset of total proof steps.  Consider, however, that minimization is a heuristic for taking \emph{extra steps} that are likely to be useful.  The discrepancy of thirty-two steps represent steps that were \emph{not} taken in the preprocessing phase, but instead delayed to the consequent exploration phase.  This increases the complexity of the search as steps taken in the exporation phase contribute to the combinatorial explosion of the search space, while steps taken in the preprocessing phase do not.
 
@@ -477,21 +515,21 @@ It may at first be unclear how minimization can eliminate thirty-five search ste
 %-----------------------------------------------------------------------------
 \section{Observations and Conclusions\label{proverEvalConclusion}}
 %-----------------------------------------------------------------------------
-These five examples were chosen to be representative of the sorts of problems to which our prover can be applied, but do not constitute the total body of components we can automatically verify.  We have a library of many other verified operations operating on stacks, queues, lists, and integers.
+These six examples were chosen to be representative of the sorts of problems to which our prover can be applied, but do not constitute the total body of components we can automatically verify.  We have a library of many other verified operations operating on stacks, queues, lists, and integers.
 
-These benchmarks together involve 130 VCs ranging over the mathematical domains of functions, strings, integers, and booleans.  Of those, we are able to mechanically verify 124, with the remaining 6 provable module improvements to RESOLVE's language representation.  This is visualized in Figure \ref{fig:pie}.  Of the mechanically verifiable VCs, the median time to prove was 1696 milliseconds, and the mean time was 2487 milliseconds.  The median number of proof steps was seven and the median number of search steps was zero.
+These benchmarks together involve 133 VCs ranging over the mathematical domains of functions, trees, strings, integers, and booleans.  Of those, we are able to mechanically verify 127, with the remaining 6 provable module improvements to RESOLVE's language representation.  This is visualized in Figure \ref{fig:pie}.  Of the mechanically verifiable VCs, the median time to prove was 1809 milliseconds, and the mean time was 2493 milliseconds.  The median number of proof steps was seven and the median number of search steps was zero.
 
 \begin{figure}
 	\centering
 	\begin{subfigure}[b]{0.40\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{proverEval/proofResults2.png}
+		\includegraphics[width=\textwidth]{proverEval/proofResults3.png}
 		\caption{Verification results\label{fig:pie}}
 	\end{subfigure}
 	\quad
 	\begin{subfigure}[b]{0.55\textwidth}
 		\centering
-		\includegraphics[width=\textwidth]{proverEval/searchSteps.png}
+		\includegraphics[width=\textwidth]{proverEval/searchSteps2.png}
 		\caption{Number of Search Steps Required by Proofs\label{fig:histogram}}
 	\end{subfigure}
 	\caption{Summary of Proof Evaluation Results}
@@ -499,4 +537,4 @@ These benchmarks together involve 130 VCs ranging over the mathematical domains 
 
 As we have previously mentioned, we are particularly interested in the search step metric since it represents the only non-deterministic portion of the proof search.  That the median number of such steps is zero is extremely heartening and we are further encouraged that no VC required more than four.  Figure \ref{fig:histogram} shows a histogram of the number of VCs requiring different numbers of search steps.
 
-The vast majority (84, or 68\%) of VCs required no search steps once all heuristics were applied.  39 (31\%) required three or fewer steps, while only a single VC required four search steps.  This data supports our hypothesis that VCs arising from well-engineered software should require only simple analysis with a minimalist prover to dispatch.
+The majority (86, or 65\%) of VCs required no search steps once all heuristics were applied.  40 (30\%) required three or fewer steps, while only a single VC required four search steps.  This data supports our hypothesis that VCs arising from well-engineered software should require only simple analysis with a minimalist prover to dispatch.

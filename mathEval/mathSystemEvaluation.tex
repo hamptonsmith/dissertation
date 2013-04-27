@@ -382,6 +382,25 @@ Candidates:
 
 
 %-----------------------------------------------------------------------------
+	\subsection{Benchmark 6: Do Nothing on Trees}	
+%-----------------------------------------------------------------------------
+For this benchmark, we created a proof-of-concept tree theory that represents a tree as an inductive structure consisting of an entity and a string of subtrees.  Doing so is remarkably straightforward in our mathematical language.
+
+		%-----------------------------------------------------------------------------
+		\subsubsection{Supporting Mathematics}	
+		%-----------------------------------------------------------------------------
+
+Our skeletal tree theory is presented in Listing \ref{lst:treeTheory}.
+
+\lstinputlisting[float=h,language=resolve,caption={A theory of trees\label{lst:treeTheory}}]{mathEval/examples/Tree_Theory.mt}
+
+As with string theory and set theory, we begin by introducing a large set of trees over heterogenous type, \texttt{TTree}.  We then create a function that restricts it to trees of homogenous type, \texttt{Tree()}.
+
+Three critical definitions provide basic manipulation on trees: \texttt{Treeify()} takes a root and a string of child trees and forms a new tree; \texttt{Get\_Root()} returns the root of a tree; and \texttt{Split()} returns its children.
+
+Of particular interest is the theorem provided.  Trees are reasoned about just like strings and integers and functions: via a body of theorems made available to the minimalist prover.  In this case the theorem we show here is the only reasoning about trees required to verify \texttt{Do\_Nothing()}.
+
+%-----------------------------------------------------------------------------
 \section{Summary}
 %-----------------------------------------------------------------------------
 As we have shown in this chapter, our mathematical system is up to the challenge of creating and manipulating complex mathematical objects.  Additionally, the resulting theories are succinct and readable.  Though subjective, we feel they are significantly more intuitive than comparable formalizations from, for example, Coq, examples of which were presented in Chapter \ref{ch:introduction}.

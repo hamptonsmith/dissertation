@@ -32,30 +32,34 @@
 \contentsline {lstlisting}{\numberline {6.15}A recursive realization of \texttt {Flipping\_Capabilitiy}}{89}{lstlisting.6.15}
 \contentsline {lstlisting}{\numberline {6.16}The specification of \texttt {Stack}}{90}{lstlisting.6.16}
 \contentsline {lstlisting}{\numberline {6.17}An array-based implementation of \texttt {Stack}}{91}{lstlisting.6.17}
-\contentsline {lstlisting}{\numberline {7.1}The definition of \texttt {OtherZ}}{96}{lstlisting.7.1}
-\contentsline {lstlisting}{\numberline {7.2}The definition of \texttt {Is\_Monogenerator\_For()}}{97}{lstlisting.7.2}
-\contentsline {lstlisting}{\numberline {7.3}The definition of \texttt {Is\_Injective()}}{97}{lstlisting.7.3}
-\contentsline {lstlisting}{\numberline {7.4}Note that \texttt {Bounce} no longer has an acceptable type}{98}{lstlisting.7.4}
-\contentsline {lstlisting}{\numberline {7.5}\texttt {Bounce} does not have the appropriate type}{98}{lstlisting.7.5}
-\contentsline {lstlisting}{\numberline {7.6}A snippet of \texttt {Static\_Array\_Template}}{99}{lstlisting.7.6}
-\contentsline {lstlisting}{\numberline {7.7}A snippet of \texttt {String\_Theory}}{100}{lstlisting.7.7}
-\contentsline {lstlisting}{\numberline {7.8}Type theorems at work in \texttt {Queue\_Template}}{101}{lstlisting.7.8}
-\contentsline {lstlisting}{\numberline {7.9}String concatenation and an associated type theorem}{102}{lstlisting.7.9}
-\contentsline {lstlisting}{\numberline {7.10}The vertical pipe operator is associated with input of type \texttt {SStr} or \texttt {Z}, neither of which is matched by \texttt {Str('Entry')} without an appropriate type theorem.}{102}{lstlisting.7.10}
-\contentsline {lstlisting}{\numberline {7.11}\texttt {Sorting\_Capability} provides the \texttt {Sort} Operation}{103}{lstlisting.7.11}
-\contentsline {lstlisting}{\numberline {7.12}Definition of \texttt {Is\_Total\_Preordering() and \texttt {Is\_Conformal\_With()}}}{104}{lstlisting.7.12}
-\contentsline {lstlisting}{\numberline {7.13}A VC arising from a selection sort implementation}{104}{lstlisting.7.13}
-\contentsline {lstlisting}{\numberline {7.14}A Useful \texttt {Is\_Universally\_Related} theorem}{105}{lstlisting.7.14}
-\contentsline {lstlisting}{\numberline {7.15}\texttt {Selection\_Sort\_Realization} taking an operation that implements \texttt {LEQV}}{105}{lstlisting.7.15}
-\contentsline {lstlisting}{\numberline {7.16}Passing a Cartesian product subtype}{105}{lstlisting.7.16}
-\contentsline {lstlisting}{\numberline {7.17}A type theorem expressing Cartesian subtypes}{106}{lstlisting.7.17}
-\contentsline {lstlisting}{\numberline {7.18}Results without type theorem}{106}{lstlisting.7.18}
-\contentsline {lstlisting}{\numberline {7.19}The representation of \texttt {Stack}}{107}{lstlisting.7.19}
-\contentsline {lstlisting}{\numberline {7.20}Definition of \texttt {Concatenate}}{107}{lstlisting.7.20}
-\contentsline {lstlisting}{\numberline {7.21}A complex VC arising from \texttt {Array\_Realiz}}{108}{lstlisting.7.21}
-\contentsline {lstlisting}{\numberline {7.22}Passing an incorrectly-typed \texttt {Value\_Function}}{109}{lstlisting.7.22}
-\contentsline {lstlisting}{\numberline {7.23}The third parameter does not have correct type}{109}{lstlisting.7.23}
-\contentsline {lstlisting}{\numberline {7.24}The expression returned by the lambda function does not maintain the string type}{110}{lstlisting.7.24}
-\contentsline {lstlisting}{\numberline {7.25}The first parameter does not have correct type}{110}{lstlisting.7.25}
-\contentsline {lstlisting}{\numberline {7.26}A type theorem stating that \texttt {T} is a subset of \texttt {E}}{111}{lstlisting.7.26}
-\contentsline {lstlisting}{\numberline {7.27}A type theorem stating that \texttt {t\nobreakspace {}*\nobreakspace {}i} returns a \texttt {T}}{112}{lstlisting.7.27}
+\contentsline {lstlisting}{\numberline {6.18}A specification of \texttt {Tree}}{92}{lstlisting.6.18}
+\contentsline {lstlisting}{\numberline {6.19}A \texttt {Do\_Nothing()} operation on \texttt {Tree}}{93}{lstlisting.6.19}
+\contentsline {lstlisting}{\numberline {6.20}A straightforward implementation of \texttt {Do\_Nothing}}{93}{lstlisting.6.20}
+\contentsline {lstlisting}{\numberline {7.1}The definition of \texttt {OtherZ}}{98}{lstlisting.7.1}
+\contentsline {lstlisting}{\numberline {7.2}The definition of \texttt {Is\_Monogenerator\_For()}}{99}{lstlisting.7.2}
+\contentsline {lstlisting}{\numberline {7.3}The definition of \texttt {Is\_Injective()}}{99}{lstlisting.7.3}
+\contentsline {lstlisting}{\numberline {7.4}Note that \texttt {Bounce} no longer has an acceptable type}{100}{lstlisting.7.4}
+\contentsline {lstlisting}{\numberline {7.5}\texttt {Bounce} does not have the appropriate type}{100}{lstlisting.7.5}
+\contentsline {lstlisting}{\numberline {7.6}A snippet of \texttt {Static\_Array\_Template}}{101}{lstlisting.7.6}
+\contentsline {lstlisting}{\numberline {7.7}A snippet of \texttt {String\_Theory}}{102}{lstlisting.7.7}
+\contentsline {lstlisting}{\numberline {7.8}Type theorems at work in \texttt {Queue\_Template}}{103}{lstlisting.7.8}
+\contentsline {lstlisting}{\numberline {7.9}String concatenation and an associated type theorem}{104}{lstlisting.7.9}
+\contentsline {lstlisting}{\numberline {7.10}The vertical pipe operator is associated with input of type \texttt {SStr} or \texttt {Z}, neither of which is matched by \texttt {Str('Entry')} without an appropriate type theorem.}{104}{lstlisting.7.10}
+\contentsline {lstlisting}{\numberline {7.11}\texttt {Sorting\_Capability} provides the \texttt {Sort} Operation}{105}{lstlisting.7.11}
+\contentsline {lstlisting}{\numberline {7.12}Definition of \texttt {Is\_Total\_Preordering() and \texttt {Is\_Conformal\_With()}}}{106}{lstlisting.7.12}
+\contentsline {lstlisting}{\numberline {7.13}A VC arising from a selection sort implementation}{106}{lstlisting.7.13}
+\contentsline {lstlisting}{\numberline {7.14}A Useful \texttt {Is\_Universally\_Related} theorem}{107}{lstlisting.7.14}
+\contentsline {lstlisting}{\numberline {7.15}\texttt {Selection\_Sort\_Realization} taking an operation that implements \texttt {LEQV}}{107}{lstlisting.7.15}
+\contentsline {lstlisting}{\numberline {7.16}Passing a Cartesian product subtype}{107}{lstlisting.7.16}
+\contentsline {lstlisting}{\numberline {7.17}A type theorem expressing Cartesian subtypes}{108}{lstlisting.7.17}
+\contentsline {lstlisting}{\numberline {7.18}Results without type theorem}{108}{lstlisting.7.18}
+\contentsline {lstlisting}{\numberline {7.19}The representation of \texttt {Stack}}{109}{lstlisting.7.19}
+\contentsline {lstlisting}{\numberline {7.20}Definition of \texttt {Concatenate}}{109}{lstlisting.7.20}
+\contentsline {lstlisting}{\numberline {7.21}A complex VC arising from \texttt {Array\_Realiz}}{110}{lstlisting.7.21}
+\contentsline {lstlisting}{\numberline {7.22}Passing an incorrectly-typed \texttt {Value\_Function}}{111}{lstlisting.7.22}
+\contentsline {lstlisting}{\numberline {7.23}The third parameter does not have correct type}{111}{lstlisting.7.23}
+\contentsline {lstlisting}{\numberline {7.24}The expression returned by the lambda function does not maintain the string type}{112}{lstlisting.7.24}
+\contentsline {lstlisting}{\numberline {7.25}The first parameter does not have correct type}{112}{lstlisting.7.25}
+\contentsline {lstlisting}{\numberline {7.26}A theory of trees}{113}{lstlisting.7.26}
+\contentsline {lstlisting}{\numberline {7.27}A type theorem stating that \texttt {T} is a subset of \texttt {E}}{114}{lstlisting.7.27}
+\contentsline {lstlisting}{\numberline {7.28}A type theorem stating that \texttt {t\nobreakspace {}*\nobreakspace {}i} returns a \texttt {T}}{115}{lstlisting.7.28}
