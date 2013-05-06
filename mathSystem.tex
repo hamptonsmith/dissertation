@@ -153,7 +153,7 @@ This theorem must be supported with a proof, of course, which requires that we e
 
 It may at first seem that this is not much of a help---in order to use some of the theorems, we must first establish them, saving us no work.  However, note that the \texttt{\reflexiveTheorem} theorem is not a defining property of a total preordering, but rather follows from \texttt{\totalTheorem}.  Such theorems are now available for free with \texttt{Compare\_Zero\_Count}, because we are able to establish, once, in this module, that any function meeting the two properties of total preorder also meet these other theorems.
 
-Note also that this arrangement decouples the decision of flagging a symbol with a particular property, and thus of including the entire body of results about that property, from the time of that symbol's definition.  This provides the option of allowing a third module to establish this relationship only when the property is semantically relevant, strengthening mosularity.
+Note also that this arrangement decouples the decision of flagging a symbol with a particular property, and thus of including the entire body of results about that property, from the time of that symbol's definition.  This provides the option of allowing a third module to establish this relationship only when the property is semantically relevant, strengthening modularity.
 
 		%------------------------------------------------------------
 		\subsubsection{Extensible Specification\label{extensibleSpecification}}
@@ -161,9 +161,9 @@ Note also that this arrangement decouples the decision of flagging a symbol with
 
 Inheritence is a powerful tool, but the cause of much problematic reasoning\cite{vlissides1995design}.  While RESOLVE does not support direct inheritence, a specification may provide points for extension by permitting function parameters that modify its behavior.  This, in turn, can permit a client to simplify their own reasoning while still using an off-the-shelf component.
 
-As an example, consider the \texttt{Predicate\_Stack}, which ensures a predicate holds on each of its elements:
+As an example, consider the \texttt{Predicate\_Stack}, presented in Listing~\ref{lst:predStack}, which ensures a predicate holds on each of its elements.
 
-\begin{lstlisting}
+\begin{lstlisting}[float=h,language=resolve,caption={A partial specification for \texttt{Predicate\_Stack}\label{lst:predStack}}]
 Concept Predicate_Stack(Type Entry, Definition Predicate : Entry -> B);
 
 	...
@@ -187,9 +187,9 @@ Just as a type-parameterized stack component prevents the user from needing to r
 
 The \emph{Strategy Pattern} permits an operation to be encapsulated in an object that can then be programmatically manipulated, e.g., by being passed as a parameter.  This pattern is an important one for resuse, since it allows a client to inject an algorithmic decision into a larger component.  By utilizing first-class functions in specifications, we are able to formally specify the strategy pattern, which to our knowledge is a novel result among practical programming systems.
 
-Consider \texttt{Lazy\_Filtering\_Bag}, a component that permits elements to be added, then retrieved in no particular order.   At instantiation time, a client provides a \emph{filtering strategy}, which is applied to each element as it is removed:
+Consider \texttt{Lazy\_Filtering\_Bag}, presented in Listing~\ref{lst:lazyBag}, a component that permits elements to be added, then retrieved in no particular order.   At instantiation time, a client provides a \emph{filtering strategy}, which is applied to each element as it is removed.
 
-\begin{lstlisting}
+\begin{lstlisting}[float=h,language=resolve,caption={A specification for \texttt{Lazy\_Filtering\_Bag}\label{lst:lazyBag}}]
 Concept Lazy_Filtering_Bag_Template(Type Entry, Definition Filter : Entry -> Entry);
 	
 	Family Lazy_Filtering_Bag : MultiSet(Entry);
@@ -206,9 +206,9 @@ Concept Lazy_Filtering_Bag_Template(Type Entry, Definition Filter : Entry -> Ent
 end;
 \end{lstlisting}
 
-We are then able to create a realization that provides parameter to implement the mathematical concept of \texttt{Filter} with a procedure.
+We are then able to create a realization that provides a parameter to implement the mathematical concept of \texttt{Filter} with a procedure, as in Listing~\ref{lst:lazyBagImpl}.
 
-\begin{lstlisting}
+\begin{lstlisting}[float=h,language=resolve,caption={A partial realization of \texttt{Lazy\_Filtering\_Bag}\label{lst:lazyBagImpl}}]
 Realization Stack_LFBag_Realiz(
 		Operation DoFilter(updates E : Entry);
 			ensures E = Filter(#E);)
@@ -223,9 +223,9 @@ Realization Stack_LFBag_Realiz(
 end;
 \end{lstlisting}
 
-And finally we may instantiate our realization, providing a filter and reasoning about the results of manipulating our \texttt{Lazy\_Filtering\_Bag}.
+And finally we may instantiate our realization, providing a filter and reasoning about the results of manipulating our \texttt{Lazy\_Filtering\_Bag}, as in Listing~\ref{lst:lazyBagUse}.
 
-\begin{lstlisting}
+\begin{lstlisting}[float=h,language=resolve,caption={An example of instantiating and using a \texttt{Lazy\_Filtering\_Bag}\label{lst:lazyBagUse}}]
 
 Definition Integer_Half(i : Z) : Z = Div(i, 2);
 
@@ -333,7 +333,7 @@ The symbol table maintains information about the kinds of elements that make up 
 	\end{subfigure}%
 \end{figure}
 
-Rules \ref{rule:mtype} and \ref{rule:set} state explicitly that \textbf{MType} and \textbf{Set} are known to contain only \textbf{MType}s.  Rule \ref{rule:power} states that the powerset of an existing type is known to contain only types---its result is a set of sets.  Rule \ref{rule:restrict} states that the result of set restriction is known to contain only types if the type being restricted is known to contain only types.  Rule \ref{rule:union} states that the result of unioning existing types is known to contain only types if each of the componen types is known to contain only types.  Rule \ref{rule:intersect} states that the result of the intersection of existing types is known to contain only types if one of the component types contains only types.  Rules \ref{rule:cross} and \ref{rule:application} state that the result of applying the cross product or the function constructor never contains only types.
+Rules \ref{rule:mtype} and \ref{rule:set} state explicitly that \textbf{MType} and \textbf{Set} are known to contain only \textbf{MType}s.  Rule \ref{rule:power} states that the powerset of an existing type is known to contain only types---its result is a set of sets.  Rule \ref{rule:restrict} states that the result of set restriction is known to contain only types if the type being restricted is known to contain only types.  Rule \ref{rule:union} states that the result of unioning existing types is known to contain only types if each of the componen types is known to contain only types.  Rule \ref{rule:intersection} states that the result of the intersection of existing types is known to contain only types if one of the component types contains only types.  Rules \ref{rule:cross} and \ref{rule:application} state that the result of applying the cross product or the function constructor never contains only types.
 
 Thus this is a valid sequence of definitions:
 
@@ -494,9 +494,9 @@ This design splits the difference between a rich, expressive type system and the
 Such theorems have a number of uses:
 
 \subparagraph{Simple Subtype}
-Here is a type theorem stating that, among other things, \texttt{Str(N)}s should be acceptable where \texttt{Str(Z)}s are required:
+Listing \ref{lst:simpleSubtype} gives a type theorem stating that, among other things, \texttt{Str(N)}s should be acceptable where \texttt{Str(Z)}s are required.
 
-\begin{lstlisting}
+\begin{lstlisting}[float=h,language=resolve,caption={Subtype relationship among strings\label{lst:simpleSubtype}}]
 Type Theorem Str_Subtype_Theorem:
 	For all T1 : MType, For all T2 : Powerset(T1),
 	For all S : Str(T2),
@@ -695,9 +695,9 @@ Definition Problematic(i : Z, n : N) : R = i + n;
 
 Clearly, \texttt{Natural\_Number\_Theory}, \texttt{Integer\_Theory}, and \texttt{Real\_Number\_Theory} have all been imported to make this definition possible, along with the various type theorems that relate them.  With that in mind, which \texttt{+} does the right-hand-side of the definition bind to?  It can't bind to the one from \texttt{Natural\_Number\_Theory}, because its first parameter is a $\mathbb{Z}$.  Both the one from \texttt{Integer\_Theory} and \texttt{Real\_Number\_Theory} match inexactly.  As a result, our algorithm gives an ``ambiguous symbol'' error.
 
-While, as with type relationships, there's no general solution to this problem, it would be useful if we could flag for the type system that in this case the integer \texttt{+} is subsumed by the real-number \texttt{+} (i.e., all theorems that hold for integer \texttt{+} also hold for real-number \texttt{+}) and, thus, if the two are in competition, the integer \texttt{+} ought be chosen.  This would be equivalent to stating (and proving) that the integer \texttt{+} really is the ``tighter'' function.
+While, as with type relationships, there's no general solution to this problem, it would be useful if we could flag for the type system that in this case the integer \texttt{+} is subsumed by the real-number \texttt{+} (i.e., all theorems that hold for integer \texttt{+} also hold for real-number \texttt{+} when operating on the subset of reals that happen to also be integers) and, thus, if the two are in competition, the integer \texttt{+} ought be chosen.  This would be equivalent to stating (and proving) that the integer \texttt{+} really is the ``tighter'' function.
 
-Our system permits this in the form of a \emph{subsumption theorem}, which in this case would look like this:
+Our design permits this in the form of a \emph{subsumption theorem}\footnote{We note that, while we have a full implementation of the rest of the design presented in this chapter, subsumption theorems are still a work in progress.}, which in this case would look like this:
 
 \begin{lstlisting}
 Subsumption Theorem R_Plus_Subsumes_Z_Plus:

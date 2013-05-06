@@ -71,7 +71,7 @@ Candidates:
 		\subsubsection{Supporting Mathematics}	
 		%-----------------------------------------------------------------------------
 
-As discussed in this benchmark in Chapter \ref{proverEvaluation}, RESOLVE does not elevate arrays to special status.  While some syntactic sugar exists to ease working with arrays, this is all translated to normal object operations as a pre-processing step, after which reasoning about arrays is based on an ordinary concept with operations and specifications.  Listing \ref{lst:staticarraytemplate1} shows the first part of that specification, including the definition of the array type and a common operation, \texttt{Swap()}.
+As discussed in this benchmark in Chapter \ref{ch:proverEvaluation}, RESOLVE does not elevate arrays to special status.  While some syntactic sugar exists to ease working with arrays, this is all translated to normal object operations as a pre-processing step, after which reasoning about arrays is based on an ordinary concept with operations and specifications.  Listing \ref{lst:staticarraytemplate1} shows the first part of that specification, including the definition of the array type and a common operation, \texttt{Swap()}.
 
 \lstinputlisting[float=h,language=resolve,caption={A snippet of \texttt{Static\_Array\_Template}\label{lst:staticarraytemplate1}}]{mathEval/examples/Static_Array_Template1.co}
 
@@ -167,13 +167,14 @@ Candidates:
 
 
 	%-----------------------------------------------------------------------------
-	\subsection{Benchmark 4: Sorting a Queue}	%-----------------------------------------------------------------------------
+	\subsection{Benchmark 4: Sorting a Queue}
+%-----------------------------------------------------------------------------
 
 \textbf{Problem Statement:} Specify a user-defined FIFO queue ADT that is generic (i.e., parameterized by the type of entries in a queue). Verify an operation that uses this component to sort the entries in a queue into some client-defined order.
 
 		%-----------------------------------------------------------------------------
-		\subsubsection{Supporting Mathematics}	
-		%-----------------------------------------------------------------------------
+		\subsubsection{Supporting Mathematics}
+%-----------------------------------------------------------------------------
 
 The previous benchmarks had straightforward specifications and most of the interesting things were happening in the supporting mathematics.  Starting with Benchmark 4, we begin to see specifications that make use of interesting features of our mathematical system directly.
 
@@ -308,9 +309,9 @@ When this realization of stack is submitted to the compiler, several of its VCs 
 
 \lstinputlisting[float=h,language=resolve,caption={A complex VC arising from \texttt{Array\_Realiz}\label{lst:arrayrealizvc}}]{mathEval/examples/arrayrealizvc.asrt}
 
-While it seems complex at first glance, the goal of the VC is, in fact, a tautology that can be proven with this theorem:
+While it seems complex at first glance, the goal of the VC is, in fact, a tautology that can be proved with the theorem in Listing~\ref{lst:inductiveReverse}.
 
-\begin{lstlisting}
+\begin{lstlisting}[float=h,language=resolve,caption={A theorem about \texttt{Reverse()}\label{lst:inductiveReverse}}]
 Theorem Inductive_Reverse_1:
 	For all f : Z -> Entity,
 	For all i : Z,
@@ -387,8 +388,8 @@ Candidates:
 For this benchmark, we created a proof-of-concept tree theory that represents a tree as an inductive structure consisting of an entity and a string of subtrees.  Doing so is remarkably straightforward in our mathematical language.
 
 		%-----------------------------------------------------------------------------
-		\subsubsection{Supporting Mathematics}	
-		%-----------------------------------------------------------------------------
+		\subsubsection{Supporting Mathematics}
+%-----------------------------------------------------------------------------
 
 Our skeletal tree theory is presented in Listing \ref{lst:treeTheory}.
 
@@ -396,16 +397,16 @@ Our skeletal tree theory is presented in Listing \ref{lst:treeTheory}.
 
 As with string theory and set theory, we begin by introducing a large set of trees over heterogenous type, \texttt{TTree}.  We then create a function that restricts it to trees of homogenous type, \texttt{Tree()}.
 
-Three critical definitions provide basic manipulation on trees: \texttt{Treeify()} takes a root and a string of child trees and forms a new tree; \texttt{Get\_Root()} returns the root of a tree; and \texttt{Split()} returns its children.
+Three critical definitions provide basic manipulation on trees: \texttt{Join()} takes a root and a string of child trees and forms a new tree; \texttt{Get\_Root()} returns the root of a tree; and \texttt{Split()} returns its children.
 
-Of particular interest is the theorem provided.  Trees are reasoned about just like strings and integers and functions: via a body of theorems made available to the minimalist prover.  In this case the theorem we show here is the only reasoning about trees required to verify \texttt{Do\_Nothing()}.
+Of particular interest is the theorem provided.  Trees are reasoned about just like strings and integers and functions: via a body of theorems made available to the minimalist prover.  In this case the theorem we show here is the only result about trees required to verify \texttt{Do\_Nothing()}.
 
 %-----------------------------------------------------------------------------
 \section{Summary}
 %-----------------------------------------------------------------------------
-As we have shown in this chapter, our mathematical system is up to the challenge of creating and manipulating complex mathematical objects.  Additionally, the resulting theories are succinct and readable.  Though subjective, we feel they are significantly more intuitive than comparable formalizations from, for example, Coq, examples of which were presented in Chapter \ref{ch:introduction}.
+As we have shown in this chapter, our mathematical system is up to the challenge of creating and manipulating complex mathematical objects.  Additionally, the resulting theories are succinct and readable.  Though subjective, we feel they are significantly more intuitive than comparable formalizations from, for example, Coq, verification examples of which were presented in Chapter \ref{ch:introduction}.
 
-In order to explore the ease with which our system could be used, we created a simple assignment that was offered as an extra-credit assignment to graduate students in CS 828.  This assignment provided an example theory that introduced types and instances of those types, functions for manipulating them, and type relationships between them.  It then asked the students to complete a series of tasks using this example file as a template.  The full list of tasks is as follows:
+In order to explore the ease with which our system could be used, we created a simple assignment that was offered as an extra-credit assignment to graduate students in a programming language theory course (CP SC 828 at Clemson).  This assignment provided an example theory that introduced types and instances of those types, functions for manipulating them, and type relationships between them.  It then asked the students to complete a series of tasks for a theory that:
 
 \begin{enumerate}
 	\item Introduces a new type, \texttt{E}, that represents the even numbers.
@@ -422,7 +423,7 @@ In order to explore the ease with which our system could be used, we created a s
 	\item Asserts that for all multiples of ten, \texttt{t}, and integers, \texttt{i}, \texttt{Without\_Last\_Zero(t~*~i)~=~i}.  This may require some additional steps.
 \end{enumerate}
 
-Questions 1--9 were designed to require only simple adaptation of the example theory.  Questions 10, 11, and 12, however, require increasing levels of critical thinking.  Question 10 makes use of a symbol, \texttt{10}, that is not immediately available.  Students must detect this, either pre-emptively or by responding to an error message when they attempt to compile, and successfully introduce a new symbol of the correct type.  Question 11 requires that a \texttt{T} be passed to the function \texttt{Next\_Even()}, which expects a \texttt{E}.  Students had to identify (again, either preemptively or in response to the error message) that this was an error, identify that \texttt{T} is a subset of \texttt{E} and that a type theorem could establish this fact, then construct and appropriate one such as the one listed in Listing \ref{lst:assignmentTheorem1}.
+Questions 1--9 are straightforward adaptations from examples.  Questions 10, 11, and 12, however, require increasing levels of critical thinking.  Question 10 makes use of a symbol, \texttt{10}, that is not immediately available.  Students must detect this, either pre-emptively or by responding to an error message when they attempt to compile, and successfully introduce a new symbol of the correct type.  Question 11 requires that a \texttt{T} be passed to the function \texttt{Next\_Even()}, which expects a \texttt{E}.  Students had to identify (again, either preemptively or in response to the error message) that this was an error, identify that \texttt{T} is a subset of \texttt{E} and that a type theorem could establish this fact, then construct and appropriate one such as the one listed in Listing \ref{lst:assignmentTheorem1}.
 
 \begin{lstlisting}[float=h,language=resolve,caption={A type theorem stating that \texttt{T} is a subset of \texttt{E}\label{lst:assignmentTheorem1}}]
 Type Theorem T_Subset_of_E:
@@ -439,6 +440,6 @@ Type Theorem T_Product_Z_in_T:
 		t * i : T;
 \end{lstlisting}
 
-Seven students elected to complete the assignment.  Despite having no training in our mathematical system beyond the small example file they were given as part of the assignment, the students successfully completed a total of 68 out of the 84 questions.  On the final three questions, which required increasingly more critical thinking, all but one student successfully completed questions 10 and 11, and two of the seven completed question 12.
+Seven out of nine students elected to complete the assignment.  Though they had not been introduced to type theorems earlier except for a few examples, the students successfully completed a total of 68 out of the 84 questions.  On the final three questions, which required increasingly more critical thinking, all but one student successfully completed questions 10 and 11, and two of the seven completed question 12.
 
-Certainly this sample size is much to small to draw any strong conclusions, but we find the speed with which students are able to learn and apply our system to be extremely encouraging that mathematical professionals will be able to quickly master it.
+Certainly this sample size is much to small to draw any strong conclusions, but we find the speed with which students are able to learn and apply our system to be encouraging and believe that mathematical professionals will be able to quickly master it.

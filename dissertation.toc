@@ -1,13 +1,13 @@
 \contentsline {chapter}{Title Page}{i}{section*.1}
 \contentsline {chapter}{Abstract}{ii}{section*.2}
-\contentsline {chapter}{Dedication}{iv}{section*.4}
-\contentsline {chapter}{Acknowledgments}{v}{section*.6}
-\contentsline {chapter}{List of Tables}{ix}{section*.8}
-\contentsline {chapter}{List of Figures}{x}{section*.9}
-\contentsline {chapter}{List of Listings}{xi}{section*.10}
+\contentsline {chapter}{Dedication}{iii}{section*.4}
+\contentsline {chapter}{Acknowledgments}{iv}{section*.6}
+\contentsline {chapter}{List of Tables}{vii}{section*.8}
+\contentsline {chapter}{List of Figures}{viii}{section*.9}
+\contentsline {chapter}{List of Listings}{ix}{section*.10}
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Alternative Systems: Practical vs. Pure}{3}{section.1.1}
-\contentsline {subsection}{\numberline {1.1.1}Example Practical System: Jahob}{3}{subsection.1.1.1}
+\contentsline {subsection}{\numberline {1.1.1}Representative Practical System: Jahob}{3}{subsection.1.1.1}
 \contentsline {paragraph}{Complex Proof Obligations for Simple Methods.}{4}{section*.13}
 \contentsline {paragraph}{Lack of Support for Modular Design.}{5}{section*.14}
 \contentsline {subsection}{\numberline {1.1.2}Example Pure System: Coq}{6}{subsection.1.1.2}
@@ -15,7 +15,7 @@
 \contentsline {section}{\numberline {1.3}Problem Statement}{11}{section.1.3}
 \contentsline {section}{\numberline {1.4}Research Approach}{11}{section.1.4}
 \contentsline {subsection}{\numberline {1.4.1}Contributions}{12}{subsection.1.4.1}
-\contentsline {section}{\numberline {1.5}Thesis Statement}{13}{section.1.5}
+\contentsline {section}{\numberline {1.5}Dissertation Goal}{13}{section.1.5}
 \contentsline {section}{\numberline {1.6}Dissertation Organization}{14}{section.1.6}
 \contentsline {chapter}{\numberline {2}Verification Background and Related Work}{15}{chapter.2}
 \contentsline {section}{\numberline {2.1}Specification and Mathematical Systems}{15}{section.2.1}
@@ -38,159 +38,157 @@
 \contentsline {subsubsection}{\numberline {4.3.1.2}Debugging and Understandability}{38}{subsubsection.4.3.1.2}
 \contentsline {subsubsection}{\numberline {4.3.1.3}Metric Collection}{39}{subsubsection.4.3.1.3}
 \contentsline {subsubsection}{\numberline {4.3.1.4}Educational Suitability}{39}{subsubsection.4.3.1.4}
-\contentsline {subsection}{\numberline {4.3.2}Design and Implementation}{40}{subsection.4.3.2}
+\contentsline {subsection}{\numberline {4.3.2}Design and Implementation}{39}{subsection.4.3.2}
 \contentsline {subsection}{\numberline {4.3.3}Domain-Specific Optimizations}{42}{subsection.4.3.3}
 \contentsline {subsubsection}{\numberline {4.3.3.1}Intelligent Antecedent Development}{42}{subsubsection.4.3.3.1}
-\contentsline {paragraph}{Qualify and Avoid Useless Transformations.}{44}{section*.23}
-\contentsline {paragraph}{Develop Antecedents Only About Relevant Terms.}{44}{section*.24}
-\contentsline {paragraph}{Maximize Diversity.}{45}{section*.25}
-\contentsline {paragraph}{Maintain Simplicity.}{45}{section*.26}
-\contentsline {subsubsection}{\numberline {4.3.3.2}Intelligent Consequent Exploration}{46}{subsubsection.4.3.3.2}
-\contentsline {paragraph}{Minimize Complications.}{46}{section*.27}
-\contentsline {paragraph}{Qualify and Avoid Useless Transformations.}{46}{section*.28}
-\contentsline {paragraph}{Detect Cycles.}{46}{section*.29}
-\contentsline {paragraph}{Tether Search.}{47}{section*.30}
-\contentsline {paragraph}{Step Intelligently.}{47}{section*.31}
-\contentsline {section}{\numberline {4.4}Soundness and Completeness}{48}{section.4.4}
-\contentsline {subsection}{\numberline {4.4.1}Eliminate \texttt {true} conjunct}{48}{subsection.4.4.1}
+\contentsline {paragraph}{Qualify and Avoid Useless Transformations.}{43}{section*.28}
+\contentsline {paragraph}{Develop Antecedents Only About Relevant Terms.}{44}{section*.29}
+\contentsline {paragraph}{Maximize Diversity.}{45}{section*.30}
+\contentsline {paragraph}{Maintain Simplicity.}{45}{section*.31}
+\contentsline {subsubsection}{\numberline {4.3.3.2}Intelligent Consequent Exploration}{45}{subsubsection.4.3.3.2}
+\contentsline {paragraph}{Minimize Complications.}{46}{section*.32}
+\contentsline {paragraph}{Qualify and Avoid Useless Transformations.}{46}{section*.33}
+\contentsline {paragraph}{Detect Cycles.}{46}{section*.34}
+\contentsline {paragraph}{Tether Search.}{46}{section*.35}
+\contentsline {paragraph}{Step Intelligently.}{46}{section*.36}
+\contentsline {section}{\numberline {4.4}Soundness and Completeness}{47}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Eliminate \texttt {true} conjunct}{47}{subsection.4.4.1}
 \contentsline {subsection}{\numberline {4.4.2}Symmetric equality is \texttt {true}}{48}{subsection.4.4.2}
 \contentsline {subsection}{\numberline {4.4.3}Replace theorem with \texttt {true}}{48}{subsection.4.4.3}
-\contentsline {subsection}{\numberline {4.4.4}Substitute}{49}{subsection.4.4.4}
+\contentsline {subsection}{\numberline {4.4.4}Substitute}{48}{subsection.4.4.4}
 \contentsline {subsection}{\numberline {4.4.5}Develop Antecedent via Implication}{49}{subsection.4.4.5}
 \contentsline {subsection}{\numberline {4.4.6}Strengthen Conseqent via Implication}{49}{subsection.4.4.6}
 \contentsline {subsection}{\numberline {4.4.7}Existential Instantiation}{49}{subsection.4.4.7}
-\contentsline {chapter}{\numberline {5}Mathematical Flexibility}{51}{chapter.5}
-\contentsline {section}{\numberline {5.1}General Design Goals}{51}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Usable Theories}{52}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}Modular Theories}{52}{subsection.5.1.2}
-\contentsline {subsection}{\numberline {5.1.3}Reusable Theories}{53}{subsection.5.1.3}
-\contentsline {section}{\numberline {5.2}Preliminaries}{53}{section.5.2}
-\contentsline {subsection}{\numberline {5.2.1}Objects \emph {vs.} Expressions}{53}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Operating on Expressions}{54}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}Type Equality}{54}{subsection.5.2.3}
-\contentsline {section}{\numberline {5.3}Concrete Features}{54}{section.5.3}
-\contentsline {subsection}{\numberline {5.3.1}Higher-order Logic}{54}{subsection.5.3.1}
-\contentsline {subsubsection}{\numberline {5.3.1.1}Higher-order Theorems}{55}{subsubsection.5.3.1.1}
-\contentsline {subsubsection}{\numberline {5.3.1.2}Generic Theories of Functions}{56}{subsubsection.5.3.1.2}
-\contentsline {subsubsection}{\numberline {5.3.1.3}Extensible Specification}{57}{subsubsection.5.3.1.3}
-\contentsline {subsubsection}{\numberline {5.3.1.4}Strategy Pattern}{58}{subsubsection.5.3.1.4}
-\contentsline {subsection}{\numberline {5.3.2}First-class Types}{60}{subsection.5.3.2}
-\contentsline {subsubsection}{\numberline {5.3.2.1}Generic Types}{62}{subsubsection.5.3.2.1}
-\contentsline {subsubsection}{\numberline {5.3.2.2}Generic Theories of Types}{62}{subsubsection.5.3.2.2}
-\contentsline {subsubsection}{\numberline {5.3.2.3}Higher-order Types}{62}{subsubsection.5.3.2.3}
-\contentsline {subsection}{\numberline {5.3.3}Inferred Generic Types}{63}{subsection.5.3.3}
-\contentsline {subsection}{\numberline {5.3.4}Rich Type System}{63}{subsection.5.3.4}
-\contentsline {subsection}{\numberline {5.3.5}Mechanisms for Static Reasoning}{64}{subsection.5.3.5}
-\contentsline {subsubsection}{\numberline {5.3.5.1}Type Theorems}{65}{subsubsection.5.3.5.1}
-\contentsline {paragraph}{Design}{65}{section*.34}
-\contentsline {subparagraph}{Simple Subtype}{67}{section*.35}
-\contentsline {subparagraph}{Overlapping Types}{67}{section*.36}
-\contentsline {subparagraph}{Complex Expression Type}{67}{section*.37}
-\contentsline {subparagraph}{Modular Relationships}{68}{section*.38}
-\contentsline {paragraph}{Implementation}{69}{section*.39}
-\contentsline {subsubsection}{\numberline {5.3.5.2}Subsumption Theorems}{73}{subsubsection.5.3.5.2}
-\contentsline {subsection}{\numberline {5.3.6}Categorical Definitions}{74}{subsection.5.3.6}
-\contentsline {chapter}{\numberline {6}Experimental Evaluation of the Minimalist Prover}{75}{chapter.6}
-\contentsline {section}{\numberline {6.1}Description of Metrics}{76}{section.6.1}
-\contentsline {section}{\numberline {6.2}Benchmark Solutions}{77}{section.6.2}
-\contentsline {subsection}{\numberline {6.2.1}VSTTE Benchmarks}{77}{subsection.6.2.1}
-\contentsline {subsubsection}{\numberline {6.2.1.1}Benchmark 1: Adding and Multiplying Integers}{77}{subsubsection.6.2.1.1}
-\contentsline {paragraph}{Problem Statement}{77}{section*.42}
-\contentsline {paragraph}{Solution Discussion}{77}{section*.43}
-\contentsline {paragraph}{Results}{78}{section*.47}
-\contentsline {subsubsection}{\numberline {6.2.1.2}Benchmark 2: Binary Search an Array}{80}{subsubsection.6.2.1.2}
-\contentsline {paragraph}{Problem Statement}{80}{section*.49}
-\contentsline {paragraph}{Solution Discussion}{80}{section*.50}
-\contentsline {paragraph}{Results}{83}{section*.54}
-\contentsline {subsubsection}{\numberline {6.2.1.3}Benchmark 3: Sorting a Queue}{85}{subsubsection.6.2.1.3}
-\contentsline {paragraph}{Problem Statement}{85}{section*.61}
-\contentsline {paragraph}{Solution Discussion}{85}{section*.62}
-\contentsline {paragraph}{Results}{86}{section*.65}
-\contentsline {subsection}{\numberline {6.2.2}Other Benchmarks}{89}{subsection.6.2.2}
-\contentsline {subsubsection}{\numberline {6.2.2.1}Reversing a Queue}{89}{subsubsection.6.2.2.1}
-\contentsline {paragraph}{Problem Statement}{89}{section*.67}
-\contentsline {paragraph}{Solution Discussion}{89}{section*.68}
-\contentsline {paragraph}{Results}{89}{section*.71}
-\contentsline {subsubsection}{\numberline {6.2.2.2}Array Realization of Stack}{90}{subsubsection.6.2.2.2}
-\contentsline {paragraph}{Problem Statement}{90}{section*.73}
-\contentsline {paragraph}{Solution Discussion}{90}{section*.74}
-\contentsline {paragraph}{Results}{90}{section*.77}
-\contentsline {subsubsection}{\numberline {6.2.2.3}Do Nothing on Trees}{92}{subsubsection.6.2.2.3}
-\contentsline {paragraph}{Problem Statement}{92}{section*.79}
-\contentsline {paragraph}{Solution Discussion}{92}{section*.80}
-\contentsline {paragraph}{Results}{93}{section*.84}
-\contentsline {section}{\numberline {6.3}Heuristic Evaluation}{93}{section.6.3}
-\contentsline {section}{\numberline {6.4}Observations and Conclusions}{95}{section.6.4}
-\contentsline {chapter}{\numberline {7}Evaluation of the Mathematical System}{97}{chapter.7}
-\contentsline {section}{\numberline {7.1}VSTTE Benchmarks}{97}{section.7.1}
-\contentsline {subsection}{\numberline {7.1.1}Benchmark 1: Adding and Multiplying Integers}{97}{subsection.7.1.1}
-\contentsline {subsubsection}{\numberline {7.1.1.1}Supporting Mathematics}{98}{subsubsection.7.1.1.1}
-\contentsline {subsubsection}{\numberline {7.1.1.2}Error Analysis and Reporting}{99}{subsubsection.7.1.1.2}
-\contentsline {subsection}{\numberline {7.1.2}Benchmark 2: Binary Search an Array}{100}{subsection.7.1.2}
-\contentsline {subsubsection}{\numberline {7.1.2.1}Supporting Mathematics}{100}{subsubsection.7.1.2.1}
-\contentsline {subsection}{\numberline {7.1.3}Benchmark 3: Reversing a Queue}{101}{subsection.7.1.3}
-\contentsline {subsubsection}{\numberline {7.1.3.1}Supporting Mathematics}{101}{subsubsection.7.1.3.1}
-\contentsline {subsubsection}{\numberline {7.1.3.2}Error Analysis and Reporting}{104}{subsubsection.7.1.3.2}
-\contentsline {subsection}{\numberline {7.1.4}Benchmark 4: Sorting a Queue}{104}{subsection.7.1.4}
-\contentsline {subsubsection}{\numberline {7.1.4.1}Supporting Mathematics}{105}{subsubsection.7.1.4.1}
-\contentsline {section}{\numberline {7.2}Other Benchmarks}{107}{section.7.2}
-\contentsline {subsection}{\numberline {7.2.1}Cartesian Product Subtypes}{107}{subsection.7.2.1}
-\contentsline {subsubsection}{\numberline {7.2.1.1}Supporting Mathematics}{107}{subsubsection.7.2.1.1}
-\contentsline {subsubsection}{\numberline {7.2.1.2}Error Analysis and Reporting}{108}{subsubsection.7.2.1.2}
-\contentsline {subsection}{\numberline {7.2.2}Array Realization of Stack}{108}{subsection.7.2.2}
-\contentsline {subsubsection}{\numberline {7.2.2.1}Supporting Mathematics}{108}{subsubsection.7.2.2.1}
-\contentsline {subsubsection}{\numberline {7.2.2.2}Error Analysis and Reporting}{111}{subsubsection.7.2.2.2}
-\contentsline {subsection}{\numberline {7.2.3}Benchmark 6: Do Nothing on Trees}{112}{subsection.7.2.3}
-\contentsline {subsubsection}{\numberline {7.2.3.1}Supporting Mathematics}{112}{subsubsection.7.2.3.1}
-\contentsline {section}{\numberline {7.3}Summary}{113}{section.7.3}
-\contentsline {chapter}{\numberline {8}Conclusion and Future Research}{116}{chapter.8}
-\contentsline {chapter}{Appendices}{119}{section*.116}
-\contentsline {section}{\numberline {A}Theories}{120}{section.2.A}
-\contentsline {subsection}{\numberline {A.1}Basic\_Function\_Properties\_Theory}{120}{subsection.2.A.1}
-\contentsline {subsection}{\numberline {A.2}Binary\_Iterator\_Theory}{120}{subsection.2.A.2}
-\contentsline {subsection}{\numberline {A.3}Binary\_Relation\_Properties\_Theory}{121}{subsection.2.A.3}
-\contentsline {subsection}{\numberline {A.4}Integer\_Theory}{122}{subsection.2.A.4}
-\contentsline {subsection}{\numberline {A.5}Monogenerator\_Theory}{130}{subsection.2.A.5}
-\contentsline {subsection}{\numberline {A.6}Set\_Theory}{131}{subsection.2.A.6}
-\contentsline {subsection}{\numberline {A.7}String\_Theory}{131}{subsection.2.A.7}
-\contentsline {subsection}{\numberline {A.8}Total\_Preordering\_Theory}{140}{subsection.2.A.8}
-\contentsline {section}{\numberline {B}Specifications}{142}{section.2.B}
-\contentsline {subsection}{\numberline {B.1}Integer\_Template}{142}{subsection.2.B.1}
-\contentsline {subsubsection}{\numberline {B.1.1}Concept}{142}{subsubsection.2.B.1.1}
-\contentsline {subsubsection}{\numberline {B.1.2}Enhancements}{145}{subsubsection.2.B.1.2}
-\contentsline {subsection}{\numberline {B.2}One\_Way\_List\_Template}{145}{subsection.2.B.2}
-\contentsline {subsubsection}{\numberline {B.2.1}Concept}{145}{subsubsection.2.B.2.1}
-\contentsline {subsection}{\numberline {B.3}Queue\_Template}{147}{subsection.2.B.3}
-\contentsline {subsubsection}{\numberline {B.3.1}Concept}{147}{subsubsection.2.B.3.1}
-\contentsline {subsubsection}{\numberline {B.3.2}Enhancements}{147}{subsubsection.2.B.3.2}
-\contentsline {subsection}{\numberline {B.4}Stack\_Template}{148}{subsection.2.B.4}
-\contentsline {subsubsection}{\numberline {B.4.1}Concept}{148}{subsubsection.2.B.4.1}
-\contentsline {subsubsection}{\numberline {B.4.2}Enhancements}{149}{subsubsection.2.B.4.2}
-\contentsline {subsection}{\numberline {B.5}Static\_Array\_Template}{149}{subsection.2.B.5}
-\contentsline {subsubsection}{\numberline {B.5.1}Concept}{149}{subsubsection.2.B.5.1}
-\contentsline {subsubsection}{\numberline {B.5.2}Enhancements}{150}{subsubsection.2.B.5.2}
-\contentsline {section}{\numberline {C}Realizations}{151}{section.2.C}
-\contentsline {subsection}{\numberline {C.1}Integer\_Template}{151}{subsection.2.C.1}
-\contentsline {subsubsection}{\numberline {C.1.1}Iterative\_Add\_to\_Realiz}{151}{subsubsection.2.C.1.1}
-\contentsline {subsubsection}{\numberline {C.1.2}Iterative\_Multiply\_into\_Realiz}{151}{subsubsection.2.C.1.2}
-\contentsline {subsubsection}{\numberline {C.1.3}Recursive\_Add\_to\_Realiz}{152}{subsubsection.2.C.1.3}
-\contentsline {subsection}{\numberline {C.2}Queue\_Template}{152}{subsection.2.C.2}
-\contentsline {subsubsection}{\numberline {C.2.1}Recursive\_Flipping\_Realiz}{152}{subsubsection.2.C.2.1}
-\contentsline {subsubsection}{\numberline {C.2.2}Selection\_Sort\_Realiz}{152}{subsubsection.2.C.2.2}
-\contentsline {subsection}{\numberline {C.3}Stack\_Template}{154}{subsection.2.C.3}
-\contentsline {subsubsection}{\numberline {C.3.1}Array\_Realiz}{154}{subsubsection.2.C.3.1}
-\contentsline {subsection}{\numberline {C.4}Static\_Array\_Template}{155}{subsection.2.C.4}
-\contentsline {subsubsection}{\numberline {C.4.1}Bin\_Search\_Realiz}{155}{subsubsection.2.C.4.1}
-\contentsline {section}{\numberline {D}Automated Proofs}{157}{section.2.D}
-\contentsline {subsection}{\numberline {D.1}Integer\_Template}{157}{subsection.2.D.1}
-\contentsline {subsubsection}{\numberline {D.1.1}Iterative\_Add\_to\_Realiz}{157}{subsubsection.2.D.1.1}
-\contentsline {subsubsection}{\numberline {D.1.2}Iterative\_Multiply\_into\_Realiz}{177}{subsubsection.2.D.1.2}
-\contentsline {subsubsection}{\numberline {D.1.3}Recursive\_Add\_to\_Realiz}{191}{subsubsection.2.D.1.3}
-\contentsline {subsection}{\numberline {D.2}Queue\_Template}{211}{subsection.2.D.2}
-\contentsline {subsubsection}{\numberline {D.2.1}Recursive\_Flipping\_Realiz}{211}{subsubsection.2.D.2.1}
-\contentsline {subsubsection}{\numberline {D.2.2}Selection\_Sort\_Realiz}{223}{subsubsection.2.D.2.2}
-\contentsline {subsection}{\numberline {D.3}Stack\_Template}{328}{subsection.2.D.3}
-\contentsline {subsubsection}{\numberline {D.3.1}Array\_Realiz}{328}{subsubsection.2.D.3.1}
-\contentsline {subsection}{\numberline {D.4}Static\_Array\_Template}{391}{subsection.2.D.4}
-\contentsline {subsubsection}{\numberline {D.4.1}Binary\_Search\_Realiz}{391}{subsubsection.2.D.4.1}
-\contentsline {chapter}{Bibliography}{529}{section*.117}
+\contentsline {chapter}{\numberline {5}Mathematical Flexibility}{50}{chapter.5}
+\contentsline {section}{\numberline {5.1}General Design Goals}{50}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Usable Theories}{51}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}Modular Theories}{51}{subsection.5.1.2}
+\contentsline {subsection}{\numberline {5.1.3}Reusable Theories}{52}{subsection.5.1.3}
+\contentsline {section}{\numberline {5.2}Preliminaries}{52}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Objects \emph {vs.} Expressions}{52}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Operating on Expressions}{53}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Type Equality}{53}{subsection.5.2.3}
+\contentsline {section}{\numberline {5.3}Concrete Features}{53}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Higher-order Logic}{53}{subsection.5.3.1}
+\contentsline {subsubsection}{\numberline {5.3.1.1}Higher-order Theorems}{54}{subsubsection.5.3.1.1}
+\contentsline {subsubsection}{\numberline {5.3.1.2}Generic Theories of Functions}{55}{subsubsection.5.3.1.2}
+\contentsline {subsubsection}{\numberline {5.3.1.3}Extensible Specification}{56}{subsubsection.5.3.1.3}
+\contentsline {subsubsection}{\numberline {5.3.1.4}Strategy Pattern}{57}{subsubsection.5.3.1.4}
+\contentsline {subsection}{\numberline {5.3.2}First-class Types}{58}{subsection.5.3.2}
+\contentsline {subsubsection}{\numberline {5.3.2.1}Generic Types}{60}{subsubsection.5.3.2.1}
+\contentsline {subsubsection}{\numberline {5.3.2.2}Generic Theories of Types}{61}{subsubsection.5.3.2.2}
+\contentsline {subsubsection}{\numberline {5.3.2.3}Higher-order Types}{61}{subsubsection.5.3.2.3}
+\contentsline {subsection}{\numberline {5.3.3}Inferred Generic Types}{61}{subsection.5.3.3}
+\contentsline {subsection}{\numberline {5.3.4}Rich Type System}{62}{subsection.5.3.4}
+\contentsline {subsection}{\numberline {5.3.5}Mechanisms for Static Reasoning}{63}{subsection.5.3.5}
+\contentsline {subsubsection}{\numberline {5.3.5.1}Type Theorems}{64}{subsubsection.5.3.5.1}
+\contentsline {paragraph}{Design}{64}{section*.43}
+\contentsline {subparagraph}{Simple Subtype}{65}{section*.44}
+\contentsline {subparagraph}{Overlapping Types}{66}{section*.46}
+\contentsline {subparagraph}{Complex Expression Type}{66}{section*.47}
+\contentsline {subparagraph}{Modular Relationships}{67}{section*.48}
+\contentsline {paragraph}{Implementation}{68}{section*.49}
+\contentsline {subsubsection}{\numberline {5.3.5.2}Subsumption Theorems}{72}{subsubsection.5.3.5.2}
+\contentsline {subsection}{\numberline {5.3.6}Categorical Definitions}{73}{subsection.5.3.6}
+\contentsline {chapter}{\numberline {6}Experimental Evaluation of the Minimalist Prover}{74}{chapter.6}
+\contentsline {section}{\numberline {6.1}Description of Metrics}{75}{section.6.1}
+\contentsline {section}{\numberline {6.2}Benchmark Solutions}{76}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}VSTTE Benchmarks}{76}{subsection.6.2.1}
+\contentsline {subsubsection}{\numberline {6.2.1.1}Benchmark 1: Adding and Multiplying Integers}{76}{subsubsection.6.2.1.1}
+\contentsline {paragraph}{Problem Statement}{76}{section*.52}
+\contentsline {paragraph}{Solution Discussion}{76}{section*.53}
+\contentsline {paragraph}{Results}{77}{section*.57}
+\contentsline {subsubsection}{\numberline {6.2.1.2}Benchmark 2: Binary Search an Array}{79}{subsubsection.6.2.1.2}
+\contentsline {paragraph}{Problem Statement}{79}{section*.59}
+\contentsline {paragraph}{Solution Discussion}{79}{section*.60}
+\contentsline {paragraph}{Results}{81}{section*.64}
+\contentsline {subsubsection}{\numberline {6.2.1.3}Benchmark 3: Sorting a Queue}{83}{subsubsection.6.2.1.3}
+\contentsline {paragraph}{Problem Statement}{83}{section*.71}
+\contentsline {paragraph}{Solution Discussion}{83}{section*.72}
+\contentsline {paragraph}{Results}{84}{section*.75}
+\contentsline {subsection}{\numberline {6.2.2}Other Benchmarks}{87}{subsection.6.2.2}
+\contentsline {subsubsection}{\numberline {6.2.2.1}Reversing a Queue}{87}{subsubsection.6.2.2.1}
+\contentsline {paragraph}{Problem Statement}{87}{section*.77}
+\contentsline {paragraph}{Solution Discussion}{87}{section*.78}
+\contentsline {paragraph}{Results}{87}{section*.81}
+\contentsline {paragraph}{Implicit vs. Explicit Style}{88}{section*.83}
+\contentsline {subsubsection}{\numberline {6.2.2.2}Array Realization of Stack}{89}{subsubsection.6.2.2.2}
+\contentsline {paragraph}{Problem Statement}{89}{section*.87}
+\contentsline {paragraph}{Solution Discussion}{89}{section*.88}
+\contentsline {paragraph}{Results}{89}{section*.91}
+\contentsline {subsubsection}{\numberline {6.2.2.3}Do Nothing on Trees}{91}{subsubsection.6.2.2.3}
+\contentsline {paragraph}{Problem Statement}{91}{section*.93}
+\contentsline {paragraph}{Solution Discussion}{91}{section*.94}
+\contentsline {paragraph}{Results}{92}{section*.98}
+\contentsline {section}{\numberline {6.3}Heuristic Evaluation}{92}{section.6.3}
+\contentsline {section}{\numberline {6.4}Observations and Conclusions}{94}{section.6.4}
+\contentsline {chapter}{\numberline {7}Evaluation of the Mathematical System}{96}{chapter.7}
+\contentsline {section}{\numberline {7.1}VSTTE Benchmarks}{96}{section.7.1}
+\contentsline {subsection}{\numberline {7.1.1}Benchmark 1: Adding and Multiplying Integers}{96}{subsection.7.1.1}
+\contentsline {subsubsection}{\numberline {7.1.1.1}Supporting Mathematics}{97}{subsubsection.7.1.1.1}
+\contentsline {subsubsection}{\numberline {7.1.1.2}Error Analysis and Reporting}{98}{subsubsection.7.1.1.2}
+\contentsline {subsection}{\numberline {7.1.2}Benchmark 2: Binary Search an Array}{99}{subsection.7.1.2}
+\contentsline {subsubsection}{\numberline {7.1.2.1}Supporting Mathematics}{99}{subsubsection.7.1.2.1}
+\contentsline {subsection}{\numberline {7.1.3}Benchmark 3: Reversing a Queue}{100}{subsection.7.1.3}
+\contentsline {subsubsection}{\numberline {7.1.3.1}Supporting Mathematics}{100}{subsubsection.7.1.3.1}
+\contentsline {subsubsection}{\numberline {7.1.3.2}Error Analysis and Reporting}{103}{subsubsection.7.1.3.2}
+\contentsline {subsection}{\numberline {7.1.4}Benchmark 4: Sorting a Queue}{103}{subsection.7.1.4}
+\contentsline {subsubsection}{\numberline {7.1.4.1}Supporting Mathematics}{104}{subsubsection.7.1.4.1}
+\contentsline {section}{\numberline {7.2}Other Benchmarks}{106}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}Cartesian Product Subtypes}{106}{subsection.7.2.1}
+\contentsline {subsubsection}{\numberline {7.2.1.1}Supporting Mathematics}{106}{subsubsection.7.2.1.1}
+\contentsline {subsubsection}{\numberline {7.2.1.2}Error Analysis and Reporting}{107}{subsubsection.7.2.1.2}
+\contentsline {subsection}{\numberline {7.2.2}Array Realization of Stack}{107}{subsection.7.2.2}
+\contentsline {subsubsection}{\numberline {7.2.2.1}Supporting Mathematics}{107}{subsubsection.7.2.2.1}
+\contentsline {subsubsection}{\numberline {7.2.2.2}Error Analysis and Reporting}{110}{subsubsection.7.2.2.2}
+\contentsline {subsection}{\numberline {7.2.3}Benchmark 6: Do Nothing on Trees}{111}{subsection.7.2.3}
+\contentsline {subsubsection}{\numberline {7.2.3.1}Supporting Mathematics}{111}{subsubsection.7.2.3.1}
+\contentsline {section}{\numberline {7.3}Summary}{112}{section.7.3}
+\contentsline {chapter}{\numberline {8}Conclusions and Future Research}{115}{chapter.8}
+\contentsline {chapter}{Appendices}{118}{section*.131}
+\contentsline {section}{\numberline {A}Theories}{119}{section.2.A}
+\contentsline {subsection}{\numberline {A.1}Basic\_Function\_Properties\_Theory}{119}{subsection.2.A.1}
+\contentsline {subsection}{\numberline {A.2}Binary\_Iterator\_Theory}{119}{subsection.2.A.2}
+\contentsline {subsection}{\numberline {A.3}Binary\_Relation\_Properties\_Theory}{120}{subsection.2.A.3}
+\contentsline {subsection}{\numberline {A.4}Integer\_Theory}{121}{subsection.2.A.4}
+\contentsline {subsection}{\numberline {A.5}Monogenerator\_Theory}{129}{subsection.2.A.5}
+\contentsline {subsection}{\numberline {A.6}Set\_Theory}{130}{subsection.2.A.6}
+\contentsline {subsection}{\numberline {A.7}String\_Theory}{130}{subsection.2.A.7}
+\contentsline {subsection}{\numberline {A.8}Total\_Preordering\_Theory}{139}{subsection.2.A.8}
+\contentsline {section}{\numberline {B}Specifications}{141}{section.2.B}
+\contentsline {subsection}{\numberline {B.1}Integer\_Template}{141}{subsection.2.B.1}
+\contentsline {subsubsection}{\numberline {B.1.1}Concept}{141}{subsubsection.2.B.1.1}
+\contentsline {subsubsection}{\numberline {B.1.2}Enhancements}{144}{subsubsection.2.B.1.2}
+\contentsline {subsection}{\numberline {B.2}One\_Way\_List\_Template}{144}{subsection.2.B.2}
+\contentsline {subsubsection}{\numberline {B.2.1}Concept}{144}{subsubsection.2.B.2.1}
+\contentsline {subsection}{\numberline {B.3}Queue\_Template}{146}{subsection.2.B.3}
+\contentsline {subsubsection}{\numberline {B.3.1}Concept}{146}{subsubsection.2.B.3.1}
+\contentsline {subsubsection}{\numberline {B.3.2}Enhancements}{146}{subsubsection.2.B.3.2}
+\contentsline {subsection}{\numberline {B.4}Stack\_Template}{147}{subsection.2.B.4}
+\contentsline {subsubsection}{\numberline {B.4.1}Concept}{147}{subsubsection.2.B.4.1}
+\contentsline {subsubsection}{\numberline {B.4.2}Enhancements}{148}{subsubsection.2.B.4.2}
+\contentsline {subsection}{\numberline {B.5}Static\_Array\_Template}{148}{subsection.2.B.5}
+\contentsline {subsubsection}{\numberline {B.5.1}Concept}{148}{subsubsection.2.B.5.1}
+\contentsline {subsubsection}{\numberline {B.5.2}Enhancements}{149}{subsubsection.2.B.5.2}
+\contentsline {section}{\numberline {C}Realizations}{150}{section.2.C}
+\contentsline {subsection}{\numberline {C.1}Integer\_Template}{150}{subsection.2.C.1}
+\contentsline {subsubsection}{\numberline {C.1.1}Iterative\_Add\_to\_Realiz}{150}{subsubsection.2.C.1.1}
+\contentsline {subsubsection}{\numberline {C.1.2}Iterative\_Multiply\_into\_Realiz}{150}{subsubsection.2.C.1.2}
+\contentsline {subsubsection}{\numberline {C.1.3}Recursive\_Add\_to\_Realiz}{151}{subsubsection.2.C.1.3}
+\contentsline {subsection}{\numberline {C.2}Queue\_Template}{151}{subsection.2.C.2}
+\contentsline {subsubsection}{\numberline {C.2.1}Recursive\_Flipping\_Realiz}{151}{subsubsection.2.C.2.1}
+\contentsline {subsubsection}{\numberline {C.2.2}Selection\_Sort\_Realiz}{151}{subsubsection.2.C.2.2}
+\contentsline {subsection}{\numberline {C.3}Stack\_Template}{153}{subsection.2.C.3}
+\contentsline {subsubsection}{\numberline {C.3.1}Array\_Realiz}{153}{subsubsection.2.C.3.1}
+\contentsline {subsection}{\numberline {C.4}Static\_Array\_Template}{154}{subsection.2.C.4}
+\contentsline {subsubsection}{\numberline {C.4.1}Bin\_Search\_Realiz}{154}{subsubsection.2.C.4.1}
+\contentsline {section}{\numberline {D}Automated Proofs}{156}{section.2.D}
+\contentsline {subsection}{\numberline {D.1}Integer\_Template}{156}{subsection.2.D.1}
+\contentsline {subsubsection}{\numberline {D.1.1}Iterative\_Add\_to\_Realiz}{156}{subsubsection.2.D.1.1}
+\contentsline {subsection}{\numberline {D.2}Queue\_Template}{177}{subsection.2.D.2}
+\contentsline {subsubsection}{\numberline {D.2.1}Selection\_Sort\_Realiz}{177}{subsubsection.2.D.2.1}
+\contentsline {subsection}{\numberline {D.3}Stack\_Template}{214}{subsection.2.D.3}
+\contentsline {subsubsection}{\numberline {D.3.1}Array\_Realiz}{214}{subsubsection.2.D.3.1}
+\contentsline {subsection}{\numberline {D.4}Static\_Array\_Template}{242}{subsection.2.D.4}
+\contentsline {subsubsection}{\numberline {D.4.1}Binary\_Search\_Realiz}{242}{subsubsection.2.D.4.1}
+\contentsline {chapter}{Bibliography}{292}{section*.132}

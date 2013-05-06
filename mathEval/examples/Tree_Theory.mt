@@ -9,7 +9,7 @@ Precis Tree_Theory;
 		For all Tr : Tree(T),
 			Tr : TTree;
 
-	Definition Treeify(Root : Entity, Children : Str(TTree)) : TTree = ...;
+	Definition Join(Root : Entity, Children : Str(TTree)) : TTree = ...;
 	Definition Split(Tr : TTree) : Str(TTree) = ...;
 	Definition Get_Root(Tr : TTree) : Entity = ...;
 

@@ -280,6 +280,14 @@ LogiCal Project.
 \newblock {\em The \mbox{C}oq proof assistant reference manual}, 2004.
 \newblock Version 8.0.
 
+\bibitem{manna1995step}
+Zohar Manna, Nikolaj Bj{\o}rner, Anca Browne, Edward Chang, Michael Col{\'o}n,
+  Luca de~Alfaro, Harish Devarajan, Arjun Kapur, Jaejin Lee, Henny Sipma,
+  et~al.
+\newblock Step: The stanford temporal prover.
+\newblock In {\em TAPSOFT'95: Theory and Practice of Software Development},
+  pages 793--794. Springer, 1995.
+
 \bibitem{meyer1988eiffel}
 Bertrand Meyer.
 \newblock Eiffel: A language and environment for software engineering.
