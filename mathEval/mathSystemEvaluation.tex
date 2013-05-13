@@ -203,7 +203,7 @@ For all S : String,
 	Is_Total_Preordering(f) and
 	f(E1, E2) and
 	Is_Universally_Related(<E2>, S, f)
-		implies Is_Unversally_Related(E1, S);
+		implies Is_Unversally_Related(<E1>, S);
 \end{lstlisting}
 
 The requirement that \texttt{f} be a total preordering is critical, since only for a transitive function does this statement hold\footnote{It would, of course, be sufficient to simply know \texttt{Is\_Transitive(f)}, but since none of our benchmarks or examples make use of this weaker statement, we see no reason to multiply predicates unnecessarily.}.

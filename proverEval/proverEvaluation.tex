@@ -34,7 +34,8 @@ For this chapter we focus on four primary metrics for exploring the effectivenes
 %-----------------------------------------------------------------------------
 In 2010, members of the RSRG at Clemson and The Ohio State University published a set of incremental verification benchmarks at the Verified Software: Tools, Theories, and Experiments conference (VSSTE)\cite{Benchmarks}.  These benchmarks are intended to provide a basis for experimentation and discussion among verification efforts.  In \cite{hartonDissertation}, the author presents a selection of these benchmarks implemented in RESOLVE in order to demonstrate the VC-generation capabilities of the RESOLVE compiler.  We mirror that methodology in this section, presenting a selection of the VSTTE benchmarks, including several that are borrowed or adapted from \cite{hartonDissertation}, before applying our minimalist prover to them and presenting resulting data.
 	%-----------------------------------------------------------------------------
-		\subsubsection{Benchmark 1: Adding and Multiplying Integers}	%-----------------------------------------------------------------------------
+		\subsubsection{Benchmark 1: Adding and Multiplying Integers}
+	%-----------------------------------------------------------------------------
 
 \paragraph{Problem Statement}Verify an operation that adds two numbers by repeated incrementing. Verify an operation that multiplies two numbers by repeated addition, using the first operation to do the addition. Make one algorithm iterative, the other recursive.\footnote{This and all other problem statements quote directly from \cite{Benchmarks}.}
 
@@ -411,7 +412,7 @@ Total, using an explicit specification required 1669 milliseconds longer than im
 		\subsubsection{Array Realization of Stack}	
 %-----------------------------------------------------------------------------
 
-\paragraph{Problem Statement}Specify a user-defined LIFO stack ADT that is generic (i.e., parameterized by the type of entries in a queue). Verify an implementation of that array.
+\paragraph{Problem Statement}Specify a user-defined LIFO stack ADT that is generic (i.e., parameterized by the type of entries in a queue). Verify an array implementation of that ADT.
 
 \paragraph{Solution Discussion}Listing \ref{lst:stackSpec} gives RESOLVE's specification for a stack in the context of a \texttt{Stack\_Template}, which is generic and bounded.
 

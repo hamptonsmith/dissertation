@@ -61,19 +61,19 @@ A particularly illustrative example of this lack of modularity appears in a \tex
 %----------------------------------------------------------------------------
 For an illustration of the workings of a pure system, we now  consider a recursive implementation of the integer division operator, specified and implemented in Coq.  Despite the fact that Coq is a mathematical system, unable to execute code, we could use its ability to ``extract'' a program into various target languages\footnote{At time of writing: OCaml, Haskell, and Scheme.} for execution.  Coq separates specification from implementation; in Listing \ref{lst:divpred} we see a pair of predicates for specifying integer division.
 
-\lstinputlisting[language=Coq,caption={Division Predicates\label{lst:divpred}}]{DivPred.coq}
+\lstinputlisting[float=h,language=Coq,caption={Division Predicates\label{lst:divpred}}]{DivPred.coq}
 
 The \texttt{divPre} predicate represents the precondition on division---that the second argument is not 0.  The \texttt{divRel} predicate specifies the relational\footnote{Note that while, in general, this technique permits a relation, here the predicate takes the form of a function.} behavior of division---that the result will consist of two natural numbers, \texttt{q} and \texttt{r}, such that \texttt{q * d + r = n} and \texttt{r < d}, i.e., \texttt{q} is the quotient and \texttt{r} the remainder.
 
 We then implement division recursively as shown in Listing \ref{lst:divimpl}.
 
-\lstinputlisting[language=Coq,caption={Division Implementation\label{lst:divimpl}}]{DivImpl.coq}
+\lstinputlisting[float=h,language=Coq,caption={Division Implementation\label{lst:divimpl}}]{DivImpl.coq}
 
 Coq's \texttt{Function} keyword introduces a recursive function with an appropriate implicit fixpoint.  The \texttt{measure} keyword provides a progress metric---namely, that \texttt{fst} is decreasing.  Note that, despite the fact that an input matching \texttt{(\_,0)} is disallowed by the precondition, Coq does not permit non-total functions, so we provide a nonsense return value for this case.  The \texttt{le\_lt\_dec} is simply a less-than-or-equal-to predicate on natural numbers. Defining this function immediately raises a termination proof obligation, which one of Coq's built-in proof scripts can dispatch automatically.
 
 To demonstrate the correctness of the implementation, we can assert the theorem given in Listing \ref{lst:divtheorem}.  That is, for all inputs, if the inputs meet the precondition, then the behavioral function holds between the inputs and the result of applying \texttt{div}.
 
-\lstinputlisting[language=Coq,caption={Division Functional Correctness Theorem\label{lst:divtheorem}}]{DivTheorem.coq}
+\lstinputlisting[float=h,language=Coq,caption={Division Functional Correctness Theorem\label{lst:divtheorem}}]{DivTheorem.coq}
 
 Proving this theorem is more complicated than the termination proof and none of Coq's built-in tactics can dispatch it automatically.  Instead we enter interactive mode and prove it live with the sequence of tactics given in Listing \ref{lst:divproof}.
 
