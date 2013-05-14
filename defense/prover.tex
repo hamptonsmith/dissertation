@@ -1,6 +1,6 @@
 \section{Minimalist Prover}
 
-\subsection{Design}
+\subsection{Research}
 \begin{frame}{Minimalist Prover: Motivation}
 	\begin{itemize}
 		\item Prover is the final phase of the verification pipeline
@@ -45,7 +45,7 @@
 		\item Explore consequent\\
 		\begin{itemize}
 			\item Tethered depth-first search\\
-				Prevents \texttt{i = i + 1} or \texttt{Reverse(Empty\_String) = Empty\_String} from being applied ad nausium
+				Prevents \texttt{i < j implies i < j + 1} or \texttt{Reverse(Empty\_String) = Empty\_String} from being applied ad nausium
 			\item Terminates when proof space is exhausted or all consequents are dispatched
 		\end{itemize}
 	\end{enumerate}
@@ -55,7 +55,7 @@
 \begin{frame}{Automated Prover Algorithm}
 	\begin{itemize}
 		\item Extremely straightforward
-		\item Closely mimics how a human mathematician might perform a proof
+		\item Similar to how a human mathematician might perform a proof
 		\item Many irrelevant antecedent developments are likely to be made
 		\item Antecedent development happens once, up-front, so time is less of an issue, but space complexity is combinatorial
 		\item During consequent exploration, full proof space must be searched.  Combinatorial time complexity is a problem.
@@ -97,7 +97,7 @@
 			\item What causes VCs not to prove?
 			\item How does disabling each heuristic impact verification metrics?
 		\end{itemize}
-		\item For full details, see Chapter 6
+		\item For full details, see Chapter 7
 	\end{itemize}
 \end{frame}
 
@@ -109,6 +109,13 @@
 		\item Operative steps
 		\item Search steps (subset of operative steps occurring during consequent exploration)
 	\end{itemize}
+\end{frame}
+
+
+\begin{frame}{Sorting a Queue}
+	Specify a user-defined FIFO queue ADT that is generic (i.e., parameterized by the type of entries in a queue). Verify an operation that uses this component to sort the entries in a queue into some client-defined order.
+	\vspace{2em}
+	\lstinputlisting[language=resolve,caption=]{examples/Sorting_Capability_bad.en}
 \end{frame}
 
 
@@ -132,11 +139,11 @@
 \begin{frame}{Sorting a Queue}
 	\begin{itemize}
 		\item VCs proved: 16/16
-		\item Mean time: 1781
+		\item Mean time: 1781 ms
 		\item Median proof steps: 8
 		\item Median search steps: 0
-		\item \textbf{XXX histogram XXX}
 	\end{itemize}
+	\centering{\includegraphics[width=.8\textwidth]{QueueSortHist}}
 \end{frame}
 
 
@@ -163,11 +170,11 @@
 \begin{frame}{Array Realization of a Stack}
 	\begin{itemize}
 		\item VCs proved: 27/27
-		\item Mean time: 1707.1
+		\item Mean time: 1707.1 ms
 		\item Median proof steps: 6
 		\item Median search steps: 0
-		\item \textbf{XXX histogram XXX}
 	\end{itemize}
+	\centering{\includegraphics[width=.8\textwidth]{ArrayRealizHist}}
 \end{frame}
 
 
@@ -183,7 +190,7 @@
 			\item Modify and Restore a Tree
 		\end{itemize}
 		\item VCs proved: 127/133
-		\item Mean time: 2493
+		\item Mean time: 2493 ms
 		\item Median proof steps: 7
 		\item Median search steps: 0
 	\end{itemize}

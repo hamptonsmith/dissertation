@@ -8,9 +8,34 @@
 
 \DeclareMathAlphabet\mathbb{U}{msb}{m}{n}
 
-
 \usetheme{Madrid}
 \usecolortheme{beaver}
+
+
+\defbeamertemplate*{title page}{customized}[1][]
+{
+	\bigskip\bigskip\bigskip\bigskip\bigskip
+	\centering{
+  \usebeamerfont{title}\inserttitle\par
+  \usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\insertsubtitle\par
+  \bigskip
+  \usebeamerfont{author}\insertauthor\par
+  \usebeamerfont{institute}\insertinstitute\par
+  \usebeamerfont{date}\insertdate\par
+  \usebeamercolor[fg]{titlegraphic}\inserttitlegraphic
+	\bigskip
+	\bigskip
+	\usebeamercolor[fg]{normal text}
+	\tiny\textbf{Committee}\par
+	Murali Sitaraman (Chair)\par
+	Brian C. Dean\par
+	Jason O. Hallstrom\par
+	Roy P. Pargas\par}
+\bigskip\bigskip
+\includegraphics[width=30px]{NSF_logo}
+}
+
+
 \title[Engineering Specifications and Mathematics]{Engineering Specifications and Mathematics\\for Verified Software}
 \author{Hampton Smith}
 \institute{Clemson University}
@@ -74,7 +99,7 @@
 
 
 \begin{frame}{How do we verify?}
-	\includegraphics[width=\textwidth]{verification_pipeline}
+	\includegraphics[width=\textwidth]{verificationProcess}
 \end{frame}
 
 
@@ -88,6 +113,8 @@
 			\item Limited mathematical language
 			\item Focus on verifying narrow properties
 			\item Automatic proofs
+			\item Accomplishments: Automatically verified linked data structures
+			\item Example systems: Jahob, Verifast
 		\end{itemize}
 	\end{column}
 	\begin{column}[r]{5cm}
@@ -97,141 +124,28 @@
 			\item Rich mathematical language
 			\item Full verification (up to termination)
 			\item Interactive proofs
+			\item Accomplishments: Interactively verified C compiler, OS kernel
+			\item Example systems: Coq, Issabelle
 		\end{itemize}
 	\end{column}
 	\end{columns}
 \end{frame}
 
-\begin{frame}{Practical: Jahob}
-	\begin{itemize}
-		\item Implementation in a subset of Java
-		\begin{itemize}
-			\item No generics
-			\item No dynamic dispatch
-		\end{itemize}
-		\item Specification in Isabelle
-		\item Targets multiple back-end provers using intermediate first-order VC language
-		\begin{itemize}
-			\item CVC3
-			\item Z3
-		\end{itemize}
-	\end{itemize}
-\end{frame}
 
-
-\begin{frame}
+\begin{frame}{Jahob Example}
 	\lstinputlisting[basicstyle=\tiny,language=Java]{ArrayList1.java}
 \end{frame}
 
 
-\begin{frame}{The Good and the Bad}
-	\begin{itemize}
-		\item Used to verify suite of linked data structures
-		\item How does Jahob do it?
-		\begin{itemize}
-			\item Flexible, integrated specification tools
-			\begin{itemize}
-				\item Pre-/Post-conditions
-				\item Auxiliary variables
-				\item Concept definitions
-			\end{itemize}
-			\item Encourages first-order specs to target multiple provers
-			\item Permits in-line hints
-		\end{itemize}
-		\item But, there are some problems...
-		\begin{itemize}
-			\item Complex proof obligations
-			\item Lack of mathematical modularity
-		\end{itemize}
-	\end{itemize}
-\end{frame}
-
-
-\begin{frame}{Complex Proof Obligations}
-	\begin{itemize}
-		\item Must capture full Java complexity
-		\begin{itemize}
-			\item Null references
-			\item Object aliasing
-		\end{itemize}
-		\item In-line assertions raise additional obligations
-		\item Encourages cumbersome mathematical model
-		\begin{itemize}
-			\item Set of (index, element)
-			\item Verify that no index appears twice
-		\end{itemize}
-	\end{itemize}
-\end{frame}
-
-
-\begin{frame}{Lack of Mathematical Modularity}
-	\begin{itemize}
-		\item Higher-order mathematics hamstrung
-		\begin{itemize}
-			\item Encouraged to use a subset of Isabelle's power
-			\item Lack of generics/dynamic dispatch limit usefulness
-			\begin{itemize}
-				\item No way to parameterize a spec
-				\item No way to pass a definition
-			\end{itemize}
-		\end{itemize}
-		\item Coupling of specifications
-	\end{itemize}
-\end{frame}
-
-
-\begin{frame}{Pure: Coq}
-	\begin{itemize}
-		\item Pure mathematical language based on the calculus of inductive constructions
-		\item Provides its own functional implementation language
-		\begin{itemize}
-			\item OCaml
-			\item Haskell
-			\item Scheme
-		\end{itemize}
-		\item Emphasizes interactive proving
-	\end{itemize}
-\end{frame}
-
-
-\begin{frame}
+\begin{frame}{Coq Example}
 	\lstinputlisting[basicstyle=\scriptsize,language=Coq]{DivPred.coq}
 	\lstinputlisting[basicstyle=\scriptsize,language=Coq]{DivImpl.coq}
 	\lstinputlisting[basicstyle=\scriptsize,language=Coq]{DivTheorem.coq}
 \end{frame}
 
 
-\begin{frame}
+\begin{frame}{Coq Example}
 	\lstinputlisting[basicstyle=\scriptsize,language=Coq]{DivProof.coq}
-\end{frame}
-
-\begin{frame}{The Good and the Bad}
-	\begin{itemize}
-		\item Been used to verify a C compiler
-		\item How does Coq do it?
-		\begin{itemize}
-			\item Rich, extensible mathematical language
-			\begin{itemize}
-				\item Hierarchy of types
-				\item Higher-order logic
-				\item User-defined theories
-			\end{itemize}
-			\item Programming model is functional
-			\item Exploits human intuitions
-		\end{itemize}
-		\item But, there are some problems...
-		\begin{itemize}
-			\item Poorly integrated with the programming realm
-			\begin{itemize}
-				\item Verify cases that can't happen!
-			\end{itemize}
-			\item Automated prover is more flexible, but slower
-			\item No notion of programming components
-			\begin{itemize}
-				\item Next compiler must be verified from scratch
-			\end{itemize}
-		\end{itemize}
-	\end{itemize}
 \end{frame}
 
 
@@ -241,21 +155,23 @@
 		\begin{itemize}
 			\item Flexible, integrated specification
 			\item Component support
+			\item Automatic proofs
 		\end{itemize}
 		\item Pure Systems
 		\begin{itemize}
+			\item Modular mathematics and specifications
 			\item Protection from certain complications (preferably still with the flexibility to use them)
 			\item Rich, extensible mathematical language
 		\end{itemize}
 	\end{itemize}
 \end{frame}
 
-\subsection{Problem/Thesis Statement}
+\subsection{Problem Statement}
 \begin{frame}{Problem Statement}
 	\begin{itemize}
 		\item Architecture and implementation of a minimalist rewrite prover to explore those prover capabilities practically necessary to mechanically verify well-engineered, modular components.
 		\item Design and implementation of an extensible, flexible supporting mathematical framework for a practical verification system that permits reuse as well as the development of a rich set of models and assertions.
-		\item Design and implementation of a well-integrated specification framework that is explicitely designed to work with the mathematical system, supporting verifiability by allowing simple, flexible specifications and supporting scalability by encouraging verified component reuse.
+		\item Design and implementation of a well-integrated specification framework that is explicitly designed to work with the mathematical system, supporting verifiability by allowing simple, flexible specifications and supporting scalability by encouraging verified component reuse.
 		\item Validation of our central hypothesis via application of the minimalist prover to software constructed using the mathematical and specification framework.
 	\end{itemize}
 \end{frame}
@@ -269,12 +185,12 @@
 \input{math}
 
 
-\section{Conclusion}
+\section{Conclusions and Future Directions}
 \begin{frame}{Conclusion}
 	\begin{itemize}
 		\item Systems need not be limited to the features of a pure or a practical system. Our hybrid system incorporates features of practical verification systems (static checking, efficient implementation, polymorphism) with pure mathematical systems (dependent types, higher-order logic, mathematical reusability.)
 		\item Novel mechanism for static reasoning can be used to bridge the gap between undecidable, but flexible type systems and constrained, hierarchical systems.
-		\item It can be demostrated empirically that using such a language, a programmer is capable of creating components about which reasoning is sufficiently easy that VCs can be dispatched by a minimalist prover.
+		\item It can be demonstrated empirically that using such a language, a programmer is capable of creating components about which reasoning is sufficiently easy that VCs can be dispatched by a minimalist prover.
 		\item This includes a verified generic sorting algorithm---a first.
 		\item A variety of useful heuristics exist to help a minimalist prover expose programmer intuition.
 	\end{itemize}
@@ -284,7 +200,7 @@
 	\begin{itemize}
 		\item Better transformation fitness functions
 		\item Other prover styles
-		\item Evaulate usability of new features
+		\item Evaluate usability of new features
 		\item Increase type-system intuitiveness
 		\item Prover scalability
 	\end{itemize}
@@ -293,6 +209,59 @@
 
 \begin{frame}{Questions?}
 ~
+\end{frame}
+
+\begin{frame}{Type Universe}
+	\centering
+	\includegraphics[width=.5\textwidth]{../universe}
+\end{frame}
+
+\begin{frame}{Specification Style}
+	\lstinputlisting[language=resolve,caption=]{examples/specificationStyle.co}
+\end{frame}
+
+\begin{frame}{Implicit}
+	\begin{figure}
+	\centering
+	\begin{tabular}{lrrrr}
+		\toprule
+			& Time (ms)	& $\sigma$& Steps & Search \\
+		\midrule
+		VC 0\_1	& 1520		& 141	& 5 	& 0     \\
+		VC 0\_2	& 3118		& 295	& 7 	& 0     \\
+		VC 0\_3	& 2741		& 222	& 8 	& 0     \\
+		VC 0\_4	& 2174		& 170	& 9 	& 2     \\
+		VC 1\_1	& 366		& 83	& 10	& 0     \\
+		\bottomrule
+	\end{tabular}
+	\caption{Recursive \texttt{Flipping\_Capability} results\label{fig:flippingResults}}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Explicit}
+	\begin{figure}
+	\centering
+	\begin{tabular}{lrrrr}
+		\toprule
+			& Time (ms)	& $\sigma$& Steps & Search \\
+		\midrule
+		VC 0\_1	& 2199		& 160	& 5 	& 0     \\
+		VC 0\_2	& 1468		& 182	& 6 	& 0     \\
+		VC 0\_3	& 2149		& 253	& 8 	& 0     \\
+		VC 0\_4	& 1589		& 225	& 8 	& 3     \\
+		VC 1\_1	& 845		& 139	& 10	& 0     \\
+		\bottomrule
+	\end{tabular}
+	\caption{Recursive \texttt{Flipping\_Capability} results, based on an explicitly-specified queue\label{fig:explicitFlippingResults}}
+\end{figure}
+\end{frame}
+
+\begin{frame}{Comparison}
+	\begin{itemize}
+		\item Explicit 1669 ms longer
+		\item Saved two proof steps
+		\item Cost one search step
+	\end{itemize}
 \end{frame}
 
 \end{document}

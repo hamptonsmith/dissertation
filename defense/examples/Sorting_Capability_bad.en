@@ -1,0 +1,11 @@
+Enhancement Sorting_Capability(Definition LEQV(x, y : Entry) : B) for 
+			Queue_Template;
+		uses String_Theory, Total_Preordering_Theory;
+		requires Is_Total_Preordering(LEQV);
+
+	Operation Sort(updates Q : Queue);
+		ensures for all i, j : Z where 0 < i < j <= |Q|, 
+				LEQV(Element_At(i, Q), Element_At(j, Q)) and 
+			for all e : Entity, Occurs_Ct(e, Q) = Occurs_Ct(e, #Q);
+
+end;

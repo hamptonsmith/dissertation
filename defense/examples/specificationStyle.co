@@ -1,0 +1,9 @@
+Operation Dequeue(replaces R: Entry; updates Q: Queue);
+	requires |Q| /= 0;
+	ensures #Q = <R> o Q;
+
+
+Operation Dequeue(replaces R: Entry; updates Q: Queue);
+	requires |Q| /= 0;
+	ensures R = Element_At(1, #Q) and 
+		Q = Substring(#Q, 2, |#Q| - 1);

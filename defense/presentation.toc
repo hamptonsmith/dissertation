@@ -1,11 +1,11 @@
 \beamer@endinputifotherversion {3.10pt}
 \beamer@sectionintoc {1}{Introduction}{2}{0}{1}
 \beamer@subsectionintoc {1}{1}{Example Systems}{5}{0}{1}
-\beamer@subsectionintoc {1}{2}{Problem/Thesis Statement}{16}{0}{1}
-\beamer@sectionintoc {2}{Minimalist Prover}{18}{0}{2}
-\beamer@subsectionintoc {2}{1}{Design}{19}{0}{2}
-\beamer@subsectionintoc {2}{2}{Evaluation}{26}{0}{2}
-\beamer@sectionintoc {3}{Mathematical Flexibility}{40}{0}{3}
-\beamer@subsectionintoc {3}{1}{Design}{41}{0}{3}
-\beamer@subsectionintoc {3}{2}{Evaluation}{45}{0}{3}
-\beamer@sectionintoc {4}{Conclusion}{56}{0}{4}
+\beamer@subsectionintoc {1}{2}{Problem Statement}{10}{0}{1}
+\beamer@sectionintoc {2}{Minimalist Prover}{12}{0}{2}
+\beamer@subsectionintoc {2}{1}{Research}{13}{0}{2}
+\beamer@subsectionintoc {2}{2}{Evaluation}{20}{0}{2}
+\beamer@sectionintoc {3}{Mathematical Flexibility}{35}{0}{3}
+\beamer@subsectionintoc {3}{1}{Research}{36}{0}{3}
+\beamer@subsectionintoc {3}{2}{Evaluation}{40}{0}{3}
+\beamer@sectionintoc {4}{Conclusions and Future Directions}{51}{0}{4}

@@ -5,9 +5,9 @@ Realization Array_Realiz for Stack_Template;
 		Contents: Array 1..Max_Depth of Entry;
 		Top: Integer;
 	end;
-	convention
+	convention (* representation invariant *)
 		0 <= S.Top <= Max_Depth;
-	correspondence
+	correspondence (* abstraction function *)
 		Conc.S = Reverse(Concatenate(S.Contents, S.Top));
 
 	Procedure Push(alters E: Entry; updates S: Stack);
