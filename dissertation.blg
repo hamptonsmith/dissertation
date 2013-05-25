@@ -8,45 +8,45 @@ Warning--can't use both volume and number fields in hollingsworth2000experience
 Warning--can't use both volume and number fields in leonard2009injecting
 Warning--can't use both volume and number fields in milner1972implementation
 Warning--can't use both volume and number fields in sitaraman2009engaging
-You've used 67 entries,
+You've used 68 entries,
             2118 wiz_defined-function locations,
-            929 strings with 18214 characters,
-and the built_in function-call counts, 28150 in all, are:
-= -- 2802
-> -- 1467
+            934 strings with 18344 characters,
+and the built_in function-call counts, 28354 in all, are:
+= -- 2824
+> -- 1474
 < -- 43
-+ -- 588
-- -- 504
-* -- 1999
-:= -- 4501
-add.period$ -- 239
-call.type$ -- 67
-change.case$ -- 440
++ -- 591
+- -- 506
+* -- 2011
+:= -- 4542
+add.period$ -- 242
+call.type$ -- 68
+change.case$ -- 444
 chr.to.int$ -- 0
-cite$ -- 72
-duplicate$ -- 1106
-empty$ -- 2059
-format.name$ -- 504
-if$ -- 6060
+cite$ -- 73
+duplicate$ -- 1115
+empty$ -- 2073
+format.name$ -- 506
+if$ -- 6099
 int.to.chr$ -- 0
-int.to.str$ -- 67
+int.to.str$ -- 68
 missing$ -- 63
-newline$ -- 347
-num.names$ -- 146
-pop$ -- 488
+newline$ -- 352
+num.names$ -- 148
+pop$ -- 491
 preamble$ -- 1
-purify$ -- 377
+purify$ -- 380
 quote$ -- 0
-skip$ -- 819
+skip$ -- 824
 stack$ -- 0
-substring$ -- 1584
-swap$ -- 369
+substring$ -- 1589
+swap$ -- 370
 text.length$ -- 43
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 258
+type$ -- 262
 warning$ -- 5
-while$ -- 254
-width$ -- 69
-write$ -- 809
+while$ -- 256
+width$ -- 70
+write$ -- 821
 (There were 5 warnings)

@@ -58,7 +58,7 @@
 \contentsline {lstlisting}{\numberline {7.13}A VC arising from a selection sort implementation}{105}{lstlisting.7.13}
 \contentsline {lstlisting}{\numberline {7.14}A Useful \texttt {Is\_Universally\_Related} theorem}{106}{lstlisting.7.14}
 \contentsline {lstlisting}{\numberline {7.15}\texttt {Selection\_Sort\_Realization} taking an operation that implements \texttt {LEQV}}{106}{lstlisting.7.15}
-\contentsline {lstlisting}{\numberline {7.16}Passing a Cartesian product subtype}{106}{lstlisting.7.16}
+\contentsline {lstlisting}{\numberline {7.16}Passing a Cartesian product subtype}{107}{lstlisting.7.16}
 \contentsline {lstlisting}{\numberline {7.17}A type theorem expressing Cartesian subtypes}{107}{lstlisting.7.17}
 \contentsline {lstlisting}{\numberline {7.18}Results without type theorem}{107}{lstlisting.7.18}
 \contentsline {lstlisting}{\numberline {7.19}The representation of \texttt {Stack}}{108}{lstlisting.7.19}

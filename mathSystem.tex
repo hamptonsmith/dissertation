@@ -12,7 +12,7 @@ While we argue that this cost is justified in critical or long-running deploymen
 \section{General Design Goals\label{mathDesignGoals}}
 %-----------------------------------------------------------------------------
 
-After considering the problem, we arrived at three overarching strategies to address verificaton complexity, then brainstormed a number of features that would support these objectives.  This section covers the overarching strategies, while the next lists specific features and explains how they support these strategies. 
+After considering the problem, we arrived at three overarching strategies to address verificaton complexity, then considered a number of features that would support these objectives.  This section covers the overarching strategies, while the next lists specific features and explains how they support these strategies. 
 
 	%---------------------------------------------------------------------
 	\subsection{Usable Theories\label{usableTheories}}
@@ -197,12 +197,12 @@ Concept Lazy_Filtering_Bag_Template(Type Entry, Definition Filter : Entry -> Ent
 		initialization ensures B = Empty_Multi_Set;
 
 	Operation Add(alters E : Entry, updates B : Lazy_Filtering_Bag);
-		ensures B = #B + {#E};
+		ensures B = #B U {#E};
 
 	Operation Retrieve(replaces E : Entry, updates B : Lazy_Filtering_Bag);
 		requires |B| > 0;
 		ensures there exists F : Entry,
-			#B = B + {F} and E = Filter(F);
+			#B = B U {F} and E = Filter(F);
 end;
 \end{lstlisting}
 
@@ -247,7 +247,7 @@ Procedure;
 	Add(I, B);
 	Retrieve(I, B);
 
-	Assert I = 2;
+	Confirm I = 2;
 end;
 \end{lstlisting}
 
@@ -333,7 +333,7 @@ The symbol table maintains information about the kinds of elements that make up 
 	\end{subfigure}%
 \end{figure}
 
-Rules \ref{rule:mtype} and \ref{rule:set} state explicitly that \textbf{MType} and \textbf{Set} are known to contain only \textbf{MType}s.  Rule \ref{rule:power} states that the powerset of an existing type is known to contain only types---its result is a set of sets.  Rule \ref{rule:restrict} states that the result of set restriction is known to contain only types if the type being restricted is known to contain only types.  Rule \ref{rule:union} states that the result of unioning existing types is known to contain only types if each of the componen types is known to contain only types.  Rule \ref{rule:intersection} states that the result of the intersection of existing types is known to contain only types if one of the component types contains only types.  Rules \ref{rule:cross} and \ref{rule:application} state that the result of applying the cross product or the function constructor never contains only types.
+Rules \ref{rule:mtype} and \ref{rule:set} state explicitly that \textbf{MType} and \textbf{Set} are known to contain only \textbf{MType}s.  Rule \ref{rule:power} states that the powerset of an existing type is known to contain only types---its result is a set of sets.  Rule \ref{rule:restrict} states that the result of set restriction is known to contain only types if the type being restricted is known to contain only types.  Rule \ref{rule:union} states that the result of unioning existing types is known to contain only types if each of the component types is known to contain only types.  Rule \ref{rule:intersection} states that the result of the intersection of existing types is known to contain only types if one of the component types contains only types.  Rules \ref{rule:cross} and \ref{rule:application} state that the result of applying the cross product or the function constructor never contains only types.
 
 Thus this is a valid sequence of definitions:
 
@@ -581,7 +581,7 @@ So, if a type expression started life as $T \cup W \cup T$, where $T$ ranges ove
 
 Static requirements encode the relationships between the original free type variables.  Two types of relationships are permitted: 1) \emph{equality}---two type variables were originally the same and 2) \emph{membership}---a variable was originally declared as a member of a certain type.
 
-So, in our above example, the static requirements would be: $T_1 : MType, T_2 : Powerset(T_1), T_3 = T_1$.  The first two requirements are examples of membership relationships and simply encode the declared types of the variables that (in the case of $T_2$, at least) were weakened during canonicalization.  The third requirements is an example of an equality relationship and establishes that in the original expression $T_1$ and $T_3$ represented the same value.
+So, in our above example, the static requirements would be: $T_1 : MType, T_2 : Powerset(T_1), T_3 = T_1$.  The first two requirements are examples of membership relationships and simply encode the declared types of the variables that (in the case of $T_2$, at least) were weakened during canonicalization.  The third requirement is an example of an equality relationship and establishes that in the original expression $T_1$ and $T_3$ represented the same value.
 
 In addition to these static requirements, the expression pattern and condition are added to the edge.
 
@@ -673,7 +673,7 @@ When we seek to determine if a given expression is acceptable as a particular ty
 	\end{subfigure}%
 \end{figure}
 
-Rules \ref{ssrule:mtype} and \ref{ssrule:element} establish that all types are subtypes of \textbf{MType} and \textbf{Entity}.  This is because \textbf{MType} contains all RESOLVE types and \textbf{Entity} is a superset of \textbf{MType}.  Rule \ref{ssrule:emptyset} establishes that the empty set is a subtype of any type.  Rule \ref{ssrule:symmetric} establishes that any type is a subtype of a second type to which it is alpha equivalent.  Rule \ref{ssrule:promote} establishes that ``promoting'' an existing type to a ``big union'' type by surrounding it in a trivial big union that introduces an arbitrary number of free variables that do not appear in the type maintains the subtype relationship.  Rule \ref{ssrule:bigunion} establishes that one big union type is a subtype of a second if there is an assignment of free variables in the first to unique free variables in the second such that the declared types of the free variables in the first are syntactic subtypes of those in the second and for each of any remaining, un-mapped free variables in the second there is a concrete instantiation such that the resulting two big union types are alpha equivalent.
+Rules \ref{ssrule:mtype} and \ref{ssrule:element} establish that all types are subtypes of \textbf{MType} and \textbf{Entity}.  This is because \textbf{MType} contains all RESOLVE types and \textbf{Entity} is a superset of \textbf{MType}.  Rule \ref{ssrule:emptyset} establishes that the empty set is a subtype of any type.  Rule \ref{ssrule:symmetric} establishes that any type is a subtype of a second type to which it is alpha-equivalent.  Rule \ref{ssrule:promote} establishes that ``promoting'' an existing type to a ``big union'' type by surrounding it in a trivial big union that introduces an arbitrary number of free variables that do not appear in the type maintains the subtype relationship.  Rule \ref{ssrule:bigunion} establishes that one big union type is a subtype of a second if there is an assignment of free variables in the first to unique free variables in the second such that the declared types of the free variables in the first are syntactic subtypes of those in the second and for each of any remaining, un-mapped free variables in the second there is a concrete instantiation such that the resulting two big union types are alpha-equivalent.
 
 We repeat this process for the expected type.  We then determine if there are edges from any of the provided value's buckets to any of the expected type's buckets.  For each such edge, we iterate, attempting to bind the value to the pattern expression, then use the resulting bindings to satisfy the static requirements, before finally instantiating the condition and adding it to a list.
 

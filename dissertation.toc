@@ -11,8 +11,8 @@
 \contentsline {paragraph}{Complex Proof Obligations for Simple Methods.}{4}{section*.13}
 \contentsline {paragraph}{Lack of Support for Modular Design.}{5}{section*.14}
 \contentsline {subsection}{\numberline {1.1.2}Example Pure System: Coq}{6}{subsection.1.1.2}
-\contentsline {section}{\numberline {1.2}Best of Both Worlds?}{10}{section.1.2}
-\contentsline {section}{\numberline {1.3}Problem Statement}{11}{section.1.3}
+\contentsline {section}{\numberline {1.2}Best of Both Worlds?}{9}{section.1.2}
+\contentsline {section}{\numberline {1.3}Problem Statement}{10}{section.1.3}
 \contentsline {section}{\numberline {1.4}Research Approach}{11}{section.1.4}
 \contentsline {subsection}{\numberline {1.4.1}Contributions}{12}{subsection.1.4.1}
 \contentsline {section}{\numberline {1.5}Dissertation Goal}{13}{section.1.5}
@@ -20,7 +20,7 @@
 \contentsline {chapter}{\numberline {2}Verification Background and Related Work}{15}{chapter.2}
 \contentsline {section}{\numberline {2.1}Specification and Mathematical Systems}{15}{section.2.1}
 \contentsline {section}{\numberline {2.2}Automated Theorem Provers}{18}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Decision Procedures}{18}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.1}Decision Procedures}{19}{subsection.2.2.1}
 \contentsline {subsection}{\numberline {2.2.2}SAT-Solvers}{19}{subsection.2.2.2}
 \contentsline {subsection}{\numberline {2.2.3}Term-Rewrite Provers}{19}{subsection.2.2.3}
 \contentsline {section}{\numberline {2.3}Benchmarks and Specification Engineering}{20}{section.2.3}

@@ -264,6 +264,10 @@
           \ifx \@ClemsonCommitteeMemberFour  \empty \else \@ClemsonCommitteeMemberFour\\  \fi
           \ifx \@ClemsonCommitteeMemberFive  \empty \else \@ClemsonCommitteeMemberFive\\  \fi
           \ifx \@ClemsonCommitteeMemberSix   \empty \else \@ClemsonCommitteeMemberSix\\   \fi
+          \bigskip\bigskip\bigskip\bigskip\bigskip\bigskip
+          \includegraphics[width=66px]{cc}\\
+          Copyright 2013 Hampton Smith\\
+          Licensed under the Creative Commons Attribution-ShareAlike 3.0 License\\
        \end{center}
    \end{titlepage}
 }

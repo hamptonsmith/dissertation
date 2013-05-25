@@ -208,6 +208,12 @@ James~Cornelius King.
 \newblock PhD thesis, Carnegie Mellon University, Pittsburgh, PA, USA, 1970.
 \newblock AAI7018026.
 
+\bibitem{kirschenbaumDissertation}
+Jason Kirschenbaum.
+\newblock {\em Investigation in Automating Software Verification}.
+\newblock Phd dissertation, The Ohio State University, Columbus, Ohio, May
+  2011.
+
 \bibitem{klebanovVSTTEExperience}
 Vladimir Klebanov, Peter M\"{u}ller, Natarajan Shankar, Gary~T. Leavens,
   Valentin W\"{u}stholz, Eyad Alkassar, Rob Arthan, Derek Bronish, Rod Chapman,

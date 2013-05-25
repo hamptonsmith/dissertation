@@ -2,11 +2,11 @@ Precis Tree_Theory;
 		uses String_Theory;
 
 	Definition TTree : MType = ...;
-	Definition Tree : MType -> MType = ...;
+	Definition Tr : MType -> MType = ...;
 
 	Type Theorem Tree_Subset:
 		For all T : MType,
-		For all Tr : Tree(T),
+		For all Tr : Tr(T),
 			Tr : TTree;
 
 	Definition Join(Root : Entity, Children : Str(TTree)) : TTree = ...;

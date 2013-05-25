@@ -11,7 +11,7 @@ This chapter contains necessary background information for understanding our ver
 
 The RESOLVE\cite{RESOLVE} Verifying Compiler is an attempt to create a full verification pipeline, beginning with an integrated specification and programming language and continuing through to a back-end prover.  It has been applied in industrial settings\cite{hollingsworth2000experience} and used extensively as a platform for education\cite{leonard2009injecting, sitaraman2009engaging, sitaraman2001formal}.  The focus of RESOLVE is on modular verification and scalability.  These are addressed by ensuring each component is verified in isolation and need not be re-verified regardless of the context of deployment.  This means that encapsulation must be strictly assured, which requires that certain treacherous programmatic constructs such as aliases must be tightly controlled.
 
-As an example, let's consider a Stack abstraction.  We are interested in designing a system for complete verification---including constraints like memory, so we will use a bounded stack that takes as a parameter its maximum depth.  Listing \ref{lst:stack} shows part of a RESOLVE concept describing such a component.
+As an example, we consider a Stack abstraction.  We are interested in designing a system for complete verification---including constraints like memory, so we will use a bounded stack that takes as a parameter its maximum depth.  Listing \ref{lst:stack} shows part of a RESOLVE concept describing such a component.
 
 \lstinputlisting[language=resolve,caption={A Stack Concept\label{lst:stack}}]{Stack_Template.co}
 
@@ -96,7 +96,7 @@ Though no language can force its users to write good APIs, the constraints and r
 	ensures P.Prec = #P.Prec and P.Rem = <#New_Entry> o #P.Rem
 \end{lstlisting}
 
-While these design decisions encourage reuse and simplify \emph{human} reasoning, they correspondingly simplify automated reasoning.  Consider the VC given in Listing \ref{lst:easyVCEg} derived from a stack reversing procedure.
+Just as these design decisions encourage reuse and simplify \emph{human} reasoning, they correspondingly simplify automated reasoning.  Consider the VC given in Listing \ref{lst:easyVCEg} derived from a stack reversing procedure.
 
 \lstinputlisting[language=RESOLVE,caption={VC for the Inductive Case of Loop Invariant\label{lst:easyVCEg}}]{StackFlipVC1.asrt}
 

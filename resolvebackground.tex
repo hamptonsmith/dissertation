@@ -11,11 +11,11 @@ This chapter contains necessary background information for understanding our ver
 
 The RESOLVE\cite{RESOLVE} Verifying Compiler is an attempt to create a full verification pipeline, beginning with an integrated specification and programming language and continuing through to a back-end prover.  It has been applied in industrial settings\cite{hollingsworth2000experience} and used extensively as a platform for education\cite{leonard2009injecting, sitaraman2009engaging, sitaraman2001formal}.  The focus of RESOLVE is on modular verification and scalability.  These are addressed by ensuring each component is verified in isolation and need not be re-verified regardless of the context of deployment.  This means that encapsulation must be strictly assured, which requires that certain treacherous programmatic constructs such as aliases must be tightly controlled.
 
-As an example, let's consider a Stack abstraction.  We are interested in designing a system for complete verification---including constraints like memory, so we will use a bounded stack that takes as a parameter its maximum depth.  Listing \ref{lst:stack} shows part of a RESOLVE concept describing such a component.
+As an example, we consider a Stack abstraction.  We are interested in designing a system for complete verification---including constraints like memory, so we will use a bounded stack that takes as a parameter its maximum depth.  Listing \ref{lst:stack} shows part of a RESOLVE concept describing such a component.
 
 \lstinputlisting[language=resolve,caption={A Stack Concept\label{lst:stack}}]{Stack_Template.co}
 
-RESOLVE permits parameterized types.  In this case, \texttt{Entry} is a generic type, permitting \texttt{Stack}s to be created to contain any other RESOLVE type.  \texttt{Max\_Depth} is an integer indicating the maximum number of elements that can ever be on a stack.  The \texttt{evaluates} parameter mode indicates that the parameter is pass-by-value (parameters are ordinarily pass-by-reference.)
+RESOLVE permits parameterized types.  In this case, \texttt{Entry} is a generic type, permitting \texttt{Stack}s to be created to contain any other RESOLVE type.  \texttt{Max\_Depth} is an integer indicating the maximum number of elements that can ever be on a stack.  The \texttt{evaluates} parameter mode indicates that the actual argument may be an expression and that it is evaluated and supplied as a parameter.
 
 Applying modular lessons from the world of programming to mathematics, we store theories in separate files with their own scopes that can be imported individually\cite{smith08}.  The \emph{uses} line includes one such theory---the theory of strings, i.e., finite sequences.
 

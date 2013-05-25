@@ -138,7 +138,7 @@ An implementation for this operation is provided in Listing \ref{lst:searchImpl}
 
 The realization takes a function, \texttt{Are\_Ordered()} which provides a programmatic way of establishing \texttt{LEQ}.  From there, the implementation is the usual straightforward binary search implementation.  Note that when calculating the new mid, we first take the difference, then divide, avoiding the overflow problem exposed in \cite{blochBinarySearch}.
 
-An important design goal of RESOLVE is that as much reasoning as possible happens through the general component machinery.  As a result, RESOLVE does not elevate arrays (or pointers, as we discuss in \cite{kulczyckiPointers}) to special status, unlike nearly all other practical verification languages (\cite{DafnyOverview}, \cite{cok:esc}, or \cite{kuncakJahobOverview}, e.g.).
+An important design goal of RESOLVE is that as much reasoning as possible happens through the general component machinery.  As a result, RESOLVE does not elevate arrays (or pointers, as we discuss in \cite{kulczyckiPointers}) to special status, unlike nearly all other practical verification languages (e.g., \cite{DafnyOverview}, \cite{cok:esc}, or \cite{kuncakJahobOverview}).
 
 \FloatBarrier
 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2012.11.17)  30 APR 2013 01:37
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2012.11.17)  24 MAY 2013 22:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -518,16 +518,22 @@ e
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 
-[1
+<cc.png, id=188, 88.33pt x 31.11626pt>
+File: cc.png Graphic file (type png)
+ <use cc.png>
+Package pdftex.def Info: cc.png used on input line 70.
+(pdftex.def)             Requested size: 66.24774pt x 23.33759pt.
+ [1
 
 
 
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] (./abstract.tex)
-[2
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./cc.png>] (./abstract.tex
+) [2
 
 
-] (./dedication.tex) [3
+] (./dedication.tex)
+[3
 
 
 ] (./acknowledgments.tex) [4
@@ -599,13 +605,13 @@ Chapter 1.
 
 
 
-] <verification_pipeline.png, id=497, 819.06pt x 255.95625pt>
-File: verification_pipeline.png Graphic file (type png)
+] <verification_pipeline2.png, id=500, 740.7675pt x 201.75375pt>
+File: verification_pipeline2.png Graphic file (type png)
 
-<use verification_pipeline.png>
-Package pdftex.def Info: verification_pipeline.png used on input line 12.
-(pdftex.def)             Requested size: 433.62001pt x 135.50774pt.
- [2 <./verification_pipeline.png>]
+<use verification_pipeline2.png>
+Package pdftex.def Info: verification_pipeline2.png used on input line 12.
+(pdftex.def)             Requested size: 433.62001pt x 118.10088pt.
+ [2 <./verification_pipeline2.png>]
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2004/09/05 1.3 listings language file
 )
@@ -631,28 +637,29 @@ LaTeX Font Info:    Font shape `OML/cmr/m/it' in size <8> not available
 LaTeX Font Info:    Font shape `OML/cmr/m/n' in size <8> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 10.
 ) [3] [4] [5]
-<proverpart.png, id=579, 819.06pt x 255.95625pt>
-File: proverpart.png Graphic file (type png)
- <use proverpart.png>
-Package pdftex.def Info: proverpart.png used on input line 55.
-(pdftex.def)             Requested size: 433.62001pt x 135.50774pt.
- [6 <./proverpart.png>] (./DivPred.coq) (./DivImpl.coq) (./DivTheorem.coq) [7]
-(./DivProof.coq) [8] <vcpart.png, id=640, 819.06pt x 255.95625pt>
-File: vcpart.png Graphic file (type png)
+<proverpart2.png, id=582, 740.7675pt x 201.75375pt>
+File: proverpart2.png Graphic file (type png)
+ <use proverpart2.png>
+Package pdftex.def Info: proverpart2.png used on input line 55.
+(pdftex.def)             Requested size: 433.62001pt x 118.10088pt.
 
-<use vcpart.png>
-Package pdftex.def Info: vcpart.png used on input line 88.
-(pdftex.def)             Requested size: 433.62001pt x 135.50774pt.
- [9 <./vcpart.png>]
-<specpart.png, id=649, 819.06pt x 255.95625pt>
-File: specpart.png Graphic file (type png)
- <use specpart.png>
-Package pdftex.def Info: specpart.png used on input line 105.
-(pdftex.def)             Requested size: 433.62001pt x 135.50774pt.
- [10 <./specpart.png>]
+(./DivPred.coq) [6 <./proverpart2.png>] (./DivImpl.coq) (./DivTheorem.coq)
+(./DivProof.coq) [7] <vcpart2.png, id=620, 740.7675pt x 201.75375pt>
+File: vcpart2.png Graphic file (type png)
+
+<use vcpart2.png>
+Package pdftex.def Info: vcpart2.png used on input line 88.
+(pdftex.def)             Requested size: 433.62001pt x 118.10088pt.
+ [8] [9 <./vcpart2.png>]
+<specpart2.png, id=651, 740.7675pt x 201.75375pt>
+File: specpart2.png Graphic file (type png)
+ <use specpart2.png>
+Package pdftex.def Info: specpart2.png used on input line 105.
+(pdftex.def)             Requested size: 433.62001pt x 118.10088pt.
+ [10 <./specpart2.png>]
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 117.
- [11] [12] [13]) [14] (./background.tex
+ [11] [12]) [13] [14] (./background.tex
 Chapter 2.
 [15
 
@@ -686,14 +693,14 @@ Overfull \hbox (15.18993pt too wide) in paragraph at lines 8--9
  []
 
 ) [34] (./longVCReduced.asrt) [35] [36] [37] [38]
-<proverDebugMode.png, id=1106, 415.5525pt x 552.0625pt>
+<proverDebugMode.png, id=1110, 415.5525pt x 552.0625pt>
 File: proverDebugMode.png Graphic file (type png)
 
 <use proverDebugMode.png>
 Package pdftex.def Info: proverDebugMode.png used on input line 159.
 (pdftex.def)             Requested size: 195.12767pt x 259.22511pt.
  [39] [40 <./proverDebugMode.png>]
-<newProverInterface.png, id=1121, 663.47874pt x 456.70625pt>
+<newProverInterface.png, id=1125, 663.47874pt x 456.70625pt>
 File: newProverInterface.png Graphic file (type png)
 
 <use newProverInterface.png>
@@ -726,7 +733,7 @@ Overfull \hbox (23.71912pt too wide) in paragraph at lines 329--332
  []$[]$ 
  []
 
-[59] [60] [61] [62] <universe.png, id=1484, 273.49678pt x 302.40479pt>
+[59] [60] [61] [62] <universe.png, id=1488, 273.49678pt x 302.40479pt>
 File: universe.png Graphic file (type png)
 
 <use universe.png>
@@ -744,7 +751,7 @@ e: $\OML/cmm/m/it/10 T[] \OT1/cmr/m/n/10 : \OML/cmm/m/it/10 MType; T[] \OT1/cmr
 r/m/n/10 )\OML/cmm/m/it/10 ; T[] \OT1/cmr/m/n/10 =
  []
 
-[68] <typeGraph.png, id=1574, 328.427pt x 336.457pt>
+[68] <typeGraph.png, id=1578, 328.427pt x 336.457pt>
 File: typeGraph.png Graphic file (type png)
  <use typeGraph.png>
 Package pdftex.def Info: typeGraph.png used on input line 610.
@@ -760,7 +767,7 @@ Chapter 6.
 
 
 ] [75] (./proverEval/examples/IntegerPlusTimesSpecs.en) [76]
-Overfull \hbox (5.68367pt too wide) in paragraph at lines 47--48
+Overfull \hbox (5.68367pt too wide) in paragraph at lines 48--49
 []\OT1/cmr/m/n/10 We ex-per-i-mented both with an it-er-a-tive and re-cur-sive 
 im-ple-men-ta-tion of \OT1/cmtt/m/n/10 Adding[]Capability\OT1/cmr/m/n/10 .
  []
@@ -771,12 +778,12 @@ im-ple-men-ta-tion of \OT1/cmtt/m/n/10 Adding[]Capability\OT1/cmr/m/n/10 .
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Overfull \hbox (9.44489pt too wide) in paragraph at lines 65--79
+Overfull \hbox (9.44489pt too wide) in paragraph at lines 66--80
  [][] 
  []
 
 
-Overfull \hbox (9.44489pt too wide) in paragraph at lines 84--98
+Overfull \hbox (9.44489pt too wide) in paragraph at lines 85--99
  [][] 
  []
 
@@ -839,18 +846,18 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 [91
 
 ] [92] [93]
-<proverEval/proofResults3.png, id=2186, 328.22626pt x 285.065pt>
+<proverEval/proofResults3.png, id=2190, 328.22626pt x 285.065pt>
 File: proverEval/proofResults3.png Graphic file (type png)
 
 <use proverEval/proofResults3.png>
-Package pdftex.def Info: proverEval/proofResults3.png used on input line 562.
+Package pdftex.def Info: proverEval/proofResults3.png used on input line 563.
 (pdftex.def)             Requested size: 173.44534pt x 150.64005pt.
 
-<proverEval/searchSteps2.png, id=2187, 411.5375pt x 228.855pt>
+<proverEval/searchSteps2.png, id=2191, 411.5375pt x 228.855pt>
 File: proverEval/searchSteps2.png Graphic file (type png)
 
 <use proverEval/searchSteps2.png>
-Package pdftex.def Info: proverEval/searchSteps2.png used on input line 568.
+Package pdftex.def Info: proverEval/searchSteps2.png used on input line 569.
 (pdftex.def)             Requested size: 238.49232pt x 132.62424pt.
  [94 <./proverEval/proofResults3.png> <./proverEval/searchSteps2.png>]) [95] (.
 /mathEval/mathSystemEvaluation.tex
@@ -928,7 +935,14 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[105] [106] (./mathEval/examples/Array_Realiz1.rb)
+[105]
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[106] (./mathEval/examples/Array_Realiz1.rb)
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -996,7 +1010,7 @@ Missing character: There is no â in font cmr10!
 Missing character: There is no € in font cmr10!
 Missing character: There is no ™ in font cmr10!
  [293]
-Underfull \hbox (badness 1158) in paragraph at lines 252--257
+Underfull \hbox (badness 1158) in paragraph at lines 258--263
 []\OT1/cmr/m/n/10 Gary T. Leav-ens, Al-bert L. Baker, and Clyde Ruby.  JML: a J
 ava Mod-el-ing Lan-
  []
@@ -1020,10 +1034,10 @@ Package rerunfilecheck Info: File `dissertation.out' has not changed.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 168.
  ) 
 Here is how much of TeX's memory you used:
- 18891 strings out of 495059
- 295706 string characters out of 3182029
- 601637 words of memory out of 3000000
- 13457 multiletter control sequences out of 15000+200000
+ 18897 strings out of 495059
+ 295829 string characters out of 3182029
+ 601868 words of memory out of 3000000
+ 13462 multiletter control sequences out of 15000+200000
  16246 words of font info for 64 fonts, out of 3000000 for 9000
  14 hyphenation exceptions out of 8191
  39i,26n,45p,1672b,1834s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1120,10 +1134,10 @@ re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt9.pfb></usr/share/texl
 ive/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texliv
 e/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on dissertation.pdf (306 pages, 1508988 bytes).
+Output written on dissertation.pdf (306 pages, 1503256 bytes).
 PDF statistics:
- 11713 PDF objects out of 12825 (max. 8388607)
- 11247 compressed objects within 113 object streams
- 8265 named destinations out of 8907 (max. 500000)
- 419 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11717 PDF objects out of 12825 (max. 8388607)
+ 11249 compressed objects within 113 object streams
+ 8266 named destinations out of 8907 (max. 500000)
+ 424 words of extra memory for PDF output out of 10000 (max. 10000000)
 
